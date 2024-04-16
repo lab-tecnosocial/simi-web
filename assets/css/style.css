@@ -1,124 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Roboto Mono', sans-serif; 
+  font-family: 'Roboto Mono', sans-serif;
   font-family: Arial, sans-serif;
 }
 
 /*Header*/
-.navbar-simi{
-    color: #f4eefe !important;
-    font-size: 40px;
-    text-decoration: none;
+.navbar-simi {
+  color: #f4eefe !important;
+  font-size: 40px;
+  text-decoration: none;
 }
 
 .logo-container {
-    display: inline-block;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
-  }
-  
-  .logo-simi {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 150%;
-    height: 150%;
-    object-fit: contain;
-    z-index: 1;
-  }
-  
-  .logo-container::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 150%;
-    border-radius: 50%;
-    background-color: white;
-    z-index: 0;
-  }
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.logo-simi {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.logo-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 0;
+}
 
 .navbar-custom {
-    background-color: #5dbf40;
+  background-color: #5dbf40;
 }
 
 .navbar-custom .nav-link {
-    color: #f4eefe !important;
-    font-size: 18px;
+  color: #f4eefe !important;
+  font-size: 18px;
 }
 
 .navbar-simi:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+a.nav-link {
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+a.nav-link.active {
+  background-color: #F4EEFE;
+  color: black !important;
+}
+
+a.nav-link:hover {
+  background-color: #F4EEFE;
+  color: black !important;
+}
 
 /* Hero */
 .logo-smaller {
-    width: auto; 
-    height: 25%; 
+  width: auto;
+  height: 25%;
 }
 
 .column-1-hero {
-   text-align: center; 
-   font-family: 'Text Me One', sans-serif;
+  text-align: center;
+  font-family: 'Text Me One', sans-serif;
 }
 
 .column-1-hero h1 {
-    font-size: 50px;
-    font-weight: bold;
+  font-size: 50px;
+  font-weight: bold;
 }
 
-.labtecnosoc-logo{
-    justify-content: center;
-    text-align: center;
-    padding: 70px;
+.labtecnosoc-logo {
+  justify-content: center;
+  text-align: center;
+  padding: 70px;
 }
 
 .logo {
-    width: 150px; 
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 
-/*Efecto hover para logo de google play*/ 
-  .google-play-link {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .google-play-link:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.3s;
-  }
-  
-  .google-play-link:hover:before {
-    opacity: 1;
-  }
-  
-  .logo-smaller {
-    transition: transform 0.3s;
-  }
-  
-  .logo-smaller:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
+/*Efecto hover para logo de google play*/
+.google-play-link {
+  display: inline-block;
+  position: relative;
+}
+
+.google-play-link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s;
+}
+
+.google-play-link:hover:before {
+  opacity: 1;
+}
+
+.logo-smaller {
+  transition: transform 0.3s;
+}
+
+.logo-smaller:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 .cellphone-1 {
-    transform: rotate(-5deg);
-    transition: transform 0.5s ease;
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease;
 }
-  
+
 .cellphone-1:hover {
   animation: shakeAnimation 0.5s infinite;
 }
@@ -127,40 +150,44 @@ body {
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(-5px);
   }
+
   100% {
     transform: translateX(0);
   }
 }
 
 /* Cards */
-.bg-custom{
-    text-align: center;
+.bg-custom {
+  text-align: center;
 }
 
 #cards-section {
-    background-color: #f4eefe; 
-    position: relative; 
-    min-height: 400px; 
-    width: 100%;
-    padding: 20px 10px; 
+  background-color: #f4eefe;
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+  padding: 20px 10px;
 }
 
 #cards-section-1 {
-    background-color: #f4eefe; 
-    justify-content: center;
-    position: relative; 
-    min-height: 100%; 
-    width: 100%; 
-    padding: 10px; 
+  background-color: #f4eefe;
+  justify-content: center;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  padding: 10px;
 }
 
 #cards-section .row {
@@ -171,18 +198,19 @@ body {
 .title-above-cards {
   position: relative;
   z-index: 2;
-  top: -30px; 
+  top: -30px;
 }
 
 
 /* Cellphone section */
-.cellphone{
+.cellphone {
   font-family: 'Text Me One', sans-serif;
   text-align: center;
 }
 
 #join-simi {
-  color: #444444; /* Cambia el color a tu preferencia, por ejemplo, rojo */
+  color: #444444;
+  /* Cambia el color a tu preferencia, por ejemplo, rojo */
   /* También puedes agregar otros estilos según tus necesidades */
 }
 
@@ -192,7 +220,7 @@ body {
 /* Cards-equipo */
 
 .bg-custom-1 {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .col-md-12.text-center {
@@ -200,8 +228,8 @@ body {
 }
 
 .smaller-image {
-    width: 150px; 
-    height: auto; 
+  width: 150px;
+  height: auto;
 }
 
 #people-images {
@@ -221,14 +249,14 @@ body {
 
 .card-img-top {
   width: 100%;
-  height: 150px; 
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .smaller-image {
-  width: 140px; 
-  height: 140px; 
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -240,29 +268,29 @@ body {
 /* Logos sections */
 #apoyo.apoyo {
   margin-top: -100px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 
 
 /* Footer */
-#footer{
-    background-color: #5dbf40; 
-    font-family: 'Text Me One', sans-serif;
-    position: relative; 
-    min-height: 100%; 
-    width: 100%; 
-    padding: 50px 0;
+#footer {
+  background-color: #5dbf40;
+  font-family: 'Text Me One', sans-serif;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  padding: 50px 0;
 }
-  
+
 .white-link {
-    color: #fff; 
+  color: #fff;
 }
-  
+
 #favicon {
-    filter: invert(1);
-    height: 50px;
-    width: auto;
+  filter: invert(1);
+  height: 50px;
+  width: auto;
 }
 
 .red-link {
@@ -291,4 +319,9 @@ body {
 .white-link i:hover {
   background-color: #00aaff;
   color: #fff;
+}
+
+[href="https://labtecnosocial.org/"] {
+  font-weight: bold;
+  color: white;
 }
