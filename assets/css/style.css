@@ -325,3 +325,124 @@ a.nav-link:hover {
   font-weight: bold;
   color: white;
 }
+
+
+/* Para redireccionar a otra pestaña para sugerencias y errores*/
+.scroll-message {
+  position: fixed;
+  top: 60%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+  width: 350px;
+}
+
+.scroll-message a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/*
+.scroll-message-2 {
+  position: fixed;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+} */
+
+.scroll-message p,
+.scroll-message-2 p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.scroll-message a,
+.scroll-message-2 a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.scroll-message img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px 50px 10px;
+  width: 150px;
+  background-color: transparent;
+}
+
+.scroll-message .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.scroll-message .close-icon {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .scroll-message {
+    width: 70%;
+    top:550px ;
+    left: 60%;
+  }
+
+  .scroll-message-2 {
+    top: 250px;
+    width: 80%;
+    max-height: 100px;
+  }
+
+  .scroll-message img {
+    max-width: 90px;
+    margin-bottom: 5px;
+  }
+
+  .scroll-message p,
+  .scroll-message-2 p,
+  .scroll-message a,
+  .scroll-message-2 a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .scroll-message {
+    width: 50%;
+    height: auto;
+    top: 750px;
+  }
+
+  .scroll-message img {
+    max-width: 100px;
+    margin-bottom: 5px;
+  }
+
+  .scroll-message p,
+  .scroll-message-2 p,
+  .scroll-message a,
+  .scroll-message-2 a {
+    font-size: 14px;
+  }
+
+  .scroll-message .close-btn {
+    width: 60px;
+    height: 45px;
+  }
+
+}

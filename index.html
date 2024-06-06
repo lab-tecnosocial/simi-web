@@ -329,6 +329,20 @@
     </div>
   </section>
 
+  <!--Suggestion box-->
+  <div class="scroll-message">
+    <div class="close-btn">
+      <span class="close-icon">×</span>
+    </div>
+    <p>¿Quieres dejar alguna sugerencia?</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform" target="_blank">Has click acá para mandarnos tu sugerencia</a>
+
+    <p>¿Encontraste un error?</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDCzuKpa-6jABQICgjvb9mYONlmQ1XKc24IuuLLlbmobTDpQ/viewform" target="_blank">Reporta el error haciendo click acá</a>
+
+    <img src="assets/images/problemasimi.png" alt="Imagen 1">
+  </div>
+
   <!--  Footer  -->
   <footer id="footer">
     <div class="container">
@@ -377,6 +391,48 @@
       });
 
 
+    });
+  </script>
+
+  <script>
+    var scrollMessage1 = document.querySelector('.scroll-message');
+    var scrollMessage2 = document.querySelector('.scroll-message-2');
+    var prevScrollPos = window.pageYOffset;
+
+    window.addEventListener('scroll', function() {
+      var currentScrollPos = window.pageYOffset;
+      var scrollPosition = window.scrollY;
+      var elementPosition = document.getElementById('people-images').offsetTop;
+
+      if (scrollPosition > elementPosition - window.innerHeight + 200) {
+        scrollMessage1.style.display = 'block';
+      } else {
+        scrollMessage1.style.display = 'none';
+      }
+
+      if (scrollPosition > elementPosition + 200) {
+        scrollMessage2.style.display = 'block';
+      } else {
+        scrollMessage2.style.display = 'none';
+      }
+
+      if (currentScrollPos < prevScrollPos) {
+        scrollMessage1.style.display = 'none';
+        scrollMessage2.style.display = 'none';
+      }
+
+      prevScrollPos = currentScrollPos;
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var scrollMessage = document.querySelector('.scroll-message');
+      var closeBtn = document.querySelector('.scroll-message .close-btn');
+
+      closeBtn.addEventListener('click', function() {
+        scrollMessage.style.display = 'none';
+      });
     });
   </script>
 
