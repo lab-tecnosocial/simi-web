@@ -1,0 +1,13 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Anagram from "../components/juegos/Anagram";
+import "../styles/global.css";
+---
+
+<PageLayout
+    titulo="Anagrama"
+    descripcion="Juega a descifrar las palabras"
+    imagen="/assets/img/anagrama.jpg"
+>
+    <Anagram client:only="react" />
+</PageLayout>
