@@ -5,12 +5,14 @@ import GameOver from './GameOver';
 import wordList from './WordList';
 import fondoCielo from '../assets/images/fondo_cielo.png';
 import globo from '../assets/images/globo.png';
+import mancha from '../assets/images/mancha.png';
 
 function Game() {
   const [selectedList, setSelectedList] = useState('animales');
   const [selectedWord, setSelectedWord] = useState('');
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
+  const [manchas, setManchas] = useState([]);
 
   const maxAttempts = 4;
 
@@ -27,6 +29,7 @@ function Game() {
       setSelectedWord(words[Math.floor(Math.random() * words.length)]);
       setGuessedLetters([]);
       setWrongGuesses(0);
+      setManchas([]);//Para reiniciar manchas
       setGameStarted(true); // El juego ha comenzado
     } else {
       console.error(`No existe la lista de palabras para: ${selectedList}`);
@@ -43,6 +46,7 @@ function Game() {
     setGuessedLetters([...guessedLetters, letter]);
     if (!selectedWord.includes(letter)) {
       setWrongGuesses(wrongGuesses + 1);
+      setManchas([...manchas, mancha]); //Para añadir una nueva mancha
     }
   };
 
@@ -66,11 +70,25 @@ function Game() {
       className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8"
       style={{ backgroundImage: `url(${fondoCielo.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
-      <h1 className='text-3xl font-bold mb-8 text-left'>Salva a Simi -  Simiman yanapay</h1>
-      <p className="text-sm mb-4 text-left">Un juego donde debes descubrir la palabra oculta letra por letra antes de que el globo de Simi se caiga.</p>
-      <p className="text-sm mb-8 text-left">QUE: Kaypi tarinayki tiyan ima sananpachus kaypi kachkan. Simita yanapayki tiyan mana globomanta urmamunanpaq.</p>
+      <h1 className='text-3xl font-bold mb-8'>Salva a Simi -  Simiman yanapay</h1>
+      <p className="text-sm mb-4">Un juego donde debes descubrir la palabra oculta letra por letra antes de que el globo de Simi se caiga.</p>
+      <p className="text-sm mb-8">QUE: Kaypi tarinayki tiyan ima sananpachus kaypi kachkan. Simita yanapayki tiyan mana globomanta urmamunanpaq.</p>
 
-      <img src={globo.src} alt="Globo" className="mb-4 w-64" />
+      <div className="relative">
+        <img src={globo.src} alt="Globo" className="mb-4 w-64" />
+        {manchas.map((_, index) => (
+          <img
+            key={index}
+            src={mancha.src} // Asegúrate de usar 'mancha' directamente si es una importación
+            alt="Mancha"
+            className="absolute w-14"
+            style={{
+              top: `${Math.random() * 30 + 20}px`, // Aleatorio entre 20px y 50px
+              left: `${Math.random() * 100 + 85}px`, // Aleatorio entre 0px y 100px
+              transform: 'translateX(-50%)'
+            }}          />
+        ))}
+      </div>
 
       <div className="w-full max-w-md text-center">
         <label htmlFor="word-list">Selecciona una lista de palabras: </label>

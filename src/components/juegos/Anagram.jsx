@@ -42,12 +42,12 @@ function Anagram() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
       <div className="text-center">
-        <h1 className='text-3xl font-bold mb-8 text-left'>Anagrama - T’ikraspa pukllay</h1>
-        <p className="text-sm mb-4 text-left">Desafía tu mente reorganizando letras para formar palabras. Encuentra todas las combinaciones posibles antes de que el tiempo se agote.</p>
-        <p className="text-sm mb-8 text-left">QUE: Kaypi t’ukunayki kay sananpakunamanta tikraspa t’ikraspa allin simikunata tarinaykikama</p>
-        <div className="mb-4">
+        <h1 className='text-3xl font-bold mb-8'>Anagrama - T’ikraspa pukllay</h1>
+        <p className="text-sm mb-4">Desafía tu mente reorganizando letras para formar palabras. Encuentra todas las combinaciones posibles antes de que el tiempo se agote.</p>
+        <p className="text-sm mb-8">QUE: Kaypi t’ukunayki kay sananpakunamanta tikraspa t’ikraspa allin simikunata tarinaykikama</p>
+        <div className="border border-gray-300 rounded p-12 bg-gray-300 mb-8">
           <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona un tema:</label>
           <select
             id="category"
@@ -61,7 +61,6 @@ function Anagram() {
               </option>
             ))}
           </select>
-        </div>
 
         <h2 className="text-xl font-bold mb-4">Reordena las letras:</h2>
         {shuffledWord && !isGameOver && (
@@ -82,7 +81,7 @@ function Anagram() {
             </button>
           </div>
         )}
-
+        </div>
         {/* Mostrar el resultado */}
         {isGameOver && (
           <GameOver
