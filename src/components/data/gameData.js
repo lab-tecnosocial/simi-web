@@ -33,7 +33,7 @@ export const gameData = {
       { id: 9, word: "Pariwana", image: '/assets/images/animales/pariwana.png' },
       { id: 10, word: "Suri", image: '/assets/images/animales/suri.png' },
       { id: 11, word: "Urpi", image: '/assets/images/animales/urpi.png' },
-      { id: 12, word: "Wallpa", image: '/assets/images/animales/wallpa.png' }
+      { id: 12, word: "Wallpa", image: '/assets/images/animales/wallpa.png' , audio: '/assets/sounds/animales/wallpa.mp3' },
     ],
     Familia: [
       { id: 1, word: "Allchhi", image: '/assets/images/familia/allchhi.png' },

@@ -41,13 +41,17 @@ function Anagram() {
     selectRandomWord(selectedCategory);
   };
 
+  const changeWord = () => {
+    selectRandomWord(selectedCategory);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
       <div className="text-center">
         <h1 className='text-3xl font-bold mb-8'>Anagrama - T’ikraspa pukllay</h1>
+        <p className="text-sm mb-8">Kaypi t’ukunayki kay sananpakunamanta tikraspa t’ikraspa allin simikunata tarinaykikama</p>
         <p className="text-sm mb-4">Desafía tu mente reorganizando letras para formar palabras. Encuentra todas las combinaciones posibles antes de que el tiempo se agote.</p>
-        <p className="text-sm mb-8">QUE: Kaypi t’ukunayki kay sananpakunamanta tikraspa t’ikraspa allin simikunata tarinaykikama</p>
-        <div className="border border-gray-300 rounded p-12 bg-gray-300 mb-8">
+        <div className="border rounded p-12 bg-[#bef789] mb-8">
           <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona un tema:</label>
           <select
             id="category"
@@ -62,24 +66,32 @@ function Anagram() {
             ))}
           </select>
 
-        <h2 className="text-xl font-bold mb-4">Reordena las letras:</h2>
+        <h2 className="text-xl font-bold mt-4 mb-4">Reordena las letras:</h2>
         {shuffledWord && !isGameOver && (
           <div className='flex flex-col items-center'>
-            <p className="text-4xl mb-4">{shuffledWord}</p>
+          <p className="text-4xl mb-4">{shuffledWord}</p>
+          <div className='flex items-center mb-4'>
             <input
               type="text"
-              className="border border-gray-300 p-2 rounded mb-2 w-64"
+              className="border border-gray-300 p-2 rounded w-64 mr-2"
               value={guess}
               onChange={(e) => setGuess(e.target.value)}
               placeholder="Escribe tu respuesta"
             />
             <button
               onClick={checkGuess}
-              className="bg-blue-500 text-white p-2 rounded w-64 hover:bg-blue-600 block mt-2"
+              className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
             >
               Comprobar
             </button>
           </div>
+          <button
+                onClick={changeWord}
+                className="bg-green-500 text-white p-2 rounded hover:bg-green-600 mb-4"
+              >
+                Cambiar Palabra
+              </button>
+        </div>
         )}
         </div>
         {/* Mostrar el resultado */}

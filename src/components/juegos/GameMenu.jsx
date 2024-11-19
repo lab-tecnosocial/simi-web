@@ -40,6 +40,12 @@ const GameMenu = () => {
             className='mt-auto bg-green-500 text-white px-4 py--2 rounded hover:bg-green-600' type="">Pukllana!</a>
         </div>
       </div>
+      <a
+        href='/glosario'
+        className='m-4 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600'
+      >
+        Ir al Glosario
+      </a>
     </div>
   );
 };
