@@ -32,10 +32,8 @@
             >
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a
-                            class="nav-link inicio active"
-                            aria-current="page"
-                            href="/">Inicio</a
+                        <a class="nav-link inicio" aria-current="page" href="/"
+                            >Inicio</a
                         >
                     </li>
                     <li class="nav-item">
@@ -57,3 +55,16 @@
         </div>
     </nav>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+                navLinks.forEach((nav) => nav.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    });
+</script>

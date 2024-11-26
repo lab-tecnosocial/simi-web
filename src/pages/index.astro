@@ -477,26 +477,6 @@ import Footer from "../components/Footer.astro";
       </script>
 
       <script>
-        $(document).ready(function () {
-          $(".navbar-toggler").click(function () {
-            $(".navbar-collapse").toggleClass("show");
-          });
-
-          $("a.nav-link").click(function () {
-            $("a.nav-link").removeClass("active");
-            $(this).addClass("active");
-          });
-
-          $(window).scroll(function () {
-            if ($(this).scrollTop() < 100) {
-              $("a.nav-link").removeClass("active");
-              $("a.inicio.nav-link").addClass("active");
-            }
-          });
-        });
-      </script>
-
-      <script>
         var scrollMessage1 = document.querySelector(".scroll-message");
         var scrollMessage2 = document.querySelector(".scroll-message-2");
         var prevScrollPos = window.pageYOffset;
