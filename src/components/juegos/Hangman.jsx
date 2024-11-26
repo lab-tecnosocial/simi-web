@@ -13,8 +13,10 @@ function Game() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [manchas, setManchas] = useState([]);
+  const [hintsUsed, setHintsUsed] = useState(0); // Estado para controlar el número de pistas usadas
 
   const maxAttempts = 4;
+  const maxHints = 2; // Máximo número de pistas permitidas
 
   // Estados para estadísticas
   const [wins, setWins] = useState(0);
@@ -29,7 +31,8 @@ function Game() {
       setSelectedWord(words[Math.floor(Math.random() * words.length)]);
       setGuessedLetters([]);
       setWrongGuesses(0);
-      setManchas([]);//Para reiniciar manchas
+      setManchas([]); // Para reiniciar manchas
+      setHintsUsed(0); // Reiniciar el contador de pistas
       setGameStarted(true); // El juego ha comenzado
     } else {
       console.error(`No existe la lista de palabras para: ${selectedList}`);
@@ -46,7 +49,18 @@ function Game() {
     setGuessedLetters([...guessedLetters, letter]);
     if (!selectedWord.includes(letter)) {
       setWrongGuesses(wrongGuesses + 1);
-      setManchas([...manchas, mancha]); //Para añadir una nueva mancha
+      setManchas([...manchas, mancha]); // Para añadir una nueva mancha
+    }
+  };
+
+  const handleHint = () => {
+    if (hintsUsed >= maxHints) return;
+
+    const remainingLetters = selectedWord.split('').filter(letter => !guessedLetters.includes(letter));
+    if (remainingLetters.length > 0) {
+      const randomLetter = remainingLetters[Math.floor(Math.random() * remainingLetters.length)];
+      setGuessedLetters([...guessedLetters, randomLetter]);
+      setHintsUsed(hintsUsed + 1);
     }
   };
 
@@ -86,7 +100,7 @@ function Game() {
               top: `${Math.random() * 30 + 20}px`, // Aleatorio entre 20px y 50px
               left: `${Math.random() * 100 + 85}px`, // Aleatorio entre 0px y 100px
               transform: 'translateX(-50%)'
-            }}          />
+            }} />
         ))}
       </div>
 
@@ -108,6 +122,14 @@ function Game() {
         <p>Partidas ganadas: {wins}</p>
         <p>Partidas perdidas: {losses}</p>
       </div>
+
+      <button
+        onClick={handleHint}
+        disabled={hintsUsed >= maxHints}
+        className={`bg-blue-500 text-white py-2 px-4 rounded ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''}`}
+      >
+        Dame una pista
+      </button>
 
       {isGameOver || isWinner ? (
         <GameOver
