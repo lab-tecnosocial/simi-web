@@ -117,16 +117,10 @@ function Game() {
 
       <Word selectedWord={selectedWord} guessedLetters={guessedLetters} />
       <Keyboard handleGuess={handleGuess} />
-      <div className='bg-gray-300 mt-2 mb-4 py-2 px-4 rounded'>
-        <h3>Estadísticas</h3>
-        <p>Partidas ganadas: {wins}</p>
-        <p>Partidas perdidas: {losses}</p>
-      </div>
-
       <button
         onClick={handleHint}
         disabled={hintsUsed >= maxHints}
-        className={`bg-blue-500 text-white py-2 px-4 rounded ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`bg-blue-500 text-white py-2 px-4 mb-2 rounded ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         Dame una pista
       </button>
@@ -137,11 +131,20 @@ function Game() {
           selectedWord={selectedWord}
           resetGame={resetGame}
         />
+
       ) : (
         <div>
           <h2>Intentos fallidos: {wrongGuesses} / {maxAttempts}</h2>
         </div>
       )}
+      <div className='bg-[#bef789] mt-2 mb-4 py-2 px-4 rounded'>
+        <h3>Estadísticas</h3>
+        <p>Partidas ganadas: {wins}</p>
+        <p>Partidas perdidas: {losses}</p>
+      </div>
+
+
+
     </div>
   );
 }
