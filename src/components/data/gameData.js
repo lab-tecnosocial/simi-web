@@ -75,8 +75,8 @@ export const gameData = {
       { id: 22, word: "Wisa", image: '/assets/images/anatomia/wisa.png' },
     ],
     Pronombres: [
-      { id: 1, word: "Nuqa", image: '/assets/images/pronombres/nuqa.png' },
-      { id: 2, word: "Nuqanchik", image: '/assets/images/pronombres/nuqanchik.png' },
+      { id: 1, word: "Ñuqa", image: '/assets/images/pronombres/nuqa.png' },
+      { id: 2, word: "Ñuqanchik", image: '/assets/images/pronombres/nuqanchik.png' },
       { id: 3, word: "Nuqayku", image: '/assets/images/pronombres/nuqayku.png' },
       { id: 4, word: "Pay", image: '/assets/images/pronombres/pay.png' },
       { id: 5, word: "Paykuna", image: '/assets/images/pronombres/paykuna.png' },
