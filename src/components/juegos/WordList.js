@@ -4,9 +4,9 @@ const wordList = {
     'allqu',
     'kuntur',
     'wallpa',
-    'jamp’atu',
-    'ch’iñi',
-    'K’usillu',
+    'jamp\'atu',
+    'ch\'iñi',
+    'K\'usillu',
     'urpi',
     'juku',
     'atuq'
@@ -36,7 +36,7 @@ const wordList = {
     'chayamuy',
     'tiyakuy',
     'mayllakuy',
-    'simp’akuy'
+    'simp\'akuy'
   ],
   anatomía: [
     'chaka',
@@ -47,7 +47,7 @@ const wordList = {
     'sinqa',
     'ninri',
     'uya',
-    't’usu'
+    't\'usu'
   ],
   números: [
     'juk',
@@ -59,7 +59,7 @@ const wordList = {
     'qanchis',
     'pusaq',
     'chunka',
-    'jisq’un',
+    'jisq\'un',
     //'chunka_jukniyuq',
   ],
   familia: [
@@ -78,19 +78,19 @@ const wordList = {
     'yana',
     'yuraq',
     'puka',
-    'q’illu',
+    'q\'illu',
     'qumir',
     'chumpi',
     'uqi',
     //'yuraq_anqas',
     'anqas',
-    'ch’umpi'
+    'ch\'umpi'
   ],
   saludos: [
     //'allin_p’unchaw',
     //'allin_sukhayay',
     //'allin_ch’isi',
-    'q’ayakama',
+    'q\'ayakama',
     'tinkunakama'
   ],
   pronombres: [
