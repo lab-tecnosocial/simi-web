@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import GameOver from './GameOver';
 import wordList from './WordList';
+import fondo_simi from '../assets/images/fondo_simi2.png';
 
 function Anagram() {
   const [currentWord, setCurrentWord] = useState('');
@@ -46,7 +47,8 @@ function Anagram() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8"
+    style={{ backgroundImage: `url(${fondo_simi.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="text-center">
         <h1 className='text-3xl font-bold mb-8'>Anagrama - T’ikraspa pukllay</h1>
         <p className="text-sm mb-8">Kaypi t’ukunayki kay sananpakunamanta tikraspa t’ikraspa allin simikunata tarinaykikama</p>

@@ -6,7 +6,7 @@ const wordList = {
     'wallpa',
     'jamp\'atu',
     'ch\'iñi',
-    'K\'usillu',
+    'k\'usillu',
     'urpi',
     'juku',
     'atuq'
