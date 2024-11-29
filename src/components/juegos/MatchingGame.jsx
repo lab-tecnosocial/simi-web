@@ -115,20 +115,20 @@ const MatchingGame = () => {
     <div className="matching-game p-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Emparejamiento - Tinkuchispa pukllay</h1>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-center">
         <div className="mb-4">
           <div className="mb-4">
-            <p>Empareja imágenes con las palabras correspondientes. Asegúrate de que coincidan y mejora tu vocabulario mientras juegas.</p>
-            <p>QUE: Kaypiqa juk dibujota juk sananpawan tinkuchinayki tiyan. Pukllasqa kay qhichwa simiykita wiñachinki.</p>
+            <p className="text-sm mb-4">Kaypiqa juk dibujota juk sananpawan tinkuchinayki tiyan. Pukllasqa kay qhichwa simiykita wiñachinki.</p>
+            <p className="text-sm mb-4">Empareja imágenes con las palabras correspondientes. Asegúrate de que coincidan y mejora tu vocabulario mientras juegas.</p>
           </div>
 
-          <div className="mb-4">
+          <div className="text-center mb-4">
             <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona un tema:</label>
             <select
               id="category"
               value={selectedTheme}
               onChange={(e) => handleThemeChange(e.target.value)}
-              className="border border-gray-300 p-2 rounded w-64"
+              className="border border-gray-300 p-2 rounded w-64 text-center"
             >
               {['Numeros', 'Saludos', 'Animales', 'Familia', 'Anatomia', 'Pronombres'].map(theme => (
                 <option key={theme} value={theme}>
@@ -162,8 +162,8 @@ const MatchingGame = () => {
           </div>
 
           {gameResults && (
-            <div className="mt-4 p-4 bg-blue-100 rounded-lg">
-              <h3 className="text-xl font-bold mb-2">Resultados del Juego</h3>
+            <div className="mt-4 p-4 bg-[#bef789] rounded-lg text-center">
+              <h3 className="text-xl font-bold">Resultados del Juego</h3>
               <p className="text-lg">
                 Emparejamientos Correctos: {gameResults.correct} / {gameResults.total}
               </p>
@@ -176,7 +176,7 @@ const MatchingGame = () => {
           )}
         </div>
 
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col mt-1">
           <div className="flex justify-center">
             {randomItems.map(item => (
               <div
@@ -196,7 +196,7 @@ const MatchingGame = () => {
             {shuffledWords.map((word, index) => (
               <div
                 key={index}
-                className="text-center text-lg m-8 cursor-pointer border-2 border-black p-4 rounded-lg bg-transparent p-4 rounded-lg w-40 h-60"
+                className="text-center text-xl m-2 cursor-pointer border-2 border-[#66d400] p-4 rounded-lg bg-transparent p-4 rounded-lg w-40 h-40"
                 onDrop={() => handleDrop(word, index)}
                 onDragOver={(e) => e.preventDefault()}
               >

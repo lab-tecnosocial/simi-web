@@ -1,17 +1,17 @@
-// src/data/gameData.js
+// src/data/gameData.js for MathingGame
 export const gameData = {
   temas: {
     Numeros: [
-      { id: 1, word: "Juk", image: '/assets/images/1.png' },
-      { id: 2, word: "Iskay", image: '/assets/images/2.png' },
-      { id: 3, word: "Kimsa", image: '/assets/images/3.png' },
-      { id: 4, word: "Tawa", image: '/assets/images/4.png' },
-      { id: 5, word: "Pichqa", image: '/assets/images/5.png' },
-      { id: 6, word: "Suqta", image: '/assets/images/6.png' },
-      { id: 7, word: "Qanchis", image: '/assets/images/7.png' },
-      { id: 8, word: "Pusaq", image: '/assets/images/8.png' },
-      { id: 9, word: "Chunka", image: '/assets/images/9.png' },
-      { id: 10, word: "Jisq’un", image: '/assets/images/10.png' }
+      { id: 1, word: "Juk", image: '/assets/images/1.png', definition: 'Uno' },
+      { id: 2, word: "Iskay", image: '/assets/images/2.png', definition: 'Dos' },
+      { id: 3, word: "Kimsa", image: '/assets/images/3.png', definition: 'Tres' },
+      { id: 4, word: "Tawa", image: '/assets/images/4.png', definition: 'Cuatro' },
+      { id: 5, word: "Pichqa", image: '/assets/images/5.png', definition: 'Cinco' },
+      { id: 6, word: "Suqta", image: '/assets/images/6.png', definition: 'Seis' },
+      { id: 7, word: "Qanchis", image: '/assets/images/7.png', definition: 'Siete' },
+      { id: 8, word: "Pusaq", image: '/assets/images/8.png', definition: 'Ocho' },
+      { id: 9, word: "Chunka", image: '/assets/images/9.png', definition: 'Nueve' },
+      { id: 10, word: "Jisq’un", image: '/assets/images/10.png', definition: 'Diez' }
     ],
     Saludos: [
       { id: 1, word: "Allin ch’isi", image: '/assets/images/allinchisi.png' },
@@ -22,18 +22,18 @@ export const gameData = {
       { id: 6, word: "Tinkunakama", image: '/assets/images/tinkunakama.png' }
     ],
     Animales: [
-      { id: 1, word: "Allqu", image: '/assets/images/animales/allqu.png' },
-      { id: 2, word: "Atuq", image: '/assets/images/animales/atuq.png' },
-      { id: 3, word: "Chini", image: '/assets/images/animales/chini.png' },
-      { id: 4, word: "Jampatu", image: '/assets/images/animales/jampatu.png' },
-      { id: 5, word: "Juku", image: '/assets/images/animales/juku.png' },
-      { id: 6, word: "Kuntur", image: '/assets/images/animales/kuntur.png' },
-      { id: 7, word: "Kusillu", image: '/assets/images/animales/kusillu.png' },
-      { id: 8, word: "Misi", image: '/assets/images/animales/misi.png' },
-      { id: 9, word: "Pariwana", image: '/assets/images/animales/pariwana.png' },
-      { id: 10, word: "Suri", image: '/assets/images/animales/suri.png' },
-      { id: 11, word: "Urpi", image: '/assets/images/animales/urpi.png' },
-      { id: 12, word: "Wallpa", image: '/assets/images/animales/wallpa.png' }
+      { id: 1, word: "Allqu", image: '/assets/images/animales/allqu.png', definition: 'Perro' },
+      { id: 2, word: "Atuq", image: '/assets/images/animales/atuq.png', definition: 'Zorro' },
+      { id: 3, word: "Ch'ini", image: '/assets/images/animales/chini.png', definition: 'Murciélago' },
+      { id: 4, word: "Jamp'atu", image: '/assets/images/animales/jampatu.png', definition: 'Rana' },
+      { id: 5, word: "Juku", image: '/assets/images/animales/juku.png', definition: 'Buho' },
+      { id: 6, word: "Kuntur", image: '/assets/images/animales/kuntur.png', definition: 'Cóndor'},
+      { id: 7, word: "K'usillu", image: '/assets/images/animales/kusillu.png', definition: 'Mono'},
+      { id: 8, word: "Misi", image: '/assets/images/animales/misi.png', definition: 'Gato' },
+      { id: 9, word: "Pariwana", image: '/assets/images/animales/pariwana.png', definition: 'Flamenco' },
+      { id: 10, word: "Suri", image: '/assets/images/animales/suri.png', definition: 'Avestruz' },
+      { id: 11, word: "Urpi", image: '/assets/images/animales/urpi.png', definition: 'Paloma' },
+      { id: 12, word: "Wallpa", image: '/assets/images/animales/wallpa.png', definition: 'Gallina' , audio: '/assets/sounds/animales/wallpa.mp3' },
     ],
     Familia: [
       { id: 1, word: "Allchhi", image: '/assets/images/familia/allchhi.png' },
@@ -68,7 +68,7 @@ export const gameData = {
       { id: 15, word: "Simi", image: '/assets/images/anatomia/simi.png' },
       { id: 16, word: "Sinqa", image: '/assets/images/anatomia/sinqa.png' },
       { id: 17, word: "Takillpa", image: '/assets/images/anatomia/takillpa.png' },
-      { id: 18, word: "Tusu", image: '/assets/images/anatomia/tusu.png' },
+      { id: 18, word: "T'usu", image: '/assets/images/anatomia/tusu.png' },
       { id: 19, word: "Ulla", image: '/assets/images/anatomia/ulla.png' },
       { id: 20, word: "Uma", image: '/assets/images/anatomia/uma.png' },
       { id: 21, word: "Wallwaku", image: '/assets/images/anatomia/wallwaku.png' },

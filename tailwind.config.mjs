@@ -7,7 +7,11 @@ export default {
 		'!./src/components/Footer.astro',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				custom: ['"Text Me One"', 'sans-serif'],
+			  },
+		},
 	},
 	corePlugins: {
 		container: false,

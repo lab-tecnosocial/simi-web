@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { answerWords } from "./words";
 import wordList from "./WordList";
-
+import GameOver from "./GameOver";
 
 const generateRandomMatrix = (rows, cols, words) => {
     const letters = "abcdefghijklmnopqrstuvwxyz’";
@@ -88,7 +88,6 @@ const WordPuzzleGame = () => {
         setAnswerWords(getRandomWords(selectedCategory, 4));
     }, [selectedCategory]);
 
-
     const initializeGame = () => {
         const newMatrix = generateRandomMatrix(11, 12, answerWords);
         setMatrix(newMatrix);
@@ -113,6 +112,7 @@ const WordPuzzleGame = () => {
         const selectedWord = selectedLetters.map((l) => l.letter).join("");
         if (answerWords.includes(selectedWord)) {
             setFoundWords((prev) => [...prev, selectedWord]);
+            setAnswerWords((prev) => prev.filter(word => word !== selectedWord));
             setSelectedLetters([]);
         }
     }, [selectedLetters]);
@@ -143,7 +143,7 @@ const WordPuzzleGame = () => {
             <div className="flex flex-col items-start mb-6 w-full md:w-1/3">
                 <h1 className="text-2xl mb-4">Sopa de letras - Qillqa jilli</h1>
                 <p className="mb-2">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
-                <div className="bg-gray-200 p-4 rounded mb-4">
+                <div className="bg-[#bef789] p-4 rounded mb-4">
                     <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona una categoría:</label>
                     <select
                         id="category"
@@ -159,12 +159,26 @@ const WordPuzzleGame = () => {
                     </select>
                 </div>
                 <p className="mb-2">QUE: Usqayta pakasqa simikunata tarinayki tiyan.</p>
-                <div className="bg-gray-200 p-4 rounded mb-4">
+                <div className="bg-[#bef789] p-4 rounded mb-4">
                     <div className="mb-4">
-                        <h2>Palabras a buscar: {answerWords.join(", ")}</h2>
+                        <h2>Palabras a buscar:</h2>
+                        <div className="flex flex-wrap">
+                            {answerWords.map((word, index) => (
+                                <span key={index} className="bg-white text-gray-800 px-2 py-1 rounded-full m-1">
+                                    {word}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                     <div className="mb-4">
-                        <h2>Palabras encontradas: {foundWords.join(", ")}</h2>
+                        <h2>Palabras encontradas:</h2>
+                        <div className="flex flex-wrap">
+                            {foundWords.map((word, index) => (
+                                <span key={index} className="bg-white text-green-800 px-2 py-1 rounded-full m-1">
+                                    {word}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                     <div className="mb-4">
                         <h2>Tiempo restante: {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, '0')}</h2>
@@ -182,8 +196,14 @@ const WordPuzzleGame = () => {
                     </div>
                 )}
                 {!isGameActive && timeLeft === 0 && (
-                    <div className="bg-red-200 p-4 rounded mb-4">
-                        <h2>Fin del juego. Se acabó el tiempo.</h2>
+                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                        <div className="bg-white p-6 rounded shadow-lg text-center">
+                            <h2>Fin del juego. Se acabó el tiempo.</h2>
+                            <button onClick={initializeGame}
+                                className='bg-green-500 text-white font-bold mt-6 py-2 px-4 rounded hover:bg-green-600 transition duration-500'>Reiniciar Juego</button>
+                        </div>
+
+
                     </div>
                 )}
             </div>
