@@ -27,7 +27,7 @@ const Glossary = ({ gameData }) => {
                                     >
                                         🔊 
                                     </span>
-                                    {palabra.word}
+                                    <span>{palabra.word}: {palabra.definition || 'Definición no disponible'}</span>
                                 </li>
                             ))}
                         </ul>
