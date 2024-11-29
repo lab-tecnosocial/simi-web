@@ -30,8 +30,8 @@ body {
 .logo-simi {
   position: absolute;
   top: -8px;
-  left: -10px;
-  width: 150%;
+  left: -10px !important;
+  width: 150% !important;
   height: 150%;
   object-fit: contain;
   z-index: 1;
@@ -46,7 +46,6 @@ body {
   width: 150%;
   height: 150%;
   border-radius: 50%;
-  background-color: white;
   z-index: 0;
 }
 
