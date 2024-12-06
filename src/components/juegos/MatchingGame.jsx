@@ -196,7 +196,7 @@ const MatchingGame = () => {
             {shuffledWords.map((word, index) => (
               <div
                 key={index}
-                className="text-center text-xl m-2 cursor-pointer border-2 border-[#66d400] p-4 rounded-lg bg-transparent p-4 rounded-lg w-40 h-40"
+                className="text-center text-xl m-2 cursor-pointer border-2 border-[#66d400] p-4 rounded-lg bg-transparent w-40 h-40"
                 onDrop={() => handleDrop(word, index)}
                 onDragOver={(e) => e.preventDefault()}
               >

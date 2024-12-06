@@ -1,6 +1,6 @@
 
 const Keyboard = ({ handleGuess }) => {
-  const letters = 'acdhijklmnñpqrstuwy\''.split('');
+  const letters = 'achijklmnñpqrstuwy\''.split('');
 
   return (
     <div>

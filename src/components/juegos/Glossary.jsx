@@ -21,13 +21,7 @@ const Glossary = ({ gameData }) => {
                         <ul className="list-disc pl-5">
                             {palabras.map((palabra) => (
                                 <li key={palabra.id} className="my-2 flex items-center">
-                                    <span 
-                                        className="mr-2 cursor-pointer" 
-                                        onClick={() => playAudio(palabra.audio)}
-                                    >
-                                        🔊 
-                                    </span>
-                                    <span>{palabra.word}: {palabra.definition || 'Definición no disponible'}</span>
+                                    <span> - {palabra.word}: {palabra.definition || 'Definición no disponible'}</span>
                                 </li>
                             ))}
                         </ul>
