@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 const Carousel = () => {
     const images = [
-        '/images/juego/carrusel/1.png',
-        './src',
-        '/assets/img/image3.jpg',
+        '/src/components/assets/images/juego/carrusel_atuq/1.png',
+        '/src/components/assets/images/juego/carrusel_atuq/2.png',
+        '/src/components/assets/images/juego/carrusel_atuq/3.png',
+        '/src/components/assets/images/juego/carrusel_atuq/4.png',
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +26,7 @@ const Carousel = () => {
                             key={index} 
                             src={image} 
                             alt={`Slide ${index + 1}`} 
-                            className="w-full h-64 object-cover flex-shrink-0" 
+                            className="w-full h-80 object-contain flex-shrink-0" 
                         />
                     ))}
                 </div>

@@ -3,49 +3,68 @@ import Carousel from "../components/simiwanpullkana/carousel";
 import Simiwanpukllana from "../components/simiwanpullkana";
 import ImageTextBlock from "../components/simiwanpullkana/imagetextblock";
 import LogoSection from "../components/simiwanpullkana/logoSection";
-import PageLayout from "../layouts/PageLayout.astro";
+import Recursos from "../components/simiwanpullkana/recursos";
+//import PageLayout from "../layouts/PageLayout.astro";
 import "../styles/global.css";
 ---
 
-<PageLayout
-    titulo="Simiwan Pukllana"
-    descripcion="Disfruta de la experiencia Simiwan"
-    imagen="" 
->
-    <div class="p-6 rounded-lg flex items-center">
-        <img src="/ruta/a/tu/imagen.jpg" alt="Descripción de la imagen" class="w-1/3 h-auto rounded-lg mr-4" />
-        <div class="w-2/3">
-            <p class="mt-4 text-gray-600">Atuq Yachachiq se trata de un colectivo editorial fundada en 2019 qeu se dedica a la creación y difusión de material didáctico y literario en Quechua de Cochabamba.</p>
-        </div>
-    </div>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simiwan Pukllana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
 
-    <!-- Sección del Carrusel -->
-    <section class="mt-8">
-        <h2 class="text-3xl font-bold text-black">Imágenes Destacadas</h2>
-        <Carousel />
-    </section>
-
-
-    <div class="container mx-auto px-4">
-        <div class="flex">
-            <!-- Columna izquierda con texto e imagen -->
-            <div class="w-1/3 p-6 rounded-lg flex items-center">
-                <img src="/ruta/a/tu/imagen.jpg" alt="Descripción de la imagen" class="w-1/2 h-auto rounded-lg mr-4" />
-                <div class="w-1/2">
-                    <p class="mt-4 text-gray-600">Atuq Yachachiq se trata de un colectivo editorial fundada en 2019 qeu se dedica a la creación y difusión de material didáctico y literario en Quechua de Cochabamba.</p>
+    <header style="background-color: #ffee77; padding: 16px; text-align: center;" id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom-game">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color: #895d08;" href="/">ATUQ YACHACHIQ</a>
+                <div
+                    class="justify-content-end font-bold"
+                    id="navbarNav"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #895d08;" href="/#cards-section-1">NOVEDADES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #895d08;" href="/#footer">SERVICIOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #895d08;" href="/juegos">SIMI APP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #895d08;" href="/simiwanpullkana">CONTACTO</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
+    </header>
     
-            <!-- Columna derecha con carrusel -->
-            <div class="w-2/3">
-                <section class="mt-8">
-                    <h2 class="text-3xl font-bold text-black">Imágenes Destacadas</h2>
+    <section class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row">
+            <!-- Columna izquierda con carrusel -->
+            <div class="md:w-1/2 p-6">
+                <div class="carousel mt-4">
                     <Carousel />
-                </section>
+                </div>
+            </div>
+
+            <!-- Columna derecha con texto -->
+            <div class="md:w-1/2 p-6 flex items-center">
+                <div class="w-full">
+                    <img src="/src/components/assets/images/juego/atuq_logo.png" alt="" class="mx-auto h-80" />
+                    <p class="mt-4 text-gray-600 text-center">
+                        Atuq Yachachiq se trata de un colectivo editorial fundada en 2019 que se dedica a la creación y difusión de material didáctivo y literario en Quechua de Cochabamba. Actualmente nos encontramos presentes en Cochabamba, Bolivia.                    </p>
+                </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
     <!-- Sección de Hero -->
     <div class="w-full overflow-hidden">
@@ -54,10 +73,10 @@ import "../styles/global.css";
 
     <!-- Sección de Imagen y Texto -->
     <section class="mt-8">
-        <h1 class="text-3xl text-center font-bold mb-4">Juego de mesa "Simiwan Pukllana"</h1>
+        <h1 class="text-3xl text-center font-bold mb-1">Juego de mesa "Simiwan Pukllana"</h1>
         <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 p-2">
-                <img src="/src/components/assets/images/juego/logobyn.png" alt="logosimiwanpukllana" class="mb-1 w-64 h-64 mx-auto">
+            <div class="md:w-1/2 p-8 text-center">
+                <img src="/src/components/assets/images/juego/logobyn.png" alt="logosimiwanpukllana" class="mb-1 h-80 w-auto mx-auto">
                 <p class="mt-1 text-gray-700">
                     Simiwan Pukllana se trata de un juego de mesa divertido y educativo creado para promover el quechua de Cochabamba. El título del juego se traduce en español como “juguemos con Simi”, Simi se trata de una ranita que ama difundir su lengua materna que es el quechua.
                 </p>
@@ -66,7 +85,10 @@ import "../styles/global.css";
                 </p>
             </div>
             <div class="md:w-1/2 p-4">
-                <img src="/assets/juego/image1.jpg" alt="Simiwan Pukllana" class="w-full h-auto rounded-lg" />
+                <div class="carousel mt-4 text-center">
+                    <h2>Descarga la versión digital del juegos</h2>
+                    <Recursos />
+                </div>
             </div>
         </div>
     </section>
@@ -89,11 +111,11 @@ import "../styles/global.css";
     </section>
 
     <!-- Sección de Tarjetas -->
-    <section class="mt-8">
+    <section class="mt-8 p-8">
         <h2 class="text-3xl font-bold text-blue-700">Servicios</h2>
-        <h3>Si bien realizamos material gratuito didáctico y literario en quechua, también ofrecemos nuestros servicios de manera que que Atuq Yachachiq sea una iniciativa autosustentable y podamos seguir liberando material.
+        <h2 class="text-center text-xl mb-4">Si bien realizamos material gratuito didáctico y literario en quechua, también ofrecemos nuestros servicios de manera que que Atuq Yachachiq sea una iniciativa autosustentable y podamos seguir liberando material.
             Atuq Yachachiq desafia las estructuras tradicionales de distribución del conocimiento que perpetúan sistemas de exclusión, las cuales refuerzan un modelo de inequidad, donde el acceso a libros y materiales culturales queda restringido a sectores privilegiados. 
-            Cuando adquieres nuestros servicios también apoyas a un  nuestro proyecto editorial que promueve el acceso equitativo de material literario en qeuchua y otras lenguas indígenas de Bolivia.</h3>
+            Cuando adquieres nuestros servicios también apoyas a un  nuestro proyecto editorial que promueve el acceso equitativo de material literario en qeuchua y otras lenguas indígenas de Bolivia.</h2>
         <Simiwanpukllana client:only="react" />
     </section>
 
@@ -101,4 +123,26 @@ import "../styles/global.css";
     <div class="w-full">
         <img src="/src/components/assets/images/juego/zorrito1.png" alt="hero" class="mx-auto w-full h-auto" />
     </div>
-</PageLayout>
+
+    <footer style="background-color: #ffe064" class="text-white p-20 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 style="color: #a8751f;">Acerca de</h3>
+                    <p style="color: #a8751f;">Atuq Yachachiq es una editorial especializada en libros ilustrados. Nos gustan los dibujos bonitios y la diversidad linguistica. </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 style="color: #a8751f;">Contacto</h5>
+                    <p style="color: #a8751f;">WhatsApp: +591 75968087</p>
+                    <p style="color: #a8751f;">Email: atuqyachachiq@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 style="color: #a8751f;">Suscríbete</h5>
+                    <p style="color: #a8751f;">Suscríbete a nuestro newsletter por email para recibir los nuevos posts en tu correo electrónico</p>
+                </div>
+            </div>
+            <p style="color: #a8751f;" class="mt-4">&copy; 2024 Atuq Yachachiq. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
