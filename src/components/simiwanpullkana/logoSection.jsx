@@ -10,7 +10,7 @@ const LogoSection = () => {
                     <div className="flex justify-center space-x-2">
                         <img src="/assets/images/juego/colabs/atuq.jpg" alt="simi" className="h-20" />
                         <a href="https://simiquechua.app/" target="_blank" rel="">
-                            <img src="src/components/assets/images/juego/colabs/simi.png" alt="simi" className="h-20" />
+                            <img src="/assets/images/juego/colabs/simi.png" alt="simi" className="h-20" />
                         </a>
                     </div>
                 </div>
