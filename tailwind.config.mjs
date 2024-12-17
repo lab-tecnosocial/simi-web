@@ -10,6 +10,9 @@ export default {
 		extend: {
 			fontFamily: {
 				custom: ['"Text Me One"', 'sans-serif'],
+				schoolbell: ['Schoolbell', 'cursive'],
+				abel: ['Abel', 'sans-serif'],
+				baloo: ['"Baloo Thambi"', 'cursive'],
 			  },
 		},
 	},
