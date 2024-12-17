@@ -5,17 +5,17 @@ const cardsData = [
     {
         title: "ILUSTRACIÓN",
         description: "Te ofrecemos servicios de ilustración para tu proyecto teniendo en cuenta la pertinencia cultural",
-        image: "src/components/assets/images/juego/zorrito.png",
+        image: "/assets/images/juego/zorrito.png",
     },
     {
         title: "TALLERES",
         description: "Realizamos talleres de iniciación en la ilustración y escritura de cuentos y comics en diferentes lenguas indígenas",
-        image: "src/components/assets/images/juego/zorrito.png",
+        image: "/assets/images/juego/zorrito.png",
     },
     {
         title: "TRADUCCIÓN",
         description: "Te ayudamos en la traducción y edición de textos BILINGÛES (Quechua-Castellano)",
-        image: "src/components/assets/images/juego/zorrito.png",
+        image: "/assets/images/juego/zorrito.png",
     },
 ];
 

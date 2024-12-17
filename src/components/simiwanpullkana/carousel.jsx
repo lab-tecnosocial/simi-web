@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 const Carousel = () => {
     const images = [
-        '/src/components/assets/images/juego/carrusel_atuq/1.png',
-        '/src/components/assets/images/juego/carrusel_atuq/2.png',
-        '/src/components/assets/images/juego/carrusel_atuq/3.png',
-        '/src/components/assets/images/juego/carrusel_atuq/4.png',
+        '/assets/images/juego/carrusel_atuq/1.png',
+        '/assets/images/juego/carrusel_atuq/2.png',
+        '/assets/images/juego/carrusel_atuq/3.png',
+        '/assets/images/juego/carrusel_atuq/4.png',
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
