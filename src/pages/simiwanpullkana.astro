@@ -15,27 +15,32 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simiwan Pukllana</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Abel&family=Baloo+Thambi&display=swap" rel="stylesheet">
+
     <link href="/assets/css/style.css" rel="stylesheet" />
 </head>
-<body>
+<body class="font-abel">
 
     <header style="background-color: #ffee77; padding: 16px; text-align: center;" id="inicio">
         <nav class="navbar navbar-expand-lg navbar-light navbar-custom-game">
             <div class="container-fluid">
-                <a class="navbar-brand" style="color: #895d08;" href="/">ATUQ YACHACHIQ</a>
+                <a class="navbar-brand font-bold" style="color: #895d08;" href="/">ATUQ YACHACHIQ</a>
                 <div
                     class="justify-content-end font-bold"
                     id="navbarNav"
                 >
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #895d08;" href="/#cards-section-1">NOVEDADES</a>
+                            <a class="nav-link" style="color: #895d08;" href="#nosotrxs">NOSOTRXS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #895d08;" href="/#footer">SERVICIOS</a>
+                            <a class="nav-link" style="color: #895d08;" href="#novedadesjuego">NOVEDADES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #895d08;" href="/juegos">SIMI APP</a>
+                            <a class="nav-link" style="color: #895d08;" href="#servicios">SERVICIOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #895d08;" href="https://simiquechua.app/">SIMI APP</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: #895d08;" href="/simiwanpullkana">CONTACTO</a>
@@ -46,7 +51,10 @@ import "../styles/global.css";
         </nav>
     </header>
     
-    <section class="container mx-auto px-4 py-6">
+    <section id="nosotrxs" class="container mx-auto px-4 py-6">
+        <h2 class="text-3xl font-bold bg-yellow-200 text-[#895d08] rounded-lg p-3 inline-block">
+            NOSOTRXS
+        </h2>
         <div class="flex flex-col md:flex-row">
             <!-- Columna izquierda con carrusel -->
             <div class="md:w-1/2 p-6">
@@ -67,13 +75,16 @@ import "../styles/global.css";
     </section>
 
     <!-- Sección de Hero -->
-    <div class="w-full overflow-hidden">
+    <div id="novedadesjuego" class="w-full overflow-hidden">
+        <h2 class="text-3xl font-bold bg-yellow-200 text-[#895d08] rounded-lg p-3 inline-block ml-14 mb-4">
+            NOVEDADES
+        </h2>
         <img src="/src/components/assets/images/juego/hero.png" alt="hero" class="mx-auto w-full h-auto" />
     </div>
 
     <!-- Sección de Imagen y Texto -->
     <section class="mt-8">
-        <h1 class="text-3xl text-center font-bold mb-1">Juego de mesa "Simiwan Pukllana"</h1>
+        <h1 class="font-baloo text-3xl text-center mb-1" style="color: #74c741;">Juego de mesa "Simiwan Pukllana"</h1>
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 p-8 text-center">
                 <img src="/src/components/assets/images/juego/logobyn.png" alt="logosimiwanpukllana" class="mb-1 h-80 w-auto mx-auto">
@@ -86,7 +97,9 @@ import "../styles/global.css";
             </div>
             <div class="md:w-1/2 p-4">
                 <div class="carousel mt-4 text-center">
-                    <h2>Descarga la versión digital del juegos</h2>
+                    <h2 class="font-schoolbell text-3xl mb-2">
+                        Descarga la versión digital del juego
+                    </h2>
                     <Recursos />
                 </div>
             </div>
@@ -100,19 +113,27 @@ import "../styles/global.css";
     </section>
 
     <!-- Sección de Tarjetas -->
-    <section class="py-12"> {/* Espacio arriba y abajo */}
-        <div class="container mx-auto justify-items-center">
+    <section class="py-12">
+        <div class="container mx-auto">
             <div class="grid grid-cols-3 gap-4">
-                <img src="ruta/a/imagen1.jpg" alt="Imagen 1" class="w-full h-auto object-cover" />
-                <img src="ruta/a/imagen2.jpg" alt="Imagen 2" class="w-full h-auto object-cover" />
-                <img src="ruta/a/imagen3.jpg" alt="Imagen 3" class="w-full h-auto object-cover" />
+                <div class="bg-red-200 rounded-lg overflow-hidden">
+                    <img src="/src/components/assets/images/juego/cover1.png" alt="Imagen 1" class="w-full h-auto object-cover" />
+                </div>
+                <div class="bg-blue-200 rounded-lg overflow-hidden">
+                    <img src="/src/components/assets/images/juego/cover3.png" alt="Imagen 2" class="w-full h-auto object-cover" />
+                </div>
+                <div class="bg-green-200 rounded-lg overflow-hidden">
+                    <img src="/src/components/assets/images/juego/cover2.png" alt="Imagen 3" class="w-full h-auto object-cover" />
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Sección de Tarjetas -->
-    <section class="mt-8 p-8">
-        <h2 class="text-3xl font-bold text-blue-700">Servicios</h2>
+    <section id="servicios" class="mt-8 p-8">
+        <h2 class="text-3xl font-bold bg-yellow-200 text-[#895d08] rounded-lg p-3 inline-block ml-8">
+            SERVICIOS
+        </h2>
         <h2 class="text-center text-xl mb-4">Si bien realizamos material gratuito didáctico y literario en quechua, también ofrecemos nuestros servicios de manera que que Atuq Yachachiq sea una iniciativa autosustentable y podamos seguir liberando material.
             Atuq Yachachiq desafia las estructuras tradicionales de distribución del conocimiento que perpetúan sistemas de exclusión, las cuales refuerzan un modelo de inequidad, donde el acceso a libros y materiales culturales queda restringido a sectores privilegiados. 
             Cuando adquieres nuestros servicios también apoyas a un  nuestro proyecto editorial que promueve el acceso equitativo de material literario en qeuchua y otras lenguas indígenas de Bolivia.</h2>
@@ -145,4 +166,5 @@ import "../styles/global.css";
         </div>
     </footer>
 </body>
+
 </html>
