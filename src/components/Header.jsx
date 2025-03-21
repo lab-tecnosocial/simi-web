@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow font-nunito">
+    <header className="bg-white shadow text-lg font-nunito">
       <nav className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center">
           <img
@@ -11,21 +11,21 @@ const Header = () => {
             className="h-16 mr-2"
           />
         </div>
-        <ul className="flex space-x-8">
+        <ul className="flex space-x-8 font-nunito">
           <li>
-            <a className="text-gray-800 hover:text-green-500" href="/">Inicio</a>
+            <a className="text-gray-800 hover:text-green-500 font-nunito" href="/">Inicio</a>
           </li>
           <li>
-            <a className="text-gray-800 hover:text-green-500" href="/#cards-section">Sobre nosotros</a>
+            <a className="text-gray-800 hover:text-green-500" href="/sobre_nosotros">Sobre nosotros</a>
           </li>
           <li>
             <a className="text-gray-800 hover:text-green-500" href="/juegos">Juegos</a>
           </li>
           <li>
-            <a className="text-gray-800 hover:text-green-500" href="/#footer">Comunidad</a>
+            <a className="text-gray-800 hover:text-green-500" href="/eventos">Comunidad</a>
           </li>
           <li>
-            <a className="text-gray-800 hover:text-green-500" href="/juegos">Apóyenos</a>
+            <a className="text-gray-800 hover:text-green-500" href="/apoyenos">Apóyenos</a>
           </li>
           <li>
             <a className="text-gray-800 hover:text-green-500" href="">

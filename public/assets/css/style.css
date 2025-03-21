@@ -15,7 +15,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/*Header*/
+/*Header
 .navbar-simi {
   color: #f4eefe !important;
   font-size: 40px;
@@ -81,7 +81,7 @@ a.nav-link.active {
 a.nav-link:hover {
   background-color: #F4EEFE;
   color: black !important;
-}
+} */
 
 /* Hero */
 .logo-smaller {
