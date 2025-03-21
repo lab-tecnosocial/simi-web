@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow text-lg font-nunito">
+    <header className="bg-white shadow text-2xl font-bold">
       <nav className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center">
           <img
@@ -11,9 +11,9 @@ const Header = () => {
             className="h-16 mr-2"
           />
         </div>
-        <ul className="flex space-x-8 font-nunito">
+        <ul className="flex space-x-8 header-navbar">
           <li>
-            <a className="text-gray-800 hover:text-green-500 font-nunito" href="/">Inicio</a>
+            <a className="text-gray-800 hover:text-green-500" href="/">Inicio</a>
           </li>
           <li>
             <a className="text-gray-800 hover:text-green-500" href="/sobre_nosotros">Sobre nosotros</a>
