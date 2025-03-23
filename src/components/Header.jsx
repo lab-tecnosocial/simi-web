@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 
 const Header = () => {
+  console.log('Header renderizado');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(prev => !prev);
-    console.log('Dropdown abierto:', !isDropdownOpen);
-  };
+const toggleDropdown = () => {
+  console.log('Botón de dropdown clicado'); // Esto debería aparecer al hacer clic
+  setIsDropdownOpen(prev => {
+    const newState = !prev;
+    console.log('Dropdown abierto:', newState); // Esto debería mostrar el nuevo estado
+    return newState;
+  });
+};
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
@@ -17,16 +22,9 @@ const Header = () => {
     <header className="bg-white shadow text-2xl font-bold">
       <nav className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center">
-          <img
-            src="/assets/images/logo_simi2025.png"
-            alt="Logo"
-            className="h-16 mr-2"
-          />
+          <img src="/assets/images/logo_simi2025.png" alt="Logo" className="h-16 mr-2" />
         </div>
-        <button
-          className="md:hidden text-gray-800 hover:text-green-500 focus:outline-none"
-          onClick={toggleMenu}
-        >
+        <button className="md:hidden text-gray-800 hover:text-green-500 focus:outline-none" onClick={toggleMenu}>
           Menu
         </button>
         <ul className={`flex-col md:flex md:flex-row md:space-x-8 header-navbar ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
@@ -44,7 +42,7 @@ const Header = () => {
               Juegos <i className="fa fa-chevron-down ml-1"></i>
             </button>
             {isDropdownOpen && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-10">
+              <ul className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-20">
                 <li>
                   <a className="block px-4 py-2 text-gray-800 hover:bg-gray-200" href="/juegos">Juegos</a>
                 </li>
