@@ -5,3 +5,31 @@
 /* body {
      @apply font-custom;
 } */
+
+/*Styles added by vladimuji for Slider*/
+.swiper-button-prev,
+.swiper-button-next {
+  @apply text-white px-4 py-2 rounded-full absolute top-1/2 transform -translate-y-1/2 z-10;
+}
+
+.swiper-button-prev {
+  @apply left-4; /* Moves the button slightly away from the left edge */
+}
+
+.swiper-button-next {
+  @apply right-4; /* Moves the button slightly away from the right edge */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  @apply text-white; /* Adds hover effect for better interactivity */
+}
+
+.swiper-pagination-bullet {
+  @apply w-2 h-2 bg-gray-800 opacity-50 rounded-full transition-all duration-300;
+}
+
+.swiper-pagination-bullet-active {
+  @apply w-2 h-2 bg-white opacity-100;
+}
+/*END Styles added by vladimuji for Slider*/
