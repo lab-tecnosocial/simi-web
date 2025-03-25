@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Hero2Section from "../components/Hero2.astro";
 import Header from "../components/Header.jsx";
+import PeopleSection from "../components/PeopleSection.jsx";
 ---
 
 <!doctype html>
@@ -417,13 +418,7 @@ import Header from "../components/Header.jsx";
       </div>
 
       <!--  People Section  -->
-      <section id="people-images">
-        <img
-          src="/assets/images/personajessimi.png"
-          class="img-fluid"
-          alt="Imagen 1"
-        />
-      </section>
+      <PeopleSection client:load />
 
       <!--Suggestion box-->
       <div class="scroll-message">
