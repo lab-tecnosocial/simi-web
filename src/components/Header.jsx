@@ -21,7 +21,7 @@ const toggleDropdown = () => {
   return (
     <header className="bg-white shadow text-2xl font-bold">
       <nav className="container mx-auto flex items-center justify-between p-4">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center md:justify-start">
           <img src="/assets/images/logo_simi2025.png" alt="Logo" className="h-16 mr-2" />
         </div>
         <button className="md:hidden text-gray-800 hover:text-green-500 focus:outline-none" onClick={toggleMenu}>
