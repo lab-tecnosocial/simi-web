@@ -2,6 +2,7 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card";
 import "../styles/global.css";
+import SobreNosotrosContent from '../components/sobreNosotros/SobreNosotrosContent.jsx';
 ---
 
 <PageLayout
@@ -10,18 +11,21 @@ import "../styles/global.css";
   imagen="/assets/img/sobre_nosotros.jpg"
 >
   <div class="p-4 justify-center items-center">
-    <h1 class="text-4xl font-bold mb-4">Sobre Nosotros</h1>
-    <p>
-      Aquí puedes incluir información sobre el proyecto, su misión, visión, y el
-      equipo detrás de él.
-    </p>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Mi sitio con Astro</title>
+    </head>
+    <body>
+      <SobreNosotrosContent />
+    </body>
 
     <!-- Sección: Equipos -->
     <div class="flex flex-col items-center mb-4">
       <img
-        src="/public/assets/images/equipo/simi_uma.png"
+        src="/assets/images/cabezasimi.png"
         alt="Equipos"
-        class="w-12 h-auto mb-2"
+        class="w-32 h-32 mt-[-50px] mb-10"
       />
       <h2 class="text-3xl font-bold">Equipos</h2>
     </div>
@@ -205,7 +209,7 @@ import "../styles/global.css";
           },
           {
             nombre: "Ruben Pol Ventura Huchani ",
-            imagen: "/public/assets/images/equipo/VENTURA.jpg",
+            imagen: "/public/assets/images/equipo/VENTURA_POL.jpg",
             linkedin: "https://linkedin.com/in/persona4",
             profesion: "Estudiante de informática",
           },

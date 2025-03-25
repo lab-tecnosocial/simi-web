@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import Hero2Section from "../components/Hero2.astro";
 import Header from "../components/Header.jsx";
 import PeopleSection from "../components/PeopleSection.jsx";
+import Hero from '../components/Hero.jsx';
 ---
 
 <!doctype html>
@@ -109,11 +110,11 @@ import PeopleSection from "../components/PeopleSection.jsx";
 
   <body>
     <Header />
-    <!--  Seccion de prueba de Tailwind css  -->
+    <!--  Seccion de prueba de Tailwind css  
     <div class="bg-blue-500 text-white p-4">
       ¡Tailwind CSS está funcionando!
-    </div>
-    <!--  Hero Section  -->
+    </div>-->
+    <!--  Hero Section  
     <section id="hero">
       <div class="container" data-aos="fade-in" data-aos-duration="3000">
         <div class="row">
@@ -147,222 +148,19 @@ import PeopleSection from "../components/PeopleSection.jsx";
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Cards -->
-    <section id="cards-section">
-      <div class="container mt-4 mb-4 bg-custom">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="title-above-cards">Acerca de Simi</h2>
-          </div>
-          <div class="col-md-4 col-12">
-            <div class="card h-10">
-              <div class="card-body">
-                <h5 class="card-title">Misión</h5>
-                <p class="card-text">
-                  Simi se trata de una aplicación para celulares que promueve el
-                  aprendizaje del quechua nivel básico de una forma amigable y
-                  accesible a través de unidades de aprendizaje que contienen
-                  audios e ilustraciones
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12">
-            <div class="card h-10">
-              <div class="card-body">
-                <h5 class="card-title">Quienes somos</h5>
-                <p class="card-text">
-                  Simi es un equipo multidisciplinario compuesto por
-                  profesionales voluntarias/os del área de programación,
-                  lingüística y comunicación social que apuntan por el
-                  fortalecimiento del quechua en contextos digitales
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-12">
-            <div class="card h-10">
-              <div class="card-body">
-                <h5 class="card-title">Visión</h5>
-                <p class="card-text">
-                  Simi pretende ser la primera aplicación digital líder y
-                  competitiva en la enseñanza del quechua en el contexto
-                  digital, apostando por el uso de tecnologías para la promoción
-                  y fortalecimiento del quechua en la población joven y adulta
-                  de Bolivia
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </section>-->
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Mi sitio Astro</title>
+    </head>
+    <body>
+      <!-- Usamos el componente React importado -->
+      <Hero />
+    </body>
 
     <!--  Hero Section  -->
     <Hero2Section />
-
-    <!-- Profile Cards -->
-    <section id="cards-section-1">
-      <div class="container mt-4 mb-4">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2>Equipo</h2>
-          </div>
-
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/alexrojas.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Alex Ojeda Copa</h5>
-                <p class="card-text">Sociólogo e informático</p>
-                <div class="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/alexroc/"
-                    class="twitter-icon"
-                    target="blank"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/nicaelaleon.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Nicaela Leon Coico</h5>
-                <p class="card-text">Lingüista e Ilustradora infantil</p>
-                <div class="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/nicaelaleon/"
-                    class="linkedin-icon"
-                    target="blank"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/ruthjimenez.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Ruth Jimenez Nina</h5>
-                <p class="card-text">Lingüista</p>
-                <div class="social-icons">
-                  <a
-                    href="https://www.twitter.com/tu_enlace_de_twitter"
-                    class="twitter-icon"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/elenarocabado.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Elena Rocabado Zalles</h5>
-                <p class="card-text">Lingüista</p>
-                <div class="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/celia-elena-rocabado-zalles-4a7239257/"
-                    class="twitter-linkedin"
-                    target="blank"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/taniagisela.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Tania Gisela Choque Condori</h5>
-                <p class="card-text">Ingeniera de sistemas y médico cirujano</p>
-                <div class="social-icons">
-                  <a
-                    href="https://bo.linkedin.com/in/tania-gisela-choque-condori"
-                    class="twitter-icon"
-                    target="blank"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 my-3">
-            <div class="card text-center h-100 d-flex border-0 bg-custom-1">
-              <div
-                class="card-body d-flex flex-column justify-content-center align-items-center"
-              >
-                <img
-                  src="/assets/images/karlagalvez.jpg"
-                  class="card-img-top smaller-image"
-                  alt=""
-                />
-                <h5 class="card-title">Karla Galvez</h5>
-                <p class="card-text">Comunicadora Social</p>
-                <div class="social-icons">
-                  <a
-                    href="https://www.twitter.com/tu_enlace_de_twitter"
-                    class="twitter-icon"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!--  Logos Section  -->
     <section id="logos" class="logos">
