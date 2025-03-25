@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 const { titulo, descripcion, imagen } = Astro.props;
 ---
@@ -30,6 +30,10 @@ const { titulo, descripcion, imagen } = Astro.props;
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
     />
 
     <link href="/assets/css/style.css" rel="stylesheet" />
