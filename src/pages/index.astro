@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+import Hero2Section from "../components/Hero2.astro";
 ---
 
 <!doctype html>
@@ -40,6 +42,10 @@ import Footer from "../components/Footer.astro";
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+    
     <link href="/assets/css/style.css" rel="stylesheet" />
 
     <title>Simi</title>
@@ -184,40 +190,7 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <!--  Hero Section  -->
-    <section id="hero">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center cellphone"
-          >
-            <div data-aos="fade-right" data-aos-duration="1500">
-              <h2>
-                ¡La 1ra aplicación para aprender <br />
-                Quechua de Cochabamba!
-              </h2>
-              <a
-                href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
-                target="_blank"
-                class="btn-get-started scrollto"
-                id="join-simi"
-                style="font-size: 30px;">¡Únete a Simi!</a
-              >
-            </div>
-          </div>
-          <div
-            class="col-lg-6 order-1 order-lg-2 hero-img cellphone-1"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
-            <img
-              src="/assets/images/celular_con_logo_simi.png"
-              class="img-fluid small-image"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+     <Hero2Section />
 
     <!-- Profile Cards -->
     <section id="cards-section-1">
