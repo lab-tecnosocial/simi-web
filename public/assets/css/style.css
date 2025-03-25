@@ -11,77 +11,12 @@ html {
 }
 
 body {
-  font-family: 'Roboto Mono', sans-serif;
-  font-family: Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  /*font-family: 'Roboto Mono', sans-serif;
+  font-family: Arial, sans-serif;*/
 }
 
-/*Header
-.navbar-simi {
-  color: #f4eefe !important;
-  font-size: 40px;
-  text-decoration: none;
-}
-
-.logo-container {
-  display: inline-block;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  margin-left: 20px;
-  margin-right: 30px;
-}
-
-.logo-simi {
-  position: absolute;
-  top: -8px;
-  left: -10px !important;
-  width: 150% !important;
-  height: 150%;
-  object-fit: contain;
-  z-index: 1;
-}
-
-.logo-container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150%;
-  height: 150%;
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.navbar-custom {
-  background-color: #5dbf40;
-  min-height: 80px;
-}
-
-.navbar-custom .nav-link {
-  color: #f4eefe !important;
-  font-size: 18px;
-}
-
-.navbar-simi:hover {
-  text-decoration: none;
-}
-
-a.nav-link {
-  border-radius: 10px;
-  padding: 10px 20px;
-  margin: 0 10px;
-}
-
-a.nav-link.active {
-  background-color: #F4EEFE;
-  color: black !important;
-}
-
-a.nav-link:hover {
-  background-color: #F4EEFE;
-  color: black !important;
-} */
+/*Header*/
 
 .header-navbar {
   font-family: 'Nunito', sans-serif;
