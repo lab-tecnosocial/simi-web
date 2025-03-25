@@ -13,6 +13,7 @@ export default {
 				schoolbell: ['Schoolbell', 'cursive'],
 				abel: ['Abel', 'sans-serif'],
 				baloo: ['"Baloo Thambi"', 'cursive'],
+				nunito: ['Nunito', 'sans-serif'],
 			  },
 		},
 	},
