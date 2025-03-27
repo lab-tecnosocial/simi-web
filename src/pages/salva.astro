@@ -1,0 +1,13 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Hangman from "../components/juegos/Hangman";
+import "../styles/global.css";
+---
+
+<PageLayout
+    titulo="Salva a Simi"
+    descripcion="Juega a descifrar las palabras"
+    imagen="/assets/img/anagrama.jpg"
+>
+    <Hangman client:only="react" />
+</PageLayout>

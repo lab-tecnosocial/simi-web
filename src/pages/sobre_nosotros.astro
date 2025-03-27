@@ -1,0 +1,19 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import "../styles/global.css"; // Importa tus estilos globales si es necesario
+---
+
+<PageLayout
+  titulo="Sobre Nosotros"
+  descripcion="Conoce más sobre nuestro proyecto y equipo"
+  imagen="/assets/img/sobre_nosotros.jpg"
+>
+  <div class="p-4">
+    <h1 class="text-4xl font-bold mb-4">Sobre Nosotros</h1>
+    <p>
+      Aquí puedes incluir información sobre el proyecto, su misión, visión, y el
+      equipo detrás de él.
+    </p>
+    {/* Importar aca el contenido */}
+  </div>
+</PageLayout>

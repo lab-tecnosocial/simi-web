@@ -1,0 +1,8 @@
+---
+import GameMenu from "../components/juegos/GameMenu";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout titulo="Juegos" descripcion="Juega a los mejores juegos online">
+    <GameMenu client:only="react" />
+</PageLayout>

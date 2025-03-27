@@ -1,0 +1,13 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import WordPuzzleGame from "../components/juegos/WordPuzzleGame";
+import "../styles/global.css";
+---
+
+<PageLayout
+    titulo="Sopa de letras"
+    descripcion="Juega a descifrar las palabras"
+    imagen="/assets/img/anagrama.jpg"
+>
+    <WordPuzzleGame client:only="react" />
+</PageLayout>
