@@ -1,12 +1,17 @@
 const Hero = () => {
   return (
-    <section className="flex justify-center items-center min-h-screen p-10 bg-white">
-      <div className="flex flex-col md:flex-row items-center gap-6 transform origin-center scale-[1.4] md:scale-[1.6]">
-        
+    <section className="relative flex justify-center items-center min-h-screen p-10 overflow-hidden">
+
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 z-0"
+        style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
+      ></div>
+
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 transform origin-center scale-[1.4] md:scale-[1.6]">
         <img
-          src="/assets/images/ninoleyendo.png"
+          src="/assets/images/QHICHWAPI PARLANA.png"
           alt="Personaje aprendiendo"
-          className="w-64 md:w-96"
+          className="w-64 md:w-96 -translate-x-4 md:-translate-x-8 transition-transform"
         />
 
         <div className="flex flex-col items-center text-center">
