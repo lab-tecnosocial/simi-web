@@ -8,6 +8,7 @@ function Anagram() {
   const [guess, setGuess] = useState('');
   const [isGameOver, setIsGameOver] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('animales');
+  const [timeLeft, setTimeLeft] = useState(120);
 
   const selectRandomWord = useCallback((category) => {
     if (wordList[category] && wordList[category].length > 0) {
@@ -17,6 +18,7 @@ function Anagram() {
       setShuffledWord(shuffleWord(word));
       setGuess('');
       setIsGameOver(false);
+      setTimeLeft(120);
     } else {
       console.error('La categoría no existe o está vacía.');
     }
@@ -25,6 +27,18 @@ function Anagram() {
   useEffect(() => {
     selectRandomWord(selectedCategory);
   }, [selectedCategory, selectRandomWord]);
+
+  useEffect(() => {
+    if (timeLeft > 0 && !isGameOver) {
+      const timer = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+      }, 1000);
+
+      return () => clearInterval(timer);
+    } else if (timeLeft === 0) {
+      setIsGameOver(true);
+    }
+  }, [timeLeft, isGameOver]);
 
   const shuffleWord = (word) => {
     if (!word) {
@@ -53,12 +67,12 @@ function Anagram() {
         <p className="text-sm mb-4">Reordena las letras y forma tantas palabras como puedas antes que se acabe el tiempo.</p>
         <div className="flex flex-col items-center justify-center">
           <div className="border rounded-xl p-8 w-96 bg-qumir bg-opacity-20 mb-8 text-left items-center justify-center shadow-lg">
-            <label htmlFor="category" className="blockmb-4 text-base font-bold">Elige un tema:</label>
+            <label htmlFor="category" className="block mb-4 text-base font-bold">Elige un tema:</label>
             <select
               id="category"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-riti border border-gray-300 p-2 rounded-lg w-72 shadow-lg mt-4"
+              className="bg-riti border border-gray-300 p-2 rounded-lg w-80 shadow-lg mt-4"
             >
               {Object.keys(wordList).map(category => (
                 <option key={category} value={category}>
@@ -66,6 +80,10 @@ function Anagram() {
                 </option>
               ))}
             </select>
+            <div className="flex justify-between items-center mt-4">
+              <p className="font-bold">Tiempo:</p>
+              <p className="bg-riti border border-gray-300 p-2 rounded-lg w-24 text-center shadow-lg text-xl font-black">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</p>
+            </div>
           </div>
         </div>  
         {/* <h2 className="text-xl font-bold mt-4 mb-4">Reordena las letras:</h2>*/}
@@ -99,7 +117,6 @@ function Anagram() {
                   </div>
               </div>
           )}
-
 
         {/* Mostrar el resultado */}
         {isGameOver && (
