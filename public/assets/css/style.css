@@ -385,3 +385,8 @@ body {
   }
 
 }
+
+/* Anagram */
+.shadow-green {
+  box-shadow: 0 4px 15px rgba(89, 203, 7, 0.5); 
+}
