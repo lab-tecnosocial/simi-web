@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import Hero2Section from "../components/Hero2.astro";
 import Header from "../components/Header.jsx";
 import PeopleSection from "../components/PeopleSection.jsx";
-import Hero from '../components/Hero.jsx';
+import Hero from "../components/Hero.jsx";
 ---
 
 <!doctype html>
@@ -110,137 +110,38 @@ import Hero from '../components/Hero.jsx';
 
   <body>
     <Header />
-    <!--  Seccion de prueba de Tailwind css  
-    <div class="bg-blue-500 text-white p-4">
-      ¡Tailwind CSS está funcionando!
-    </div>-->
-    <!--  Hero Section  
-    <section id="hero">
-      <div class="container" data-aos="fade-in" data-aos-duration="3000">
-        <div class="row">
-          <div
-            class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
-          >
-            <div class="column-1-hero">
-              <h1 style="margin-bottom: 30px;">Simi</h1>
-              <h3 style="margin-bottom: 30px;">
-                Aprende Quechua de una manera amigable
-              </h3>
-              <a
-                href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
-                class="logo-wrapper"
-                target="_blank"
-              >
-                <img
-                  src="/assets/images/google_play.png"
-                  class="img-fluid logo-smaller"
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img hero-nino">
-            <img
-              src="/assets/images/ninoleyendo.png"
-              class="img-fluid"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </section>-->
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Mi sitio Astro</title>
-    </head>
-    <body>
-      <!-- Usamos el componente React importado -->
-      <Hero />
-    </body>
+
+    <Hero />
 
     <!--  Hero Section  -->
     <Hero2Section />
 
-    <!--  Logos Section  -->
-    <section id="logos" class="logos">
-      <div class="container labtecnosoc-logo">
-        <div class="section-title" data-aos="fade-up">
-          <h2>Una iniciativa de:</h2>
-        </div>
+    <!--  People Section  -->
+    <PeopleSection client:load />
 
-        <div class="row justify-content-center">
-          <div
-            class="col-lg-3 col-md-4 col-xs-6 d-flex align-items-center justify-content-center"
-          >
-            <div class="logo centered-container" data-aos="zoom-in">
-              <img
-                src="/assets/images/logolabtecnosocial.png"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-lg-3 col-md-4 col-xs-6 d-flex align-items-center justify-content-center"
-          >
-            <div class="logo" data-aos="zoom-in" data-aos-delay="100">
-              <img
-                src="/assets/images/logoatuqyachachiq.png"
-                class="img-fluid"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
+    <!--Suggestion box-->
+    <div class="scroll-message">
+      <div class="close-btn">
+        <span class="close-icon">×</span>
       </div>
-    </section>
+      <p>¿Quieres dejar alguna sugerencia?</p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform"
+        target="_blank">Has click acá para mandarnos tu sugerencia</a
+      >
 
-    <!--  Apoyo Section  -->
-    <section id="apoyo" class="apoyo">
-      <div class="container labtecnosoc-logo">
-        <div class="section-title" data-aos="fade-up">
-          <h2>Con el apoyo de:</h2>
-        </div>
+      <p>¿Encontraste un error?</p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdDCzuKpa-6jABQICgjvb9mYONlmQ1XKc24IuuLLlbmobTDpQ/viewform"
+        target="_blank">Reporta el error haciendo click acá</a
+      >
 
-        <div class="row justify-content-center">
-          <div
-            class="col-lg-3 col-md-4 col-xs-6 d-flex align-items-center justify-content-center"
-          >
-            <div class="logo-elp" data-aos="zoom-in">
-              <img src="/assets/images/logoelp.png" class="img-fluid" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <img src="/assets/images/problemasimi.png" alt="Imagen 1" />
+    </div>
 
-      <!--  People Section  -->
-      <PeopleSection client:load />
+    <Footer />
 
-      <!--Suggestion box-->
-      <div class="scroll-message">
-        <div class="close-btn">
-          <span class="close-icon">×</span>
-        </div>
-        <p>¿Quieres dejar alguna sugerencia?</p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform"
-          target="_blank">Has click acá para mandarnos tu sugerencia</a
-        >
-
-        <p>¿Encontraste un error?</p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdDCzuKpa-6jABQICgjvb9mYONlmQ1XKc24IuuLLlbmobTDpQ/viewform"
-          target="_blank">Reporta el error haciendo click acá</a
-        >
-
-        <img src="/assets/images/problemasimi.png" alt="Imagen 1" />
-      </div>
-
-      <Footer />
-
-      <!--Suggestion box<script>
+    <!--Suggestion box<script>
         AOS.init();
       </script>
 
@@ -286,6 +187,5 @@ import Hero from '../components/Hero.jsx';
           });
         });
       </script>-->
-    </section>
   </body>
 </html>
