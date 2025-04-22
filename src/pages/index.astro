@@ -113,6 +113,16 @@ import Hero from "../components/Hero.jsx";
 
     <Hero />
 
+    <!-- Android Simi App Downloads Counter -->
+    <section id="counter-section" class="w-full h-auto py-12 relative bg-[#f4eefe]">
+      <div id="counter-container" class="flex justify-center gap-2.5">
+        <!-- Counter digits will be added here -->
+      </div>
+      <h2 class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center" >
+        Descargas hasta hoy
+      </h2>
+    </section>
+
     <!--  Hero Section  -->
     <Hero2Section />
 
@@ -188,4 +198,50 @@ import Hero from "../components/Hero.jsx";
         });
       </script>-->
   </body>
+  <!-- Android App Downloads Counter -->
+  <script>
+    const targetNumber = 7231;
+    const counterContainer = document.getElementById("counter-container");
+    const digits = targetNumber.toString().length;
+    let hasScrolled = false;
+    document.addEventListener("DOMContentLoaded", function () {
+      for (let i = 0; i < digits; i++) {
+        const draw = document.createElement("div");
+        draw.className = "w-14 h-16 text-[#74c741] text-5xl flex justify-center items-center font-bold bg-transparent rounded-lg border border-black shadow-md m-1 px-4";
+        draw.textContent = "0";
+        counterContainer.appendChild(draw);
+      }
+      function countUp()
+      {
+        let currentNumber = 0;
+        let increment = Math.ceil(targetNumber / 50);
+        const interval = setInterval(() => {
+            if (currentNumber >= targetNumber) {
+                currentNumber = targetNumber;
+                decorCounter(currentNumber);
+                clearInterval(interval);
+            } else {
+                currentNumber++;
+                currentNumber = currentNumber + increment;
+                decorCounter(currentNumber);
+            }
+        }, 50);
+      }
+      window.addEventListener("scroll", function () {
+        const sectionTop = document.getElementById("counter-section").offsetTop;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        if (scrollPosition > sectionTop && !hasScrolled) {
+          hasScrolled = true;
+          countUp();
+        }
+      });
+      function decorCounter(num)
+      {
+        const currentDigits = num.toString().padStart(digits, "0");
+        Array.from(counterContainer.children).forEach((cell, index) => {
+            cell.textContent = currentDigits[index];
+        });
+      }
+    });
+  </script>
 </html>

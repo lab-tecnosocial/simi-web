@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import Slider from "../components/eventos/Slider";
 import "../styles/global.css"; // Importa tus estilos globales si es necesario
 ---
 
@@ -8,6 +9,10 @@ import "../styles/global.css"; // Importa tus estilos globales si es necesario
   descripcion="Descubre nuestros próximos eventos"
   imagen="/assets/img/eventos.jpg"
 >
+<!-- Sección de Slider -->
+<div id="slider" class="w-full overflow-hidden">
+  <Slider client:load />
+</div>
   <div class="p-4">
     <h1 class="text-4xl font-bold mb-4">Eventos</h1>
     <p>
