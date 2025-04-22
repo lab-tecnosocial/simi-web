@@ -1,0 +1,620 @@
+{
+    "entries": [
+      {
+        "id": 1,
+        "tema": "Numeros",
+        "word": "Juk",
+        "image": "/assets/images/1.png",
+        "audio": "/assets/Audios_glosario/Numeros/1.mp3",
+        "definition": "Uno"
+      },
+      {
+        "id": 2,
+        "tema": "Numeros",
+        "word": "Iskay",
+        "image": "/assets/images/2.png",
+        "audio": "/assets/Audios_glosario/Numeros/2.mp3",
+        "definition": "Dos"
+      },
+      {
+        "id": 3,
+        "tema": "Numeros",
+        "word": "Kimsa",
+        "image": "/assets/images/3.png",
+        "audio": "/assets/Audios_glosario/Numeros/3.mp3",
+        "definition": "Tres"
+      },
+      {
+        "id": 4,
+        "tema": "Numeros",
+        "word": "Tawa",
+        "image": "/assets/images/4.png",
+        "audio": "/assets/Audios_glosario/Numeros/4.mp3",
+        "definition": "Cuatro"
+      },
+      {
+        "id": 5,
+        "tema": "Numeros",
+        "word": "Pichqa",
+        "image": "/assets/images/5.png",
+        "audio": "/assets/Audios_glosario/Numeros/5.mp3",
+        "definition": "Cinco"
+      },
+      {
+        "id": 6,
+        "tema": "Numeros",
+        "word": "Suqta",
+        "image": "/assets/images/6.png",
+        "audio": "/assets/Audios_glosario/Numeros/6.mp3",
+        "definition": "Seis"
+      },
+      {
+        "id": 7,
+        "tema": "Numeros",
+        "word": "Qanchis",
+        "image": "/assets/images/7.png",
+        "audio": "/assets/Audios_glosario/Numeros/7.mp3",
+        "definition": "Siete"
+      },
+      {
+        "id": 8,
+        "tema": "Numeros",
+        "word": "Pusaq",
+        "image": "/assets/images/8.png",
+        "audio": "/assets/Audios_glosario/Numeros/8.mp3",
+        "definition": "Ocho"
+      },
+      {
+        "id": 9,
+        "tema": "Numeros",
+        "word": "Chunka",
+        "image": "/assets/images/9.png",
+        "audio": "/assets/Audios_glosario/Numeros/9.mp3",
+        "definition": "Nueve"
+      },
+      {
+        "id": 10,
+        "tema": "Numeros",
+        "word": "Jisq'un",
+        "image": "/assets/images/10.png",
+        "audio": "/assets/Audios_glosario/Numeros/10.mp3",
+        "definition": "Diez"
+      },
+      {
+        "id": 11,
+        "tema": "Saludos",
+        "word": "Allin ch'isi",
+        "image": "/assets/images/allinchisi.png",
+        "audio": "/assets/Audios_glosario/Saludos/allinchisi.mp3",
+        "definition": "Buenas noches"
+      },
+      {
+        "id": 12,
+        "tema": "Saludos",
+        "word": "Allin p'unchaw",
+        "image": "/assets/images/allinpunchaw.png",
+        "audio": "/assets/Audios_glosario/Saludos/allinpunchaw.mp3",
+        "definition": "Buenos días"
+      },
+      {
+        "id": 13,
+        "tema": "Saludos",
+        "word": "Allin sukhayay",
+        "image": "/assets/images/allinsukhayay.png",
+        "audio": "/assets/Audios_glosario/Saludos/allinsukhayay.mp3",
+        "definition": "Buenas tardes"
+      },
+      {
+        "id": 14,
+        "tema": "Saludos",
+        "word": "Imaynalla",
+        "image": "/assets/images/imaynalla.png",
+        "audio": "/assets/Audios_glosario/Saludos/imaynalla.mp3",
+        "definition": "¿Cómo estás?"
+      },
+      {
+        "id": 15,
+        "tema": "Saludos",
+        "word": "Qayakama",
+        "image": "/assets/images/qayakama.png",
+        "audio": "/assets/Audios_glosario/Saludos/qayakama.mp3",
+        "definition": "Hasta mañana"
+      },
+      {
+        "id": 16,
+        "tema": "Saludos",
+        "word": "Tinkunakama",
+        "image": "/assets/images/tinkunakama.png",
+        "audio": "/assets/Audios_glosario/Saludos/tinkunakama.mp3",
+        "definition": "Hasta la próxima"
+      },
+      {
+        "id": 17,
+        "tema": "Animales",
+        "word": "Allqu",
+        "image": "/assets/images/animales/allqu.png",
+        "audio": "/assets/Audios_glosario/Animales/Allqu.mp3",
+        "definition": "Perro"
+      },
+      {
+        "id": 18,
+        "tema": "Animales",
+        "word": "Atuq",
+        "image": "/assets/images/animales/atuq.png",
+        "audio": "/assets/Audios_glosario/Animales/atuq.mp3",
+        "definition": "Zorro"
+      },
+      {
+        "id": 19,
+        "tema": "Animales",
+        "word": "Ch'iñi",
+        "image": "/assets/images/animales/chini.png",
+        "audio": "/assets/Audios_glosario/Animales/Chini.mp3",
+        "definition": "Murciélago"
+      },
+      {
+        "id": 20,
+        "tema": "Animales",
+        "word": "Jamp'atu",
+        "image": "/assets/images/animales/jampatu.png",
+        "audio": "/assets/Audios_glosario/Animales/jampatu.mp3",
+        "definition": "Rana"
+      },
+      {
+        "id": 21,
+        "tema": "Animales",
+        "word": "Juku",
+        "image": "/assets/images/animales/juku.png",
+        "audio": "/assets/Audios_glosario/Animales/juku.mp3",
+        "definition": "Búho"
+      },
+      {
+        "id": 22,
+        "tema": "Animales",
+        "word": "Kuntur",
+        "image": "/assets/images/animales/kuntur.png",
+        "audio": "/assets/Audios_glosario/Animales/kuntur.mp3",
+        "definition": "Cóndor"
+      },
+      {
+        "id": 23,
+        "tema": "Animales",
+        "word": "K'usillu",
+        "image": "/assets/images/animales/kusillu.png",
+        "audio": "/assets/Audios_glosario/Animales/kusillu.mp3",
+        "definition": "Mono"
+      },
+      {
+        "id": 24,
+        "tema": "Animales",
+        "word": "Misi",
+        "image": "/assets/images/animales/misi.png",
+        "audio": "/assets/Audios_glosario/Animales/misi.mp3",
+        "definition": "Gato"
+      },
+      {
+        "id": 25,
+        "tema": "Animales",
+        "word": "Pariwana",
+        "image": "/assets/images/animales/pariwana.png",
+        "audio": "/assets/Audios_glosario/Animales/pariwana.mp3",
+        "definition": "Flamenco"
+      },
+      {
+        "id": 26,
+        "tema": "Animales",
+        "word": "Suri",
+        "image": "/assets/images/animales/suri.png",
+        "audio": "/assets/Audios_glosario/Animales/suri.mp3",
+        "definition": "Avestruz"
+      },
+      {
+        "id": 27,
+        "tema": "Animales",
+        "word": "Urpi",
+        "image": "/assets/images/animales/urpi.png",
+        "audio": "/assets/Audios_glosario/Animales/urpi.mp3",
+        "definition": "Paloma"
+      },
+      {
+        "id": 28,
+        "tema": "Animales",
+        "word": "Wallpa",
+        "image": "/assets/images/animales/wallpa.png",
+        "audio": "/assets/Audios_glosario/Animales/wallpa.mp3",
+        "definition": "Gallina"
+      },
+      {
+        "id": 29,
+        "tema": "Familia",
+        "word": "Allchhi",
+        "image": "/assets/images/familia/allchhi.png",
+        "audio": "/assets/Audios_glosario/Familia/allchhi.mp3",
+        "definition": "Nieta/o"
+      },
+      {
+        "id": 30,
+        "tema": "Familia",
+        "word": "Ipa",
+        "image": "/assets/images/familia/ipa.png",
+        "audio": "/assets/Audios_glosario/Familia/ipa.mp3",
+        "definition": "Tía"
+      },
+      {
+        "id": 31,
+        "tema": "Familia",
+        "word": "Jatun mama",
+        "image": "/assets/images/familia/jatunmama.png",
+        "audio": "/assets/Audios_glosario/Familia/jatunmama.mp3",
+        "definition": "Abuela"
+      },
+      {
+        "id": 32,
+        "tema": "Familia",
+        "word": "Jatun tata",
+        "image": "/assets/images/familia/jatuntata.png",
+        "audio": "/assets/Audios_glosario/Familia/jatuntata.mp3",
+        "definition": "Abuelo"
+      },
+      {
+        "id": 33,
+        "tema": "Familia",
+        "word": "Mama",
+        "image": "/assets/images/familia/mama.png",
+        "audio": "/assets/Audios_glosario/Familia/mama.mp3",
+        "definition": "Mamá"
+      },
+      {
+        "id": 34,
+        "tema": "Familia",
+        "word": "Ñaña",
+        "image": "/assets/images/familia/nana.png",
+        "audio": "/assets/Audios_glosario/Familia/nana.mp3",
+        "definition": "Hermana"
+      },
+      {
+        "id": 35,
+        "tema": "Familia",
+        "word": "Pana",
+        "image": "/assets/images/familia/pana.png",
+        "audio": "/assets/Audios_glosario/Familia/pana.mp3",
+        "definition": "Hermana (de un varón)"
+      },
+      {
+        "id": 36,
+        "tema": "Familia",
+        "word": "Tata",
+        "image": "/assets/images/familia/tata.png",
+        "audio": "/assets/Audios_glosario/Familia/tata.mp3",
+        "definition": "Papá"
+      },
+      {
+        "id": 37,
+        "tema": "Familia",
+        "word": "Tatawki",
+        "image": "/assets/images/familia/tatawki.png",
+        "audio": "/assets/Audios_glosario/Familia/tatawki.mp3",
+        "definition": "Tío"
+      },
+      {
+        "id": 38,
+        "tema": "Familia",
+        "word": "Tura",
+        "image": "/assets/images/familia/tura.png",
+        "audio": "/assets/Audios_glosario/Familia/tura.mp3",
+        "definition": "Hermano (de una mujer)"
+      },
+      {
+        "id": 39,
+        "tema": "Familia",
+        "word": "Warmi",
+        "image": "/assets/images/familia/warmi.png",
+        "audio": "/assets/Audios_glosario/Familia/warmi.mp3",
+        "definition": "Hermana"
+      },
+      {
+        "id": 40,
+        "tema": "Familia",
+        "word": "Wawa",
+        "image": "/assets/images/familia/wawa.png",
+        "audio": "/assets/Audios_glosario/Familia/wawa.mp3",
+        "definition": "Bebé/Hija/Hijo"
+      },
+      {
+        "id": 41,
+        "tema": "Familia",
+        "word": "Wawqi",
+        "image": "/assets/images/familia/wawqi.png",
+        "audio": "/assets/Audios_glosario/Familia/wawqi.mp3",
+        "definition": "Hermano (de un varón)"
+      },
+      {
+        "id": 42,
+        "tema": "Anatomia",
+        "word": "Chaka",
+        "image": "/assets/images/anatomia/chaka.png",
+        "audio": "/assets/Audios_glosario/Anatomia/chaka.mp3",
+        "definition": "Cadera"
+      },
+      {
+        "id": 43,
+        "tema": "Anatomia",
+        "word": "Chaki",
+        "image": "/assets/images/anatomia/chaki.png",
+        "audio": "/assets/Audios_glosario/Anatomia/chaki.mp3",
+        "definition": "Pie"
+      },
+      {
+        "id": 44,
+        "tema": "Anatomia",
+        "word": "Chukcha",
+        "image": "/assets/images/anatomia/chukcha.png",
+        "audio": "/assets/Audios_glosario/Anatomia/chukcha.mp3",
+        "definition": "Cabello"
+      },
+      {
+        "id": 45,
+        "tema": "Anatomia",
+        "word": "Maki",
+        "image": "/assets/images/anatomia/maki.png",
+        "audio": "/assets/Audios_glosario/Anatomia/maki.mp3",
+        "definition": "Mano"
+      },
+      {
+        "id": 46,
+        "tema": "Anatomia",
+        "word": "Mat'i",
+        "image": "/assets/images/anatomia/mati.png",
+        "audio": "/assets/Audios_glosario/Anatomia/mati.mp3",
+        "definition": "Frente"
+      },
+      {
+        "id": 47,
+        "tema": "Anatomia",
+        "word": "Muqu",
+        "image": "/assets/images/anatomia/muqu.png",
+        "audio": "/assets/Audios_glosario/Anatomia/muqu.mp3",
+        "definition": "Cabello"
+      },
+      {
+        "id": 48,
+        "tema": "Anatomia",
+        "word": "Ninri",
+        "image": "/assets/images/anatomia/ninri.png",
+        "audio": "/assets/Audios_glosario/Anatomia/ninri.mp3",
+        "definition": "Oreja"
+      },
+      {
+        "id": 49,
+        "tema": "Anatomia",
+        "word": "Pupu",
+        "image": "/assets/images/anatomia/pupu.png",
+        "audio": "/assets/Audios_glosario/Anatomia/pupu.mp3",
+        "definition": "Ombligo"
+      },
+      {
+        "id": 50,
+        "tema": "Anatomia",
+        "word": "Qasqu",
+        "image": "/assets/images/anatomia/qasqu.png",
+        "audio": "/assets/Audios_glosario/Anatomia/qasqu.mp3",
+        "definition": "Pecho"
+      },
+      {
+        "id": 51,
+        "tema": "Anatomia",
+        "word": "Qhichikra",
+        "image": "/assets/images/anatomia/qhichikra.png",
+        "audio": "/assets/Audios_glosario/Anatomia/qhichikra.mp3",
+        "definition": "Ceja"
+      },
+      {
+        "id": 52,
+        "tema": "Anatomia",
+        "word": "Rikra",
+        "image": "/assets/images/anatomia/rikra.png",
+        "audio": "/assets/Audios_glosario/Anatomia/rikra.mp3",
+        "definition": "Hombro"
+      },
+      {
+        "id": 53,
+        "tema": "Anatomia",
+        "word": "Rukana",
+        "image": "/assets/images/anatomia/rukana.png",
+        "audio": "/assets/Audios_glosario/Anatomia/rukana.mp3",
+        "definition": "Dedo"
+      },
+      {
+        "id": 54,
+        "tema": "Anatomia",
+        "word": "Sillu",
+        "image": "/assets/images/anatomia/sillu.png",
+        "audio": "/assets/Audios_glosario/Anatomia/sillu.mp3",
+        "definition": "Uña"
+      },
+      {
+        "id": 55,
+        "tema": "Anatomia",
+        "word": "Simi",
+        "image": "/assets/images/anatomia/simi.png",
+        "audio": "/assets/Audios_glosario/Anatomia/simi.mp3",
+        "definition": "Boca"
+      },
+      {
+        "id": 56,
+        "tema": "Anatomia",
+        "word": "Sinqa",
+        "image": "/assets/images/anatomia/sinqa.png",
+        "audio": "/assets/Audios_glosario/Anatomia/sinqa.mp3",
+        "definition": "Nariz"
+      },
+      {
+        "id": 57,
+        "tema": "Anatomia",
+        "word": "Takillpa",
+        "image": "/assets/images/anatomia/takillpa.png",
+        "audio": "/assets/Audios_glosario/Anatomia/takillpa.mp3",
+        "definition": "Talón"
+      },
+      {
+        "id": 58,
+        "tema": "Anatomia",
+        "word": "T'usu",
+        "image": "/assets/images/anatomia/tusu.png",
+        "audio": "/assets/Audios_glosario/Anatomia/tusu.mp3",
+        "definition": "Pantorrilla"
+      },
+      {
+        "id": 59,
+        "tema": "Anatomia",
+        "word": "Ulla",
+        "image": "/assets/images/anatomia/ulla.png",
+        "audio": "/assets/Audios_glosario/Anatomia/uya.mp3",
+        "definition": "Rostro"
+      },
+      {
+        "id": 60,
+        "tema": "Anatomia",
+        "word": "Uma",
+        "image": "/assets/images/anatomia/uma.png",
+        "audio": "/assets/Audios_glosario/Anatomia/uma.mp3",
+        "definition": "Cabeza"
+      },
+      {
+        "id": 61,
+        "tema": "Anatomia",
+        "word": "Wallwaku",
+        "image": "/assets/images/anatomia/wallwaku.png",
+        "audio": "/assets/Audios_glosario/Anatomia/wallaku.mp3",
+        "definition": "Axila"
+      },
+      {
+        "id": 62,
+        "tema": "Anatomia",
+        "word": "Wisa",
+        "image": "/assets/images/anatomia/wisa.png",
+        "audio": "/assets/Audios_glosario/Anatomia/wisa.mp3",
+        "definition": "Barriga"
+      },
+      {
+        "id": 63,
+        "tema": "Pronombres",
+        "word": "Ñuqa",
+        "image": "/assets/images/pronombres/nuqa.png",
+        "audio": "/assets/Audios_glosario/Pronombres/nuqa.mp3",
+        "definition": "Yo"
+      },
+      {
+        "id": 64,
+        "tema": "Pronombres",
+        "word": "Ñuqanchik",
+        "image": "/assets/images/pronombres/nuqanchik.png",
+        "audio": "/assets/Audios_glosario/Pronombres/nuqanchik.mp3",
+        "definition": "Nosotras/os (inclusivo)"
+      },
+      {
+        "id": 65,
+        "tema": "Pronombres",
+        "word": "Ñuqayku",
+        "image": "/assets/images/pronombres/nuqayku.png",
+        "audio": "/assets/Audios_glosario/Pronombres/nuqayku.mp3",
+        "definition": "Nosotras/os (exclusivo)"
+      },
+      {
+        "id": 66,
+        "tema": "Pronombres",
+        "word": "Pay",
+        "image": "/assets/images/pronombres/pay.png",
+        "audio": "/assets/Audios_glosario/Pronombres/pay.mp3",
+        "definition": "Ella, él"
+      },
+      {
+        "id": 67,
+        "tema": "Pronombres",
+        "word": "Paykuna",
+        "image": "/assets/images/pronombres/paykuna.png",
+        "audio": "/assets/Audios_glosario/Pronombres/paykuna.mp3",
+        "definition": "Ellas/Ellos"
+      },
+      {
+        "id": 68,
+        "tema": "Pronombres",
+        "word": "Qam",
+        "image": "/assets/images/pronombres/qam.png",
+        "audio": "/assets/Audios_glosario/Pronombres/qam.mp3",
+        "definition": "Tú"
+      },
+      {
+        "id": 69,
+        "tema": "Pronombres",
+        "word": "Qamkuna",
+        "image": "/assets/images/pronombres/qamkuna.png",
+        "audio": "/assets/Audios_glosario/Pronombres/qamkuna.mp3",
+        "definition": "Ustedes"
+      },
+      {
+        "id": 70,
+        "tema": "Verbos",
+        "word": "Mikhuy",
+        "image": "/assets/images/pronombres/mikhuy.png",
+        "audio": "/assets/Audios_glosario/Verbos/mikhuy.mp3",
+        "definition": "Comer"
+      },
+      {
+        "id": 71,
+        "tema": "Verbos",
+        "word": "Ñawiriy",
+        "image": "/assets/images/pronombres/ñawiriy.png",
+        "audio": "/assets/Audios_glosario/Verbos/nawiriy.mp3",
+        "definition": "Leer"
+      },
+      {
+        "id": 72,
+        "tema": "Verbos",
+        "word": "Parlay",
+        "image": "/assets/images/pronombres/parlay.png",
+        "audio": "/assets/Audios_glosario/Verbos/parlay.mp3",
+        "definition": "Hablar"
+      },
+      {
+        "id": 73,
+        "tema": "Verbos",
+        "word": "Qillqay",
+        "image": "/assets/images/pronombres/qillqay.png",
+        "audio": "/assets/Audios_glosario/Verbos/qillqay.mp3",
+        "definition": "Escribir"
+      },
+      {
+        "id": 74,
+        "tema": "Verbos",
+        "word": "Ranqhay",
+        "image": "/assets/images/pronombres/ranqhay.png",
+        "audio": "/assets/Audios_glosario/Verbos/ranqhay.mp3",
+        "definition": "Vender"
+      },
+      {
+        "id": 75,
+        "tema": "Verbos",
+        "word": "Takiy",
+        "image": "/assets/images/pronombres/takiy.png",
+        "audio": "/assets/Audios_glosario/Verbos/takiy.mp3",
+        "definition": "Cantar"
+      },
+      {
+        "id": 76,
+        "tema": "Verbos",
+        "word": "Tusuy",
+        "image": "/assets/images/pronombres/tusuy.png",
+        "audio": "/assets/Audios_glosario/Verbos/tusuy.mp3",
+        "definition": "Bailar"
+      },
+      {
+        "id": 77,
+        "tema": "Verbos",
+        "word": "Uyariy",
+        "image": "/assets/images/pronombres/uyariy.png",
+        "audio": "/assets/Audios_glosario/Verbos/uyariy.mp3",
+        "definition": "Oir"
+      }
+    ]
+  }

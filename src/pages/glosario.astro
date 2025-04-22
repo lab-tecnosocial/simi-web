@@ -1,13 +1,13 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { gameData } from '../components/data/gameData';
-import Glossary from "../components/juegos/Glossary";
+import Glossary from "../components/juegos/Glossary.jsx";
 import "../styles/global.css";
 ---
 
 <PageLayout
-    titulo="Glosario"
-    descripcion="Lista de palabras"
+  titulo="Glosario"
+  descripcion="Lista de palabras"
 >
-    <Glossary gameData={gameData} />
+  {/* Monta el React component con Astro cuando cargue la página */}
+  <Glossary client:load />
 </PageLayout>
