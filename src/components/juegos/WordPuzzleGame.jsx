@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { answerWords } from "./words";
 import wordList from "./WordList";
 import GameOver from "./GameOver";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const generateRandomMatrix = (rows, cols, words) => {
     const letters = "abcdefghijklmnopqrstuvwxyz’";
@@ -140,16 +142,17 @@ const WordPuzzleGame = () => {
 
     return (
         <div className="flex flex-col md:flex-row min-h-screen p-4 max-w-screen-lg mx-auto">
-            <div className="flex flex-col items-start mb-6 w-full md:w-1/3">
-                <h1 className="text-2xl mb-4">Sopa de letras - Qillqa jilli</h1>
-                <p className="mb-2">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
-                <div className="bg-[#bef789] p-4 rounded mb-4">
-                    <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona una categoría:</label>
+            <div className="flex flex-col items-center justify-center text-center mb-6 w-full md:w-1/3 mx-auto">
+                <h1 className="text-[32px] font-bold text-[#59CB07] font-[Nunito] mb-[1]">Sopa de letras</h1>
+                <h2 className="text-[24px] font-bold text-neutral-600 font-[Nunito] mb-4">Quillqa jilli</h2>
+                <p className="text-[16px] font-light text-neutral-600 font-[Nunito] mb-4">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
+                <div className="bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
+                    <label htmlFor="category" className="block mb-4 text-base font-bold">Elige un tema:</label>
                     <select
                         id="category"
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="border border-gray-300 p-2 rounded w-64"
+                        className="border border-gray-300 p-2 rounded w-[300px] mb-4"
                     >
                         {Object.keys(wordList).map(category => (
                             <option key={category} value={category}>
@@ -157,8 +160,29 @@ const WordPuzzleGame = () => {
                             </option>
                         ))}
                     </select>
+                    <div className="mb-4">
+                        <div className="w-[156.41px] h-[52.51px] text-[16px] bg-white rounded-lg shadow-md inline-block font-mono text-gray-800 flex items-center justify-center font-semibold">
+                        <i class="fa-regular fa-hourglass-half"></i>
+                            {String(Math.floor(timeLeft / 3600)).padStart(2, '0')}:
+                            {String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0')}:
+                            {String(timeLeft % 60).padStart(2, '0')}
+                        </div>
+
+
+
+
+                        <button
+  onClick={initializeGame}
+  className="flex items-center gap-2 px-4 py-2 rounded text-white font-semibold"
+  style={{ backgroundColor: '#59CB07' }}
+>
+  <i className="fa-solid fa-play"></i>
+  {isGameActive ? 'Reiniciar' : 'Jugar'}
+</button>
+
+                    </div>
+                    
                 </div>
-                <p className="mb-2">QUE: Usqayta pakasqa simikunata tarinayki tiyan.</p>
                 <div className="bg-[#bef789] p-4 rounded mb-4">
                     <div className="mb-4">
                         <h2>Palabras a buscar:</h2>
@@ -180,15 +204,8 @@ const WordPuzzleGame = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="mb-4">
-                        <h2>Tiempo restante: {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, '0')}</h2>
-                    </div>
-                    <button
-                        onClick={initializeGame}
-                        className="px-4 py-2 bg-blue-500 text-white rounded"
-                    >
-                        {isGameActive ? 'Reiniciar Juego' : 'Iniciar Juego'}
-                    </button>
+                    
+                    
                 </div>
                 {!isGameActive && foundWords.length === answerWords.length && (
                     <div className="bg-green-200 p-4 rounded mb-4">
