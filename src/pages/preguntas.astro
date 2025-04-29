@@ -1,0 +1,35 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import FAQ from "../components/FAQ";
+import "../styles/global.css";
+
+const questions = [
+  {
+    question: "¿Cuál es el propósito de este juego?",
+    answer:
+      "El propósito es mejorar tus habilidades de vocabulario mediante el emparejamiento de palabras.",
+  },
+  {
+    question: "¿Cómo se juega?",
+    answer: "Debes hacer clic en las cartas para emparejarlas correctamente.",
+  },
+  {
+    question: "¿Hay un límite de tiempo?",
+    answer: "No, puedes jugar a tu propio ritmo.",
+  },
+  {
+    question: "¿Puedo jugar en mi móvil?",
+    answer:
+      "Sí, el juego es completamente responsivo y se puede jugar en dispositivos móviles.",
+  },
+];
+---
+
+<PageLayout
+  titulo="Empareja"
+  descripcion="Juega a descifrar las palabras"
+  imagen="/assets/img/anagrama.jpg"
+>
+  <FAQ client:only="react" />
+</PageLayout>;
+
