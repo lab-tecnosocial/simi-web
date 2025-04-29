@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./src/**/*.{astro,js,jsx,ts,tsx}", 
+    "./src/**/*.{astro,js,jsx,ts,tsx}",
+	"./node_modules/swiper/swiper-bundle.esm.js"
   ],
   theme: {
     extend: {
