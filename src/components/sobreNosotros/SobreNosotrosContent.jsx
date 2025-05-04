@@ -3,7 +3,7 @@ const SobreNosotrosContent = () => {
     <section className="font-roboto flex flex-col items-center py-10 bg-white">
       <div className="flex flex-col items-center mb-20">
         <img
-          src="/assets/images/cabezasimi.png"
+          src="/assets/images/simicards.png"
           alt="Simi Logo"
           className="w-32 h-32 mt-[-50px] mb-10"
         />
