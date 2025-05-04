@@ -11,10 +11,10 @@ const Card = ({ nombre, imagen, linkedin, profesion }) => {
         alt={nombre}
       />
       <div className="p-4 text-center">
-        <h2 className="text-xl font-semibold">{nombre}</h2>
-        <p className="text-gray-600">{profesion}</p>
+        <h2 className="text-2xl font-semibold mb-4">{nombre}</h2>
+        <p className="text-2xl font-light">{profesion}</p>
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin w-6 h-6 mt-2 text-blue-700" aria-hidden="true"></i>
+          <i className="fab fa-linkedin text-5xl mt-2 text-[#3489b7]" aria-hidden="true"></i>
         </a>
       </div>
     </div>
