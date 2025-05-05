@@ -155,15 +155,15 @@ const Equipo = () => {
         <img
           src="/assets/images/simicards.png"
           alt="Equipos"
-          className="w-48 h-auto mt-[-30px] mb-10"
+          className="w-28 h-auto mt-12 mb-12"
         />
-        <h2 className="text-4xl font-nunito font-black">
+        <h2 className="text-4xl sm:text-4xl text-center font-nunito font-black mb-16">
           Conoce a nuestro equipo de trabajo
         </h2>
       </div>
 
       {/* Sección: Equipo de Informática o Sistemas */}
-      <h2 className="text-3xl font-bold mt-6 mb-4 text-center">
+      <h2 className="text-3xl font-bold text-futuro mt-6 mb-4 text-center">
         Informática y Desarrollo Web
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -192,11 +192,11 @@ const Equipo = () => {
       </div>
 
       {/* Sección: Diseño UX/UI */}
-      <h2 className="text-3xl font-bold mt-6 mb-20 text-center">Diseño UX/UI</h2>
+      <h2 className="text-3xl font-bold text-futuro mt-6 mb-20 text-center">Diseño UX/UI</h2>
       <Miembros miembros={equiposDiseno} />
 
       {/* Sección: Lingüística */}
-      <h2 className="text-3xl font-semibold mt-20 mb-4 text-center">
+      <h2 className="text-3xl font-semibold text-futuro mt-20 mb-4 text-center">
         Aprendizaje y Diseño Curricular
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -222,7 +222,7 @@ const Equipo = () => {
       </div>
 
       {/* Sección: Editorial */}
-      <h2 className="text-3xl font-semibold mt-16 mb-4 text-center">Editorial</h2>
+      <h2 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Editorial</h2>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-40">
           {equiposEditorial.map((miembro, index) => (
@@ -238,7 +238,7 @@ const Equipo = () => {
       </div>
 
       {/* Sección: Ilustracion */}
-      <h2 className="text-3xl font-semibold mt-16 mb-4 text-center">Ilustración</h2>
+      <h2 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Ilustración</h2>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-40">
           {equiposIlustracion.map((miembro, index) => (
