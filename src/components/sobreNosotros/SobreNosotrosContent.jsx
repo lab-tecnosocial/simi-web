@@ -5,9 +5,9 @@ const SobreNosotrosContent = () => {
         <img
           src="/assets/images/simicards.png"
           alt="Simi Logo"
-          className="w-32 h-32 mt-[-50px] mb-10"
+          className="w-28 h-28 mt-[-30px] mb-10"
         />
-        <h2 className="text-5xl font-semibold text-black">Acerca de Simi</h2>
+        <h2 className="text-4xl sm:text-4xl font-semibold text-black">Acerca de Simi</h2>
       </div>
 
       <div
