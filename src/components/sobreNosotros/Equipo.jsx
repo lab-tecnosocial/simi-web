@@ -240,7 +240,7 @@ const Equipo = () => {
       {/* Sección: Ilustracion */}
       <h2 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Ilustración</h2>
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-40 mb-28">
           {equiposIlustracion.map((miembro, index) => (
             <Card
               key={index}
