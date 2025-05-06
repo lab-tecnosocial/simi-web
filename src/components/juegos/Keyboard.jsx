@@ -1,11 +1,28 @@
 
 const Keyboard = ({ handleGuess }) => {
-  const letters = 'achijklmnñpqrstuwy\''.split('');
+  const letters = "achijklmnñpqrstuwy'".split("");
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center gap-2 p-4">
       {letters.map((letter) => (
-        <button key={letter} onClick={() => handleGuess(letter)} className='bg-green-400 text-white font-bold py-2 px-2 m-2 rounded hover:bg-gray-300 transition duration-200'>
+        <button
+          key={letter}
+          onClick={() => handleGuess(letter)}
+          className="
+            bg-white
+            text-black
+            font-bold
+            w-10 h-10
+            rounded-lg
+            border-2 border-[#59CB07]
+            shadow-[0_4px_0_#59CB07]
+            hover:shadow-[0_2px_0_#59CB07]
+            hover:translate-y-0.5
+            transition-all
+            duration-200
+            flex items-center justify-center
+          "
+        >
           {letter}
         </button>
       ))}

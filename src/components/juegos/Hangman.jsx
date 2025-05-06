@@ -3,7 +3,7 @@ import Word from './Word';
 import Keyboard from './Keyboard';
 import GameOver from './GameOver';
 import wordList from './WordList';
-import fondoCielo from '../assets/images/fondo_cielo.png';
+import fondoCielo from '../assets/images/Nubes.gif';
 import globo from '../assets/images/globo.png';
 import mancha from '../assets/images/mancha.png';
 
@@ -82,14 +82,32 @@ function Game() {
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8"
-      style={{ backgroundImage: `url(${fondoCielo.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ 
+        backgroundImage: `url(${fondoCielo.src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
     >
-      <h1 className='text-3xl font-bold mb-8'>Salva a Simi -  Simiman yanapay</h1>
-      <p className="text-sm mb-4">Un juego donde debes descubrir la palabra oculta letra por letra antes de que el globo de Simi se caiga.</p>
-      <p className="text-sm mb-8">QUE: Kaypi tarinayki tiyan ima sananpachus kaypi kachkan. Simita yanapayki tiyan mana globomanta urmamunanpaq.</p>
+      <div className="text-center mb-8">
+      <h1 className="text-2xl font-bold" style={{ color: '#59CB07' }}>Salva a Simi</h1>
+        <h2 className="text- text-gray-700">Simiman yanapay</h2>
+      </div>
+      <div 
+        className="rounded-lg p-4 mb-8 max-w-lg text-center mx-auto"
+        style={{
+          border: '2px solid #59CB07',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          backgroundColor: 'rgba(255, 255, 255, 0.8)'
+        }}
+      >
+        <p className="text-gray-700">
+          Un juego donde debes descubrir la palabra oculta letra por<br />
+          letra antes de que el globo de Simi se caiga.
+        </p>
+      </div>
 
       <div className="relative">
-        <img src={globo.src} alt="Globo" className="mb-4 w-64" />
+        <img src={globo.src} alt="Globo" className="mb-4 w-64" />   
         {manchas.map((_, index) => (
           <img
             key={index}
@@ -104,12 +122,19 @@ function Game() {
         ))}
       </div>
 
-      <div className="w-full max-w-md text-center">
-        <label htmlFor="word-list">Selecciona una lista de palabras: </label>
-        <select id="word-list" value={selectedList} onChange={(e) => setSelectedList(e.target.value)}>
+      <div className="w-full max-w-[280px] mb-8 mx-auto text-center">
+        <label htmlFor="word-list" className="block text-sm font-medium text-black mb-2">
+          Selecciona una lista de palabras:
+        </label>
+        <select
+          id="word-list"
+          value={selectedList}
+          onChange={(e) => setSelectedList(e.target.value)}
+          className="w-full py-3 px-2 h-12 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+        >
           {Object.keys(wordList).map((key) => (
             <option key={key} value={key}>
-              {key.charAt(0).toUpperCase() + key.slice(1)} {/* Capitaliza la primera letra */}
+              {key.charAt(0).toUpperCase() + key.slice(1)}
             </option>
           ))}
         </select>
@@ -120,7 +145,7 @@ function Game() {
       <button
         onClick={handleHint}
         disabled={hintsUsed >= maxHints}
-        className={`bg-blue-500 text-white py-2 px-4 mb-2 rounded ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`bg-[#59CB07] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#4bb306] transition duration-200 ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''} text-lg shadow-md hover:shadow-lg mt-4`}
       >
         Dame una pista
       </button>
@@ -134,15 +159,16 @@ function Game() {
 
       ) : (
         <div>
-          <h2>Intentos fallidos: {wrongGuesses} / {maxAttempts}</h2>
+          <p className="text-sm">Intentos fallidos: {wrongGuesses} / {maxAttempts}</p>
         </div>
       )}
+      {/*
       <div className='bg-[#bef789] mt-2 mb-4 py-2 px-4 rounded'>
         <h3>Estadísticas</h3>
         <p>Partidas ganadas: {wins}</p>
         <p>Partidas perdidas: {losses}</p>
       </div>
-
+      */}
 
 
     </div>
