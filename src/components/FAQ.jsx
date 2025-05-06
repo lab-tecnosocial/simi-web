@@ -29,12 +29,12 @@ export default function FAQ({ questions }) {
             onClick={() => toggleAccordion(index)}
           >
             <h4 className="text-xl font-normal">{item.question}</h4>
-            <span>{activeIndex === index ? '-' : '+'}</span>
+            <span>{activeIndex === index ? <i className="fa fa-chevron-down ml-1 mr-2 text-xl"></i> : <i className="fa fa-chevron-right ml-1 mr-2 text-xl text-gray-600"></i>}</span>
           </button>
           
           {activeIndex === index && (
             <div className="p-4 mt-8 mb-8 bg-white border-spacing-0 text-futuro text-lg">
-              <p>{item.answer}</p>
+              <p dangerouslySetInnerHTML={{ __html: item.answer }} />
             </div>
           )}
         </div>
