@@ -1,46 +1,45 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function App() {
-  const [active, setActive] = useState(false);
+export default function FAQ({ questions }) {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    contentRef.current.style.maxHeight = active
-      ? `${contentRef.current.scrollHeight}px`
-      : "0px";
-  }, [contentRef, active]);
-
-  const toggleAccordion = () => {
-    setActive(!active);
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
+
   return (
-    <>
-      <div className="App">
-        <div>
-          <button
-            className={`question-section ${active}`}
-            onClick={toggleAccordion}
-          >
-            <div>
-              <div className="question-align">
-                <h4 className="question-style">
-                  Why do you like web developemnt
-                </h4>
-                <FiPlus
-                  className={active ? `question-icon rotate` : `question-icon`}
-                />
-              </div>
-              <div
-                ref={contentRef}
-                className={active ? `answer answer-divider` : `answer`}
-              >
-                <p>Because I love coding</p>
-              </div>
-            </div>
-          </button>
-        </div>
+    <div className="faq-container max-w-7xl m-8 mx-auto p-18">
+
+
+      <div className="flex flex-col items-center mb-4">
+        <img
+          src="/assets/images/simicards.png"
+          alt="Equipos"
+          className="w-28 h-auto mt-12 mb-12"
+        />
+        <h2 className="text-4xl sm:text-4xl text-center font-nunito font-black mb-12">
+          Preguntas frecuentes
+        </h2>
       </div>
-    </>
+
+      {questions.map((item, index) => (
+        <div key={index} className="border border-texto2 rounded-xl">
+          <button
+            className={`w-full text-left p-4 mt-4 mb-4 flex justify-between items-center 
+              ${activeIndex === index ? 'bg-white' : ''}`}
+            onClick={() => toggleAccordion(index)}
+          >
+            <h4 className="text-xl font-normal">{item.question}</h4>
+            <span>{activeIndex === index ? '-' : '+'}</span>
+          </button>
+          
+          {activeIndex === index && (
+            <div className="p-4 mt-8 mb-8 bg-white border-spacing-0 text-futuro text-lg">
+              <p>{item.answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }

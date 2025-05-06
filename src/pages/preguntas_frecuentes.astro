@@ -1,0 +1,38 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import FAQ from "../components/FAQ";
+import "../styles/global.css";
+
+const questions = [
+  {
+    question: "¿Dónde consigo la app?",
+    answer:
+      "La aplicación está disponible para su descarga en la Play Store. Actualmente la app está disponible para su descarga en Bolivia y no en otros países. ",
+  },
+  {
+    question:
+      "¿Quiero apoyar al proyecto Simi App y soy de Bolivia. ¿Dónde puedo realizar mi aporte económico? ",
+    answer:
+      "Simi es una app creada por un grupo de voluntarias y voluntarios, tu ayuda.",
+  },
+  {
+    question: "¿Quiero ser parte del proyecto Simi App. ¿Dónde me apunto?",
+    answer:
+      "Si estás interesada/o en unirte al equipo o ser voluntaria/o en Simi registrate en este formulario.",
+  },
+  {
+    question:
+      "¿Tengo algunas observaciones y comentarios sobre el contenido de la app.  ¿Dónde las puedo compartir?",
+    answer:
+      "Nos interesa conocer tu opinión acerca del contenido de la app, esta información nos sirve para mejorar el contenido. Por favor accede al siguiente formulario para dejarnos tus observaciones o comentarios:  ",
+  },
+];
+---
+
+<PageLayout
+  titulo="Preguntas frecuentes"
+  descripcion="Preguntas mas frecuentes de usuarios"
+  imagen="/assets/img/anagrama.jpg"
+>
+  <FAQ client:only="react" questions={questions} />
+</PageLayout>
