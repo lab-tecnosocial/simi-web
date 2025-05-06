@@ -34,5 +34,14 @@ const questions = [
   descripcion="Preguntas mas frecuentes de usuarios"
   imagen="/assets/img/anagrama.jpg"
 >
-  <FAQ client:only="react" questions={questions} />
+  <div class="relative">
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-repeat opacity-20 z-0"
+      style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
+    >
+    </div>
+    <div class="relative z-10">
+      <FAQ client:only="react" questions={questions} />
+    </div>
+  </div>
 </PageLayout>

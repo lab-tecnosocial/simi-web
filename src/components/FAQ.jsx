@@ -8,8 +8,7 @@ export default function FAQ({ questions }) {
   };
 
   return (
-    <div className="faq-container max-w-7xl m-8 mx-auto p-18">
-
+    <div className="faq-container max-w-7xl mx-auto p-8 sm:p-8 lg:p-10">
 
       <div className="flex flex-col items-center mb-4">
         <img
@@ -23,7 +22,7 @@ export default function FAQ({ questions }) {
       </div>
 
       {questions.map((item, index) => (
-        <div key={index} className="border border-texto2 rounded-xl">
+        <div key={index} className="border border-texto2 rounded-xl bg-white">
           <button
             className={`w-full text-left p-4 mt-4 mb-4 flex justify-between items-center 
               ${activeIndex === index ? 'bg-white' : ''}`}
