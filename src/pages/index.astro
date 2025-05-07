@@ -6,6 +6,7 @@ import Hero2Section from "../components/Hero2.astro";
 import Header from "../components/Header.jsx";
 import PeopleSection from "../components/PeopleSection.jsx";
 import Hero from "../components/Hero.jsx";
+import SuggestionBox from "../components/SuggestionBox.jsx";
 ---
 
 <!doctype html>
@@ -25,14 +26,16 @@ import Hero from "../components/Hero.jsx";
     <script
       is:inline
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    ></script>
+    ></script>-->
 
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
-    ></script>-->
+    ></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link
       rel="stylesheet"
@@ -114,11 +117,16 @@ import Hero from "../components/Hero.jsx";
     <Hero />
 
     <!-- Android SIMI App Downloads Counter -->
-    <section id="counter-section" class="w-full h-auto py-12 relative bg-[#f4eefe]">
+    <section
+      id="counter-section"
+      class="w-full h-auto py-12 relative bg-[#f4eefe]"
+    >
       <div id="counter-container" class="flex justify-center gap-2.5">
         <!-- Counter digits will be added here -->
       </div>
-      <h2 class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center" >
+      <h2
+        class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center"
+      >
         Descargas hasta hoy
       </h2>
     </section>
@@ -129,75 +137,88 @@ import Hero from "../components/Hero.jsx";
     <!--  People Section  -->
     <PeopleSection client:load />
 
-    <!--Suggestion box-->
-    <div class="scroll-message">
+    <SuggestionBox />
+
+    <!--Suggestion box
+    <div
+      class="scroll-message p-6 border-qumir border-2 rounded-3xl bg-riti text-center text-2xl"
+    >
       <div class="close-btn">
         <span class="close-icon">×</span>
       </div>
-      <p>¿Quieres dejar alguna sugerencia?</p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform"
-        target="_blank">Has click acá para mandarnos tu sugerencia</a
-      >
 
-      <p>¿Encontraste un error?</p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdDCzuKpa-6jABQICgjvb9mYONlmQ1XKc24IuuLLlbmobTDpQ/viewform"
-        target="_blank">Reporta el error haciendo click acá</a
-      >
-
-      <img src="/assets/images/problemasimi.png" alt="Imagen 1" />
+      <div>
+        <p>¿Tienes una sugerencia?</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform"
+          target="_blank"
+          class="font-bold">Compártela💡</a
+        >
+        <p>¿Encontraste un error?</p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdDCzuKpa-6jABQICgjvb9mYONlmQ1XKc24IuuLLlbmobTDpQ/viewform"
+          target="_blank"
+          class="font-bold">Avísanos ⚠️</a
+        >
+      </div>
     </div>
+    <img
+      class="w-20 h-auto align-left"
+      src="/assets/images/problemasimi.png"
+      alt="Imagen 1"
+    />-->
 
-    <!--  Footer  -->
+    <!--Footer  -->
     <Footer />
 
-    <!--Suggestion box<script>
-        AOS.init();
-      </script>
+    <!--Suggestion box-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
-      <script>
-        var scrollMessage1 = document.querySelector(".scroll-message");
-        var scrollMessage2 = document.querySelector(".scroll-message-2");
-        var prevScrollPos = window.pageYOffset;
+    <script>
+      var scrollMessage1 = document.querySelector(".scroll-message");
+      var scrollMessage2 = document.querySelector(".scroll-message-2");
+      var prevScrollPos = window.pageYOffset;
 
-        window.addEventListener("scroll", function () {
-          var currentScrollPos = window.pageYOffset;
-          var scrollPosition = window.scrollY;
-          var elementPosition =
-            document.getElementById("people-images").offsetTop;
+      window.addEventListener("scroll", function () {
+        var currentScrollPos = window.pageYOffset;
+        var scrollPosition = window.scrollY;
+        var elementPosition =
+          document.getElementById("people-images").offsetTop;
 
-          if (scrollPosition > elementPosition - window.innerHeight + 200) {
-            scrollMessage1.style.display = "block";
-          } else {
-            scrollMessage1.style.display = "none";
-          }
+        if (scrollPosition > elementPosition - window.innerHeight + 200) {
+          scrollMessage1.style.display = "block";
+        } else {
+          scrollMessage1.style.display = "none";
+        }
 
-          if (scrollPosition > elementPosition + 200) {
-            scrollMessage2.style.display = "block";
-          } else {
-            scrollMessage2.style.display = "none";
-          }
+        if (scrollPosition > elementPosition + 200) {
+          scrollMessage2.style.display = "block";
+        } else {
+          scrollMessage2.style.display = "none";
+        }
 
-          if (currentScrollPos < prevScrollPos) {
-            scrollMessage1.style.display = "none";
-            scrollMessage2.style.display = "none";
-          }
+        if (currentScrollPos < prevScrollPos) {
+          scrollMessage1.style.display = "none";
+          scrollMessage2.style.display = "none";
+        }
 
-          prevScrollPos = currentScrollPos;
+        prevScrollPos = currentScrollPos;
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var scrollMessage = document.querySelector(".scroll-message");
+        var closeBtn = document.querySelector(".scroll-message .close-btn");
+
+        closeBtn.addEventListener("click", function () {
+          scrollMessage.style.display = "none";
         });
-      </script>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          var scrollMessage = document.querySelector(".scroll-message");
-          var closeBtn = document.querySelector(".scroll-message .close-btn");
-
-          closeBtn.addEventListener("click", function () {
-            scrollMessage.style.display = "none";
-          });
-        });
-      </script>-->
+      });
+    </script>
 
     <!-- Android App Downloads Counter -->
     <script>
@@ -208,39 +229,39 @@ import Hero from "../components/Hero.jsx";
       document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < digits; i++) {
           const draw = document.createElement("div");
-          draw.className = "w-14 h-16 text-[#74c741] text-5xl flex justify-center items-center font-bold bg-transparent rounded-lg border border-black shadow-md m-1 px-4";
+          draw.className =
+            "w-14 h-16 text-[#74c741] text-5xl flex justify-center items-center font-bold bg-transparent rounded-lg border border-black shadow-md m-1 px-4";
           draw.textContent = "0";
           counterContainer.appendChild(draw);
         }
-        function countUp()
-        {
+        function countUp() {
           let currentNumber = 0;
           let increment = Math.ceil(targetNumber / 50);
           const interval = setInterval(() => {
-              if (currentNumber >= targetNumber) {
-                  currentNumber = targetNumber;
-                  decorCounter(currentNumber);
-                  clearInterval(interval);
-              } else {
-                  currentNumber++;
-                  currentNumber = currentNumber + increment;
-                  decorCounter(currentNumber);
-              }
+            if (currentNumber >= targetNumber) {
+              currentNumber = targetNumber;
+              decorCounter(currentNumber);
+              clearInterval(interval);
+            } else {
+              currentNumber++;
+              currentNumber = currentNumber + increment;
+              decorCounter(currentNumber);
+            }
           }, 50);
         }
         window.addEventListener("scroll", function () {
-          const sectionTop = document.getElementById("counter-section").offsetTop;
+          const sectionTop =
+            document.getElementById("counter-section").offsetTop;
           const scrollPosition = window.scrollY + window.innerHeight;
           if (scrollPosition > sectionTop && !hasScrolled) {
             hasScrolled = true;
             countUp();
           }
         });
-        function decorCounter(num)
-        {
+        function decorCounter(num) {
           const currentDigits = num.toString().padStart(digits, "0");
           Array.from(counterContainer.children).forEach((cell, index) => {
-              cell.textContent = currentDigits[index];
+            cell.textContent = currentDigits[index];
           });
         }
       });
