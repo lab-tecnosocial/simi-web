@@ -88,12 +88,12 @@ function Game() {
         backgroundPosition: 'center'
       }}
     >
-      <div className="text-center mb-8">
-      <h1 className="text-2xl font-bold" style={{ color: '#59CB07' }}>Salva a Simi</h1>
-        <h2 className="text- text-gray-700">Simiman yanapay</h2>
+      <div className="text-center mb-6">
+      <h1 className="text-3xl font-bold" style={{ color: '#59CB07' }}>Salva a Simi</h1>
+        <h2 className="text-lg text-gray-700">Simiman yanapay</h2>
       </div>
       <div 
-        className="rounded-lg p-4 mb-8 max-w-lg text-center mx-auto"
+        className="rounded-lg p-4 mb max-w-lg text-center mx-auto"
         style={{
           border: '2px solid #59CB07',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
@@ -107,11 +107,11 @@ function Game() {
       </div>
 
       <div className="relative">
-        <img src={globo.src} alt="Globo" className="mb-4 w-64" />   
+        <img src={globo.src} alt="Globo" className="mb-4 w-[500px]" />   
         {manchas.map((_, index) => (
           <img
             key={index}
-            src={mancha.src} // Asegúrate de usar 'mancha' directamente si es una importación
+            src={mancha.src} 
             alt="Mancha"
             className="absolute w-14"
             style={{
@@ -122,18 +122,18 @@ function Game() {
         ))}
       </div>
 
-      <div className="w-full max-w-[280px] mb-8 mx-auto text-center">
-        <label htmlFor="word-list" className="block text-sm font-medium text-black mb-2">
+      <div className="w-full max-w-[350px] mb-2 mx-auto text-center">
+        <label htmlFor="word-list" className="block text-lg font-bold text-black mb-2">
           Selecciona una lista de palabras:
         </label>
         <select
           id="word-list"
           value={selectedList}
           onChange={(e) => setSelectedList(e.target.value)}
-          className="w-full py-3 px-2 h-12 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
+          className="w-full py-4 px-4 h-14 text-lg font-bold border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500"
         >
           {Object.keys(wordList).map((key) => (
-            <option key={key} value={key}>
+            <option key={key} value={key} className="text-lg font-bold"> 
               {key.charAt(0).toUpperCase() + key.slice(1)}
             </option>
           ))}
