@@ -280,13 +280,13 @@ body {
   width: 350px;
 }
 
+/*
 .scroll-message a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
 
-/*
 .scroll-message-2 {
   position: fixed;
   top: 50%;
@@ -297,7 +297,7 @@ body {
   padding: 20px;
   border-radius: 5px;
   display: none;
-} */
+} 
 
 .scroll-message p,
 .scroll-message-2 p {
@@ -311,7 +311,7 @@ body {
   color: #333;
   font-weight: bold;
   font-size: 14px;
-}
+}*/
 
 .scroll-message img {
   display: block;

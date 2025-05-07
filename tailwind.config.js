@@ -12,6 +12,7 @@ export default {
 			abel: ['Abel', 'sans-serif'],
 			baloo: ['"Baloo Thambi"', 'cursive'],
 			nunito: ['Nunito', 'sans-serif'],
+			asap: ['Asap', 'sans-serif'],
 		},
 		colors: {
 			qumir: '#59CB07',
