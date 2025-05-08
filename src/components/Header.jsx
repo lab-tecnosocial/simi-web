@@ -1,43 +1,57 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
-  console.log('Header renderizado');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownGamesOpen, setIsDropdownGamesOpen] = useState(false);
+  const [isDropdownCommunityOpen, setIsDropdownCommunityOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  
+  const dropdownGamesRef = useRef(null);
+  const dropdownCommunityRef = useRef(null);
 
-  // Efecto para manejar clics fuera del dropdown
+  // Efecto para manejar clics fuera de los dropdowns
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
+      if (
+        dropdownGamesRef.current && !dropdownGamesRef.current.contains(event.target)
+      ) {
+        setIsDropdownGamesOpen(false);
+      }
+      
+      if (
+        dropdownCommunityRef.current && !dropdownCommunityRef.current.contains(event.target)
+      ) {
+        setIsDropdownCommunityOpen(false);
       }
     };
 
-    // Añadir listener al documento
     document.addEventListener('mousedown', handleClickOutside);
     
-    // Limpiar el listener al desmontar
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
-  const toggleDropdown = (e) => {
-    // Prevenir comportamiento por defecto
+  const toggleDropdownGames = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    setIsDropdownGamesOpen(prev => !prev);
+    // Cerrar el otro dropdown
+    setIsDropdownCommunityOpen(false);
+  };
 
-    console.log('Botón de dropdown clicado'); // Esto debería aparecer al hacer clic
-    setIsDropdownOpen(prev => {
-      const newState = !prev;
-      console.log('Dropdown abierto:', newState); // Esto debería mostrar el nuevo estado
-      return newState;
-    });
+  const toggleDropdownCommunity = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDropdownCommunityOpen(prev => !prev);
+    // Cerrar el otro dropdown
+    setIsDropdownGamesOpen(false);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
+    // Cerrar dropdowns cuando se abre/cierra el menú móvil
+    setIsDropdownGamesOpen(false);
+    setIsDropdownCommunityOpen(false);
   };
 
   return (
@@ -46,35 +60,66 @@ const Header = () => {
         <div className="flex items-center justify-center md:justify-start">
           <img src="/assets/images/logo_simi2025.png" alt="Logo" className="h-16 mr-2" />
         </div>
-        <button className="md:hidden text-futuro hover:text-green-500 focus:outline-none" onClick={toggleMenu}>
-          Menu
+        
+        {/* Botón Hamburguesa */}
+        <button 
+          className="md:hidden text-futuro hover:text-green-500 focus:outline-none z-50"
+          onClick={toggleMenu}
+        >
+          <span className="block w-6 h-0.5 bg-futuro my-1"></span>
+          <span className="block w-6 h-0.5 bg-futuro my-1"></span>
+          <span className="block w-6 h-0.5 bg-futuro my-1"></span>
         </button>
-        <ul className={`flex-col md:flex md:flex-row md:space-x-8 header-navbar ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
-          <li>
-            <a className="text-futuro hover:text-green-500" href="/">Inicio</a>
+
+        {/* Menú principal */}
+        <ul 
+          className={`
+            fixed inset-0 bg-white flex-col items-center justify-center 
+            md:static md:flex md:flex-row md:space-x-8 
+            ${isMenuOpen ? 'flex' : 'hidden'} 
+            md:flex z-40
+          `}
+        >
+          <li className="md:hidden absolute top-4 right-4">
+            <button 
+              className="text-futuro hover:text-green-500 focus:outline-none"
+              onClick={toggleMenu}
+            >
+              ✕
+            </button>
           </li>
-          <li>
-            <a className="text-futuro hover:text-green-500" href="/sobre_nosotros">Sobre nosotros</a>
+          
+          <li className="my-2 md:my-0">
+            <a className="text-futuro hover:text-green-500" href="/" onClick={toggleMenu}>Inicio</a>
           </li>
-          <li className="relative" ref={dropdownRef}>
+          
+          <li className="my-2 md:my-0">
+            <a className="text-futuro hover:text-green-500" href="/sobre_nosotros" onClick={toggleMenu}>Sobre nosotros</a>
+          </li>
+          
+          {/* Dropdown Juegos */}
+          <li className="relative my-2 md:my-0" ref={dropdownGamesRef}>
             <button
               type="button"
               className="text-futuro hover:text-green-500 focus:outline-none flex items-center"
-              onClick={toggleDropdown}
+              onClick={toggleDropdownGames}
             >
               Juegos 
-              <i className={`fa fa-chevron-${isDropdownOpen ? 'up' : 'down'} ml-1`}></i>
+              <i className={`fa fa-chevron-${isDropdownGamesOpen ? 'up' : 'down'} ml-1`}></i>
             </button>
-            {isDropdownOpen && (
+            {isDropdownGamesOpen && (
               <ul 
-                className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
-                onClick={(e) => e.stopPropagation()} // Prevenir que el clic cierre el dropdown
+                className="md:absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
+                onClick={(e) => e.stopPropagation()}
               >
                 <li>
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
                     href="/juegos"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={() => {
+                      setIsDropdownGamesOpen(false);
+                      toggleMenu();
+                    }}
                   >
                     Juegos
                   </a>
@@ -83,7 +128,10 @@ const Header = () => {
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
                     href="/simiwanpullkana"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={() => {
+                      setIsDropdownGamesOpen(false);
+                      toggleMenu();
+                    }}
                   >
                     Juego de mesa
                   </a>
@@ -91,25 +139,30 @@ const Header = () => {
               </ul>
             )}
           </li>
-          <li className="relative" ref={dropdownRef}>
+          
+          {/* Dropdown Comunidad */}
+          <li className="relative my-2 md:my-0" ref={dropdownCommunityRef}>
             <button
               type="button"
               className="text-futuro hover:text-green-500 focus:outline-none flex items-center"
-              onClick={toggleDropdown}
+              onClick={toggleDropdownCommunity}
             >
               Comunidad 
-              <i className={`fa fa-chevron-${isDropdownOpen ? 'up' : 'down'} ml-1`}></i>
+              <i className={`fa fa-chevron-${isDropdownCommunityOpen ? 'up' : 'down'} ml-1`}></i>
             </button>
-            {isDropdownOpen && (
+            {isDropdownCommunityOpen && (
               <ul 
-                className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
-                onClick={(e) => e.stopPropagation()} // Prevenir que el clic cierre el dropdown
+                className="md:absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
+                onClick={(e) => e.stopPropagation()}
               >
                 <li>
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
-                    href="/juegos"
-                    onClick={() => setIsDropdownOpen(false)}
+                    href="/eventos"
+                    onClick={() => {
+                      setIsDropdownCommunityOpen(false);
+                      toggleMenu();
+                    }}
                   >
                     Eventos
                   </a>
@@ -117,8 +170,11 @@ const Header = () => {
                 <li>
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
-                    href="/eventos"
-                    onClick={() => setIsDropdownOpen(false)}
+                    href="/blog"
+                    onClick={() => {
+                      setIsDropdownCommunityOpen(false);
+                      toggleMenu();
+                    }}
                   >
                     Blog
                   </a>
@@ -127,7 +183,10 @@ const Header = () => {
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
                     href="/preguntas_frecuentes"
-                    onClick={() => setIsDropdownOpen(false)}
+                    onClick={() => {
+                      setIsDropdownCommunityOpen(false);
+                      toggleMenu();
+                    }}
                   >
                     Preguntas frecuentes
                   </a>
@@ -135,15 +194,18 @@ const Header = () => {
               </ul>
             )}
           </li>
-          <li>
-            <a className="text-futuro hover:text-green-500" href="/apoyenos">Apóyenos</a>
+          
+          <li className="my-2 md:my-0">
+            <a className="text-futuro hover:text-green-500" href="/apoyenos" onClick={toggleMenu}>Apóyenos</a>
           </li>
-          <li>
+          
+          <li className="my-2 md:my-0">
             <a className="text-futuro hover:text-green-500" href="#">
               <i className="fas fa-globe"></i>
             </a>
           </li>
-          <li>
+          
+          <li className="my-2 md:my-0">
             <a className="text-futuro hover:text-green-500" href="#">
               <i className="fas fa-sun"></i>
             </a>
