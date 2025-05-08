@@ -109,7 +109,7 @@ const Header = () => {
             </button>
             {isDropdownGamesOpen && (
               <ul 
-                className="md:absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
+                className="md:absolute left-0 mt-2 w-48 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
@@ -152,7 +152,7 @@ const Header = () => {
             </button>
             {isDropdownCommunityOpen && (
               <ul 
-                className="md:absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50"
+                className="md:absolute left-0 mt-2 w-48 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
