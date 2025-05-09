@@ -1,7 +1,8 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import Slider from "../components/eventos/Slider";
-import "../styles/global.css"; // Importa tus estilos globales si es necesario
+import EventosList from "../components/eventos/EventosList";
+import "../styles/global.css";
 ---
 
 <PageLayout
@@ -14,10 +15,10 @@ import "../styles/global.css"; // Importa tus estilos globales si es necesario
     <Slider client:load />
   </div>
   <div class="p-4">
-    <h1 class="text-4xl font-bold mb-4">Eventos</h1>
-    <p>
-      Aquí puedes listar los próximos eventos, actividades y cómo participar.
-    </p>
-    {/* Importar aca el contenido */}
+    {/*Componente EventosList*/}
+    <EventosList client:load />
   </div>
+
 </PageLayout>
+
+
