@@ -33,7 +33,7 @@ const Glossary = () => {
         backgroundPosition: 'top center',
       }}
     >
-      <div className="absolute inset-0 bg-white bg-opacity-85 z-0" />
+      <div className="absolute inset-0 bg-white bg-opacity-90 z-0" />
       <div className="relative z-10 w-full max-w-6xl">
         {/* Logo */}
         <div className="flex justify-center mb-4">
@@ -114,11 +114,7 @@ const Glossary = () => {
                               mr-3
                             "
                           >
-                            <img
-                              src="/assets/images/Voice.png"
-                              alt="Play audio"
-                              className="w-6 h-6"
-                            />
+                            <i className="fa fa-volume-up text-[#58CB05] text-xl" aria-hidden="true"></i>
                           </button>
                           <span>
                             <strong>{entry.word}</strong>: {entry.definition}
@@ -150,11 +146,7 @@ const Glossary = () => {
                           mr-3
                         "
                       >
-                        <img
-                          src="/assets/images/Voice.png"
-                              alt="Play audio"
-                              className="w-6 h-6"
-                        />
+                        <i className="fa fa-volume-up text-[#58CB05] text-xl" aria-hidden="true"></i>
                       </button>
                       <span>
                         <strong>{entry.word}</strong>: {entry.definition}
