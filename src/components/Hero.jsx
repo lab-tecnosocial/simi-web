@@ -3,7 +3,7 @@ const Hero = () => {
     <section className="relative flex justify-center items-center min-h-screen p-10 overflow-hidden">
 
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 z-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
         style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
       ></div>
 
