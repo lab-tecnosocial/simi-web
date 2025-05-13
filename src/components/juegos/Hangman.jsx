@@ -3,7 +3,7 @@ import Word from './Word';
 import Keyboard from './Keyboard';
 import GameOver from './GameOver';
 import wordList from './WordList';
-import fondoCielo from '../assets/images/Nubes.gif';
+import fondoCielo from '../assets/images/nubes.gif';
 import globo from '../assets/images/globo.png';
 import mancha from '../assets/images/mancha.png';
 
@@ -81,7 +81,7 @@ function Game() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8"
+      className="flex flex-col items-center min-h-screen bg-gray-100 pt-12 pb-2 px-4"
       style={{ 
         backgroundImage: `url(${fondoCielo.src})`,
         backgroundSize: 'cover',
