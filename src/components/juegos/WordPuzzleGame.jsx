@@ -146,13 +146,13 @@ const WordPuzzleGame = () => {
                 <h1 className="text-[32px] font-bold text-[#59CB07] font-[Nunito] mb-[1]">Sopa de letras</h1>
                 <h2 className="text-[24px] font-bold text-neutral-600 font-[Nunito] mb-4">Quillqa jilli</h2>
                 <p className="text-[16px] font-light text-neutral-600 font-[Nunito] mb-4">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
-                <div className="bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
-                    <label htmlFor="category" className="block mb-4 text-base font-bold">Elige un tema:</label>
+                <div className="w-[384.68px] h-[250.74px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4">
+                    <label htmlFor="category" className="text-left block mb-4 mt-[20px] ml-[27px] text-base font-bold">Elige un tema:</label>
                     <select
                         id="category"
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="border border-gray-300 p-2 rounded w-[300px] mb-4"
+                        className="border border-gray-300 p-2 rounded w-[300px] h-[52.51px] mb-4 drop-shadow-[2px_2px_2px_rgba(75,75,75,0.25)]"
                     >
                         {Object.keys(wordList).map(category => (
                             <option key={category} value={category}>
@@ -160,45 +160,40 @@ const WordPuzzleGame = () => {
                             </option>
                         ))}
                     </select>
-                    <div className="mb-4">
-                        <div className="w-[156.41px] h-[52.51px] text-[16px] bg-white rounded-lg shadow-md inline-block font-mono text-gray-800 flex items-center justify-center font-semibold">
-                        <i class="fa-regular fa-hourglass-half"></i>
+                    <div className="mb-4 flex items-center gap-4">
+                        
+                        <div className="w-[156px] h-[52.51px] text-[16px] bg-white rounded-lg inline-block font-nunito text-gray-800 flex items-center justify-center font-semibold ml-[26px] mr-[-8px] drop-shadow-[2px_2px_2px_rgba(75,75,75,0.25)]">
+                            <i className="fas fa-hourglass-half mr-[15px]"></i>
                             {String(Math.floor(timeLeft / 3600)).padStart(2, '0')}:
                             {String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0')}:
                             {String(timeLeft % 60).padStart(2, '0')}
                         </div>
-
-
-
-
                         <button
-  onClick={initializeGame}
-  className="flex items-center gap-2 px-4 py-2 rounded text-white font-semibold"
-  style={{ backgroundColor: '#59CB07' }}
->
-  <i className="fa-solid fa-play"></i>
-  {isGameActive ? 'Reiniciar' : 'Jugar'}
-</button>
-
-                    </div>
-                    
+                            onClick={initializeGame}
+                            className="flex items-center justify-center gap-2 px-4 py-2 rounded text-white font-semibold w-[136px] h-[52.51px] text-[16px] drop-shadow-[2px_2px_4px_rgba(89,203,7,0.50)]"
+                            style={{ backgroundColor: '#59CB07' }}
+                            >
+                            <i className="fas fa-play"></i>
+                            <span>{isGameActive ? 'Reiniciar' : 'Jugar'}</span>
+                        </button>
+                        </div>
                 </div>
-                <div className="bg-[#bef789] p-4 rounded mb-4">
+                <div className="w-[384.68px] h-[210.1px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
                     <div className="mb-4">
-                        <h2>Palabras a buscar:</h2>
-                        <div className="flex flex-wrap">
+                    <h2 className="text-left ml-[18px]">Palabras a buscar:</h2>
+                        <div className="flex flex-wrap items-center justify-center">
                             {answerWords.map((word, index) => (
-                                <span key={index} className="bg-white text-gray-800 px-2 py-1 rounded-full m-1">
+                                <span key={index} className="flex items-center justify-center font-black font-[Nunito] w-[73.94px] h-[41.79px] bg-white text-gray-800 px-2 py-1 rounded-[5.36px] m-1 drop-shadow-[2px_2px_5px_rgba(89,203,7,0.25)]">
                                     {word}
                                 </span>
                             ))}
                         </div>
                     </div>
                     <div className="mb-4">
-                        <h2>Palabras encontradas:</h2>
-                        <div className="flex flex-wrap">
+                        <h2 className="text-left ml-[18px]">Palabras encontradas:</h2>
+                        <div className="flex flex-wrap items-center justify-center">
                             {foundWords.map((word, index) => (
-                                <span key={index} className="bg-white text-green-800 px-2 py-1 rounded-full m-1">
+                                <span key={index} className="flex items-center justify-center font-black font-[Nunito] w-[73.94px] h-[41.79px] bg-white text-gray-800 px-2 py-1 rounded-[5.36px] m-1 drop-shadow-[2px_2px_5px_rgba(89,203,7,0.25)]">
                                     {word}
                                 </span>
                             ))}
@@ -207,7 +202,7 @@ const WordPuzzleGame = () => {
                     
                     
                 </div>
-                {!isGameActive && foundWords.length === answerWords.length && (
+                {!isGameActive && foundWords.length === 0 && (
                     <div className="bg-green-200 p-4 rounded mb-4">
                         <h2>¡Felicitaciones! Has encontrado todas las palabras.</h2>
                     </div>
@@ -224,33 +219,45 @@ const WordPuzzleGame = () => {
                     </div>
                 )}
             </div>
-            <div className="flex-grow flex items-center justify-center">
-                <table className="table-auto border-collapse border border-gray-300">
+            <div className="flex-grow flex items-center justify-center rounded-[50px]">
+                <div className="w-[650px] h-[650px] shadow-lg shadow-[#59CB07] flex items-center justify-center ml-[55px]">
+                    <table className="w-[650px] h-[650px] table-auto border-collapse border border-gray-300 font-nunito font-bold text-[24px] text-neutral-600">
                     <tbody>
                         {matrix.map((rowData, rowIndex) => (
-                            <tr key={rowIndex}>
-                                {rowData.map((cell, colIndex) => (
-                                    <td
-                                        key={colIndex}
-                                        onClick={() => handleLetterClick(cell.letter, rowIndex, colIndex)}
-                                        style={{
-                                            backgroundColor: selectedLetters.some((l) => l.row === rowIndex && l.col === colIndex) ? 'lightblue' : (highlightAnswers && cell.isAnswer ? 'aliceblue' : 'white'),
-                                            cursor: 'pointer',
-                                            width: '40px',
-                                            height: '40px',
-                                            textAlign: 'center',
-                                            verticalAlign: 'middle',
-                                        }}
-                                        className="border border-gray-300"
-                                    >
-                                        <h3>{cell.letter}</h3>
-                                    </td>
-                                ))}
-                            </tr>
+                        <tr key={rowIndex}>
+                            {rowData.map((cell, colIndex) => (
+                            <td
+                                key={colIndex}
+                                onClick={() => handleLetterClick(cell.letter, rowIndex, colIndex)}
+                                style={{
+                                backgroundColor: selectedLetters.some((l) => l.row === rowIndex && l.col === colIndex)
+                                    ? 'rgba(89, 203, 7, 0.5)'
+                                    : (highlightAnswers && cell.isAnswer ? 'black' : 'white'),
+                                cursor: 'pointer',
+                                width: '40px',
+                                height: '40px',
+                                textAlign: 'center',
+                                verticalAlign: 'middle',
+                                borderRadius: (() => {
+                                    const index = selectedLetters.findIndex(l => l.row === rowIndex && l.col === colIndex);
+                                    if (selectedLetters.length === 1) return '50%'; 
+                                    if (index === 0) return '30px 0 0 30px'; 
+                                    if (index === selectedLetters.length - 1) return '0 30px 30px 0'; 
+                                    return '0'; 
+                                })(),
+                                }}
+                                className="border border-gray-300"
+                            >
+                                <h3>{cell.letter}</h3>
+                            </td>
+                            ))}
+                        </tr>
                         ))}
                     </tbody>
-                </table>
-            </div>
+                    </table>
+                </div>
+                </div>
+
         </div>
     );
 };
