@@ -53,7 +53,7 @@ const { titulo, descripcion, imagen } = Astro.props;
     <meta property="twitter:image" content={new URL(imagen, Astro.url)} />
   </head>
   <body>
-    <Header />
+    <Header client:load />
     <slot />
     <Footer />
   </body>
