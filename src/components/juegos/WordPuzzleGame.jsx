@@ -74,11 +74,12 @@ const WordPuzzleGame = () => {
     const [matrix, setMatrix] = useState([]);
     const [selectedLetters, setSelectedLetters] = useState([]);
     const [highlightAnswers, setHighlightAnswers] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(180); // 3 minutos en segundos
+    const [timeLeft, setTimeLeft] = useState(180); 
     const [isGameActive, setIsGameActive] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('animales');
     const [answerWords, setAnswerWords] = useState([]);
     const [foundWords, setFoundWords] = useState([]);
+    const [highlightedCells, setHighlightedCells] = useState([]);
 
     const getRandomWords = (category, count) => {
         const words = wordList[category];
@@ -129,12 +130,10 @@ const WordPuzzleGame = () => {
         setSelectedLetters((prev) => {
             const existingIndex = prev.findIndex(l => l.row === row && l.col === col);
             if (existingIndex !== -1) {
-                // Si la letra ya está seleccionada, deseleccionarla
                 const newSelection = [...prev];
                 newSelection.splice(existingIndex, 1);
                 return newSelection;
             } else {
-                // Si la letra no está seleccionada, seleccionarla
                 return [...prev, { letter, row, col }];
             }
         });
@@ -142,12 +141,12 @@ const WordPuzzleGame = () => {
 
     return (
         <div className="flex flex-col md:flex-row min-h-screen p-4 max-w-screen-lg mx-auto">
-            <div className="flex flex-col items-center justify-center text-center mb-6 w-full md:w-1/3 mx-auto">
+            <div className="flex flex-col items-center justify-center text-center mb-24 w-full md:w-1/3 mx-auto">
                 <h1 className="text-[32px] font-bold text-[#59CB07] font-[Nunito] mb-[1]">Sopa de letras</h1>
-                <h2 className="text-[24px] font-bold text-neutral-600 font-[Nunito] mb-4">Quillqa jilli</h2>
-                <p className="text-[16px] font-light text-neutral-600 font-[Nunito] mb-4">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
-                <div className="w-[384.68px] h-[250.74px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4">
-                    <label htmlFor="category" className="text-left block mb-4 mt-[20px] ml-[27px] text-base font-bold">Elige un tema:</label>
+                <h2 className="text-[24px] font-bold text-neutral-600 font-[Nunito] mb-2">Quillqa jilli</h2>
+                <p className="text-[16px] font-light text-neutral-600 font-[Nunito] mb-2">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
+                <div className="w-[384.68px] h-[195px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4">
+                    <label htmlFor="category" className="text-left block mb-4 mt-[-5px] ml-[27px] text-base font-bold">Elige un tema:</label>
                     <select
                         id="category"
                         value={selectedCategory}
@@ -178,8 +177,8 @@ const WordPuzzleGame = () => {
                         </button>
                         </div>
                 </div>
-                <div className="w-[384.68px] h-[210.1px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
-                    <div className="mb-4">
+                <div className="w-[384.68px] h-[190px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
+                    <div className="mb-2">
                     <h2 className="text-left ml-[18px]">Palabras a buscar:</h2>
                         <div className="flex flex-wrap items-center justify-center">
                             {answerWords.map((word, index) => (
@@ -220,40 +219,128 @@ const WordPuzzleGame = () => {
                 )}
             </div>
             <div className="flex-grow flex items-center justify-center rounded-[50px]">
-                <div className="w-[650px] h-[650px] shadow-lg shadow-[#59CB07] flex items-center justify-center ml-[55px]">
-                    <table className="w-[650px] h-[650px] table-auto border-collapse border border-gray-300 font-nunito font-bold text-[24px] text-neutral-600">
+                <div className="w-[570px] h-[550px] flex items-center justify-center ml-[55px] mt-[-100px]">
+                    <table className="w-[570px] h-[550px] table-auto border-collapse border border-gray-300 font-nunito font-bold text-[24px] text-neutral-600">
                     <tbody>
-                        {matrix.map((rowData, rowIndex) => (
+                    {matrix.map((rowData, rowIndex) => (
                         <tr key={rowIndex}>
-                            {rowData.map((cell, colIndex) => (
+                        {rowData.map((cell, colIndex) => {
+                            const isPartOfFoundWord = foundWords.some(word =>
+                            word.split('').every((letter, i) => {
+                                return selectedLetters.some(
+                                l => l.letter === letter && l.row === rowIndex && l.col === colIndex + i
+                                );
+                            })
+                            );
+
+                            return (
                             <td
                                 key={colIndex}
-                                onClick={() => handleLetterClick(cell.letter, rowIndex, colIndex)}
+                                onClick={() => {
+                                const index = selectedLetters.findIndex(
+                                    (l) => l.row === rowIndex && l.col === colIndex
+                                );
+
+                                if (index !== -1) {
+                                    // Si ya fue seleccionada
+                                    if (index < selectedLetters.length - 1) {
+                                    setSelectedLetters(selectedLetters.slice(0, index));
+                                    } else {
+                                    setSelectedLetters(selectedLetters.slice(0, -1));
+                                    }
+                                } else {
+                                    setSelectedLetters([
+                                    ...selectedLetters,
+                                    { letter: cell.letter, row: rowIndex, col: colIndex },
+                                    ]);
+                                }
+                                }}
                                 style={{
-                                backgroundColor: selectedLetters.some((l) => l.row === rowIndex && l.col === colIndex)
+                                backgroundColor: selectedLetters.some(
+                                    (l) => l.row === rowIndex && l.col === colIndex
+                                )
                                     ? 'rgba(89, 203, 7, 0.5)'
-                                    : (highlightAnswers && cell.isAnswer ? 'black' : 'white'),
+                                    : cell.isAnswer && foundWords.some(word => word.includes(cell.letter))
+
+                                    ? 'rgba(89, 203, 7, 0.5)'
+                                    : highlightAnswers && cell.isAnswer
+                                    ? 'black'
+                                    : 'white',
                                 cursor: 'pointer',
                                 width: '40px',
                                 height: '40px',
                                 textAlign: 'center',
                                 verticalAlign: 'middle',
                                 borderRadius: (() => {
-                                    const index = selectedLetters.findIndex(l => l.row === rowIndex && l.col === colIndex);
-                                    if (selectedLetters.length === 1) return '50%'; 
-                                    if (index === 0) return '30px 0 0 30px'; 
-                                    if (index === selectedLetters.length - 1) return '0 30px 30px 0'; 
-                                    return '0'; 
+                                    const index = selectedLetters.findIndex(
+                                    (l) => l.row === rowIndex && l.col === colIndex
+                                    );
+                                    if (index === -1) return '0';
+
+                                    if (selectedLetters.length === 1) return '50%';
+
+                                    const first = selectedLetters[0];
+                                    const last = selectedLetters[selectedLetters.length - 1];
+
+                                    console.log("....");
+                                    console.log(cell.isAnswer);
+                                    console.log(foundWords.some(word => word.includes(cell.letter)));
+
+                                    const isHorizontal = first.row === last.row;
+                                    const isVertical = first.col === last.col;
+                                    const isDiagonal =
+                                    Math.abs(first.row - last.row) === Math.abs(first.col - last.col);
+
+                                    const isRight = isHorizontal && first.col < last.col;
+                                    const isLeft = isHorizontal && first.col > last.col;
+                                    const isDown = isVertical && first.row < last.row;
+                                    const isUp = isVertical && first.row > last.row;
+
+                                    const isDownRight =
+                                    isDiagonal && first.row < last.row && first.col < last.col;
+                                    const isDownLeft =
+                                    isDiagonal && first.row < last.row && first.col > last.col;
+                                    const isUpRight =
+                                    isDiagonal && first.row > last.row && first.col < last.col;
+                                    const isUpLeft =
+                                    isDiagonal && first.row > last.row && first.col > last.col;
+
+                                    if (index === 0) {
+                                    if (isRight) return '30px 0 0 30px';
+                                    if (isLeft) return '0 30px 30px 0';
+                                    if (isDown) return '30px 30px 0 0';
+                                    if (isUp) return '0 0 30px 30px';
+                                    if (isDownRight) return '30px 0 0 30px';
+                                    if (isDownLeft) return '0 30px 30px 0';
+                                    if (isUpRight) return '30px 0 0 30px';
+                                    if (isUpLeft) return '0 30px 30px 0';
+                                    }
+
+                                    if (index === selectedLetters.length - 1) {
+                                    if (isRight) return '0 30px 30px 0';
+                                    if (isLeft) return '30px 0 0 30px';
+                                    if (isDown) return '0 0 30px 30px';
+                                    if (isUp) return '30px 30px 0 0';
+                                    if (isDownRight) return '0 30px 30px 0';
+                                    if (isDownLeft) return '30px 0 0 30px';
+                                    if (isUpRight) return '0 30px 30px 0';
+                                    if (isUpLeft) return '30px 0 0 30px';
+                                    }
+
+                                    return '0';
                                 })(),
                                 }}
                                 className="border border-gray-300"
                             >
                                 <h3>{cell.letter}</h3>
                             </td>
-                            ))}
+                            );
+                        })}
                         </tr>
-                        ))}
+                    ))}
                     </tbody>
+
+
                     </table>
                 </div>
                 </div>
