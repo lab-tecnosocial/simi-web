@@ -52,17 +52,21 @@ const EventosList = () => {
 
               <div className="flex items-center justify-between pt-4">
                 <button className="flex items-center bg-white hover:bg-gray-100 text-gray-800 font-extrabold text-lg px-5 py-2.5 rounded-lg border border-gray-300 shadow-md transition">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                  <img
+                    src="/assets/images/GoogleCalendar.png"
+                    alt="Google Calendar"
+                    className="w-6 h-6 mr-2"
+                  />
                   Agregar al calendario
                 </button>
 
+                {/* Imagen Users.png como ícono */}
                 <div className="flex items-center text-gray-600 text-sm">
-                  <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 7H7v6h6V7z" />
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-3-9a1 1 0 100 2 1 1 0 000-2zm6 1a1 1 0 112-0 1 1 0 01-2 0z" clipRule="evenodd" />
-                  </svg>
+                  <img
+                    src="/assets/images/Users.png"
+                    alt="Usuarios"
+                    className="w-5 h-5 mr-1"
+                  />
                   25
                 </div>
               </div>
@@ -70,15 +74,13 @@ const EventosList = () => {
           </div>
         ))}
 
-        
-          <div className="flex flex-col lg:flex-row bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden w-full h-[560px]">
-        
+        {/* Evento vacío */}
+        <div className="flex flex-col lg:flex-row bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden w-full h-[560px]">
           <div className="lg:w-1/6 bg-white flex flex-col items-center justify-center text-center px-4">
-            <p className="text-gray-400 text-2xl uppercase tracking-widest">Próximamente</p>
-            <p className="text-6xl font-extrabold text-gray-300">?</p>
+            <p className="text-gray-400 text-xl uppercase tracking-widest">Próximamente</p>
           </div>
 
-         
+
           <div className="lg:w-3/5 bg-gray-100 flex items-center justify-center">
             <span className="text-5xl text-gray-400 font-extrabold transition-opacity duration-1000 ease-out opacity-0 animate-fade-in">
               Próximamente
