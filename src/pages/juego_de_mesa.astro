@@ -1,0 +1,138 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import "../styles/global.css";
+import Recursos from "../components/simiwanpullkana/recursos";
+import CardsSection from "../components/simiwanpullkana/cardsSection";
+import LogoSection from "../components/simiwanpullkana/logoSection";
+---
+
+<PageLayout
+  titulo="Simiwanpukllana"
+  descripcion="Disfruta nuestro juego de mesa"
+  imagen="/assets/img/eventos.jpg"
+>
+  <!-- Sección de Hero -->
+  <div id="novedadesjuego" class="w-full overflow-hidden">
+    <div
+      class="w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] relative"
+    >
+      <img
+        src="/assets/images/juego/banner.jpg"
+        alt="hero"
+        class="mx-auto w-full h-full object-cover absolute brightness-75"
+      />
+    </div>
+  </div>
+
+  <!-- Sección de Imagen y Texto -->
+  <section class="mt-8">
+    <div class="flex justify-center items-center mb-6">
+      <div class="w-full md:w-3/4 lg:w-3/4 p-6 text-center">
+        <img
+          src="/assets/images/juego/atuq_logo.png"
+          alt=""
+          class="mx-auto h-[150px]"
+        />
+        <p class="mt-4 font-[Nunito] font-light text-[20px]">
+          Atuq Yachachiq se trata de un colectivo editorial fundada en 2019 que
+          se dedica a la creación y difusión de material didáctico y literario
+          en Quechua de Cochabamba. Actualmente nos encontramos presentes en
+          Cochabamba, Bolivia.
+        </p>
+      </div>
+    </div>
+    <br />
+
+    <div class="flex flex-col lg:flex-row items-center justify-center">
+      <div class="w-full md:w-1/2 p-4 lg:w-1/2 sm:order-1 lg:order-2">
+        <div class="carousel mt-4 text-center">
+          <h2 class="font-[Nunito] text-3xl font-black mb-2">
+            Descarga la versión digital del juego
+          </h2>
+          <Recursos />
+        </div>
+      </div>
+
+      <div
+        class="w-full md:w-[608px] lg:w-[500px] h-auto bg-[#fff4cd] border-4 border-[#fff4cd] rounded-lg p-8 text-center relative mb-6 lg:mb-0 sm:order-2 lg:order-1"
+      >
+        <img
+          src="/assets/images/juego/logobyn.png"
+          alt="logosimiwanpukllana"
+          class="mt-[-50px] h-[315px] w-auto mx-auto"
+        />
+        <p
+          class="mt-[-55px] text-[19px] text-justify text-gray-700 font-[Nunito] font-light"
+        >
+          Simiwan Pukllana se trata de un <span class="font-bold"
+            >juego de mesa</span
+          > divertido y educativo creado para
+          <span class="font-bold">promover el quechua de Cochabamba.</span>
+        </p>
+        <br />
+        <p
+          class="text-[19px] text-justify text-gray-700 font-[Nunito] font-light"
+        >
+          El título del juego se traduce en español como <span class="font-bold"
+            >“juguemos con Simi”</span
+          >, Simi se trata de una ranita que ama difundir su lengua materna que
+          es el quechua.
+        </p>
+        <br />
+        <p
+          class="text-[19px] text-justify text-gray-700 font-[Nunito] font-light"
+        >
+          A medida que las personas avanzan en “Simiwan Pukllana,” se
+          encontrarán con
+          <span class="font-bold"
+            >tarjetas de preguntas que pondrán a prueba sus conocimientos
+            lingüísticos</span
+          > en temas relacionados con comida, colores, números y toponimia en quechua,
+          entre otros.
+        </p>
+        <br />
+        <p
+          class="text-[19px] text-justify text-gray-700 font-[Nunito] font-light"
+        >
+          Este juego no solo se trata de ganar; busca fomentar la conciencia
+          sobre la importancia de preservar y revitalizar la lengua quechua,
+          especialmente en un departamento de Bolivia con una amplia comunidad
+          bilingüe (quechua-español) como Cochabamba.
+        </p>
+        <br />
+        <p
+          class="text-[19px] text-justify text-gray-700 font-[Nunito] font-light"
+        >
+          Con un diseño accesible para familias, amistades, estudiantes y
+          docentes, el juego promueve el trabajo en equipo, el aprendizaje y el <span
+            class="font-bold"
+            >aprecio por la diversidad cultural y lingüística</span
+          >, ayudando a preservar y aumentar la vitalidad de una de las lenguas
+          indígenas más habladas en Bolivia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección nuestros servicios -->
+  <section class="mt-8">
+    <CardsSection />
+  </section>
+
+  <!-- Sección del Logos -->
+  <section class="mt-8">
+    <!-- <h2 class="text-3xl font-bold text-black">Imágenes Destacadas</h2>  -->
+    <LogoSection />
+  </section>
+
+  <!-- Sección de Hero bottom-->
+  <div class="w-full overflow-hidden">
+    <div class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
+      <img
+        src="/assets/images/juego/wawasjugando.jpg"
+        alt="Wawas pukllaspa"
+        class="absolute inset-0 w-full h-full object-cover brightness-75"
+      />
+    </div>
+  </div>
+</PageLayout>
