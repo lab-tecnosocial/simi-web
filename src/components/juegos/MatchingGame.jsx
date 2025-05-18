@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
-import { gameData } from '../data/gameData';
-import winSound from '../assets/sounds/win.mp3';
-import loseSound from '../assets/sounds/lose.mp3';
+import { useState, useEffect } from 'react'; import { gameData } from '../data/gameData'; import winSound
+from '../assets/sounds/win.mp3'; import loseSound from '../assets/sounds/lose.mp3';
 
 const MatchingGame = () => {
   const [matchedPairs, setMatchedPairs] = useState([]);
@@ -112,53 +110,126 @@ const MatchingGame = () => {
   };
 
   return (
-    <div className="matching-game p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">Emparejamiento - Tinkuchispa pukllay</h1>
-
-      <div className="flex flex-col items-center text-center">
-        <div className="mb-4">
+    <div className="matching-game p-4 mt-10">
+      <h1 className="text-4xl text-[#59CB07] font-bold mb-2 text-center">Emparejamiento</h1>
+      <h2 className="text-center text-2xl text-[#4B4B4B] font-bold">Tinkuchispa pukllay</h2>
+      <div className="flex flex-col items-center text-center mt-8">
+        <div className="mb-4 text-center">
           <div className="mb-4">
-            <p className="text-sm mb-4">Kaypiqa juk dibujota juk sananpawan tinkuchinayki tiyan. Pukllasqa kay qhichwa simiykita wiñachinki.</p>
-            <p className="text-sm mb-4">Empareja imágenes con las palabras correspondientes. Asegúrate de que coincidan y mejora tu vocabulario mientras juegas.</p>
+            <p className="text-lg mb-4">Una la palabra con la imégen que le corresponde.</p>
           </div>
 
-          <div className="text-center mb-4">
-            <label htmlFor="category" className="block mb-4 text-base font-bold">Selecciona un tema:</label>
-            <select
-              id="category"
-              value={selectedTheme}
-              onChange={(e) => handleThemeChange(e.target.value)}
-              className="border border-gray-300 p-2 rounded w-64 text-center"
-            >
-              {['Numeros', 'Saludos', 'Animales', 'Familia', 'Anatomia', 'Pronombres'].map(theme => (
-                <option key={theme} value={theme}>
-                  {theme.charAt(0).toUpperCase() + theme.slice(1)}
-                </option>
-              ))}
-            </select>
+          <div className="text-center mb-4 p-6 bg-[rgba(89,203,7,0.2)] rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.2)] px-14">
+            <div className="text-left w-full mb-5">
+              <label htmlFor="category" className="block mb-4 text-lg font-bold">Elige un tema:</label>
+            </div>
+            <div className="relative text-left w-full">
+              <select
+                id="category"
+                value={selectedTheme}
+                onChange={(e) => handleThemeChange(e.target.value)}
+                className="text-lg border border-green-300 px-5 rounded-lg bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.2)] text-left font-bold w-full min-h-14 appearance-none"
+              >
+                {['Numeros', 'Saludos', 'Animales', 'Familia', 'Anatomia', 'Pronombres'].map(theme => (
+                  <option key={theme} value={theme} className="p-5">
+                    {theme.charAt(0).toUpperCase() + theme.slice(1)}
+                  </option>
+                ))}
+              </select>
+              {/* Custom Arrow */}
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-black"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+            <div className="flex w-full mt-5">
+              <div className="w-[30%] text-left">
+                <label htmlFor="category" className="block mb-4 text-lg font-bold">Tiempo:</label>
+              </div>
+              <div className="w-[70%] text-lg border border-green-300 rounded-lg bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.2)] items-center justify-center font-bold p-1">
+                <p id="clock-timer">02:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-1">
+          <div className="flex justify-center border border-[#66d400] rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.2)] bg-transparent p-4">
+            {randomItems.map(item => (
+              <div
+                key={item.id}
+                draggable
+                onDragStart={() => setDraggedWord(item.word)}
+                className="flex flex-col items-center m-4"
+              >
+                {!Object.values(positions).includes(item.id) && (
+                  <img src={item.image} alt={item.word} className="w-24 h-24 object-cover" />
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="flex justify-between space-x-4">
-            <button
-              onClick={checkResults}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-            >
-              Verificar Resultados
-            </button>
+          <div className="flex w-full min-h-[200px] pt-5 relative justify-between gap-x-8 max-w-4xl">
+            {shuffledWords.map((word, index) => (
+              <div
+                key={index}
+                className="text-center text-xl cursor-pointer border-2 border-[#66d400] rounded-3xl bg-transparent w-40 h-40 shadow-[4px_4px_8px_rgba(0,0,0,0.2)] flex flex-col items-center justify-between"
+                onDrop={() => handleDrop(word, index)}
+                onDragOver={(e) => e.preventDefault()}
+              >
+                {/* Word with underline */}
+                <div className="relative w-full text-center">
+                  <p className="font-bold text-[#4B4B4B] pt-2">{word}</p>
+                  <div className="absolute left-0 w-full h-[2px] bg-[#66d400] mt-1"></div>
+                </div>
 
-            <button
-              onClick={retryGame}
-              className="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition"
-            >
-              Volver a Intentar
-            </button>
+                {/* Image placement */}
+                {positions[index] && (
+                  <img
+                    src={randomItems.find(item => item.id === positions[index]).image}
+                    alt={word}
+                    className="w-24 h-24 object-cover z-10 mb-3"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
 
-            <button
-              onClick={resetGame}
-              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
-            >
-              Jugar de Nuevo
-            </button>
+          <div className="grid grid-cols-3 w-full max-h-16 mb-10 gap-x-4">
+            <div className="w-full">
+              <button
+                onClick={checkResults}
+                className="w-full px-5 py-4 bg-[#1EAFF7] text-white rounded-xl shadow-md flex items-center gap-2 hover:bg-blue-600 transition"
+              >
+                <div className="text-lg w-full text-center font-bold">Comprobar</div>
+              </button>
+            </div>
+
+            <div className="w-full">
+              <button
+                onClick={retryGame}
+                className="w-full px-4 py-4 bg-[#FFC803] text-black rounded-xl shadow-md flex items-center gap-2 hover:bg-yellow-600 transition"
+              >
+                <div className="text-lg w-full text-center font-bold">Reintentar</div>
+              </button>
+            </div>
+
+            <div className="w-full">
+              <button
+                onClick={resetGame}
+                className="w-full px-4 py-4 bg-[#FF4B4B] text-white rounded-xl shadow-md flex items-center gap-2 hover:bg-red-600 transition"
+              >
+                <div className="text-lg w-full text-center font-bold">Jugar de nuevo</div>
+              </button>
+            </div>
           </div>
 
           {gameResults && (
@@ -174,43 +245,6 @@ const MatchingGame = () => {
               </p>
             </div>
           )}
-        </div>
-
-        <div className="flex flex-col mt-1">
-          <div className="flex justify-center">
-            {randomItems.map(item => (
-              <div
-                key={item.id}
-                draggable
-                onDragStart={() => setDraggedWord(item.word)}
-                className="flex flex-col items-center m-4"
-              >
-                {!Object.values(positions).includes(item.id) && (
-                  <img src={item.image} alt={item.word} className="w-24 h-24 object-cover" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center w-full min-h-[200px] relative">
-            {shuffledWords.map((word, index) => (
-              <div
-                key={index}
-                className="text-center text-xl m-2 cursor-pointer border-2 border-[#66d400] p-4 rounded-lg bg-transparent w-40 h-40"
-                onDrop={() => handleDrop(word, index)}
-                onDragOver={(e) => e.preventDefault()}
-              >
-                {word}
-                {positions[index] && (
-                  <img
-                    src={randomItems.find(item => item.id === positions[index]).image}
-                    alt={word}
-                    className="absolute w-24 h-24 object-cover z-10"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
