@@ -39,7 +39,7 @@ const cardsSection = () => {
         <div className="container mx-auto mt-16">
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 {cardsData.map((card, index) => (
-                    <div key={index} className="bg-[#FFC803]/20 rounded-3xl h-80 sm:aspect-[5/4] mx-auto">
+                    <div key={index} className="bg-[#FFC803]/20 rounded-3xl min-h-[300px] sm:aspect-[5/4] mx-auto">
                         <div className="flex items-center justify-center w-full text-center mt-10">
                           <img src={card.image} alt={card.title} className="h-12" />
                         </div>
