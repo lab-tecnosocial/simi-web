@@ -26,13 +26,13 @@ const EventosList = () => {
             key={evento.id}
             className="flex flex-col lg:flex-row bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden w-full"
           >
-            {/* Fecha */}
+
             <div className="lg:w-1/6 bg-white flex flex-col items-center justify-start py-16 text-center">
               <p className="text-gray-600 text-3xl uppercase tracking-widest">{evento.mes}</p>
               <p className="text-8xl font-extrabold text-gray-600">{evento.dia}</p>
             </div>
 
-            {/* Imagen */}
+
             <div className="lg:w-3/5 h-[680px] lg:h-auto">
               <img
                 src={evento.imagen}
@@ -41,7 +41,7 @@ const EventosList = () => {
               />
             </div>
 
-            {/* Detalles */}
+
             <div className="lg:w-2/5 p-10 flex flex-col justify-between space-y-6">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900">{evento.titulo}</h3>
@@ -60,7 +60,7 @@ const EventosList = () => {
                   Agregar al calendario
                 </button>
 
-                {/* Imagen Users.png como ícono */}
+
                 <div className="flex items-center text-gray-600 text-sm">
                   <img
                     src="/assets/images/Users.png"
@@ -74,17 +74,20 @@ const EventosList = () => {
           </div>
         ))}
 
-        {/* Evento vacío */}
+
         <div className="flex flex-col lg:flex-row bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden w-full h-[560px]">
           <div className="lg:w-1/6 bg-white flex flex-col items-center justify-center text-center px-4">
             <p className="text-gray-400 text-xl uppercase tracking-widest">Próximamente</p>
           </div>
 
-
-          <div className="lg:w-3/5 bg-gray-100 flex items-center justify-center">
-            <span className="text-5xl text-gray-400 font-extrabold transition-opacity duration-1000 ease-out opacity-0 animate-fade-in">
-              Próximamente
-            </span>
+          <div className="lg:w-3/5 bg-gray-100 flex items-center justify-center p-8">
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src="/assets/images/simi_calendario.png"
+                alt="Próximamente"
+                className="w-auto h-auto object-contain transform scale-75"
+              />
+            </div>
           </div>
 
           <div className="lg:w-2/5 p-10 flex flex-col justify-center items-center text-center space-y-4">
