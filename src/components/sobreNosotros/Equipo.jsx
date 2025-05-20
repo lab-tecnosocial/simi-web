@@ -36,7 +36,7 @@ const Equipo = () => {
       nombre: "Ruben Pol Ventura Huchani",
       imagen: "/assets/images/equipo/VENTURA_POL.jpg",
       linkedin: "https://www.linkedin.com/in/ruben-pol-ventura-huchani-846609337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      profesion: "Estudiante de informática",
+      profesion: "Estudiante de Ingeniería de Sistemas y Economía",
     },
     {
       nombre: "Alex Ojeda Copa",
