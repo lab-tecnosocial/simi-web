@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; import { gameData } from '../data/gameData'; import winSound
+import { useState, useEffect, useRef } from 'react'; import { gameData } from '../data/gameData'; import winSound
 from '../assets/sounds/win.mp3'; import loseSound from '../assets/sounds/lose.mp3';
 
 const MatchingGame = () => {
@@ -8,7 +8,10 @@ const MatchingGame = () => {
   const [draggedWord, setDraggedWord] = useState(null);
   const [randomItems, setRandomItems] = useState([]);
   const [shuffledWords, setShuffledWords] = useState([]);
-  const [positions, setPositions] = useState({}); 
+  const [positions, setPositions] = useState({});
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const timerRef = useRef(null);
 
   const getRandomItems = (array, count) => {
     const shuffled = array.sort(() => 0.5 - Math.random());
@@ -16,8 +19,31 @@ const MatchingGame = () => {
   };
 
   useEffect(() => {
-    startNewGame(); 
+    startNewGame();
+    startClock();
+    return () => clearInterval(timerRef);
   }, [selectedTheme]);
+
+  const startClock = () => {
+    setTime(0);
+    setIsRunning(true);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
+  };
+
+  const stopClock = () => {
+    clearInterval(timerRef.current);
+    setIsRunning(false);
+  };
+
+  const formatTime = (seconds) => {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const secs = String(seconds % 60).padStart(2, "0");
+    return `${hrs}:${mins}:${secs}`;
+  };
 
   const startNewGame = () => {
     const items = getRandomItems(gameData.temas[selectedTheme], 5);
@@ -33,6 +59,7 @@ const MatchingGame = () => {
     setMatchedPairs([]);
     setGameResults(null);
     setPositions({});
+    startClock();
   };
 
   const handleDrop = (targetWord, index) => {
@@ -78,6 +105,7 @@ const MatchingGame = () => {
   };
 
   const checkResults = () => {
+    stopClock();
     // Obtener los elementos aleatorios del tema actual
     const currentThemeItems = gameData.temas[selectedTheme];
 
@@ -102,6 +130,7 @@ const MatchingGame = () => {
 
   const resetGame = () => {
     startNewGame();
+    startClock();
   };
 
   const playSound = (soundFile) => {
@@ -155,33 +184,41 @@ const MatchingGame = () => {
                 <label htmlFor="category" className="block mb-4 text-lg font-bold">Tiempo:</label>
               </div>
               <div className="w-[70%] text-lg border border-green-300 rounded-lg bg-white shadow-[4px_4px_8px_rgba(0,0,0,0.2)] items-center justify-center font-bold p-1">
-                <p id="clock-timer">02:00</p>
+                <p id="clock-timer">{formatTime(time)}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col mt-1">
-          <div className="flex justify-center border border-[#66d400] rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.2)] bg-transparent p-4">
+        {/*Dragable Section*/}
+        <div className="flex flex-col items-center w-full max-w-6xl mx-auto sm:px-6 lg:px-10 scale-95 sm:scale-100">
+          <div className="flex w-full justify-center border border-[#66d400] rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.2)] bg-transparent p-4 max-w-4xl">
             {randomItems.map(item => (
               <div
                 key={item.id}
                 draggable
                 onDragStart={() => setDraggedWord(item.word)}
-                className="flex flex-col items-center m-4"
+                className="flex flex-col items-center m-1 sm:m-2 md:m-3 lg:m-4"
               >
                 {!Object.values(positions).includes(item.id) && (
-                  <img src={item.image} alt={item.word} className="w-24 h-24 object-cover" />
+                  <img src={item.image} alt={item.word} className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover" />
                 )}
               </div>
             ))}
           </div>
 
-          <div className="flex w-full min-h-[200px] pt-5 relative justify-between gap-x-8 max-w-4xl">
+          <div className="flex w-full pt-5 pb-5 relative justify-between 
+          gap-x-2 sm:gap-x-4 md:gap-x-6 lg:gap-x-8
+          max-w-4xl">
             {shuffledWords.map((word, index) => (
               <div
                 key={index}
-                className="text-center text-xl cursor-pointer border-2 border-[#66d400] rounded-3xl bg-transparent w-40 h-40 shadow-[4px_4px_8px_rgba(0,0,0,0.2)] flex flex-col items-center justify-between"
+                className="text-center 
+                  text-sm sm:text-xl md:text-xl lg:text-xl 
+                  cursor-pointer border-2 border-[#66d400] 
+                  rounded-md md:rounded-2xl lg:rounded-3xl 
+                  w-24 sm:w-28 md:w-36 lg:w-40 h-24 sm:h-28 md:h-36 lg:h-40  
+                  bg-transparent shadow-[4px_4px_8px_rgba(0,0,0,0.2)] flex flex-col items-center justify-between"
                 onDrop={() => handleDrop(word, index)}
                 onDragOver={(e) => e.preventDefault()}
               >
@@ -196,15 +233,17 @@ const MatchingGame = () => {
                   <img
                     src={randomItems.find(item => item.id === positions[index]).image}
                     alt={word}
-                    className="w-24 h-24 object-cover z-10 mb-3"
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover z-10 mb-3"
                   />
                 )}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-3 w-full max-h-16 mb-10 gap-x-4">
-            <div className="w-full">
+          <div className="w-full mb-5
+            sm:grid grid-cols-3
+            sm:max-h-16 sm:mb-10 gap-x-2 max-w-4xl">
+            <div className="w-full mb-3">
               <button
                 onClick={checkResults}
                 className="w-full px-5 py-4 bg-[#1EAFF7] text-white rounded-xl shadow-md flex items-center gap-2 hover:bg-blue-600 transition"
@@ -213,7 +252,7 @@ const MatchingGame = () => {
               </button>
             </div>
 
-            <div className="w-full">
+            <div className="w-full mb-3">
               <button
                 onClick={retryGame}
                 className="w-full px-4 py-4 bg-[#FFC803] text-black rounded-xl shadow-md flex items-center gap-2 hover:bg-yellow-600 transition"
@@ -246,6 +285,7 @@ const MatchingGame = () => {
             </div>
           )}
         </div>
+        {/*End dragable section*/}
       </div>
     </div>
   );
