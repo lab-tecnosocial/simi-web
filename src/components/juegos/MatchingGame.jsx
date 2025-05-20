@@ -28,8 +28,15 @@ const MatchingGame = () => {
     setTime(0);
     setIsRunning(true);
     if (timerRef.current) clearInterval(timerRef.current);
+
     timerRef.current = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
+      setTime(prevTime => {
+        if (prevTime + 1 === 120) { // When timer reaches 2 min
+          stopClock();
+          document.getElementById("check-results-btn").click(); // Trigger the button click
+        }
+        return prevTime + 1;
+      });
     }, 1000);
   };
 
@@ -245,6 +252,7 @@ const MatchingGame = () => {
             sm:max-h-16 sm:mb-10 gap-x-2 max-w-4xl">
             <div className="w-full mb-3">
               <button
+                id="check-results-btn"
                 onClick={checkResults}
                 className="w-full px-5 py-4 bg-[#1EAFF7] text-white rounded-xl shadow-md flex items-center gap-2 hover:bg-blue-600 transition"
               >
