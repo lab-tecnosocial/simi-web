@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { answerWords } from "./words";
 import wordList from "./WordList";
 import GameOver from "./GameOver";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const generateRandomMatrix = (rows, cols, words) => {
