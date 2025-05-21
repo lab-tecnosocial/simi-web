@@ -27,13 +27,8 @@ const Glossary = () => {
   return (
     <div
       className="relative flex justify-center items-start min-h-screen pt-6 px-10 pb-16 bg-repeat-y font-[Nunito,sans-serif] text-[21px]"
-      style={{
-        backgroundImage: "url('/assets/images/fondo.png')",
-        backgroundRepeat: 'repeat-y',
-        backgroundPosition: 'top center',
-      }}
     >
-      <div className="absolute inset-0 bg-white bg-opacity-90 z-0" />
+      <div className="absolute inset-0 bg-transparent" />
       <div className="relative z-10 w-full max-w-6xl">
         {/* Logo */}
         <div className="flex justify-center mb-4">

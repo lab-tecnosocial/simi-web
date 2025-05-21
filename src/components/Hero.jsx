@@ -4,7 +4,6 @@ const Hero = () => {
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
-        style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
       ></div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 transform origin-center scale-[1.4] md:scale-[1.6]">

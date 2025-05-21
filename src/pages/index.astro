@@ -114,25 +114,27 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
   <body>
     <Header client:load />
 
-    <Hero />
+    <div class="bg-rana">
+      <Hero />
 
-    <!-- Android SIMI App Downloads Counter -->
-    <section
-      id="counter-section"
-      class="w-full h-auto py-12 relative bg-[#f4eefe]"
-    >
-      <div id="counter-container" class="flex justify-center gap-2.5">
-        <!-- Counter digits will be added here -->
-      </div>
-      <h2
-        class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center"
+      <!-- Android SIMI App Downloads Counter -->
+      <section
+        id="counter-section"
+        class="w-full h-auto py-12 relative bg-transparent"
       >
-        Descargas hasta hoy
-      </h2>
-    </section>
+        <div id="counter-container" class="flex justify-center gap-2.5">
+          <!-- Counter digits will be added here -->
+        </div>
+        <h2
+          class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center"
+        >
+          Descargas hasta hoy
+        </h2>
+      </section>
 
-    <!--  Hero Section  -->
-    <Hero2Section />
+      <!--  Hero Section  -->
+      <Hero2Section />
+    </div>
 
     <!--  People Section  -->
     <PeopleSection client:load />

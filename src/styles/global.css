@@ -32,3 +32,11 @@
   @apply w-2 h-2 bg-white opacity-100;
 }
 /*END Styles added by vladimuji for Slider*/
+
+/*Fondo con cabecitas de rana */
+.bg-rana {
+  background-image: url('/assets/images/fondoSimi.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+}
