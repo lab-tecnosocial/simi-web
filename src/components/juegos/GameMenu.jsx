@@ -10,7 +10,6 @@ const GameMenu = () => {
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 z-0"
-        style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
       ></div>
 
       <div className="relative z-10 w-full flex flex-col items-center">

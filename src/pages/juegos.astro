@@ -4,5 +4,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout titulo="Juegos" descripcion="Juega a los mejores juegos online">
+  <div class="bg-rana">
     <GameMenu client:only="react" />
+  </div>
 </PageLayout>

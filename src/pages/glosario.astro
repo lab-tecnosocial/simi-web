@@ -9,5 +9,7 @@ import "../styles/global.css";
   descripcion="Lista de palabras"
 >
   {/* Monta el React component con Astro cuando cargue la página */}
-  <Glossary client:load />
+  <div class="bg-rana">
+    <Glossary client:load />
+  </div>
 </PageLayout>
