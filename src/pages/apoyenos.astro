@@ -1,68 +1,56 @@
 ---
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.astro";
-//import PageLayout from "../layouts/PageLayout.astro"; apoyenos updated
+//import Header from "../components/Header.jsx";
+//import Footer from "../components/Footer.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 import "../styles/global.css";
+import "flag-icon-css/css/flag-icons.min.css";
 ---
 
-
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apóyenos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Abel&family=Baloo+Thambi&display=swap" rel="stylesheet">
-
-    <link href="/assets/css/style.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
-</head>
-<body class="font-nunito">
+<PageLayout
+  titulo="Apóyenos"
+  descripcion="Tu apoyo significa mucho para nosotros"
+  imagen="/assets/images/fondo.png"
+>
+  <div class="relative">
     <div class="absolute inset-0 bg-[url('/assets/images/fondo.png')] bg-cover bg-center opacity-20 z-0"></div>
 
     <div class="relative z-10">
-    <Header />
 
-    <div class="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left space-y-4 ml-[180px] relative z-10 max-w-4xl mx-auto mt-[70px]">
-        <div>
-          <h2 class="text-[36px] font-bold text-neutral-600 text-center whitespace-nowrap font-[Roboto] leading-relaxed">
-            APÓYANOS DESDE BOLIVIA <span class="flag-icon flag-icon-bo"></span> <br /> 
-            Tu <span class="text-[#59CB07] text-[36px]">apoyo</span> significa <br />
-            mucho para nosotros.
-          </h2>
-        </div>
-    </div>
-    
-    <div class="flex flex-col md:flex-row pt-10 px-4 md:px-0 gap-6">
-
-      <div class="w-full md:w-1/2 flex justify-center items-center md:order-2 lg:mr-[300px]">
-        <div class="w-[250px] md:w-[290px] h-[350px] md:h-[400px] bg-[#f5f5f5] rounded-lg shadow-md">
-          <img src="/assets/images/Chanchitosimi.jpg" alt="Código QR" class="w-full h-full object-cover rounded-lg">
-        </div>
+      <div class="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left space-y-4 ml-[300px] relative z-10 max-w-4xl mx-auto mt-[70px]">
+          <div>
+            <h2 class="text-[36px] font-bold text-neutral-600 text-center whitespace-nowrap font-[Roboto] leading-relaxed">
+              APÓYANOS DESDE BOLIVIA <span class="flag-icon flag-icon-bo"></span> <br /> 
+              Tu <span class="text-[#59CB07] text-[36px]">apoyo</span> significa <br />
+              mucho para nosotros.
+            </h2>
+          </div>
       </div>
-    
-      <div class="w-full md:w-1/2 flex justify-center items-center md:order-1 lg:ml-[300px]">
-        <div class="border border-[#59CB07] p-6 rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-[#4B4B4B] shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[487px] w-full h-auto">
-          <h2 class="text-[32px] md:text-[40px] font-bold mb-4 font-[Roboto]">PASOS:</h2>
-        
-          <div class="space-y-2 text-[18px] md:text-[20px] font-light font-[Nunito] text-justify">
-            <p>1. Escanea el código QR.</p>
-            <p>2. Abre la app de tu banco.</p>
-            <p>3. Escanea el QR y confirma tu donación.</p>
-            <p>
-              4. Envía el comprobante 
-              <a href="https://qt9k559s.forms.app/chanchitodesimi" class="text-[#59CB07] font-bold hover:opacity-80 transition" target="_blank" >AQUÍ</a>.
-              
-            </p>
+      
+      <div class="flex flex-col md:flex-row pt-10 px-4 md:px-0 gap-6">
+        <div class="w-full md:w-1/2 flex justify-center items-center md:order-2 lg:mr-[300px]">
+          <div class="w-[250px] md:w-[290px] h-[350px] md:h-[400px] bg-[#f5f5f5] rounded-lg shadow-md">
+            <img src="/assets/images/Chanchitosimi.jpg" alt="Código QR" class="w-full h-full object-cover rounded-lg">
+          </div>
+        </div>
+      
+        <div class="w-full md:w-1/2 flex justify-center items-center md:order-1 lg:ml-[300px]">
+          <div class="border border-[#59CB07] p-6 rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-[#4B4B4B] shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[487px] w-full h-auto">
+            <h2 class="text-[32px] md:text-[40px] font-bold mb-4 font-[Roboto]">PASOS:</h2>
+          
+            <div class="space-y-2 text-[18px] md:text-[20px] font-light font-[Nunito] text-justify">
+              <p>1. Escanea el código QR.</p>
+              <p>2. Abre la app de tu banco.</p>
+              <p>3. Escanea el QR y confirma tu donación.</p>
+              <p>
+                4. Envía el comprobante 
+                <a href="https://qt9k559s.forms.app/chanchitodesimi" class="text-[#59CB07] font-bold hover:opacity-80 transition" target="_blank" >AQUÍ</a>.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <div class="mb-[130px]"></div>
-    <Footer/>
-</body>
 
-</html>
+      <div class="mb-[130px]"></div>
+    </div>
+  </div>
+</PageLayout>
