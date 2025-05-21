@@ -14,7 +14,7 @@ const generateRandomMatrix = (rows, cols, words) => {
         }))
     );
 
-    const wordPositions = []; // Almacena todas las posiciones de palabras
+    const wordPositions = []; 
 
     words.forEach((word) => {
         let placed = false;
@@ -41,7 +41,6 @@ const generateRandomMatrix = (rows, cols, words) => {
                     placed = true;
                 }
             }
-            // ... (similar para vertical y diagonal)
         }
     });
 
@@ -58,7 +57,7 @@ const WordPuzzleGame = () => {
     const [answerWords, setAnswerWords] = useState([]);
     const [foundWords, setFoundWords] = useState([]);
 const [foundWordsData, setFoundWordsData] = useState([]); // Almacena palabra + posiciones
-const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
+const [allWordPositions, setAllWordPositions] = useState([]); 
 
     const getRandomWords = (category, count) => {
         const words = wordList[category];
@@ -70,17 +69,14 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
         const selectedWord = selectedLetters.map((l) => l.letter).join("");
         
         if (answerWords.includes(selectedWord) && !foundWords.includes(selectedWord)) {
-            // Actualiza todos los estados de forma consistente
             setFoundWords(prev => [...prev, selectedWord]);
             setFoundWordsData(prev => [...prev, {
                 word: selectedWord,
                 positions: [...selectedLetters]
             }]);
             
-            // Elimina la palabra de answerWords
             setAnswerWords(prev => prev.filter(word => word !== selectedWord));
             
-            // Limpia las letras seleccionadas
             setSelectedLetters([]);
         }
     }, [selectedLetters, answerWords, foundWords]);
@@ -90,15 +86,18 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
     }, [selectedCategory]);
 
     const initializeGame = () => {
-        const { matrix, wordPositions } = generateRandomMatrix(11, 12, answerWords);
-        setMatrix(matrix);
-        setAllWordPositions(wordPositions); // Guarda todas las posiciones
-        setFoundWords([]);
-        setFoundWordsData([]);
-        setSelectedLetters([]);
-        setTimeLeft(180);
-        setIsGameActive(true);
-    };
+    const newAnswerWords = getRandomWords(selectedCategory, 4);
+    setAnswerWords(newAnswerWords);
+    
+    const { matrix, wordPositions } = generateRandomMatrix(11, 12, newAnswerWords);
+    setMatrix(matrix);
+    setAllWordPositions(wordPositions);
+    setFoundWords([]);
+    setFoundWordsData([]);
+    setSelectedLetters([]);
+    setTimeLeft(180);
+    setIsGameActive(true);
+};
 
     const revealAllWords = () => {
         const newMatrix = [...matrix];
@@ -134,6 +133,13 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
     }, [foundWords]);
 
     const handleLetterClick = (letter, row, col) => {
+        if (selectedLetters.length > 1 && 
+        getSelectionDirection(selectedLetters) === 'diagonal' &&
+        row === selectedLetters[0].row && 
+        col === selectedLetters[0].col) {
+        setSelectedLetters([]);
+        return;
+    }
         setSelectedLetters((prev) => {
             const existingIndex = prev.findIndex(l => l.row === row && l.col === col);
             if (existingIndex !== -1) {
@@ -147,7 +153,6 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
     };
 
     const getCellBorderRadius = (row, col, selectedLetters, foundWordsData) => {
-        // Para palabras seleccionadas temporalmente
         const selectedIndex = selectedLetters.findIndex(l => l.row === row && l.col === col);
         if (selectedIndex !== -1) {
             if (selectedLetters.length === 1) return '50%';
@@ -162,7 +167,6 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
             return '0';
         }
         
-        // Para palabras ya encontradas
         const foundWord = foundWordsData.find(wordData => 
             wordData.positions.some(pos => pos.row === row && pos.col === col)
         );
@@ -187,7 +191,6 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
         const first = positions[0];
         const last = positions[positions.length - 1];
         
-        // Umbral para considerar diagonal (ajusta según necesidad)
         const diagonalThreshold = 0.2;
         
         const rowDiff = Math.abs(first.row - last.row);
@@ -227,8 +230,8 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
         const length = (cells * 65);
         const angle = Math.atan2(end.row - start.row, end.col - start.col) * 192 / Math.PI;
 
-        const posY = (start.row * 50) + 120;
-        const posX = (start.col * 45) + 480;
+        const posY = (start.row * 50) + 125;
+        const posX = (start.col * 45) + 705;
 
         useEffect(() => {
             console.log("Fila inicial: ", start.row);
@@ -241,7 +244,7 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
 
             console.log("Posicion Y: ", posY);
             console.log("Posicion Y: ", posX);
-          }, []); // Array vacío significa que solo se ejecuta en el montaje
+          }, []); 
         
         return (
           <div 
@@ -321,22 +324,18 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
                             </div>
                         </div> 
                     </div>
-                {!isGameActive && foundWords.length === 4 && (
-                    <div className="bg-green-200 p-4 rounded mb-4">
-                        <h2>¡Felicitaciones! Has encontrado todas las palabras.</h2>
-                    </div>
+                {(!isGameActive && (foundWords.length === 4 || timeLeft === 0)) && (
+                <GameOver
+                    isWinner={foundWords.length === 4}
+                    selectedWord={
+                    foundWords.length === 4 
+                        ? `${foundWords.join(", ")} 🎉` 
+                        : `😢 Lograste encontrar ${foundWords.length} de 4 palabras.\nLas palabras eran: ${[...new Set([...answerWords, ...foundWords])].join(", ")}`
+                    }
+                    resetGame={initializeGame}
+                />
                 )}
-                {!isGameActive && timeLeft === 0 && (
-                    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                        <div className="bg-white p-6 rounded shadow-lg text-center">
-                            <h2>Fin del juego. Se acabó el tiempo.</h2>
-                            <button onClick={initializeGame}
-                                className='bg-green-500 text-white font-bold mt-6 py-2 px-4 rounded hover:bg-green-600 transition duration-500'>Reiniciar Juego</button>
-                        </div>
 
-
-                    </div>
-                )}
             </div>
             <div className="flex-grow flex items-center justify-center rounded-[50px]">
                 <div className="lg:w-[552px] lg:h-[552px] flex items-center justify-center ml-[55px] mt-[-100px] md:w-[400px] md:h-[400px]">
@@ -362,7 +361,6 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
                                 );
 
                                 if (index !== -1) {
-                                    // Si ya fue seleccionada
                                     if (index < selectedLetters.length - 1) {
                                     setSelectedLetters(selectedLetters.slice(0, index));
                                     } else {
@@ -375,28 +373,22 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
                                     ]);
                                 }
                                 }}
-                                // Dentro del return del componente, modifica el estilo de las celdas:
+                                
                                 style={{
                                     backgroundColor: 
-                                    getSelectionDirection(selectedLetters) !== 'diagonal' && 
-                                    (selectedLetters.some(l => l.row === rowIndex && l.col === colIndex) ||
+                                    (getSelectionDirection(selectedLetters) === 'diagonal' && 
+                                    selectedLetters.some(l => l.row === rowIndex && l.col === colIndex))
+                                    ? 'transparent'
+                                    : (selectedLetters.some(l => l.row === rowIndex && l.col === colIndex) ||
                                     foundWordsData.some(wordData => 
-                                    wordData.positions.some(pos => pos.row === rowIndex && pos.col === colIndex)
+                                        wordData.positions.some(pos => pos.row === rowIndex && pos.col === colIndex)
                                     ))
                                     ? 'rgba(89, 203, 7, 0.5)'
-                                        :cell.revealed && !foundWordsData.some(w => w.positions.some(p => p.row === rowIndex && p.col === colIndex))
-                                            ? 'rgba(255, 0, 0, 0.3)'
-                                            : selectedLetters.some(l => l.row === rowIndex && l.col === colIndex)
-                                                ? 'rgba(89, 203, 7, 0.5)'
-                                                : foundWordsData.some(wordData =>
-                                                    wordData.positions.some(
-                                                        pos => pos.row === rowIndex && pos.col === colIndex
-                                                    )
-                                                )
-                                                    ? 'rgba(89, 203, 7, 0.5)'
-                                                    : highlightAnswers && cell.isAnswer
-                                                        ? 'black'
-                                                        : 'white',
+                                    : cell.revealed && !foundWordsData.some(w => w.positions.some(p => p.row === rowIndex && p.col === colIndex))
+                                        ? 'rgba(255, 0, 0, 0.3)'
+                                        : highlightAnswers && cell.isAnswer
+                                            ? 'black'
+                                            : 'white',
                                     cursor: 'pointer',
                                     width: '46px',
                                     height: '46px',
@@ -414,35 +406,29 @@ const [allWordPositions, setAllWordPositions] = useState([]); // Nuevo estado
                         </tr>
                     ))}
                     </tbody>
-
-
                     </table>
-
-                    {/* Renderizado de líneas diagonales */}
-  {selectedLetters.length > 1 && 
-    getSelectionDirection(selectedLetters) === 'diagonal' && (
-      <DiagonalLine 
-        start={selectedLetters[0]}
-        end={selectedLetters[selectedLetters.length - 1]}
-        color="rgba(89, 203, 7, 0.5)"
-      />
-    )
-  }
-  
-  {foundWordsData.map((wordData) => (
-    wordData.positions.length > 1 && 
-    getSelectionDirection(wordData.positions) === 'diagonal' && (
-      <DiagonalLine
-        key={wordData.word}
-        start={wordData.positions[0]}
-        end={wordData.positions[wordData.positions.length - 1]}
-        color="rgba(89, 203, 7, 0.5)"
-      />
-    )
-  ))}
+                    {selectedLetters.length > 1 && 
+                        getSelectionDirection(selectedLetters) === 'diagonal' && (
+                        <DiagonalLine 
+                            start={selectedLetters[0]}
+                            end={selectedLetters[selectedLetters.length - 1]}
+                            color="rgba(89, 203, 7, 0.5)"
+                        />
+                        )
+                    }   
+                    {foundWordsData.map((wordData) => (
+                        wordData.positions.length > 1 && 
+                        getSelectionDirection(wordData.positions) === 'diagonal' && (
+                        <DiagonalLine
+                            key={wordData.word}
+                            start={wordData.positions[0]}
+                            end={wordData.positions[wordData.positions.length - 1]}
+                            color="rgba(89, 203, 7, 0.5)"
+                        />
+                        )
+                    ))}
                 </div>
                 </div>
-
         </div>
     );
 };
