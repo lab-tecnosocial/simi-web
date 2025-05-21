@@ -22,7 +22,7 @@ const questions = [
   {
     question:
       "¿Tengo algunas observaciones y comentarios sobre el contenido de la app.  ¿Dónde las puedo compartir?",
-    answer: `Nos interesa conocer tu opinión acerca del contenido de la app, esta información nos sirve para mejorar el contenido. Por favor accede al siguiente formulario para dejarnos tus observaciones o comentarios: <a href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform" target="_blank" rel="noopener noreferrer" class="font-bold"> 📋 Click para ver el formulario de comentarios</a>`,
+    answer: `Nos interesa conocer tu opinión acerca del contenido de la app, esta información nos sirve para mejorar el contenido. Por favor accede al siguiente formulario para dejarnos tus observaciones o comentarios: <a href="https://docs.google.com/forms/d/e/1FAIpQLSf91IAN8xH9o4VQnELxAWdFbj6iYhXcgyOsRMGYHD8BrpZ8Qw/viewform" target="_blank" rel="noopener noreferrer className="font-bold"> 📋 Click para ver el formulario de comentarios</a>`,
   },
 ];
 ---
@@ -32,7 +32,13 @@ const questions = [
   descripcion="Preguntas mas frecuentes de usuarios"
   imagen="/assets/img/anagrama.jpg"
 >
-  <div class="relative bg-rana bg-cover bg-no-repeat bg-center min-h-screen">
+  <div class="relative">
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-repeat opacity-15 z-0"
+      style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
+    >
+    </div>
+
     <div class="relative z-10">
       <FAQ client:only="react" questions={questions} />
     </div>
