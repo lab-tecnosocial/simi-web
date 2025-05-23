@@ -70,14 +70,13 @@ const Header = () => {
           <span className="block w-6 h-0.5 bg-futuro my-1"></span>
           <span className="block w-6 h-0.5 bg-futuro my-1"></span>
         </button>
-
+  
         {/* Menú principal */}
         <ul 
           className={`
             fixed inset-0 bg-white flex-col items-center justify-center 
-            md:static md:flex md:flex-row md:space-x-8 
-            ${isMenuOpen ? 'flex' : 'hidden'} 
-            md:flex z-40
+            md:static md:flex md:flex-row md:space-x-4 md:flex-nowrap 
+            ${isMenuOpen ? 'flex' : 'hidden'} z-40
           `}
         >
           <li className="md:hidden absolute top-4 right-4">
@@ -109,12 +108,12 @@ const Header = () => {
             </button>
             {isDropdownGamesOpen && (
               <ul 
-                className="md:absolute left-0 mt-2 w-48 bg-white rounded z-50"
+                className="md:absolute left-0 mt-2 w-40 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
                   <a 
-                    className="block px-4 py-2 text-futuro hover:bg-gray-200" 
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/juegos"
                     onClick={() => {
                       setIsDropdownGamesOpen(false);
@@ -127,7 +126,7 @@ const Header = () => {
                 <li>
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
-                    href="/juego_de_mesa"
+                    href="/simiwanpullkana"
                     onClick={() => {
                       setIsDropdownGamesOpen(false);
                       toggleMenu();
@@ -152,7 +151,7 @@ const Header = () => {
             </button>
             {isDropdownCommunityOpen && (
               <ul 
-                className="md:absolute left-0 mt-2 w-48 bg-white rounded z-50"
+                className="md:absolute left-0 mt-2 w-40 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
