@@ -3,7 +3,7 @@ import Word from './Word';
 import Keyboard from './Keyboard';
 import GameOver from './GameOver';
 import wordList from './WordList';
-import fondoCielo from '../assets/images/nubes.gif';
+import fondoCielo from '../assets/images/gifnube.gif';
 import globo from '../assets/images/globo.png';
 import mancha from '../assets/images/mancha.png';
 
