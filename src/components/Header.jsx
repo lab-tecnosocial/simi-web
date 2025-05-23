@@ -63,7 +63,7 @@ const Header = () => {
         
         {/* Botón Hamburguesa */}
         <button 
-          className="md:hidden text-futuro hover:text-green-500 focus:outline-none z-50"
+          className="md:hidden text-futuro hover:text-qumir focus:outline-none z-50"
           onClick={toggleMenu}
         >
           <span className="block w-6 h-0.5 bg-futuro my-1"></span>
@@ -75,13 +75,13 @@ const Header = () => {
         <ul 
           className={`
             fixed inset-0 bg-white flex-col items-center justify-center 
-            md:static md:flex md:flex-row md:space-x-4 md:flex-nowrap 
+            md:static md:flex md:flex-row md:space-x-4 lg:space-x-8 md:flex-nowrap 
             ${isMenuOpen ? 'flex' : 'hidden'} z-40
           `}
         >
           <li className="md:hidden absolute top-4 right-4">
             <button 
-              className="text-futuro hover:text-green-500 focus:outline-none"
+              className="text-futuro hover:text-qumir focus:outline-none"
               onClick={toggleMenu}
             >
               ✕
@@ -89,18 +89,18 @@ const Header = () => {
           </li>
           
           <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-green-500" href="/" onClick={toggleMenu}>Inicio</a>
+            <a className="text-futuro hover:text-qumir" href="/" onClick={toggleMenu}>Inicio</a>
           </li>
           
           <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-green-500" href="/sobre_nosotros" onClick={toggleMenu}>Sobre nosotros</a>
+            <a className="text-futuro hover:text-qumir" href="/sobre_nosotros" onClick={toggleMenu}>Sobre nosotros</a>
           </li>
           
           {/* Dropdown Juegos */}
           <li className="relative my-2 md:my-0" ref={dropdownGamesRef}>
             <button
               type="button"
-              className="text-futuro hover:text-green-500 focus:outline-none flex items-center"
+              className="text-futuro hover:text-qumir focus:outline-none flex items-center"
               onClick={toggleDropdownGames}
             >
               Juegos 
@@ -143,7 +143,7 @@ const Header = () => {
           <li className="relative my-2 md:my-0" ref={dropdownCommunityRef}>
             <button
               type="button"
-              className="text-futuro hover:text-green-500 focus:outline-none flex items-center"
+              className="text-futuro hover:text-qumir focus:outline-none flex items-center"
               onClick={toggleDropdownCommunity}
             >
               Comunidad 
@@ -195,17 +195,17 @@ const Header = () => {
           </li>
           
           <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-green-500" href="/apoyenos" onClick={toggleMenu}>Apóyenos</a>
+            <a className="text-futuro hover:text-qumir" href="/apoyenos" onClick={toggleMenu}>Apóyenos</a>
           </li>
           
           <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-green-500" href="#">
+            <a className="text-futuro hover:text-qumir" href="#">
               <i className="fas fa-globe"></i>
             </a>
           </li>
           
           <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-green-500" href="#">
+            <a className="text-futuro hover:text-qumir" href="#">
               <i className="fas fa-sun"></i>
             </a>
           </li>

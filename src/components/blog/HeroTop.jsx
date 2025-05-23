@@ -5,7 +5,7 @@ const HeroTop = () => {
           <img 
             src="/assets/images/juego/banner.jpg" 
             alt="hero" 
-            class="mx-auto w-full h-full object-cover absolute top-0 sm:top-[-50px] md:top-[-100px] lg:top-[-150px] xl:top-[-200px] brightness-75"
+            class="mx-auto w-full h-full object-cover absolute top-0 sm:top-[-50px] md:top-[-100px] lg:top-[-150px] xl:top-[-130px] brightness-75"
           />
   
           {/*<!-- Text Container (Positioned Left) -->*/}
