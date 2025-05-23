@@ -13,6 +13,7 @@ export default {
 			baloo: ['"Baloo Thambi"', 'cursive'],
 			nunito: ['Nunito', 'sans-serif'],
 			asap: ['Asap', 'sans-serif'],
+			roboto: ['Roboto', 'sans-serif'],
 		},
 		colors: {
 			qumir: '#59CB07',
