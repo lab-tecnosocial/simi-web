@@ -27,4 +27,20 @@ if (!post) throw new Error("Post not found");
 
   <!-- Post Content Section -->
   <PostContent content={post.content} client:load />
+
+  <!-- Post Content Section: traslation -->
+  {/* Mostrar Título Original si existe */}
+  {
+    post.original_title && (
+      <div class:list="container mx-auto px-16 mt-2 mb-10 mr-12">
+        <h2 class="text-4xl font-bold text-black font-nunito mb-10 ml-12">
+          {post.original_title}
+        </h2>
+        <p class="text-2xl text-[#5B5959]  mt-4 mb-4 font-nunito ml-12">
+          Original English Version / Versión original en inglés
+        </p>
+      </div>
+    )
+  }
+  <PostContent content={post.translation} client:load />
 </PageLayout>
