@@ -5,6 +5,11 @@ const Header = ({ post }) => {
         <h1 className="text-4xl font-bold text-black font-nunito">{post.title}</h1>
         <p className="text-2xl text-[#5B5959]  mt-4 mb-4 font-nunito">Versión en español</p>
         <p className="text-2xl text-[#5B5959]  mt-4 mb-4 font-nunito">Escrito por: {post.author}</p>
+
+        {/* Mostrar traducción si existe */}
+        {post.translate && (
+          <p className="text-2xl text-[#5B5959] mt-4 mb-4 font-nunito">Traducción por: {post.translate}</p>
+        )}
   
         <div className="w-full max-w-screen-lg mx-auto">
           <div className="relative w-full aspect-[5/3] overflow-hidden rounded-lg">
