@@ -1,6 +1,6 @@
 const SobreNosotrosContent = () => {
   return (
-    <section className="font-roboto flex flex-col items-center py-10 bg-white">
+    <section className="font-nunito flex flex-col items-center py-10 bg-white">
       <div className="flex flex-col items-center mb-20">
         <img
           src="/assets/images/simicards.png"
