@@ -10,8 +10,8 @@ export const gameData = {
       { id: 6, word: "Suqta", image: '/assets/images/6.png', definition: 'Seis' },
       { id: 7, word: "Qanchis", image: '/assets/images/7.png', definition: 'Siete' },
       { id: 8, word: "Pusaq", image: '/assets/images/8.png', definition: 'Ocho' },
-      { id: 9, word: "Chunka", image: '/assets/images/9.png', definition: 'Nueve' },
-      { id: 10, word: "Jisq’un", image: '/assets/images/10.png', definition: 'Diez' }
+      { id: 9, word: "Jisq’un", image: '/assets/images/9.png', definition: 'Nueve' },
+      { id: 10, word: "Chunka", image: '/assets/images/10.png', definition: 'Diez' }
     ],
     Saludos: [
       { id: 1, word: "Allin ch’isi", image: '/assets/images/allinchisi.png', definition: 'Buenas noches' },
