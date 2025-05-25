@@ -126,7 +126,7 @@ const Header = () => {
                 <li>
                   <a 
                     className="block px-4 py-2 text-futuro hover:bg-gray-200" 
-                    href="/simiwanpullkana"
+                    href="/juego_de_mesa"
                     onClick={() => {
                       setIsDropdownGamesOpen(false);
                       toggleMenu();
