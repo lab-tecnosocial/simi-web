@@ -11,6 +11,16 @@ const EventosList = () => {
       horario: '10:00 a 12:00',
       descripcion: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec eu pulvinar ultricies; accumsan magnis parturient molestie orci eu. Neque lobortis gravida quis nibh massa lacus adipiscing.',
       imagen: '/assets/images/JULIO.png'
+    },
+        {
+      id: 2,
+      dia: '',
+      mes: '',
+      titulo: 'Próximamente',
+      lugar: 'Mantente atento a nuestras redes sociales para conocer más.',
+      horario: 'Muy pronto anunciaremos el siguiente evento',
+      descripcion: '',
+      imagen: '/assets/images/simi_calendario.png'
     }
   ];
 
@@ -73,28 +83,6 @@ const EventosList = () => {
             </div>
           </div>
         ))}
-
-
-        <div className="flex flex-col lg:flex-row bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden w-full h-[560px]">
-          <div className="lg:w-1/6 bg-white flex flex-col items-center justify-center text-center px-4">
-            <p className="text-gray-400 text-xl uppercase tracking-widest">Próximamente</p>
-          </div>
-
-          <div className="lg:w-3/5 bg-gray-100 flex items-center justify-center p-8">
-            <div className="w-full h-full flex items-center justify-center">
-              <img
-                src="/assets/images/simi_calendario.png"
-                alt="Próximamente"
-                className="w-auto h-auto object-contain transform scale-75"
-              />
-            </div>
-          </div>
-
-          <div className="lg:w-2/5 p-10 flex flex-col justify-center items-center text-center space-y-4">
-            <h3 className="text-2xl font-bold text-gray-500">Muy pronto anunciaremos el siguiente evento</h3>
-            <p className="text-base text-gray-400">Mantente atento a nuestras redes sociales para conocer más.</p>
-          </div>
-        </div>
       </div>
     </div>
   );
