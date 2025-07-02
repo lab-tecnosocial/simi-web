@@ -24,9 +24,6 @@ const Hero = () => {
             <button className="bg-[#58CB05] text-white font-normal py-2 px-6 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] hover:bg-green-700 transition-all w-48 transform hover:scale-105">
               DESCARGAR APP
             </button>
-            <button className="bg-[#58CB05] text-white font-normal py-2 px-6 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] hover:bg-green-700 transition-all w-48 transform hover:scale-105">
-              REGISTRARSE
-            </button>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
     ></script>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
     <link
       rel="stylesheet"
@@ -100,6 +100,13 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
       property="twitter:image"
       content="https://simiquechua.app/assets/images/preview.png"
     />
+    <script>
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init();
+      });
+    </script>
   </head>
 
   <body>
@@ -136,13 +143,13 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <!--Footer  -->
     <Footer />
 
-    <!--Suggestion box-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Suggestion box
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
     <script>
-      AOS.init();
+      //AOS.init();
     </script>
 
-    <script>
+    <!--<script>
       var scrollMessage1 = document.querySelector(".scroll-message");
       var scrollMessage2 = document.querySelector(".scroll-message-2");
       var prevScrollPos = window.pageYOffset;
@@ -172,9 +179,44 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
 
         prevScrollPos = currentScrollPos;
       });
+    </script>  -->
+    <script>
+      var scrollMessage1 = document.querySelector(
+        ".scroll-message"
+      ) as HTMLElement;
+      var scrollMessage2 = document.querySelector(
+        ".scroll-message-2"
+      ) as HTMLElement;
+      var prevScrollPos = window.pageYOffset;
+
+      window.addEventListener("scroll", function () {
+        var currentScrollPos = window.pageYOffset;
+        var scrollPosition = window.scrollY;
+        var elementPosition =
+          document.getElementById("people-images")?.offsetTop || 0;
+
+        if (scrollPosition > elementPosition - window.innerHeight + 200) {
+          if (scrollMessage1) scrollMessage1.style.display = "block";
+        } else {
+          if (scrollMessage1) scrollMessage1.style.display = "none";
+        }
+
+        if (scrollPosition > elementPosition + 200) {
+          if (scrollMessage2) scrollMessage2.style.display = "block";
+        } else {
+          if (scrollMessage2) scrollMessage2.style.display = "none";
+        }
+
+        if (currentScrollPos < prevScrollPos) {
+          if (scrollMessage1) scrollMessage1.style.display = "none";
+          if (scrollMessage2) scrollMessage2.style.display = "none";
+        }
+
+        prevScrollPos = currentScrollPos;
+      });
     </script>
 
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         var scrollMessage = document.querySelector(".scroll-message");
         var closeBtn = document.querySelector(".scroll-message .close-btn");
@@ -182,6 +224,24 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
         closeBtn.addEventListener("click", function () {
           scrollMessage.style.display = "none";
         });
+      });
+    </script>-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var scrollMessage = document.querySelector(
+          ".scroll-message"
+        ) as HTMLElement;
+        var closeBtn = document.querySelector(
+          ".scroll-message .close-btn"
+        ) as HTMLElement;
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            if (scrollMessage) {
+              scrollMessage.style.display = "none";
+            }
+          });
+        }
       });
     </script>
 
@@ -230,6 +290,6 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
           });
         }
       });
-    </script>
+    </script>-->
   </body>
 </html>

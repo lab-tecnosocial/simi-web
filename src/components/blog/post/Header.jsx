@@ -1,8 +1,8 @@
 const Header = ({ post }) => {
     const img_path = '../' + post.image;
     return (
-      <section className="container mx-auto px-16 mt-2 mb-10">
-        <h1 className="text-4xl font-bold text-black font-nunito">{post.title}</h1>
+      <section className="container mx-auto px-16 mt-2 mb-10 ml-4">
+        <h1 className="text-4xl font-bold text-black font-nunito mr-8">{post.title}</h1>
         <p className="text-2xl text-[#5B5959]  mt-4 mb-4 font-nunito">Versión en español</p>
         <p className="text-2xl text-[#5B5959]  mt-4 mb-4 font-nunito">Escrito por: {post.author}</p>
 
