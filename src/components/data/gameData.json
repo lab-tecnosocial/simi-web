@@ -2,7 +2,7 @@
     "entries": [
       {
         "id": 1,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Juk",
         "image": "/assets/images/1.png",
         "audio": "/assets/Audios_glosario/Numeros/1.mp3",
@@ -10,7 +10,7 @@
       },
       {
         "id": 2,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Iskay",
         "image": "/assets/images/2.png",
         "audio": "/assets/Audios_glosario/Numeros/2.mp3",
@@ -18,7 +18,7 @@
       },
       {
         "id": 3,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Kimsa",
         "image": "/assets/images/3.png",
         "audio": "/assets/Audios_glosario/Numeros/3.mp3",
@@ -26,7 +26,7 @@
       },
       {
         "id": 4,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Tawa",
         "image": "/assets/images/4.png",
         "audio": "/assets/Audios_glosario/Numeros/4.mp3",
@@ -34,7 +34,7 @@
       },
       {
         "id": 5,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Pichqa",
         "image": "/assets/images/5.png",
         "audio": "/assets/Audios_glosario/Numeros/5.mp3",
@@ -42,7 +42,7 @@
       },
       {
         "id": 6,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Suqta",
         "image": "/assets/images/6.png",
         "audio": "/assets/Audios_glosario/Numeros/6.mp3",
@@ -50,7 +50,7 @@
       },
       {
         "id": 7,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Qanchis",
         "image": "/assets/images/7.png",
         "audio": "/assets/Audios_glosario/Numeros/7.mp3",
@@ -58,7 +58,7 @@
       },
       {
         "id": 8,
-        "tema": "Numeros",
+        "tema": "Números",
         "word": "Pusaq",
         "image": "/assets/images/8.png",
         "audio": "/assets/Audios_glosario/Numeros/8.mp3",
@@ -66,16 +66,16 @@
       },
       {
         "id": 9,
-        "tema": "Numeros",
-        "word": "Chunka",
+        "tema": "Números",
+        "word": "Jisq'un",
         "image": "/assets/images/9.png",
         "audio": "/assets/Audios_glosario/Numeros/9.mp3",
         "definition": "Nueve"
       },
       {
         "id": 10,
-        "tema": "Numeros",
-        "word": "Jisq'un",
+        "tema": "Números",
+        "word": "Chunka",
         "image": "/assets/images/10.png",
         "audio": "/assets/Audios_glosario/Numeros/10.mp3",
         "definition": "Diez"
@@ -115,7 +115,7 @@
       {
         "id": 15,
         "tema": "Saludos",
-        "word": "Qayakama",
+        "word": "Q’ayakama",
         "image": "/assets/images/qayakama.png",
         "audio": "/assets/Audios_glosario/Saludos/qayakama.mp3",
         "definition": "Hasta mañana"
@@ -123,7 +123,7 @@
       {
         "id": 16,
         "tema": "Saludos",
-        "word": "Tinkunakama",
+        "word": "Waqkutikaman",
         "image": "/assets/images/tinkunakama.png",
         "audio": "/assets/Audios_glosario/Saludos/tinkunakama.mp3",
         "definition": "Hasta la próxima"
@@ -147,7 +147,7 @@
       {
         "id": 19,
         "tema": "Animales",
-        "word": "Ch'iñi",
+        "word": "Chiñi",
         "image": "/assets/images/animales/chini.png",
         "audio": "/assets/Audios_glosario/Animales/Chini.mp3",
         "definition": "Murciélago"
@@ -158,7 +158,7 @@
         "word": "Jamp'atu",
         "image": "/assets/images/animales/jampatu.png",
         "audio": "/assets/Audios_glosario/Animales/jampatu.mp3",
-        "definition": "Rana"
+        "definition": "Sapo"
       },
       {
         "id": 21,
@@ -330,7 +330,7 @@
       },
       {
         "id": 42,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Chaka",
         "image": "/assets/images/anatomia/chaka.png",
         "audio": "/assets/Audios_glosario/Anatomia/chaka.mp3",
@@ -338,7 +338,7 @@
       },
       {
         "id": 43,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Chaki",
         "image": "/assets/images/anatomia/chaki.png",
         "audio": "/assets/Audios_glosario/Anatomia/chaki.mp3",
@@ -346,7 +346,7 @@
       },
       {
         "id": 44,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Chukcha",
         "image": "/assets/images/anatomia/chukcha.png",
         "audio": "/assets/Audios_glosario/Anatomia/chukcha.mp3",
@@ -354,7 +354,7 @@
       },
       {
         "id": 45,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Maki",
         "image": "/assets/images/anatomia/maki.png",
         "audio": "/assets/Audios_glosario/Anatomia/maki.mp3",
@@ -362,7 +362,7 @@
       },
       {
         "id": 46,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Mat'i",
         "image": "/assets/images/anatomia/mati.png",
         "audio": "/assets/Audios_glosario/Anatomia/mati.mp3",
@@ -370,15 +370,15 @@
       },
       {
         "id": 47,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Muqu",
         "image": "/assets/images/anatomia/muqu.png",
         "audio": "/assets/Audios_glosario/Anatomia/muqu.mp3",
-        "definition": "Cabello"
+        "definition": "Rodilla"
       },
       {
         "id": 48,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Ninri",
         "image": "/assets/images/anatomia/ninri.png",
         "audio": "/assets/Audios_glosario/Anatomia/ninri.mp3",
@@ -386,7 +386,7 @@
       },
       {
         "id": 49,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Pupu",
         "image": "/assets/images/anatomia/pupu.png",
         "audio": "/assets/Audios_glosario/Anatomia/pupu.mp3",
@@ -394,7 +394,7 @@
       },
       {
         "id": 50,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Qasqu",
         "image": "/assets/images/anatomia/qasqu.png",
         "audio": "/assets/Audios_glosario/Anatomia/qasqu.mp3",
@@ -402,7 +402,7 @@
       },
       {
         "id": 51,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Qhichikra",
         "image": "/assets/images/anatomia/qhichikra.png",
         "audio": "/assets/Audios_glosario/Anatomia/qhichikra.mp3",
@@ -410,7 +410,7 @@
       },
       {
         "id": 52,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Rikra",
         "image": "/assets/images/anatomia/rikra.png",
         "audio": "/assets/Audios_glosario/Anatomia/rikra.mp3",
@@ -418,7 +418,7 @@
       },
       {
         "id": 53,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Rukana",
         "image": "/assets/images/anatomia/rukana.png",
         "audio": "/assets/Audios_glosario/Anatomia/rukana.mp3",
@@ -426,7 +426,7 @@
       },
       {
         "id": 54,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Sillu",
         "image": "/assets/images/anatomia/sillu.png",
         "audio": "/assets/Audios_glosario/Anatomia/sillu.mp3",
@@ -434,7 +434,7 @@
       },
       {
         "id": 55,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Simi",
         "image": "/assets/images/anatomia/simi.png",
         "audio": "/assets/Audios_glosario/Anatomia/simi.mp3",
@@ -442,7 +442,7 @@
       },
       {
         "id": 56,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Sinqa",
         "image": "/assets/images/anatomia/sinqa.png",
         "audio": "/assets/Audios_glosario/Anatomia/sinqa.mp3",
@@ -450,7 +450,7 @@
       },
       {
         "id": 57,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Takillpa",
         "image": "/assets/images/anatomia/takillpa.png",
         "audio": "/assets/Audios_glosario/Anatomia/takillpa.mp3",
@@ -458,7 +458,7 @@
       },
       {
         "id": 58,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "T'usu",
         "image": "/assets/images/anatomia/tusu.png",
         "audio": "/assets/Audios_glosario/Anatomia/tusu.mp3",
@@ -466,7 +466,7 @@
       },
       {
         "id": 59,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Ulla",
         "image": "/assets/images/anatomia/ulla.png",
         "audio": "/assets/Audios_glosario/Anatomia/uya.mp3",
@@ -474,7 +474,7 @@
       },
       {
         "id": 60,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Uma",
         "image": "/assets/images/anatomia/uma.png",
         "audio": "/assets/Audios_glosario/Anatomia/uma.mp3",
@@ -482,15 +482,15 @@
       },
       {
         "id": 61,
-        "tema": "Anatomia",
-        "word": "Wallwaku",
+        "tema": "Anatomía",
+        "word": "Wallak’u",
         "image": "/assets/images/anatomia/wallwaku.png",
         "audio": "/assets/Audios_glosario/Anatomia/wallaku.mp3",
         "definition": "Axila"
       },
       {
         "id": 62,
-        "tema": "Anatomia",
+        "tema": "Anatomía",
         "word": "Wisa",
         "image": "/assets/images/anatomia/wisa.png",
         "audio": "/assets/Audios_glosario/Anatomia/wisa.mp3",
