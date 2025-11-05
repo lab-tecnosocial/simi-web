@@ -116,7 +116,7 @@ function Game() {
     >
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold" style={{ color: '#59CB07' }}>Salva a Simi</h1>
-        <h2 className="text-lg text-gray-700">Simiman yanapay</h2>
+        <h2 className="text-lg text-gray-700">Simita yanapay</h2>
       </div>
 
       <div
