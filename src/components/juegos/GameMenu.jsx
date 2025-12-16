@@ -67,7 +67,7 @@ const GameMenu = () => {
           {/* Tarjeta Salva a Simi */}
           <div className="w-full h-[450px] p-0 bg-white border border-[#58CB05] rounded-2xl shadow-[0_4px_16px_rgba(88,203,5,0.3)] flex flex-col overflow-hidden transition-transform hover:scale-105">
             <div className="text-center p-4 w-full h-[120px] flex flex-col justify-end">
-              <h2 className="text-[#58CB05] font-bold text-xl">Simiman yanapay!</h2>
+              <h2 className="text-[#58CB05] font-bold text-xl">Simita yanapay!</h2>
               <p className="text-gray-700 text-base mt-2">Salva a Simi</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
