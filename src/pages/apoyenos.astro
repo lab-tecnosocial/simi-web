@@ -22,16 +22,16 @@ import "../styles/global.css";
       >
         <div>
           <h2
-            class="text-2xl sm:text-3xl md:text-[36px] font-bold text-neutral-600 font-roboto leading-relaxed"
+            class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-600 font-roboto leading-tight md:leading-relaxed"
           >
             <span class="inline-block"
               >APÓYANOS DESDE BOLIVIA <img
                 src="/assets/images/bandera_Bolivia.png"
                 alt="Bandera de Bolivia"
-                class="w-[auto] h-[60px] sm:h-[50px] inline-block ml-[-30px] mt-[-10px]"
+                class="w-auto h-[40px] sm:h-[45px] md:h-[50px] inline-block ml-[-20px] sm:ml-[-25px] md:ml-[-30px] mt-[-5px]"
               /></span
-            ><br />
-            Tu <span class="text-[#59CB07] text-2xl sm:text-3xl md:text-[36px]"
+            ><br class="hidden sm:block" />
+            Tu <span class="text-[#59CB07] text-2xl sm:text-3xl md:text-4xl"
               >apoyo</span
             > significa<br class="hidden sm:block" />
             mucho para nosotros.
@@ -39,33 +39,33 @@ import "../styles/global.css";
         </div>
       </div>
 
-      <div class="flex flex-col md:flex-row pt-10 px-4 md:px-0 gap-6">
+      <div class="flex flex-col md:flex-row pt-8 md:pt-10 px-4 md:px-6 lg:px-8 gap-6 md:gap-8">
         <div
-          class="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2 lg:mr-[300px]"
+          class="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2 lg:mr-[200px] xl:mr-[300px]"
         >
           <div
-            class="w-[250px] md:w-[290px] h-[350px] md:h-[400px] bg-[#f5f5f5] rounded-lg shadow-md"
+            class="border border-[#59CB07] p-0 rounded-[15px] md:rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-[#4B4B4B] shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[350px] md:max-w-[400px] lg:max-w-[487px] w-full h-auto overflow-hidden"
           >
             <img
-              src="/assets/images/Simi_2025_2_qr.png"
+              src="/assets/images/QR_SIMI.png"
               alt="Código QR"
-              class="w-full h-full object-cover rounded-lg"
+              class="w-[90%] max-w-[280px] md:max-w-[320px] lg:max-w-[380px] h-auto object-contain py-4"
             />
           </div>
         </div>
 
         <div
-          class="w-full md:w-1/2 flex justify-center items-center order-2 md:order-1 lg:ml-[300px]"
+          class="w-full md:w-1/2 flex justify-center items-center order-2 md:order-1 lg:ml-[200px] xl:ml-[300px]"
         >
           <div
-            class="border border-[#59CB07] p-6 ml-2 rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-[#4B4B4B] shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[487px] w-full h-auto"
+            class="border border-[#59CB07] p-4 md:p-6 rounded-[15px] md:rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-[#4B4B4B] shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[350px] md:max-w-[400px] lg:max-w-[487px] w-full h-auto"
           >
-            <h2 class="text-lg md:text-[30px] font-bold mb-4 font-roboto">
+            <h2 class="text-xl md:text-2xl lg:text-[30px] font-bold mb-3 md:mb-4 font-roboto">
               PASOS:
             </h2>
 
             <div
-              class="space-y-2 text-[18px] md:text-[20px] font-light font-[Nunito] text-justify"
+              class="space-y-2 md:space-y-3 text-base md:text-lg lg:text-[20px] font-light font-[Nunito] text-justify px-2 md:px-0"
             >
               <p>1. Escanea el código QR.</p>
               <p>2. Abre la app de tu banco.</p>
@@ -74,7 +74,7 @@ import "../styles/global.css";
                 4. Envía el comprobante
                 <a
                   href="https://qt9k559s.forms.app/chanchitodesimi"
-                  class="text-[#59CB07] font-extrabold hover:opacity-80 transition"
+                  class="text-[#59CB07] font-extrabold hover:opacity-80 transition ml-1"
                   target="_blank">AQUÍ</a
                 >.
               </p>
@@ -83,7 +83,7 @@ import "../styles/global.css";
         </div>
       </div>
 
-      <div class="mb-[130px]"></div>
+      <div class="mb-16 md:mb-20 lg:mb-[130px]"></div>
     </div>
   </div>
 </PageLayout>
