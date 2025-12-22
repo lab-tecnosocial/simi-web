@@ -68,7 +68,7 @@ export const gameData = {
       { id: 15, word: "Sinqa", image: '/assets/images/anatomia/sinqa.png', definition: 'Nariz' },
       { id: 16, word: "Takillpa", image: '/assets/images/anatomia/takillpa.png', definition: 'Talón' },
       { id: 17, word: "T'usu", image: '/assets/images/anatomia/tusu.png', definition: 'Pantorrilla' },
-      { id: 18, word: "Ulla", image: '/assets/images/anatomia/ulla.png', definition: 'Rostro' },
+      { id: 18, word: "Uya", image: '/assets/images/anatomia/ulla.png', definition: 'Rostro' },
       { id: 19, word: "Uma", image: '/assets/images/anatomia/uma.png', definition: 'Cabeza' },
       { id: 20, word: "Wallwaku", image: '/assets/images/anatomia/wallwaku.png', definition: 'Axila' },
       { id: 21, word: "Wisa", image: '/assets/images/anatomia/wisa.png', definition: 'Barriga' },

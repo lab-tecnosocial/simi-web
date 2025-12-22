@@ -117,7 +117,7 @@ const Equipo = () => {
       nombre: "María Cristina Rojas López",
       imagen: "/assets/images/equipo/Rojas.png",
       linkedin: "https://www.linkedin.com/in/cristina-rojas-4a5580354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      profesion: "Maestra en formación",
+      profesion: "Maestra de Biología-Geografía",
     },
     {
       nombre: "Maria Eugenia Hidalgo Cossio",

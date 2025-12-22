@@ -123,7 +123,7 @@
       {
         "id": 16,
         "tema": "Saludos",
-        "word": "Waqkutikaman",
+        "word": "Tinkunakama",
         "image": "/assets/images/tinkunakama.png",
         "audio": "/assets/Audios_glosario/Saludos/tinkunakama.mp3",
         "definition": "Hasta la próxima"
@@ -467,7 +467,7 @@
       {
         "id": 59,
         "tema": "Anatomía",
-        "word": "Ulla",
+        "word": "Uya",
         "image": "/assets/images/anatomia/ulla.png",
         "audio": "/assets/Audios_glosario/Anatomia/uya.mp3",
         "definition": "Rostro"
