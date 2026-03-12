@@ -12,6 +12,7 @@ const Miembros = ({ miembros }) => {
           imagen={miembro.imagen}
           linkedin={miembro.linkedin}
           profesion={miembro.profesion}
+          portfolio={miembro.portfolio}
         />
       ))}
     </div>
@@ -39,6 +40,7 @@ const EquipoConLayout = ({ miembros, nombreSeccion }) => {
           imagen={miembros[0].imagen}
           linkedin={miembros[0].linkedin}
           profesion={miembros[0].profesion}
+          portfolio={miembros[0].portfolio}
         />
       </div>
     );
@@ -55,6 +57,26 @@ const EquipoConLayout = ({ miembros, nombreSeccion }) => {
               imagen={miembro.imagen}
               linkedin={miembro.linkedin}
               profesion={miembro.profesion}
+              portfolio={miembro.portfolio}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (miembros.length === 4) {
+    return (
+      <div className="flex justify-center mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-40">
+          {miembros.map((miembro, index) => (
+            <Card
+              key={`${nombreSeccion}-${index}`}
+              nombre={miembro.nombre}
+              imagen={miembro.imagen}
+              linkedin={miembro.linkedin}
+              profesion={miembro.profesion}
+              portfolio={miembro.portfolio}
             />
           ))}
         </div>
@@ -71,6 +93,7 @@ const EquipoConLayout = ({ miembros, nombreSeccion }) => {
           imagen={miembro.imagen}
           linkedin={miembro.linkedin}
           profesion={miembro.profesion}
+          portfolio={miembro.portfolio}
         />
       ))}
     </div>
@@ -168,6 +191,47 @@ const Equipo = () => {
       imagen: "/assets/images/equipo/MARTHA_DANITZA.jpg", 
       linkedin: "https://www.linkedin.com/in/martha-danitza-paitan-inga-84566a330/", 
       profesion: "Contadora y Ilustradora", 
+    },
+    {
+      nombre: "Alan Roberto Davila Tinta",
+      imagen: "/assets/images/equipo/AlanDavilaTinta.jpg",
+      linkedin: "",
+      profesion: "Diseñador Gráfico",
+      portfolio: "https://www.instagram.com/aran_dart",
+    },
+    {
+      nombre: "Alexandra Nicole Lazarte Andia",
+      imagen: "/assets/images/equipo/Nicole_Lazarte.jpg",
+      linkedin: "",
+      profesion: "Estudiante",
+    },
+  ];
+
+  // Diseño UX/UI
+  const equiposDesignActual = [
+    {
+      nombre: "Pedro Carpio Montero",
+      imagen: "/assets/images/equipo/PedroCarpio.webp",
+      linkedin: "https://www.linkedin.com/in/pedro-carpio",
+      profesion: "UI/UX Designer | Product Owner",
+      portfolio: "https://porkusillo.site",
+    },
+    {
+      nombre: "Carla Adriana Mamani Mamani",
+      imagen: "/assets/images/equipo/AdrianaMamani.jpg",
+      linkedin: "",
+      profesion: "Informática",
+    },
+  ];
+
+  // Comunicación
+  const equiposComunicacionActual = [
+    {
+      nombre: "Ana Rosa Soria Montaño",
+      imagen: "/assets/images/equipo/AnaRosaSoriaMontaño.jpg",
+      linkedin: "",
+      profesion: "Estudiante de Ciencias Jurídicas",
+      portfolio: "https://www.instagram.com/anitaa_r0sita",
     },
   ];
 
@@ -315,6 +379,7 @@ const Equipo = () => {
                   imagen={miembro.imagen}
                   linkedin={miembro.linkedin}
                   profesion={miembro.profesion}
+                  portfolio={miembro.portfolio}
                 />
               ))}
             </div>
@@ -329,6 +394,7 @@ const Equipo = () => {
                       imagen={miembro.imagen}
                       linkedin={miembro.linkedin}
                       profesion={miembro.profesion}
+                      portfolio={miembro.portfolio}
                     />
                   ))}
                 </div>
@@ -356,6 +422,20 @@ const Equipo = () => {
         <EquipoConLayout 
           miembros={equiposIlustracionActual} 
           nombreSeccion="actual-ilustracion" 
+        />
+
+        {/* Sección: Diseño UX/UI */}
+        <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Diseño UX/UI</h3>
+        <EquipoConLayout 
+          miembros={equiposDesignActual} 
+          nombreSeccion="actual-design" 
+        />
+
+        {/* Sección: Comunicación */}
+        <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Comunicación</h3>
+        <EquipoConLayout 
+          miembros={equiposComunicacionActual} 
+          nombreSeccion="actual-comunicacion" 
         />
       </div>
 
