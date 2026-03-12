@@ -172,7 +172,7 @@ const Equipo = () => {
   const equiposEditorialActual = [
     {
       nombre: "Tamara Ingrid Bascope Bozo",
-      imagen: "/assets/images/equipo/Bascope.png",
+      imagen: "/assets/images/equipo/Bascope.webp",
       linkedin: "https://linkedin.com/in/persona10",
       profesion: "Estudiante de Lingüística",
     },
