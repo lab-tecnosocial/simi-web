@@ -121,17 +121,14 @@ const Equipo = () => {
   // Informática y Desarrollo Web
   const equiposInformaticosActual = [
     {
-      nombre: "Ruben Pol Ventura Huchani",
-      imagen: "/assets/images/equipo/VENTURA_POL.jpg",
-      linkedin: "https://www.linkedin.com/in/ruben-pol-ventura-huchani-846609337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      profesion: "Estudiante de Ingeniería de Sistemas y Economía",
+      nombre: "Dante Andree Yupanqui Rodriguez",
+      imagen: "/assets/images/equipo/DANTE_YUPANQUI.jpg",
+      linkedin: "https://www.linkedin.com/in/dante-yupanqui",
+      profesion: "Ingenierío de Sistemas",
+
     },
-    {
-      nombre: "Tania Gisela Choque Condori",
-      imagen: "/assets/images/equipo/Choque.jpg",
-      linkedin: "https://linkedin.com/in/persona1",
-      profesion: "Ingeniera de sistemas y médico cirujano",
-    },
+   
+   
   ];
 
   // Aprendizaje y Diseño Curricular
@@ -154,18 +151,8 @@ const Equipo = () => {
       linkedin: "https://linkedin.com/in/persona8",
       profesion: "Lingüista",
     },
-    {
-      nombre: "Jhaxson Camacho Arandia",
-      imagen: "/assets/images/equipo/Jhaxson_Camacho.jpg",
-      linkedin: "https://linkedin.com/in/nuevo-linguista",
-      profesion: "Auditor",
-    },
-    {
-      nombre: "Nayely Vallejos Terrazas",
-      imagen: "/assets/images/equipo/nayely_vallejos.jpeg",
-      linkedin: "https://linkedin.com/in/nuevo-linguista",
-      profesion: "Licenciada en Biología e Geografía",
-    },
+    
+   
   ];
 
   // Editorial
@@ -176,22 +163,19 @@ const Equipo = () => {
       linkedin: "https://linkedin.com/in/persona10",
       profesion: "Estudiante de Lingüística",
     },
+     {
+      nombre: "Ana Rosa Soria Montaño",
+      imagen: "/assets/images/equipo/AnaRosaSoriaMontaño.jpg",
+      linkedin: "",
+      profesion: "Estudiante de Ciencias Jurídicas",
+      portfolio: "https://www.instagram.com/anitaa_r0sita",
+    },
   ];
 
   // Ilustración
   const equiposIlustracionActual = [
-    {
-      nombre: "José Froylan López García", 
-      imagen: "/assets/images/equipo/LOPEZ.jpg", 
-      linkedin: "https://linkedin.com/in/nuevo-ilustrador", 
-      profesion: "Artista", 
-    },
-    {
-      nombre: "Martha Danitza Paitan Inga", 
-      imagen: "/assets/images/equipo/MARTHA_DANITZA.jpg", 
-      linkedin: "https://www.linkedin.com/in/martha-danitza-paitan-inga-84566a330/", 
-      profesion: "Contadora y Ilustradora", 
-    },
+    
+    
     {
       nombre: "Alan Roberto Davila Tinta",
       imagen: "/assets/images/equipo/AlanDavilaTinta.jpg",
@@ -225,15 +209,7 @@ const Equipo = () => {
   ];
 
   // Comunicación
-  const equiposComunicacionActual = [
-    {
-      nombre: "Ana Rosa Soria Montaño",
-      imagen: "/assets/images/equipo/AnaRosaSoriaMontaño.jpg",
-      linkedin: "",
-      profesion: "Estudiante de Ciencias Jurídicas",
-      portfolio: "https://www.instagram.com/anitaa_r0sita",
-    },
-  ];
+  //const equiposComunicacionActual = [];
 
   // ========== ANTIGUOS MIEMBROS ==========
   // Informática
@@ -249,6 +225,18 @@ const Equipo = () => {
       imagen: "/assets/images/equipo/Calderon.png",
       linkedin: "https://www.linkedin.com/in/raquel-andrea-calderon-gallardo",
       profesion: "Ingeniería Biomédica",
+    },
+     {
+      nombre: "Tania Gisela Choque Condori",
+      imagen: "/assets/images/equipo/Choque.jpg",
+      linkedin: "https://linkedin.com/in/persona1",
+      profesion: "Ingeniera de sistemas y médico cirujano",
+    },
+     {
+      nombre: "Ruben Pol Ventura Huchani",
+      imagen: "/assets/images/equipo/VENTURA_POL.jpg",
+      linkedin: "https://www.linkedin.com/in/ruben-pol-ventura-huchani-846609337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      profesion: "Estudiante de Ingeniería de Sistemas y Economía",
     },
   ];
 
@@ -295,6 +283,18 @@ const Equipo = () => {
       linkedin: "http://www.linkedin.com/in/alexis-pelaez-olivera-bb461b23a",
       profesion: "Docente de idiomas",
     },
+     {
+      nombre: "Nayely Vallejos Terrazas",
+      imagen: "/assets/images/equipo/nayely_vallejos.jpeg",
+      linkedin: "https://linkedin.com/in/nuevo-linguista",
+      profesion: "Maestra de Biología - Geografía",
+    },
+    {
+      nombre: "Jhaxson Camacho Arandia",
+      imagen: "/assets/images/equipo/Jhaxson_Camacho.jpg",
+      linkedin: "https://linkedin.com/in/nuevo-linguista",
+      profesion: "Auditor",
+    },
   ];
 
   // Editorial
@@ -304,6 +304,12 @@ const Equipo = () => {
       imagen: "/assets/images/equipo/Alvarez.jpg",
       linkedin: "http://www.linkedin.com/in/ximena-alvarez-gutierrez-936778337",
       profesion: "Lingüista",
+    },
+    {
+      nombre: "José Froylan López García", 
+      imagen: "/assets/images/equipo/LOPEZ.jpg", 
+      linkedin: "https://linkedin.com/in/nuevo-ilustrador", 
+      profesion: "Artista", 
     },
   ];
 
@@ -321,6 +327,12 @@ const Equipo = () => {
       imagen: "/assets/images/equipo/Darek_Alberto_Larrazabal_Sanabria.jpeg",
       linkedin: "http://www.linkedin.com/in/ximena-alvarez-gutierrez-936778337",
       profesion: "Artista plástico",
+    },
+    {
+      nombre: "Martha Danitza Paitan Inga", 
+      imagen: "/assets/images/equipo/MARTHA_DANITZA.jpg", 
+      linkedin: "https://www.linkedin.com/in/martha-danitza-paitan-inga-84566a330/", 
+      profesion: "Contadora e ilustradora", 
     },
 
   ];
@@ -431,12 +443,13 @@ const Equipo = () => {
           nombreSeccion="actual-design" 
         />
 
-        {/* Sección: Comunicación */}
+        {/* Sección: Comunicación
         <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Comunicación</h3>
-        <EquipoConLayout 
-          miembros={equiposComunicacionActual} 
-          nombreSeccion="actual-comunicacion" 
-        />
+        <EquipoConLayout
+          miembros={equiposComunicacionActual}
+          nombreSeccion="actual-comunicacion"
+        />*/}
+        
       </div>
 
       {/* ========== SECCIÓN: ANTIGUOS MIEMBROS ========== */}
