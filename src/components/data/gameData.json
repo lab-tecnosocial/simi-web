@@ -67,7 +67,7 @@
       {
         "id": 9,
         "tema": "Números",
-        "word": "Jisq'un",
+        "word": "Jisq’un",
         "image": "/assets/images/9.png",
         "audio": "/assets/Audios_glosario/Numeros/9.mp3",
         "definition": "Nueve"
@@ -270,7 +270,7 @@
         "word": "Ñaña",
         "image": "/assets/images/familia/nana.png",
         "audio": "/assets/Audios_glosario/Familia/nana.mp3",
-        "definition": "Hermana"
+        "definition": "Hermana (de una mujer) "
       },
       {
         "id": 35,
@@ -310,7 +310,7 @@
         "word": "Warmi",
         "image": "/assets/images/familia/warmi.png",
         "audio": "/assets/Audios_glosario/Familia/warmi.mp3",
-        "definition": "Hermana"
+        "definition": "Esposa"
       },
       {
         "id": 40,
@@ -327,6 +327,14 @@
         "image": "/assets/images/familia/wawqi.png",
         "audio": "/assets/Audios_glosario/Familia/wawqi.mp3",
         "definition": "Hermano (de un varón)"
+      },
+      {
+        "id": 78,
+        "tema": "Familia",
+        "word": "Qusa",
+        "image": "/assets/images/familia/qusa.png",
+        "audio": "/assets/Audios_glosario/Familia/qusa.mp3",
+        "definition": "Esposo"
       },
       {
         "id": 42,
@@ -419,7 +427,7 @@
       {
         "id": 53,
         "tema": "Anatomía",
-        "word": "Rukana",
+        "word": "Ruk’ana",
         "image": "/assets/images/anatomia/rukana.png",
         "audio": "/assets/Audios_glosario/Anatomia/rukana.mp3",
         "definition": "Dedo"
@@ -491,7 +499,7 @@
       {
         "id": 62,
         "tema": "Anatomía",
-        "word": "Wisa",
+        "word": "Wiksa",
         "image": "/assets/images/anatomia/wisa.png",
         "audio": "/assets/Audios_glosario/Anatomia/wisa.mp3",
         "definition": "Barriga"

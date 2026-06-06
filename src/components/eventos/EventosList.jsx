@@ -9,7 +9,7 @@ const EventosList = () => {
       titulo: 'Conferencia conoce y aprende Quechua con la app Simi',
       lugar: 'Auditorio Valmert, Alianza Francesa',
       horario: '10:00 a 12:00',
-      descripcion: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Nec eu pulvinar ultricies; accumsan magnis parturient molestie orci eu. Neque lobortis gravida quis nibh massa lacus adipiscing.',
+      descripcion: 'Una tarde para conocer la app Simi y dar tus primeros pasos en el quechua. ¡Te esperamos!',
       imagen: '/assets/images/JULIO.png'
     },
     {
