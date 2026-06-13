@@ -147,8 +147,8 @@ const MatchingGame = () => {
 
   return (
     <div className="matching-game p-4 mt-10">
-      <h1 className="text-4xl text-[#59CB07] font-bold mb-2 text-center">Emparejamiento</h1>
-      <h2 className="text-center text-2xl text-[#4B4B4B] font-bold">Tinkuchispa pukllay</h2>
+      <h1 className="text-4xl text-qumir font-bold mb-2 text-center">Emparejamiento</h1>
+      <h2 className="text-center text-2xl text-futuro font-bold">Tinkuchispa pukllay</h2>
       <div className="flex flex-col items-center text-center mt-8">
         <div className="mb-4 text-center">
           <div className="mb-4">
@@ -231,7 +231,7 @@ const MatchingGame = () => {
               >
                 {/* Word with underline */}
                 <div className="relative w-full text-center">
-                  <p className="font-bold text-[#4B4B4B] pt-2">{word}</p>
+                  <p className="font-bold text-futuro pt-2">{word}</p>
                   <div className="absolute left-0 w-full h-[2px] bg-[#66d400] mt-1"></div>
                 </div>
 

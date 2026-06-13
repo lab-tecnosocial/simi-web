@@ -24,7 +24,7 @@ const Card = ({ nombre, imagen, linkedin, profesion, portfolio }) => {
           )}
           {portfolio && (
             <a href={portfolio} target="_blank" rel="noopener noreferrer">
-              <i className={`${esInstagram ? "fab fa-instagram" : "fas fa-globe"} text-5xl ${esInstagram ? "text-[#E1306C]" : "text-[#4B4B4B]"}`} aria-hidden="true"></i>
+              <i className={`${esInstagram ? "fab fa-instagram" : "fas fa-globe"} text-5xl ${esInstagram ? "text-[#E1306C]" : "text-futuro"}`} aria-hidden="true"></i>
             </a>
           )}
         </div>

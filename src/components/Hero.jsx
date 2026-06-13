@@ -14,8 +14,8 @@ const Hero = () => {
         />
 
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-6 leading-tight">
-            Aprende <span className="text-[#58CB05] font-bold">Quechua</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-futuro mb-6 leading-tight">
+            Aprende <span className="text-qumir font-bold">Quechua</span>
             <br />
             de forma fácil y divertida
           </h1>
@@ -26,7 +26,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-[#58CB05] text-white font-normal py-2 px-6 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] hover:bg-green-700 transition-all w-48 transform hover:scale-105">
+              <button className="bg-qumir text-white font-normal py-2 px-6 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] hover:bg-green-700 transition-all w-48 transform hover:scale-105">
                 DESCARGAR APP
               </button>
             </a>

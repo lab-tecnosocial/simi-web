@@ -115,17 +115,12 @@ function Game() {
       }}
     >
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold" style={{ color: '#59CB07' }}>Salva a Simi</h1>
+        <h1 className="text-3xl font-bold text-qumir">Salva a Simi</h1>
         <h2 className="text-lg text-gray-700">Simita yanapay</h2>
       </div>
 
       <div
-        className="rounded-lg p-4 mb max-w-lg text-center mx-auto"
-        style={{
-          border: '2px solid #59CB07',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          backgroundColor: '#ffffff'
-        }}
+        className="rounded-lg p-4 mb max-w-lg text-center mx-auto border-2 border-qumir bg-white shadow-[0_4px_6px_rgba(0,0,0,0.1)]"
       >
         <p className="text-gray-700">
           Un juego donde debes descubrir la palabra oculta letra por<br />
@@ -177,7 +172,7 @@ function Game() {
       <button
         onClick={handleHint}
         disabled={hintsUsed >= maxHints}
-        className={`bg-[#59CB07] text-white font-bold py-3 px-6 rounded-xl hover:bg-[#4bb306] transition duration-200 ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''} text-lg shadow-md hover:shadow-lg mt-4`}
+        className={`bg-qumir text-white font-bold py-3 px-6 rounded-xl hover:bg-[#4bb306] transition duration-200 ${hintsUsed >= maxHints ? 'opacity-50 cursor-not-allowed' : ''} text-lg shadow-md hover:shadow-lg mt-4`}
       >
         Dame una pista
       </button>

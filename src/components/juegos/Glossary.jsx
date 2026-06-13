@@ -51,7 +51,7 @@ const Glossary = () => {
               placeholder="Buscar palabra..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full max-w-md px-6 py-3 rounded-xl shadow-md border border-[#A5A5A5] bg-white focus:outline-none focus:ring-2 focus:ring-[#58CB05] transition"
+              className="w-full max-w-md px-6 py-3 rounded-xl shadow-md border border-[#A5A5A5] bg-white focus:outline-none focus:ring-2 focus:ring-qumir transition"
             />
           </div>
           <h2 className="text-2xl font-bold text-gray-700 mb-6">Palabras por temas</h2>
@@ -60,8 +60,8 @@ const Glossary = () => {
               onClick={() => setSelectedTema(null)}
               className={`px-6 py-2 rounded-xl shadow-md font-semibold transition border-[1.5px] bg-white ${
                 selectedTema === null
-                  ? 'border-[#58CB05] text-[#58CB05]'
-                  : 'border-[#A5A5A5] text-[#1a1a1a] hover:border-[#58CB05] hover:text-[#58CB05]'
+                  ? 'border-qumir text-qumir'
+                  : 'border-[#A5A5A5] text-[#1a1a1a] hover:border-qumir hover:text-qumir'
               }`}
             >
               Todos
@@ -72,8 +72,8 @@ const Glossary = () => {
                 onClick={() => setSelectedTema(tema)}
                 className={`px-6 py-2 rounded-xl shadow-md font-semibold transition border-[1.5px] bg-white ${
                   selectedTema === tema
-                    ? 'border-[#58CB05] text-[#58CB05]'
-                    : 'border-[#A5A5A5] text-[#1a1a1a] hover:border-[#58CB05] hover:text-[#58CB05]'
+                    ? 'border-qumir text-qumir'
+                    : 'border-[#A5A5A5] text-[#1a1a1a] hover:border-qumir hover:text-qumir'
                 }`}
               >
                 {tema}
@@ -93,7 +93,7 @@ const Glossary = () => {
                     <h2 className="text-2xl font-bold text-[#000] mb-4">{t}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 justify-center max-w-3xl mx-auto text-left">
                       {group.map(entry => (
-                        <div key={entry.id} className="text-[#4B4B4B] flex items-center">
+                        <div key={entry.id} className="text-futuro flex items-center">
                           <button
                             onClick={() => playAudio(entry.audio)}
                             className="
@@ -109,7 +109,7 @@ const Glossary = () => {
                               mr-3
                             "
                           >
-                            <i className="fa fa-volume-up text-[#58CB05] text-xl" aria-hidden="true"></i>
+                            <i className="fa fa-volume-up text-qumir text-xl" aria-hidden="true"></i>
                           </button>
                           <span>
                             <strong>{entry.word}</strong>: {entry.definition}
@@ -125,7 +125,7 @@ const Glossary = () => {
                 <h2 className="text-2xl font-bold text-[#000] mb-4">{selectedTema}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 justify-center max-w-3xl mx-auto text-left">
                   {filteredEntries.map(entry => (
-                    <div key={entry.id} className="text-[#4B4B4B] flex items-center">
+                    <div key={entry.id} className="text-futuro flex items-center">
                       <button
                         onClick={() => playAudio(entry.audio)}
                         className="
@@ -141,7 +141,7 @@ const Glossary = () => {
                           mr-3
                         "
                       >
-                        <i className="fa fa-volume-up text-[#58CB05] text-xl" aria-hidden="true"></i>
+                        <i className="fa fa-volume-up text-qumir text-xl" aria-hidden="true"></i>
                       </button>
                       <span>
                         <strong>{entry.word}</strong>: {entry.definition}
