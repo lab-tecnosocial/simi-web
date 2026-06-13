@@ -58,7 +58,7 @@ const Header = () => {
     <header className="bg-white shadow text-2xl font-bold text-futuro">
       <nav className="container mx-auto flex items-center justify-between p-4">
         <div className="flex items-center justify-center md:justify-start">
-          <img src="/assets/images/logo_simi2025.png" alt="Logo" className="h-16 mr-2" />
+          <img src="/assets/images/brand/logo_simi2025.png" alt="Logo" className="h-16 mr-2" />
         </div>
         
         {/* Botón Hamburguesa */}
@@ -198,17 +198,8 @@ const Header = () => {
             <a className="text-futuro hover:text-qumir" href="/apoyenos" onClick={toggleMenu}>Apóyenos</a>
           </li>
           
-          <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-qumir" href="#">
-              <i className="fas fa-globe"></i>
-            </a>
-          </li>
-          
-          <li className="my-2 md:my-0">
-            <a className="text-futuro hover:text-qumir" href="#">
-              <i className="fas fa-sun"></i>
-            </a>
-          </li>
+          {/* TODO: implementar selector de idioma ES/QU */}
+          {/* TODO: implementar modo oscuro con prefers-color-scheme */}
         </ul>
       </nav>
     </header>
