@@ -7,6 +7,7 @@ function Anagram() {
   const [shuffledWord, setShuffledWord] = useState('');
   const [guess, setGuess] = useState('');
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isWrong, setIsWrong] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('animales');
   const [timeLeft, setTimeLeft] = useState(120);
 
@@ -48,7 +49,12 @@ function Anagram() {
   };
 
   const checkGuess = () => {
-    setIsGameOver(true);
+    if (guess.toLowerCase() === currentWord.toLowerCase()) {
+      setIsGameOver(true);
+    } else {
+      setIsWrong(true);
+      setTimeout(() => setIsWrong(false), 1500);
+    }
   };
 
   const resetGame = () => {
@@ -63,7 +69,7 @@ function Anagram() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8 mx-4">
       <div className="text-center">
         <h1 className='text-3xl font-bold mb-0 text-titulo'>Anagrama</h1>
-        <h1 className='text-2xl font-bold text-futuro mb-4'>T’ikraspa pukllay</h1>
+        <h1 lang="qu" className="text-2xl font-bold text-futuro mb-4">T’ikraspa pukllay</h1>
         <p className="text-sm mb-4">Reordena las letras y forma tantas palabras como puedas antes que se acabe el tiempo.</p>
         <div className="flex flex-col items-center justify-center w-full">
           <div className="border rounded-xl p-4 md:p-8 w-96 bg-qumir bg-opacity-20 mb-8 text-left shadow-xl">
@@ -95,11 +101,14 @@ function Anagram() {
             <div className='flex items-center mb-16 w-full max-w-lg'>
               <input
                 type="text"
-                className="border border-qumir p-4 rounded-lg w-full shadow-lg text-center text-3xl font-extrabold tracking-wide shadow-green-100"
+                className={`border p-4 rounded-lg w-full shadow-lg text-center text-3xl font-extrabold tracking-wide ${isWrong ? 'border-yawar text-yawar' : 'border-qumir shadow-green-100'}`}
                 value={guess}
-                onChange={(e) => setGuess(e.target.value)}
+                onChange={(e) => { setGuess(e.target.value); setIsWrong(false); }}
               />
             </div>
+            {isWrong && (
+              <p className="text-yawar font-bold text-lg mb-4 -mt-12">¡Incorrecto! Intenta de nuevo.</p>
+            )}
             <div className='flex mb-12 justify-between w-full max-w-lg'>
               <button
                 onClick={changeWord}

@@ -40,7 +40,7 @@ const GameMenu = () => {
           {/* Tarjeta Anagrama */}
           <div className="w-full h-[450px] p-0 bg-white border border-qumir rounded-2xl shadow-[0_4px_16px_rgba(88,203,5,0.3)] flex flex-col overflow-hidden transition-transform hover:scale-105">
             <div className="text-center p-4 w-full h-[120px] flex flex-col justify-end">
-              <h2 className="text-qumir font-bold text-xl">T'ikraspa pukllay</h2>
+              <h2 lang="qu" className="text-qumir font-bold text-xl">T'ikraspa pukllay</h2>
               <p className="text-gray-700 text-base mt-2">Anagrama</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
@@ -52,7 +52,7 @@ const GameMenu = () => {
                 className="w-full bg-qumir hover:bg-green-700 text-white font-semibold px-4 py-4 rounded-b-2xl text-center flex flex-col items-start justify-center text-lg relative"
               >
                 <div className="flex flex-col items-start w-full pl-8">
-                  <span className="text-xl font-bold">Pukllana</span>
+                  <span lang="qu" className="text-xl font-bold">Pukllana</span>
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
@@ -67,7 +67,7 @@ const GameMenu = () => {
           {/* Tarjeta Salva a Simi */}
           <div className="w-full h-[450px] p-0 bg-white border border-qumir rounded-2xl shadow-[0_4px_16px_rgba(88,203,5,0.3)] flex flex-col overflow-hidden transition-transform hover:scale-105">
             <div className="text-center p-4 w-full h-[120px] flex flex-col justify-end">
-              <h2 className="text-qumir font-bold text-xl">Simita yanapay!</h2>
+              <h2 lang="qu" className="text-qumir font-bold text-xl">Simita yanapay!</h2>
               <p className="text-gray-700 text-base mt-2">Salva a Simi</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
@@ -79,7 +79,7 @@ const GameMenu = () => {
                 className="w-full bg-qumir hover:bg-green-700 text-white font-semibold px-4 py-4 rounded-b-2xl text-center flex flex-col items-start justify-center text-lg relative"
               >
                 <div className="flex flex-col items-start w-full pl-8">
-                  <span className="text-xl font-bold">Pukllana</span>
+                  <span lang="qu" className="text-xl font-bold">Pukllana</span>
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
@@ -94,7 +94,7 @@ const GameMenu = () => {
           {/* Tarjeta Sopa de Letras */}
           <div className="w-full h-[450px] p-0 bg-white border border-qumir rounded-2xl shadow-[0_4px_16px_rgba(88,203,5,0.3)] flex flex-col overflow-hidden transition-transform hover:scale-105">
             <div className="text-center p-4 w-full h-[120px] flex flex-col justify-end">
-              <h2 className="text-qumir font-bold text-xl">Qillqa jilli</h2>
+              <h2 lang="qu" className="text-qumir font-bold text-xl">Qillqa jilli</h2>
               <p className="text-gray-700 text-base mt-2">Sopa de letras</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
@@ -106,7 +106,7 @@ const GameMenu = () => {
                 className="w-full bg-qumir hover:bg-green-700 text-white font-semibold px-4 py-4 rounded-b-2xl text-center flex flex-col items-start justify-center text-lg relative"
               >
                 <div className="flex flex-col items-start w-full pl-8">
-                  <span className="text-xl font-bold">Pukllana</span>
+                  <span lang="qu" className="text-xl font-bold">Pukllana</span>
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
@@ -121,7 +121,7 @@ const GameMenu = () => {
           {/* Tarjeta Emparejar */}
           <div className="w-full h-[450px] p-0 bg-white border border-qumir rounded-2xl shadow-[0_4px_16px_rgba(88,203,5,0.3)] flex flex-col overflow-hidden transition-transform hover:scale-105">
             <div className="text-center p-4 w-full h-[120px] flex flex-col justify-end">
-              <h2 className="text-qumir font-bold text-xl">Tinkuchispa pukllay</h2>
+              <h2 lang="qu" className="text-qumir font-bold text-xl">Tinkuchispa pukllay</h2>
               <p className="text-gray-700 text-base mt-2">Emparejamiento</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
@@ -133,7 +133,7 @@ const GameMenu = () => {
                 className="w-full bg-qumir hover:bg-green-700 text-white font-semibold px-4 py-4 rounded-b-2xl text-center flex flex-col items-start justify-center text-lg relative"
               >
                 <div className="flex flex-col items-start w-full pl-8">
-                  <span className="text-xl font-bold">Pukllana</span>
+                  <span lang="qu" className="text-xl font-bold">Pukllana</span>
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img

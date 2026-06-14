@@ -60,7 +60,7 @@ const [allWordPositions, setAllWordPositions] = useState([]);
 
     const getRandomWords = (category, count) => {
         const words = wordList[category];
-        const shuffled = words.sort(() => 0.5 - Math.random());
+        const shuffled = [...words].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     };
 

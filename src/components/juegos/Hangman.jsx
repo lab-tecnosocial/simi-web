@@ -19,10 +19,6 @@ function Game() {
   const maxHints = 2;
 
   
-  const [wins, setWins] = useState(0);
-  const [losses, setLosses] = useState(0);
-  const [gameStarted, setGameStarted] = useState(false);
-
   const generarPosicionManchaSegura = (manchasExistentes) => {
     const radius = 130;
     const manchaSize = 80; // w-20
@@ -55,7 +51,6 @@ function Game() {
       setWrongGuesses(0);
       setManchas([]);
       setHintsUsed(0);
-      setGameStarted(true);
     } else {
       console.error(`No existe la lista de palabras para: ${selectedList}`);
     }
@@ -93,17 +88,6 @@ function Game() {
   const isGameOver = wrongGuesses >= maxAttempts;
   const isWinner = selectedWord.split('').every(letter => guessedLetters.includes(letter));
 
-  useEffect(() => {
-    
-    if (gameStarted) {
-      if (isGameOver) {
-        setLosses(prev => prev + 1);
-      }
-      if (isWinner) {
-        setWins(prev => prev + 1);
-      }
-    }
-  }, [isGameOver, isWinner, gameStarted]);
 
   return (
     <div
@@ -116,7 +100,7 @@ function Game() {
     >
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold text-qumir">Salva a Simi</h1>
-        <h2 className="text-lg text-gray-700">Simita yanapay</h2>
+        <h2 lang="qu" className="text-lg text-gray-700">Simita yanapay</h2>
       </div>
 
       <div
@@ -191,13 +175,6 @@ function Game() {
       )}
 
 
-      {/*
-      <div className='bg-[#bef789] mt-2 mb-4 py-2 px-4 rounded'>
-        <h3>Estadísticas</h3>
-        <p>Partidas ganadas: {wins}</p>
-        <p>Partidas perdidas: {losses}</p>
-      </div>
-      */}
 
 
     </div>

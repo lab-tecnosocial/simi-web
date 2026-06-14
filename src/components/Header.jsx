@@ -62,9 +62,11 @@ const Header = () => {
         </div>
         
         {/* Botón Hamburguesa */}
-        <button 
+        <button
           className="md:hidden text-futuro hover:text-qumir focus:outline-none z-50"
           onClick={toggleMenu}
+          aria-label="Abrir menú"
+          aria-expanded={isMenuOpen}
         >
           <span className="block w-6 h-0.5 bg-futuro my-1"></span>
           <span className="block w-6 h-0.5 bg-futuro my-1"></span>
@@ -80,9 +82,10 @@ const Header = () => {
           `}
         >
           <li className="md:hidden absolute top-4 right-4">
-            <button 
+            <button
               className="text-futuro hover:text-qumir focus:outline-none"
               onClick={toggleMenu}
+              aria-label="Cerrar menú"
             >
               ✕
             </button>
@@ -102,17 +105,21 @@ const Header = () => {
               type="button"
               className="text-futuro hover:text-qumir focus:outline-none flex items-center"
               onClick={toggleDropdownGames}
+              aria-haspopup="true"
+              aria-expanded={isDropdownGamesOpen}
             >
-              Juegos 
+              Juegos
               <i className={`fa fa-chevron-${isDropdownGamesOpen ? 'up' : 'down'} ml-1`}></i>
             </button>
             {isDropdownGamesOpen && (
-              <ul 
+              <ul
+                role="menu"
                 className="md:absolute left-0 mt-2 w-40 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
-                  <a 
+                  <a
+                    role="menuitem"
                     className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/juegos"
                     onClick={() => {
@@ -124,8 +131,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    className="block px-4 py-2 text-futuro hover:bg-gray-200" 
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/juego_de_mesa"
                     onClick={() => {
                       setIsDropdownGamesOpen(false);
@@ -145,18 +153,22 @@ const Header = () => {
               type="button"
               className="text-futuro hover:text-qumir focus:outline-none flex items-center"
               onClick={toggleDropdownCommunity}
+              aria-haspopup="true"
+              aria-expanded={isDropdownCommunityOpen}
             >
-              Comunidad 
+              Comunidad
               <i className={`fa fa-chevron-${isDropdownCommunityOpen ? 'up' : 'down'} ml-1`}></i>
             </button>
             {isDropdownCommunityOpen && (
-              <ul 
+              <ul
+                role="menu"
                 className="md:absolute left-0 mt-2 w-40 bg-white rounded z-50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <li>
-                  <a 
-                    className="block px-4 py-2 text-futuro hover:bg-gray-200" 
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/eventos"
                     onClick={() => {
                       setIsDropdownCommunityOpen(false);
@@ -167,8 +179,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    className="block px-4 py-2 text-futuro hover:bg-gray-200" 
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/blog"
                     onClick={() => {
                       setIsDropdownCommunityOpen(false);
@@ -179,8 +192,9 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    className="block px-4 py-2 text-futuro hover:bg-gray-200" 
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
                     href="/preguntas_frecuentes"
                     onClick={() => {
                       setIsDropdownCommunityOpen(false);
