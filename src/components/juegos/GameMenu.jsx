@@ -14,7 +14,7 @@ const GameMenu = () => {
 
       <div className="relative z-10 w-full flex flex-col items-center">
         <img
-          src="../assets/images/simicards.png"
+          src="/assets/images/simicards.png"
           alt="cabeza logo"
           className="w-32 h-auto mx-auto mb-4"
         />

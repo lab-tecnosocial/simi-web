@@ -8,8 +8,10 @@ const Hero = () => {
 
       <div className="relative z-10 flex flex-col xl:flex-row items-center gap-6 transform origin-center scale-100 xl:scale-[1.2] 2xl:scale-[1.4]">
         <img
-          src="/assets/images/QHICHWAPI PARLANA.png"
-          alt="Personaje aprendiendo"
+          src="/assets/images/hero_personaje.png"
+          alt="Personaje aprendiendo quechua"
+          width={384}
+          height={384}
           className="w-64 md:w-96 -translate-x-4 md:-translate-x-8 transition-transform"
         />
 
