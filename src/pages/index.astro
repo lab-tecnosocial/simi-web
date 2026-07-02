@@ -133,8 +133,8 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
         id="counter-section"
         class="w-full h-auto py-12 relative bg-transparent"
       >
-        <div id="counter-container" class="flex justify-center gap-2.5">
-          <!-- Counter digits will be added here -->
+        <div class="flex justify-center">
+          <span class="text-[clamp(4rem,12vw,8rem)] font-bold text-qumir font-roboto leading-none">10K+</span>
         </div>
         <h2
           class="text-5xl text-futuro downloads-txt font-roboto font-bold pt-8 text-center"
@@ -142,7 +142,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
           Descargas hasta hoy
         </h2>
         <div class="flex flex-col items-center mt-6 gap-4">
-          <p class="text-2xl font-bold text-qumir text-center">¡Ayúdanos a llegar a 10,000!</p>
+          <p class="text-2xl font-bold text-qumir text-center">¡Ayúdanos a llegar a 20,000!</p>
           <a
             href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
             target="_blank"
@@ -269,51 +269,5 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
       });
     </script>
 
-    <!-- Android App Downloads Counter -->
-    <script>
-      const targetNumber = 7231;
-      const counterContainer = document.getElementById("counter-container");
-      const digits = targetNumber.toString().length;
-      let hasScrolled = false;
-      document.addEventListener("DOMContentLoaded", function () {
-        for (let i = 0; i < digits; i++) {
-          const draw = document.createElement("div");
-          draw.className =
-            "w-14 h-16 text-[#74c741] text-5xl flex justify-center items-center font-bold bg-transparent rounded-lg border border-black shadow-md m-1 px-4";
-          draw.textContent = "0";
-          counterContainer.appendChild(draw);
-        }
-        function countUp() {
-          let currentNumber = 0;
-          let increment = Math.ceil(targetNumber / 50);
-          const interval = setInterval(() => {
-            if (currentNumber >= targetNumber) {
-              currentNumber = targetNumber;
-              decorCounter(currentNumber);
-              clearInterval(interval);
-            } else {
-              currentNumber++;
-              currentNumber = currentNumber + increment;
-              decorCounter(currentNumber);
-            }
-          }, 50);
-        }
-        window.addEventListener("scroll", function () {
-          const sectionTop =
-            document.getElementById("counter-section").offsetTop;
-          const scrollPosition = window.scrollY + window.innerHeight;
-          if (scrollPosition > sectionTop && !hasScrolled) {
-            hasScrolled = true;
-            countUp();
-          }
-        });
-        function decorCounter(num) {
-          const currentDigits = num.toString().padStart(digits, "0");
-          Array.from(counterContainer.children).forEach((cell, index) => {
-            cell.textContent = currentDigits[index];
-          });
-        }
-      });
-    </script>
   </body>
 </html>
