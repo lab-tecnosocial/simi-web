@@ -2,8 +2,7 @@
 export default {
 	content: [
 		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-		'!./src/pages/index.astro',
-		'./node_modules/swiper/swiper-bundle.esm.js',
+'./node_modules/swiper/swiper-bundle.esm.js',
 	],
 	theme: {
 		extend: {

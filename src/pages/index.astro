@@ -62,7 +62,9 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <title>Simi</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Primary Meta Tags -->
     <title>Simi - Aprende Quechua de una manera amigable</title>
@@ -116,6 +118,11 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
   </head>
 
   <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
     <Header client:load />
 
     <div class="bg-rana">
@@ -134,6 +141,17 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
         >
           Descargas hasta hoy
         </h2>
+        <div class="flex flex-col items-center mt-6 gap-4">
+          <p class="text-2xl font-bold text-qumir text-center">¡Ayúdanos a llegar a 10,000!</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-qumir hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all transform hover:scale-105"
+          >
+            Descargar app gratis
+          </a>
+        </div>
       </section>
 
       <!--  Hero Section  -->
