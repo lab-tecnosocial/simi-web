@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Word from './Word';
 import Keyboard from './Keyboard';
 import GameOver from './GameOver';
-import wordList from './WordList';
+import { wordList } from '../data';
 import fondoCielo from '../assets/images/Nubes.GIF';
 import globo from '../assets/images/globo.png';
 import mancha from '../assets/images/mancha.png';
@@ -14,6 +14,8 @@ function Game() {
   const [wrongGuesses, setWrongGuesses] = useState(0);
   const [manchas, setManchas] = useState([]);
   const [hintsUsed, setHintsUsed] = useState(0);
+  const [wins, setWins] = useState(0);
+  const [losses, setLosses] = useState(0);
 
   const maxAttempts = 4;
   const maxHints = 2;
@@ -86,7 +88,12 @@ function Game() {
   };
 
   const isGameOver = wrongGuesses >= maxAttempts;
-  const isWinner = selectedWord.split('').every(letter => guessedLetters.includes(letter));
+  const isWinner = selectedWord.length > 0 && selectedWord.split('').every(letter => guessedLetters.includes(letter));
+
+  useEffect(() => {
+    if (isWinner) setWins(w => w + 1);
+    else if (isGameOver) setLosses(l => l + 1);
+  }, [isWinner, isGameOver]);
 
 
   return (
@@ -101,6 +108,10 @@ function Game() {
       <div className="text-center mb-6">
         <h1 className="text-3xl font-bold text-qumir">Salva a Simi</h1>
         <h2 lang="qu" className="text-lg text-gray-700">Simita yanapay</h2>
+        <div className="flex justify-center gap-6 mt-3">
+          <span className="text-qumir font-bold text-lg">✓ {wins} victorias</span>
+          <span className="text-yawar font-bold text-lg">✗ {losses} derrotas</span>
+        </div>
       </div>
 
       <div

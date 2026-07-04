@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'; import { gameData } from '../data/gameData'; import winSound
+import { useState, useEffect, useRef } from 'react'; import { matchingData as gameData } from '../data'; import winSound
 from '../assets/sounds/win.mp3'; import loseSound from '../assets/sounds/lose.mp3';
 
 const MatchingGame = () => {

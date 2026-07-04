@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import GameOver from './GameOver';
-import wordList from './WordList';
+import { wordList } from '../data';
 
 function Anagram() {
   const [currentWord, setCurrentWord] = useState('');

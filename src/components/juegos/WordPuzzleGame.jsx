@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { answerWords } from "./words";
-import wordList from "./WordList";
+import { wordList } from '../data';
 import GameOver from "./GameOver";
 
 

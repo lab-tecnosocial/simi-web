@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import gameData from '../data/gameData.json'
+import { entries } from '../data'
 
 const PAGE_SIZE = 20
 
@@ -8,9 +8,9 @@ const Glossary = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
 
-  const temas = [...new Set(gameData.entries.map(e => e.tema))]
+  const temas = [...new Set(entries.map(e => e.tema))]
 
-  const filteredEntries = gameData.entries.filter(e => {
+  const filteredEntries = entries.filter(e => {
     const matchesTema = selectedTema === null || e.tema === selectedTema
     const matchesSearch =
       e.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -114,7 +114,7 @@ const Glossary = () => {
         <div className="flex flex-col gap-10">
           {!isFiltered
             ? temas.map(t => {
-                const group = filteredEntries.filter(e => e.tema === t)
+                const group = entries.filter(e => e.tema === t)
                 if (group.length === 0) return null
                 return (
                   <div key={t} className="text-center">

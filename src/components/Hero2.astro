@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import cellphone from '../assets/images/cellphone.png';
 ---
 <section id="hero" class="w-full bg-transparent py-16 relative">
   <div class="container mx-auto px-4">
@@ -16,11 +17,13 @@
       </div>
       
       <div class="flex-1 w-full sm:w-[70%] md:w-[50%] lg:w-[40%] mx-auto">
-        <img
-          src="/assets/images/cellphone.png"
+        <Image
+          src={cellphone}
           alt="Celular con logo Simi"
-          width="400"
-          height="700"
+          width={400}
+          height={700}
+          format="webp"
+          loading="lazy"
           class="w-full h-auto mx-auto object-contain"
           style="max-width: 40vw; min-width: 150px;"
         />
