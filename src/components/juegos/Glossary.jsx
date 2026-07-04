@@ -8,9 +8,11 @@ const Glossary = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
 
-  const temas = [...new Set(entries.map(e => e.tema))]
+  const glossaryEntries = entries.filter(e => e.audio)
 
-  const filteredEntries = entries.filter(e => {
+  const temas = [...new Set(glossaryEntries.map(e => e.tema))]
+
+  const filteredEntries = glossaryEntries.filter(e => {
     const matchesTema = selectedTema === null || e.tema === selectedTema
     const matchesSearch =
       e.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
