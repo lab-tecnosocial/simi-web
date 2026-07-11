@@ -27,6 +27,7 @@ const Hero = () => {
               href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => window.trackEvent?.('app_download_click', { location: 'hero' })}
             >
               <button className="bg-qumir text-white font-normal py-2 px-6 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] hover:bg-green-700 transition-all w-48 transform hover:scale-105">
                 DESCARGAR APP

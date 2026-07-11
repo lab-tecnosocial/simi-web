@@ -4,7 +4,11 @@ export default function FAQ({ questions }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    const isOpening = activeIndex !== index;
+    setActiveIndex(isOpening ? index : null);
+    if (isOpening) {
+      window.trackEvent?.('faq_toggle', { question: questions[index].question });
+    }
   };
 
   return (
