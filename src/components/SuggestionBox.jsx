@@ -44,6 +44,7 @@ const SuggestionBox = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="font-bold"
+            onClick={() => window.trackEvent?.('suggestion_click', { type: 'suggestion' })}
           >
             Compártela💡
           </a>
@@ -53,6 +54,7 @@ const SuggestionBox = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="font-bold"
+            onClick={() => window.trackEvent?.('suggestion_click', { type: 'bug_report' })}
           >
             Avísanos ⚠️
           </a>

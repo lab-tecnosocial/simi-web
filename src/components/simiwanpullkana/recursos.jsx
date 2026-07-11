@@ -40,7 +40,13 @@ const Recursos = () => {
                 key={index} 
                 className="flex flex-col justify-start items-center p-4"
             >
-                <a href={recurso.link} target="_blank" rel="noopener noreferrer" download>
+                <a
+                    href={recurso.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    onClick={() => window.trackEvent?.('resource_download_click', { resource: recurso.descripcion })}
+                >
                     <img 
                         src={recurso.imagen} 
                         alt={recurso.descripcion}
