@@ -10,7 +10,7 @@ const LogoSection = () => {
                     <div className="flex flex-wrap justify-center space-x-2 pt-4">
                         <img src="/assets/images/juego/atuq_logo.png" alt="simi" className="h-24 sm:h-32 md:h-48 mr-2" />
                         <a href="https://simiquechua.app/" target="_blank" rel="">
-                            <img src="/assets/images/logo_simi2025.png" alt="simi" className="h-24 sm:h-32 md:h-48 ml-2" />
+                            <img src="/assets/images/brand/logo_simi2025.png" alt="simi" className="h-24 sm:h-32 md:h-48 ml-2" />
                         </a>
                     </div>
                 </div>

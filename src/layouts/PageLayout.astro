@@ -7,32 +7,74 @@ const { titulo, descripcion, imagen } = Astro.props;
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w: any, d: Document, s: string, l: string, i: string) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s) as HTMLScriptElement,
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode?.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MN7JBQC8");
+
+      (window as any).trackEvent = function (
+        eventName: string,
+        params?: Record<string, any>
+      ) {
+        (window as any).dataLayer.push({ event: eventName, ...params });
+      };
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Favicon & manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
 
     <title>{titulo}</title>
 
     <!-- Primary Meta Tags -->
-    <title>{titulo}</title>
     <meta name="title" content={titulo} />
     <meta name="description" content={descripcion} />
 
-    <!-- Google fonts -->
+    <!-- Preconnect para reducir latencia DNS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Google Fonts consolidado - carga no bloqueante -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Nunito:wght@400;600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Nunito:wght@400;600&display=swap"
+      />
+    </noscript>
+
+    <!-- Font Awesome - carga no bloqueante -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      />
+    </noscript>
 
     <link href="/assets/css/style.css" rel="stylesheet" />
 
@@ -51,6 +93,21 @@ const { titulo, descripcion, imagen } = Astro.props;
     <meta property="twitter:image" content={new URL(imagen, Astro.url)} />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MN7JBQC8"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
     <Header client:load />
     <slot />
     <Footer />

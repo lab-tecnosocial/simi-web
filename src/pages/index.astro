@@ -11,6 +11,28 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w: any, d: Document, s: string, l: string, i: string) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s) as HTMLScriptElement,
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode?.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MN7JBQC8");
+
+      (window as any).trackEvent = function (
+        eventName: string,
+        params?: Record<string, any>
+      ) {
+        (window as any).dataLayer.push({ event: eventName, ...params });
+      };
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,41 +44,49 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
     ></script>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
+    <!-- Preconnect para reducir latencia DNS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Google Fonts consolidado - carga no bloqueante -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Nunito:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Text+Me+One&family=Nunito:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Font Awesome - carga no bloqueante -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-
-    <!-- Google fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      />
+    </noscript>
 
     <link href="/assets/css/style.css" rel="stylesheet" />
 
     <title>Simi</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Primary Meta Tags -->
     <title>Simi - Aprende Quechua de una manera amigable</title>
@@ -100,9 +130,31 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
       property="twitter:image"
       content="https://simiquechua.app/assets/images/preview.png"
     />
+    <script>
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init();
+      });
+    </script>
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MN7JBQC8"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
     <Header client:load />
 
     <div class="bg-rana">
@@ -113,14 +165,25 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
         id="counter-section"
         class="w-full h-auto py-12 relative bg-transparent"
       >
-        <div id="counter-container" class="flex justify-center gap-2.5">
-          <!-- Counter digits will be added here -->
+        <div class="flex justify-center">
+          <span class="text-[clamp(4rem,12vw,8rem)] font-bold text-qumir font-roboto leading-none">10K+</span>
         </div>
         <h2
-          class="text-5xl text-[#4B4B4B] downloads-txt font-roboto font-bold pt-8 text-center"
+          class="text-5xl text-futuro downloads-txt font-roboto font-bold pt-8 text-center"
         >
           Descargas hasta hoy
         </h2>
+        <div class="flex flex-col items-center mt-6 gap-4">
+          <p class="text-2xl font-bold text-qumir text-center">¡Ayúdanos a llegar a 20,000!</p>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-qumir hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-2xl shadow-[0_6px_12px_rgba(0,0,0,0.2)] transition-all transform hover:scale-105"
+          >
+            Descargar app gratis
+          </a>
+        </div>
       </section>
 
       <!--  Hero Section  -->
@@ -136,13 +199,13 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <!--Footer  -->
     <Footer />
 
-    <!--Suggestion box-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Suggestion box
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
     <script>
-      AOS.init();
+      //AOS.init();
     </script>
 
-    <script>
+    <!--<script>
       var scrollMessage1 = document.querySelector(".scroll-message");
       var scrollMessage2 = document.querySelector(".scroll-message-2");
       var prevScrollPos = window.pageYOffset;
@@ -172,9 +235,44 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
 
         prevScrollPos = currentScrollPos;
       });
+    </script>  -->
+    <script>
+      var scrollMessage1 = document.querySelector(
+        ".scroll-message"
+      ) as HTMLElement;
+      var scrollMessage2 = document.querySelector(
+        ".scroll-message-2"
+      ) as HTMLElement;
+      var prevScrollPos = window.pageYOffset;
+
+      window.addEventListener("scroll", function () {
+        var currentScrollPos = window.pageYOffset;
+        var scrollPosition = window.scrollY;
+        var elementPosition =
+          document.getElementById("people-images")?.offsetTop || 0;
+
+        if (scrollPosition > elementPosition - window.innerHeight + 200) {
+          if (scrollMessage1) scrollMessage1.style.display = "block";
+        } else {
+          if (scrollMessage1) scrollMessage1.style.display = "none";
+        }
+
+        if (scrollPosition > elementPosition + 200) {
+          if (scrollMessage2) scrollMessage2.style.display = "block";
+        } else {
+          if (scrollMessage2) scrollMessage2.style.display = "none";
+        }
+
+        if (currentScrollPos < prevScrollPos) {
+          if (scrollMessage1) scrollMessage1.style.display = "none";
+          if (scrollMessage2) scrollMessage2.style.display = "none";
+        }
+
+        prevScrollPos = currentScrollPos;
+      });
     </script>
 
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         var scrollMessage = document.querySelector(".scroll-message");
         var closeBtn = document.querySelector(".scroll-message .close-btn");
@@ -183,53 +281,25 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
           scrollMessage.style.display = "none";
         });
       });
-    </script>
-
-    <!-- Android App Downloads Counter -->
+    </script>-->
     <script>
-      const targetNumber = 7231;
-      const counterContainer = document.getElementById("counter-container");
-      const digits = targetNumber.toString().length;
-      let hasScrolled = false;
       document.addEventListener("DOMContentLoaded", function () {
-        for (let i = 0; i < digits; i++) {
-          const draw = document.createElement("div");
-          draw.className =
-            "w-14 h-16 text-[#74c741] text-5xl flex justify-center items-center font-bold bg-transparent rounded-lg border border-black shadow-md m-1 px-4";
-          draw.textContent = "0";
-          counterContainer.appendChild(draw);
-        }
-        function countUp() {
-          let currentNumber = 0;
-          let increment = Math.ceil(targetNumber / 50);
-          const interval = setInterval(() => {
-            if (currentNumber >= targetNumber) {
-              currentNumber = targetNumber;
-              decorCounter(currentNumber);
-              clearInterval(interval);
-            } else {
-              currentNumber++;
-              currentNumber = currentNumber + increment;
-              decorCounter(currentNumber);
+        var scrollMessage = document.querySelector(
+          ".scroll-message"
+        ) as HTMLElement;
+        var closeBtn = document.querySelector(
+          ".scroll-message .close-btn"
+        ) as HTMLElement;
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            if (scrollMessage) {
+              scrollMessage.style.display = "none";
             }
-          }, 50);
-        }
-        window.addEventListener("scroll", function () {
-          const sectionTop =
-            document.getElementById("counter-section").offsetTop;
-          const scrollPosition = window.scrollY + window.innerHeight;
-          if (scrollPosition > sectionTop && !hasScrolled) {
-            hasScrolled = true;
-            countUp();
-          }
-        });
-        function decorCounter(num) {
-          const currentDigits = num.toString().padStart(digits, "0");
-          Array.from(counterContainer.children).forEach((cell, index) => {
-            cell.textContent = currentDigits[index];
           });
         }
       });
     </script>
+
   </body>
 </html>

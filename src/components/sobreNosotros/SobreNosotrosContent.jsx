@@ -35,8 +35,8 @@ const SobreNosotrosContent = () => {
             className="w-16 h-16 mx-auto mt-3 mb-2 /* 2) Reducimos margen superior e inferior del ícono */
           "
           />
-          <h3 className="text-[#59CB07] font-semibold text-3xl">Misión</h3>
-          <p className="text-[#4B4B4B] mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
+          <h3 className="text-qumir font-semibold text-3xl">Misión</h3>
+          <p className="text-futuro mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
             Simi se trata de una aplicación para celulares que promueve el aprendizaje 
             del quechua nivel básico de una forma amigable y accesible a través de unidades 
             de aprendizaje que contienen audios e ilustraciones.
@@ -58,8 +58,8 @@ const SobreNosotrosContent = () => {
             alt="Quiénes somos"
             className="w-16 h-16 mx-auto mt-3 mb-2"
           />
-          <h3 className="text-[#59CB07] font-semibold text-3xl">Quiénes somos</h3>
-          <p className="text-[#4B4B4B] mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
+          <h3 className="text-qumir font-semibold text-3xl">Quiénes somos</h3>
+          <p className="text-futuro mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
             Simi es un equipo multidisciplinario compuesto por profesionales voluntarios/as
             del área de programación, lingüística y comunicación social que apuntan por el
             fortalecimiento del quechua en contextos digitales.
@@ -81,8 +81,8 @@ const SobreNosotrosContent = () => {
             alt="Visión"
             className="w-16 h-16 mx-auto mt-3 mb-2"
           />
-          <h3 className="text-[#59CB07] font-semibold text-3xl">Visión</h3>
-          <p className="text-[#4B4B4B] mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
+          <h3 className="text-qumir font-semibold text-3xl">Visión</h3>
+          <p className="text-futuro mt-4 md:mt-8 text-base md:text-2xl leading-relaxed">
             Simi pretende ser la primera aplicación digital líder y competitiva en la
             enseñanza del quechua en el contexto digital, apostando por el uso de
             tecnologías para la promoción y fortalecimiento del quechua en la población

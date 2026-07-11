@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { answerWords } from "./words";
-import wordList from "./WordList";
+import { wordList } from '../data';
 import GameOver from "./GameOver";
 
 
@@ -60,7 +59,7 @@ const [allWordPositions, setAllWordPositions] = useState([]);
 
     const getRandomWords = (category, count) => {
         const words = wordList[category];
-        const shuffled = words.sort(() => 0.5 - Math.random());
+        const shuffled = [...words].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     };
 
@@ -266,10 +265,10 @@ const [allWordPositions, setAllWordPositions] = useState([]);
     return (
         <div className="flex flex-col md:flex-row min-h-screen p-4 max-w-screen-lg mx-auto">
             <div className="flex flex-col items-center justify-center text-center mb-24 w-full md:w-1/3 mx-auto">
-                <h1 className="text-[32px] font-bold text-[#59CB07] font-[Nunito] mb-[1]">Sopa de letras</h1>
+                <h1 className="text-[32px] font-bold text-qumir font-[Nunito] mb-[1]">Sopa de letras</h1>
                 <h2 className="text-[24px] font-bold text-neutral-600 font-[Nunito] mb-2">Quillqa jilli</h2>
                 <p className="text-[16px] font-light text-neutral-600 font-[Nunito] mb-2">Busca y resalta palabras ocultas en una cuadrícula de letras en el menor tiempo posible.</p>
-                <div className="w-[384.68px] h-[195px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4">
+                <div className="w-[384.68px] h-[195px] bg-qumir bg-opacity-20 p-4 rounded-[10px] mb-4">
                     <label htmlFor="category" className="text-left block mb-4 mt-[-5px] ml-[27px] text-base font-bold">Elige un tema:</label>
                     <select
                         id="category"
@@ -293,15 +292,14 @@ const [allWordPositions, setAllWordPositions] = useState([]);
                         </div>
                         <button
                             onClick={initializeGame}
-                            className="flex items-center justify-center gap-2 px-4 py-2 rounded text-white font-semibold w-[136px] h-[52.51px] text-[16px] drop-shadow-[2px_2px_4px_rgba(89,203,7,0.50)]"
-                            style={{ backgroundColor: '#59CB07' }}
+                            className="flex items-center justify-center gap-2 px-4 py-2 rounded text-white font-semibold w-[136px] h-[52.51px] text-[16px] drop-shadow-[2px_2px_4px_rgba(89,203,7,0.50)] bg-qumir"
                             >
                             <i className="fas fa-play"></i>
                             <span>{isGameActive ? 'Reiniciar' : 'Jugar'}</span>
                         </button>
                         </div>
                     </div>
-                    <div className="w-[384.68px] h-[190px] bg-[#59CB07] bg-opacity-20 p-4 rounded-[10px] mb-4 ">
+                    <div className="w-[384.68px] h-[190px] bg-qumir bg-opacity-20 p-4 rounded-[10px] mb-4 ">
                         <div className="mb-2">
                             <h2 className="text-left ml-[18px]">Palabras a buscar:</h2>
                             <div className="flex flex-wrap items-center justify-center">
