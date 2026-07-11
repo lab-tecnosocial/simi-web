@@ -3,7 +3,7 @@ const CACHE_NAME = 'simi-v1';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/favicon.svg',
+  '/favicon.ico',
   '/assets/css/style.css',
   '/assets/images/brand/logo_simi2025.png',
   '/assets/images/hero_personaje.png',
