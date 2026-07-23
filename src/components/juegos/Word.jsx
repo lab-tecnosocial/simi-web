@@ -3,7 +3,7 @@ const Word = ({ selectedWord, guessedLetters }) => {
     <div className="flex justify-center my-4">
       <div className="
         flex items-center justify-center 
-        bg-white border border-[#59CB07] 
+        bg-white border border-qumir 
         rounded-md p-4
         shadow-[0_6px_12px_rgba(89,203,7,0.4)]
         transition-all duration-200

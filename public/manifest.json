@@ -1,0 +1,14 @@
+{
+  "name": "SIMI - Aprende Quechua",
+  "short_name": "SIMI",
+  "description": "Aprende quechua de forma fácil y divertida con juegos interactivos.",
+  "theme_color": "#59CB07",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "es",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/images/brand/logo_simi2025.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}

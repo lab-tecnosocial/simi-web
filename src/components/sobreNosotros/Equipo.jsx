@@ -124,7 +124,7 @@ const Equipo = () => {
       nombre: "Dante Andree Yupanqui Rodriguez",
       imagen: "/assets/images/equipo/DANTE_YUPANQUI.jpg",
       linkedin: "https://www.linkedin.com/in/dante-yupanqui",
-      profesion: "Ingenierío de Sistemas",
+      profesion: "Ingeniero de Sistemas",
 
     },
    
