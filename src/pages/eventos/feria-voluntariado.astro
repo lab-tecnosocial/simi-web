@@ -1,0 +1,139 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import FeriaVoluntariadoOrganizations from "../../components/eventos/FeriaVoluntariadoOrganizations.jsx";
+import participants from "../../data/feria-voluntariado-participants.json";
+import "../../styles/global.css";
+---
+
+<PageLayout
+  titulo="Feria del Voluntariado"
+  descripcion="Pequeñas acciones generan grandes cambios. ¡Visítanos en la Feria del Voluntariado!"
+  imagen="/assets/images/feria_voluntariado.jpg"
+>
+  <div class="bg-slate-200 py-12 flex flex-col items-center justify-center p-2 sm:p-4 lg:p-8 font-nunito space-y-8">
+
+    <!-- Contenedor Principal del Afiche -->
+    <div class="max-w-5xl w-full overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-10 lg:p-12 pb-4 sm:pb-4 lg:pb-4 relative">
+        
+        <!-- COLUMNA IZQUIERDA: INFORMACIÓN Y TEXTOS (alineado al inicio) -->
+        <div class="lg:col-span-7 flex flex-col justify-start space-y-6 z-10">
+          
+          <!-- Encabezado de Logos Organizadores con placehold.co -->
+          <div class="flex flex-wrap items-center justify-between sm:justify-start gap-4 sm:gap-6 pb-2 border-b border-slate-200/80">
+            <img src="/assets/images/feria-voluntariado/asobec.png" alt="Logo ASOBEC" class="h-9 w-auto object-contain">
+            <img src="/assets/images/feria-voluntariado/AmSpacesLogo.png" alt="Logo American Spaces" class="h-9 w-auto object-contain">
+            <img src="/assets/images/feria-voluntariado/LogoCBAGlobal.png" alt="Logo CBA" class="h-9 w-auto object-contain">
+          </div>
+
+          <!-- Sección de Título Principal -->
+          <div class="space-y-2 my-2">
+            <h1 class="font-roboto text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0b2545] uppercase leading-none">
+              FERIA DEL<br>
+              <span class="text-[#0b2545]">VOLUNTARIADO</span>
+            </h1>
+            <p class="text-slate-700 font-semibold text-base sm:text-lg lg:text-xl pt-2 max-w-md">
+              Pequeñas acciones generan grandes cambios. <span class="font-bold text-slate-900">¡Visítanos!</span>
+            </p>
+          </div>
+
+          <!-- Banner Rojo con Detalles del Evento -->
+          <div class="bg-gradient-to-r from-yawar to-[#cc3737] text-white rounded-xl p-5 sm:p-6 shadow-lg space-y-3.5">
+            
+            <!-- Fecha -->
+            <div class="flex items-center space-x-3">
+              <div class="bg-white/10 p-2 rounded-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <span class="text-lg sm:text-xl font-bold tracking-wide">24 de Julio</span>
+            </div>
+
+            <!-- Horario -->
+            <div class="flex items-center space-x-3">
+              <div class="bg-white/10 p-2 rounded-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="text-base sm:text-lg font-semibold">15:00 a 17:00 y de 18:30 a 20:00</span>
+            </div>
+
+            <!-- Ubicación -->
+            <div class="flex items-center space-x-3">
+              <div class="bg-white/10 p-2 rounded-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <span class="text-base sm:text-lg font-semibold">Calle 25 de Mayo casi Plaza Colón</span>
+            </div>
+
+            <!-- Etiqueta Ingreso Libre -->
+            <div class="pt-2 border-t border-red-400/40 mt-3">
+              <span class="inline-block bg-white text-yawar font-black text-lg uppercase tracking-wider px-4 py-1.5 rounded-md shadow">
+                INGRESO LIBRE
+              </span>
+            </div>
+          </div>
+
+          <!-- IMAGEN EN MOBILE -->
+          <div class="block lg:hidden my-4">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Galería</p>
+            <div class="transform rotate-1 bg-white p-3 pb-6 rounded shadow-xl border border-slate-200 max-w-sm mx-auto">
+              <img src="/assets/images/juego/hero_1.png" alt="Feria anterior de presentación de simi" class="w-full h-auto rounded object-cover border border-slate-200">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: IMÁGENES DESKTOP (2 imágenenes en formato Polaroid pegadas arriba) -->
+        <div class="hidden lg:flex lg:col-span-5 flex-col items-center justify-start space-y-6 pt-2">
+          
+          <!-- Polaroid 1 -->
+          <div class="transform rotate-2 hover:rotate-0 transition duration-300 bg-white p-3 pb-6 rounded shadow-xl border border-slate-200 w-full max-w-xs">
+            <img src="/assets/images/presentacion.jpg" alt="Feria anterior de presentación de simi" class="w-full h-auto rounded object-cover border border-slate-200">
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="transform -rotate-3 hover:rotate-0 transition duration-300 bg-white p-3 pb-6 rounded shadow-xl border border-slate-200 w-full max-w-xs">
+            <img src="/assets/images/juego/hero_4.png" alt="Presentación de la App Simi" class="w-full h-auto rounded object-cover border border-slate-200">
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Separador visual -->
+      <div class="border-t border-slate-200/80 mx-6 sm:mx-10 lg:mx-12 my-2"></div>
+
+      <!-- SECCIÓN INFERIOR: LOGOS PARTICIPANTES A TODO EL ANCHO -->
+      <FeriaVoluntariadoOrganizations participants={participants} client:load />
+        
+    </div>
+
+    <!-- Banner de Regalo Simi -->
+    <div class="max-w-5xl w-full bg-white border-2 border-dashed border-qumir/40 rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 transform hover:scale-[1.01] transition-transform duration-300">
+      <div class="flex items-center space-x-4">
+        <div class="bg-qumir/10 p-3.5 rounded-full text-qumir shrink-0">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0H4v13a2 2 0 002 2h12a2 2 0 002-2V8H12z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-futuro">¡Un regalo de Simi!</h3>
+          <p class="text-texto text-sm sm:text-base mt-1">
+            Esta página web fue desarrollada con mucho cariño por el equipo de <span class="font-bold text-qumir">Simi</span> como un obsequio especial para visibilizar la labor del voluntariado y fortalecer nuestra comunidad.
+          </p>
+        </div>
+      </div>
+      <a href="/" class="shrink-0 flex items-center justify-center bg-qumir hover:bg-qumir/90 text-white font-bold text-base px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+        Conocer Simi
+      </a>
+    </div>
+
+  </div>
+</PageLayout>

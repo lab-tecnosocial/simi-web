@@ -1,0 +1,146 @@
+[
+  {
+    "nombre": "ODS en Acción",
+    "descripcion": "Trabajamos campañas comunicacionales, acciones de movilización, intervenciones educativas en base a los 17 Objetivos de Desarrollo Sostenible",
+    "representante": "Jennifer Castro",
+    "contacto": "76955456",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/profile.php?id=61565491342201&mibextid=ZbWKwL",
+      "instagram": "https://www.instagram.com/ods.en.accion?igsh=MXFkeHZnY3F4aHZyZA==",
+      "tiktok": "https://www.tiktok.com/@ods.en.accion?_t=ZM-908cyyWy1pw&_r=1"
+    }
+  },
+  {
+    "nombre": "Sociedad científica de la carrera de Lingüística e Idiomas",
+    "descripcion": "Seminarios, talleres y cursos para estudiantes universitarios",
+    "representante": "Vladimir Villca",
+    "contacto": "62488353",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/share/18uNdtfXFS/",
+      "tiktok": "https://www.tiktok.com/@socielin_umsa?_r=1&_t=ZS-97tnk6XEdls"
+    }
+  },
+  {
+    "nombre": "Red de Voluntarios por los ODS",
+    "descripcion": "Talleres en unidades educativas y gobernaciones, ferias, donaciones a comunidades y poblaciones vulnerables, colectas, reforestaciones, concientización y revalorización de espacios verdes, educación integral.",
+    "representante": "Faviana Mendez",
+    "contacto": "63976326",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/share/187fBLqJKY/",
+      "instagram": "https://www.instagram.com/red.ods?igsh=MW9lYmZrcTFrYzlyNQ==",
+      "tiktok": "https://www.tiktok.com/@redvoluntariosods?_r=1&_t=ZS-97uwYQkP4ZV"
+    }
+  },
+  {
+    "nombre": "Simi: Proyecto de revitalización cultural y lingüística",
+    "descripcion": "Es una iniciativa totalmente voluntaria impulsada por cuatro equipos esenciales que se encargan de mantener la identidad visual, desarrollar el contenido curricular y las traducciones, gestionar la programación de la web y la aplicación, y difundir el contenido en redes sociales para asegurar el crecimiento continuo de la comunidad.",
+    "representante": "Cristina Rojas",
+    "contacto": "76924669",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/share/1BFj2ZSdWu/",
+      "instagram": "https://www.instagram.com/simiappquechua?igsh=OGx6ZzgxOGE0aXI5",
+      "tiktok": "https://www.tiktok.com/@simi.app?_r=1&_t=ZS-96AxwgjROSr",
+      "otros": "Web: https://share.google/P3EE7hrQzLIxh02Nh | App: https://play.google.com/store/apps/details?id=org.labtecnosocial.simi"
+    }
+  },
+  {
+    "nombre": "Sociedad científica de estudiantes de ingeniería industrial",
+    "descripcion": "La SOCEII desarrolla voluntariado académico y social mediante capacitaciones, investigaciones y mentorías estudiantiles, además de campañas solidarias y ambientales...",
+    "representante": "Alejandra Muriel",
+    "contacto": "70387019"
+  },
+  {
+    "nombre": "TILTIT - Today I Learn Tomorrow I Teach",
+    "representante": "Jazmine Ortiz",
+    "contacto": "72793774",
+    "redes_sociales": {
+      "otros": "Web: https://linktr.ee/tiltitprogram.bolivia"
+    }
+  },
+  {
+    "nombre": "Plataforma Teatral Cochabamba",
+    "descripcion": "Tejemos alianzas, diálogos, proyectos para realizar intervenciones artísticas constantes en Bolivia",
+    "representante": "Eva Peredo",
+    "contacto": "60765715",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/PlataformaTeatralCochabamba/"
+    }
+  },
+  {
+    "nombre": "HackLab Brick-Heads",
+    "descripcion": "Espacio Hacker de conocimiento abierto, experimentacion y aprendizaje colectivo",
+    "representante": "Erick Vasquez",
+    "contacto": "70785657",
+    "redes_sociales": {
+      "otros": "Web: https://hacklab.brickheads.space/"
+    }
+  },
+  {
+    "nombre": "Sociedad Científica de Estudiantes de Odontología (SCEOC)",
+    "descripcion": "cursos, simposios, convenciones, jornadas en el ambito cientifico y social...",
+    "representante": "Noelia Marza",
+    "contacto": "67426927",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/SCEOC.17/?locale=es_LA"
+    }
+  },
+  {
+    "nombre": "Banco de Ropa Bolivia",
+    "descripcion": "Somos el primer Banco de Ropa de Bolivia, una iniciativa solidaria que transforma prendas en esperanza...",
+    "representante": "Valeria Franco",
+    "contacto": "71425565",
+    "redes_sociales": {
+      "otros": "Web: https://www.atom.bio/bancoderopadebolivia"
+    }
+  },
+  {
+    "nombre": "Partners Campus San Simón",
+    "descripcion": "Somos un capítulo de Partners of the Americas dirigido por estudiantes de la Universidad Mayor de San Simón",
+    "contacto": "65724830",
+    "redes_sociales": {
+      "otros": "Web: https://linktr.ee/pcsansimon"
+    }
+  },
+  {
+    "nombre": "Partners of the Americas Cochabamba - Bolivia",
+    "descripcion": "Conectamos a personas y organizaciones, dentro y más allá de las fronteras, para servir y transformar vidas.",
+    "representante": "Williams Leigue",
+    "contacto": "72735692",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/poacochabamba"
+    }
+  },
+  {
+    "nombre": "ASOBEC Asociación de Becarios Cochabamba",
+    "descripcion": "Asociacion de Becarios Cochabamba trabaja con proyectos de voluntariado que beneficien a la comunidad.",
+    "representante": "Jazmine Ortiz",
+    "contacto": "72793774",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/ASOBECCBBA"
+    }
+  },
+  {
+    "nombre": "Fundación Naira",
+    "descripcion": "Terapias alternativas en Centros de salud y centros acogida.",
+    "representante": "Gricelda Rojas",
+    "contacto": "67547753"
+  },
+  {
+    "nombre": "Bomberos voluntarios: Yunka Atoq",
+    "descripcion": "Apagamos incendios, hacemos rescate urbano y forestal, humano y animal, concientización civil y respuesta ante emergencias.",
+    "representante": "Denilzon Zenteno",
+    "contacto": "57003797",
+    "redes_sociales":{
+      "facebook": "https://www.facebook.com/yunkabo"
+    }
+  },
+  {
+    "nombre": "Red tu decides",
+    "descripcion": "Promover los derechos humanos, mediante talleres e informativa.",
+    "representante": "Sebastián Capoma",
+    "contacto": "77414779",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/people/Red-T%C3%BA-Decides-Cochabamba/61578455497657/"
+    }
+  }
+]

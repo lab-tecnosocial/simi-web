@@ -1,29 +1,20 @@
 import React from 'react';
 
+
 const EventosList = () => {
   const eventos = [
     {
       id: 1,
-      dia: 5,
+      dia: 24,
       mes: 'JULIO',
-      titulo: 'Conferencia conoce y aprende Quechua con la app Simi',
-      lugar: 'Auditorio Valmert, Alianza Francesa',
-      horario: '10:00 a 12:00',
-      descripcion: 'Una tarde para conocer la app Simi y dar tus primeros pasos en el quechua. ¡Te esperamos!',
-      imagen: '/assets/images/JULIO.png'
+      titulo: 'Feria del voluntariado',
+      lugar: 'CBA 25 de mayo casi plaza colón',
+      horario: '15:00 a 17:00 y 18:30 a 20:00',
+      descripcion: 'Pequeñas acciones generan grandes cambios. ¡Te esperamos!',
+      imagen: '/assets/images/feria_voluntariado.jpg'
     },
     {
-      id: 2,
-      dia: '5-6',
-      mes: 'DICIEMBRE',
-      titulo: 'Festival Muy Waso',
-      lugar: 'Instalaciones del proyecto mARTadero, Cochabamba',
-      horario: '14:30 a 18:30',
-      descripcion: 'SIMI App llega al Festival Muy Waso con Simiwan Pukllana, un juego de mesa bilingüe (quechua–castellano) diseñado para aprender y practicar vocabulario de forma divertida y colectiva. Una experiencia que nos ayudará a acercar la lengua a niñas, niños, jóvenes y familias, promoviendo el orgullo cultural, la interculturalidad y el uso cotidiano del quechua en contextos creativos y comunitarios.',
-      imagen: '/assets/images/MuyWaso.jpg'
-    },
-    {
-      id: 3,
+      id: 4,
       dia: '',
       mes: '',
       titulo: 'Próximamente',
