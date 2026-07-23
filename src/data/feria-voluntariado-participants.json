@@ -23,7 +23,7 @@
   {
     "nombre": "Red de Voluntarios por los ODS",
     "descripcion": "Talleres en unidades educativas y gobernaciones, ferias, donaciones a comunidades y poblaciones vulnerables, colectas, reforestaciones, concientización y revalorización de espacios verdes, educación integral.",
-    "representante": "Faviana Ananda Mendez Garcia",
+    "representante": "Faviana Mendez",
     "contacto": "63976326",
     "redes_sociales": {
       "facebook": "https://www.facebook.com/share/187fBLqJKY/",
@@ -122,7 +122,25 @@
   {
     "nombre": "Fundación Naira",
     "descripcion": "Terapias alternativas en Centros de salud y centros acogida.",
-    "representante": "Gricelda Rojas Lizarazu",
+    "representante": "Gricelda Rojas",
     "contacto": "67547753"
+  },
+  {
+    "nombre": "Bomberos voluntarios: Yunka Atoq",
+    "descripcion": "Apagamos incendios, hacemos rescate urbano y forestal, humano y animal, concientización civil y respuesta ante emergencias.",
+    "representante": "Denilzon Zenteno",
+    "contacto": "57003797",
+    "redes_sociales":{
+      "facebook": "https://www.facebook.com/yunkabo"
+    }
+  },
+  {
+    "nombre": "Red tu decides",
+    "descripcion": "Promover los derechos humanos, mediante talleres e informativa.",
+    "representante": "Sebastián Capoma",
+    "contacto": "77414779",
+    "redes_sociales": {
+      "facebook": "https://www.facebook.com/people/Red-T%C3%BA-Decides-Cochabamba/61578455497657/"
+    }
   }
 ]

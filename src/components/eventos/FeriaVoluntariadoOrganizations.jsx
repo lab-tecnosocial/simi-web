@@ -44,7 +44,7 @@ const ORGANIZATION_META = [
   {
     match: "simi:",
     label: "Simi",
-    logo: "/assets/images/logo_simi2025.png",
+    logo: "/assets/images/brand/logo_simi2025.png",
   },
   {
     match: "odontologia",
@@ -59,18 +59,28 @@ const ORGANIZATION_META = [
   {
     match: "ingenieria industrial",
     label: "SOCIEII",
-    logo: "https://placehold.co/100x50/1e40af/ffffff?text=SOCIEII",
+    logo: "/assets/images/feria-voluntariado/socieii.png",
   },
   {
     match: "linguistica",
     label: "SOCIELIN",
-    logo: "https://placehold.co/100x50/db2777/ffffff?text=SOCIELIN",
+    logo: "/assets/images/feria-voluntariado/socielin.png",
   },
   {
     match: "fundacion naira",
     label: "Fundacion Naira",
-    logo: "https://placehold.co/100x50/ec4899/ffffff?text=Naira",
+    logo: "/assets/images/feria-voluntariado/naira.jpg",
   },
+  {
+    match: "bomberos voluntarios",
+    label: "Bomberos voluntarios: Yunka Atoq",
+    logo: "/assets/images/feria-voluntariado/bomberos_voluntarios.jpg"
+  },
+  {
+    match: "red tu decides",
+    label: "Red tu decides",
+    logo: "/assets/images/feria-voluntariado/red_tu_decides.jpg"
+  }
 ];
 
 const SOCIAL_LABELS = {
