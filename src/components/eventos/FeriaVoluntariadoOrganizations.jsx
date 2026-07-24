@@ -4,42 +4,42 @@ const ORGANIZATION_META = [
   {
     match: "asobec",
     label: "ASOBEC",
-    logo: "/assets/images/feria-voluntariado/asobec.png",
+    logo: "/assets/images/feria-voluntariado/asobec.webp",
   },
   {
     match: "banco de ropa",
     label: "Banco de Ropa",
-    logo: "/assets/images/feria-voluntariado/ropa.png",
+    logo: "/assets/images/feria-voluntariado/ropa.webp",
   },
   {
     match: "hacklab",
     label: "HackLab Brick-Heads",
-    logo: "/assets/images/feria-voluntariado/hacklab.png",
+    logo: "/assets/images/feria-voluntariado/hacklab.webp",
   },
   {
     match: "ods en accion",
     label: "ODS en Accion",
-    logo: "/assets/images/feria-voluntariado/ods.png",
+    logo: "/assets/images/feria-voluntariado/ods.webp",
   },
   {
     match: "partners of the americas",
     label: "Partners of the Americas",
-    logo: "/assets/images/feria-voluntariado/partnersoftheamericas.png",
+    logo: "/assets/images/feria-voluntariado/partnersoftheamericas.webp",
   },
   {
     match: "partners campus",
     label: "Partners Campus",
-    logo: "/assets/images/feria-voluntariado/partners_campus.png",
+    logo: "/assets/images/feria-voluntariado/partners_campus.webp",
   },
   {
     match: "plataforma teatral",
     label: "Plataforma Teatral Cochabamba",
-    logo: "/assets/images/feria-voluntariado/plataforma_teatral.png",
+    logo: "/assets/images/feria-voluntariado/plataforma_teatral.webp",
   },
   {
     match: "red de voluntarios",
     label: "Red de Voluntarios por los ODS",
-    logo: "/assets/images/feria-voluntariado/red_ods.png",
+    logo: "/assets/images/feria-voluntariado/red_ods.webp",
   },
   {
     match: "simi:",
@@ -49,37 +49,37 @@ const ORGANIZATION_META = [
   {
     match: "odontologia",
     label: "SCEOC",
-    logo: "/assets/images/feria-voluntariado/SCEOC.png",
+    logo: "/assets/images/feria-voluntariado/SCEOC.webp",
   },
   {
     match: "tiltit",
     label: "TILTIT",
-    logo: "/assets/images/feria-voluntariado/TILTIT.png",
+    logo: "/assets/images/feria-voluntariado/TILTIT.webp",
   },
   {
     match: "ingenieria industrial",
     label: "SOCIEII",
-    logo: "/assets/images/feria-voluntariado/socieii.png",
+    logo: "/assets/images/feria-voluntariado/socieii.webp",
   },
   {
     match: "linguistica",
     label: "SOCIELIN",
-    logo: "/assets/images/feria-voluntariado/socielin.png",
+    logo: "/assets/images/feria-voluntariado/socielin.webp",
   },
   {
     match: "fundacion naira",
     label: "Fundacion Naira",
-    logo: "/assets/images/feria-voluntariado/naira.jpg",
+    logo: "/assets/images/feria-voluntariado/naira.webp",
   },
   {
     match: "bomberos voluntarios",
     label: "Bomberos voluntarios: Yunka Atoq",
-    logo: "/assets/images/feria-voluntariado/bomberos_voluntarios.jpg"
+    logo: "/assets/images/feria-voluntariado/bomberos_voluntarios.webp"
   },
   {
     match: "red tu decides",
     label: "Red tu decides",
-    logo: "/assets/images/feria-voluntariado/red_tu_decides.jpg"
+    logo: "/assets/images/feria-voluntariado/red_tu_decides.webp"
   }
 ];
 
