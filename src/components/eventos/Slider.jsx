@@ -20,7 +20,7 @@ const Slider = () => {
         <div className="w-full h-[603px] overflow-hidden mx-auto">
           <img
             className="w-full h-full object-cover"
-            src="/assets/images/juego/hero_4.png"
+            src="/assets/images/juego/hero_4.webp"
             alt="Slide 1"
           />
         </div>
