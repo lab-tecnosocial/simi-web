@@ -98,7 +98,11 @@ const Header = () => {
           <li className="my-2 md:my-0">
             <a className="text-futuro hover:text-qumir" href="/sobre_nosotros" onClick={toggleMenu}>Sobre nosotros</a>
           </li>
-          
+
+          <li className="my-2 md:my-0">
+            <a className="text-futuro hover:text-qumir" href="/simiteca" onClick={toggleMenu}>Simiteca</a>
+          </li>
+
           {/* Dropdown Juegos */}
           <li className="relative my-2 md:my-0" ref={dropdownGamesRef}>
             <button

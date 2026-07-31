@@ -1,0 +1,22 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import biblioteca from "../../components/data/biblioteca.json";
+import FlipbookReader from "../../components/biblioteca/FlipbookReader.jsx";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  return biblioteca.map((item) => ({ params: { id: item.id.toString() } }));
+}
+
+const { id } = Astro.params;
+const item = biblioteca.find((i) => i.id === parseInt(id));
+if (!item) throw new Error("Item de la Simiteca no encontrado");
+---
+
+<PageLayout
+  titulo={item.title}
+  descripcion={item.description || `Lee ${item.title} en línea`}
+  imagen={item.cover || "/assets/images/juego/banner.jpg"}
+>
+  <FlipbookReader item={item} client:only="react" />
+</PageLayout>

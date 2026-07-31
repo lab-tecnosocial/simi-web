@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "type": "boletin",
+    "title": "Chaski SIMI - Febrero 2025",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_febrero_2025.pdf"
+  },
+  {
+    "id": 2,
+    "type": "boletin",
+    "title": "Chaski SIMI - Marzo 2025",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_marzo_2025.pdf"
+  },
+  {
+    "id": 3,
+    "type": "boletin",
+    "title": "Chaski SIMI - Abril 2025",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_abril_2025.pdf"
+  },
+  {
+    "id": 4,
+    "type": "boletin",
+    "title": "Chaski SIMI - Mayo 2025",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_mayo_2025.pdf"
+  },
+  {
+    "id": 5,
+    "type": "boletin",
+    "title": "Chaski SIMI - Junio 2025",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_junio_2025.pdf"
+  },
+  {
+    "id": 6,
+    "type": "boletin",
+    "title": "Chaski SIMI - Febrero 2026",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2026/boletin_febrero_2026.pdf"
+  },
+  {
+    "id": 7,
+    "type": "boletin",
+    "title": "Chaski SIMI - Marzo 2026",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2026/boletin_marzo_2026.pdf"
+  },
+  {
+    "id": 8,
+    "type": "boletin",
+    "title": "Chaski SIMI - Abril 2026",
+    "author": "Equipo SIMI",
+    "description": "Boletín bilingüe quechua-español.",
+    "color": "#FFC803",
+    "cover": null,
+    "pdf": "/assets/pdfs/biblioteca/2026/boletin_abril_2026.pdf"
+  }
+]
