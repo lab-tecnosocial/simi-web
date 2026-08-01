@@ -6,8 +6,46 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_febrero_2025.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2025/page-12.webp"
+      }
+    ]
   },
   {
     "id": 2,
@@ -16,8 +54,58 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_marzo_2025.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2025/page-16.webp"
+      }
+    ]
   },
   {
     "id": 3,
@@ -26,8 +114,55 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_abril_2025.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2025/page-15.webp"
+      }
+    ]
   },
   {
     "id": 4,
@@ -36,8 +171,49 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_mayo_2025.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_mayo_2025/page-13.webp"
+      }
+    ]
   },
   {
     "id": 5,
@@ -46,8 +222,58 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2025/chaski_simi_junio_2025.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_junio_2025/page-16.webp"
+      }
+    ]
   },
   {
     "id": 6,
@@ -56,8 +282,55 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2026/boletin_febrero_2026.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_febrero_2026/page-15.webp"
+      }
+    ]
   },
   {
     "id": 7,
@@ -66,8 +339,52 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2026/boletin_marzo_2026.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_marzo_2026/page-14.webp"
+      }
+    ]
   },
   {
     "id": 8,
@@ -76,7 +393,448 @@
     "author": "Equipo SIMI",
     "description": "Boletín bilingüe quechua-español.",
     "color": "#FFC803",
-    "cover": null,
-    "pdf": "/assets/pdfs/biblioteca/2026/boletin_abril_2026.pdf"
+    "cover": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-16.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-17.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/boletines/chaski_simi_abril_2026/page-18.webp"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "type": "comic",
+    "title": "Juchuy",
+    "author": "Equipo SIMI",
+    "description": "Cómic en quechua.",
+    "color": "#CE82FF",
+    "cover": "/assets/images/biblioteca/quechua/comics/juchuy/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-16.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-17.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-18.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-19.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-20.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-21.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-22.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-23.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-24.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-25.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-26.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-27.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-28.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-29.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-30.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-31.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-32.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-33.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-34.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-35.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-36.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-37.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-38.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-39.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/juchuy/page-40.webp"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "type": "comic",
+    "title": "María Cristina",
+    "author": "Equipo SIMI",
+    "description": "Cómic en quechua.",
+    "color": "#CE82FF",
+    "cover": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-01.webp",
+    "language": "quechua",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-16.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-17.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/quechua/comics/maria_cristina/page-18.webp"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "type": "comic",
+    "title": "Jawira",
+    "author": "Equipo SIMI",
+    "description": "Cómic en aymara.",
+    "color": "#CE82FF",
+    "cover": "/assets/images/biblioteca/aymara/comics/jawira/page-01.webp",
+    "language": "aymara",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-16.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-17.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/aymara/comics/jawira/page-18.webp"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "type": "comic",
+    "title": "Soledad",
+    "author": "Equipo SIMI",
+    "description": "Cómic en kichwa.",
+    "color": "#CE82FF",
+    "cover": "/assets/images/biblioteca/kichwa/comics/soledad/page-01.webp",
+    "language": "kichwa",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/kichwa/comics/soledad/page-16.webp"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "type": "comic",
+    "title": "Luis Kulub",
+    "author": "Equipo SIMI",
+    "description": "Cómic en tseltal.",
+    "color": "#CE82FF",
+    "cover": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-01.webp",
+    "language": "tseltal",
+    "pages": [
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-01.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-02.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-03.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-04.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-05.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-06.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-07.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-08.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-09.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-10.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-11.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-12.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-13.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-14.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-15.webp"
+      },
+      {
+        "image": "/assets/images/biblioteca/tseltal/comics/luis_kulub/page-16.webp"
+      }
+    ],
+    "downloadUrl": "https://drive.google.com/file/d/1CBGoBmgLWbJpp-Uk4ISgy02EzQW_77Z7/view?usp=drive_link"
   }
 ]
