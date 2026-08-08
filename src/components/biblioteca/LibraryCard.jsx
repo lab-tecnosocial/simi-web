@@ -11,6 +11,13 @@ const LANGUAGE_LABELS = {
   aymara: "Aymara",
   kichwa: "Kichwa",
   tseltal: "Tseltal",
+  mazateco: "Mazateco",
+  kamentsa: "Kamentsa",
+  kiche: "K'iche'",
+  nasayuwe: "Nasayuwe",
+  ombeayiuts: "Ombeayiüts",
+  purhepecha: "Purhépecha",
+  zapoteco: "Zapoteco",
 };
 
 const LibraryCard = ({ item }) => {
@@ -47,7 +54,7 @@ const LibraryCard = ({ item }) => {
         <h3 className="font-nunito font-bold text-futuro text-xl mb-1 group-hover:text-qumir transition-colors">
           {item.title}
         </h3>
-        {item.author && <p className="text-futuro/70 text-sm mb-2">{item.author}</p>}
+        {item.author && <p className="text-futuro/70 text-sm mb-2">Autor: {item.author}</p>}
         {item.description && (
           <p className="text-futuro/80 text-sm mb-3 line-clamp-2">{item.description}</p>
         )}

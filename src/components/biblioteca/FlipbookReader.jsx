@@ -11,6 +11,13 @@ const LANGUAGE_LABELS = {
   aymara: "Aymara",
   kichwa: "Kichwa",
   tseltal: "Tseltal",
+  mazateco: "Mazateco",
+  kamentsa: "Kamentsa",
+  kiche: "K'iche'",
+  nasayuwe: "Nasayuwe",
+  ombeayiuts: "Ombeayiüts",
+  purhepecha: "Purhépecha",
+  zapoteco: "Zapoteco",
 };
 
 const ReaderHeader = ({ item }) => (
@@ -29,7 +36,7 @@ const ReaderHeader = ({ item }) => (
       )}
     </div>
     <h1 className="text-3xl font-bold font-nunito text-black">{item.title}</h1>
-    {item.author && <p className="text-futuro/70">{item.author}</p>}
+    {item.author && <p className="text-futuro/70">Autor: {item.author}</p>}
   </div>
 );
 
@@ -42,9 +49,13 @@ const FlipbookReader = ({ item }) => {
     return <p className="text-center text-futuro/70 py-10">Este título todavía no tiene páginas cargadas.</p>;
   }
 
+  // Vuelve exactamente al idioma/tipo que se estaba viendo antes de entrar acá,
+  // en vez de resetear siempre a la vista por defecto.
+  const backHref = sessionStorage.getItem("simitecaReturnUrl") || "/simiteca";
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
-      <a href="/simiteca" className="text-qumir font-bold hover:underline">&larr; Volver a la Simiteca</a>
+      <a href={backHref} className="text-qumir font-bold hover:underline">&larr; Volver a la Simiteca</a>
 
       <ReaderHeader item={item} />
 

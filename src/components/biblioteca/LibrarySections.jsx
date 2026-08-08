@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import biblioteca from "../data/biblioteca.json";
 import LibraryCard from "./LibraryCard.jsx";
 
@@ -7,6 +7,13 @@ const TABS = [
   { code: "aymara", label: "Aymara", icon: "fa-language" },
   { code: "kichwa", label: "Kichwa", icon: "fa-language" },
   { code: "tseltal", label: "Tseltal", icon: "fa-language" },
+  { code: "mazateco", label: "Mazateco", icon: "fa-language" },
+  { code: "kamentsa", label: "Kamentsa", icon: "fa-language" },
+  { code: "kiche", label: "K'iche'", icon: "fa-language" },
+  { code: "nasayuwe", label: "Nasayuwe", icon: "fa-language" },
+  { code: "ombeayiuts", label: "Ombeayiüts", icon: "fa-language" },
+  { code: "purhepecha", label: "Purhépecha", icon: "fa-language" },
+  { code: "zapoteco", label: "Zapoteco", icon: "fa-language" },
 ];
 
 const TYPE_LABELS = {
@@ -14,43 +21,75 @@ const TYPE_LABELS = {
   comic: "Cómics",
 };
 
+// Guarda la URL actual (idioma + tipo) para que el lector sepa a dónde volver
+// exactamente, en vez de resetear siempre a "/simiteca" sin filtros.
+const rememberReturnUrl = () => {
+  sessionStorage.setItem("simitecaReturnUrl", window.location.pathname + window.location.search);
+};
+
 const LibrarySections = () => {
-  const [activeTab, setActiveTab] = useState(TABS[0].code);
+  const [activeTab, setActiveTab] = useState(
+    () => new URLSearchParams(window.location.search).get("lang") || TABS[0].code
+  );
   const [typeFilter, setTypeFilter] = useState(
     () => new URLSearchParams(window.location.search).get("type")
   );
 
-  const clearTypeFilter = () => {
-    setTypeFilter(null);
+  const updateUrl = (lang, type) => {
     const url = new URL(window.location.href);
-    url.searchParams.delete("type");
+    if (lang) url.searchParams.set("lang", lang);
+    else url.searchParams.delete("lang");
+    if (type) url.searchParams.set("type", type);
+    else url.searchParams.delete("type");
     window.history.replaceState({}, "", url);
+    rememberReturnUrl();
   };
 
+  // Deja la URL (y el "volver") sincronizada con el estado inicial apenas se monta.
+  useEffect(() => {
+    updateUrl(activeTab, typeFilter);
+  }, []);
+
+  const selectTab = (code) => {
+    setActiveTab(code);
+    updateUrl(code, typeFilter);
+  };
+
+  const clearTypeFilter = () => {
+    setTypeFilter(null);
+    updateUrl(activeTab, null);
+  };
+
+  // Los boletines por ahora solo existen en quechua, así que filtrar por idioma
+  // no aporta nada ahí: se muestran todos directo, sin pestañas de idioma.
+  const showLanguageTabs = typeFilter !== "boletin";
+
   const items = biblioteca
-    .filter((item) => item.language === activeTab)
+    .filter((item) => !showLanguageTabs || item.language === activeTab)
     .filter((item) => !typeFilter || item.type === typeFilter)
     .sort((a, b) => b.id - a.id);
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <div className="flex flex-wrap gap-4 mb-6">
-        {TABS.map((tab) => (
-          <button
-            key={tab.code}
-            type="button"
-            onClick={() => setActiveTab(tab.code)}
-            className={`flex items-center gap-3 px-8 py-4 rounded-full font-nunito font-bold text-xl transition-all ${
-              activeTab === tab.code
-                ? "bg-qumir text-white shadow-lg scale-105"
-                : "bg-white text-futuro/60 border-2 border-gray-200 hover:border-qumir hover:text-qumir"
-            }`}
-          >
-            <i className={`fas ${tab.icon} text-2xl`} aria-hidden="true"></i>
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      {showLanguageTabs && (
+        <div className="flex flex-wrap gap-4 mb-6">
+          {TABS.map((tab) => (
+            <button
+              key={tab.code}
+              type="button"
+              onClick={() => selectTab(tab.code)}
+              className={`flex items-center gap-3 px-8 py-4 rounded-full font-nunito font-bold text-xl transition-all ${
+                activeTab === tab.code
+                  ? "bg-qumir text-white shadow-lg scale-105"
+                  : "bg-white text-futuro/60 border-2 border-gray-200 hover:border-qumir hover:text-qumir"
+              }`}
+            >
+              <i className={`fas ${tab.icon} text-2xl`} aria-hidden="true"></i>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {typeFilter && (
         <button
@@ -71,7 +110,7 @@ const LibrarySections = () => {
         </div>
       ) : (
         <p className="text-futuro/70 text-center py-16">
-          Muy pronto vas a encontrar contenido en {TABS.find((t) => t.code === activeTab)?.label} aquí.
+          Muy pronto vas a encontrar {showLanguageTabs ? `contenido en ${TABS.find((t) => t.code === activeTab)?.label}` : "boletines"} aquí.
         </p>
       )}
     </div>
