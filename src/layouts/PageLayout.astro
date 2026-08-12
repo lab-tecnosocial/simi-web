@@ -7,6 +7,18 @@ const { titulo, descripcion, imagen } = Astro.props;
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-WDS1CC061R"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WDS1CC061R");
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w: any, d: Document, s: string, l: string, i: string) {
