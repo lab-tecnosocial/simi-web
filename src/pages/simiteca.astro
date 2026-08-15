@@ -1,0 +1,12 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import LibrarySections from "../components/biblioteca/LibrarySections.jsx";
+import "../styles/global.css";
+---
+
+<PageLayout
+  titulo="Simiteca"
+  descripcion="Boletines y cómics de SIMI para leer en línea"
+>
+  <LibrarySections client:only="react" />
+</PageLayout>

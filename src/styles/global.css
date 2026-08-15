@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overscroll-behavior-y: contain;
+}
+
 /* body {
      @apply font-custom;
 } */

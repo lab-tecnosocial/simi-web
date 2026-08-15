@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Header = () => {
+  const [isDropdownSimitecaOpen, setIsDropdownSimitecaOpen] = useState(false);
   const [isDropdownGamesOpen, setIsDropdownGamesOpen] = useState(false);
   const [isDropdownCommunityOpen, setIsDropdownCommunityOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
+  const dropdownSimitecaRef = useRef(null);
   const dropdownGamesRef = useRef(null);
   const dropdownCommunityRef = useRef(null);
 
@@ -12,11 +14,17 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
+        dropdownSimitecaRef.current && !dropdownSimitecaRef.current.contains(event.target)
+      ) {
+        setIsDropdownSimitecaOpen(false);
+      }
+
+      if (
         dropdownGamesRef.current && !dropdownGamesRef.current.contains(event.target)
       ) {
         setIsDropdownGamesOpen(false);
       }
-      
+
       if (
         dropdownCommunityRef.current && !dropdownCommunityRef.current.contains(event.target)
       ) {
@@ -25,17 +33,27 @@ const Header = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
+  const toggleDropdownSimiteca = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDropdownSimitecaOpen(prev => !prev);
+    // Cerrar los otros dropdowns
+    setIsDropdownGamesOpen(false);
+    setIsDropdownCommunityOpen(false);
+  };
+
   const toggleDropdownGames = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDropdownGamesOpen(prev => !prev);
-    // Cerrar el otro dropdown
+    // Cerrar los otros dropdowns
+    setIsDropdownSimitecaOpen(false);
     setIsDropdownCommunityOpen(false);
   };
 
@@ -43,13 +61,15 @@ const Header = () => {
     e.preventDefault();
     e.stopPropagation();
     setIsDropdownCommunityOpen(prev => !prev);
-    // Cerrar el otro dropdown
+    // Cerrar los otros dropdowns
+    setIsDropdownSimitecaOpen(false);
     setIsDropdownGamesOpen(false);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
     // Cerrar dropdowns cuando se abre/cierra el menú móvil
+    setIsDropdownSimitecaOpen(false);
     setIsDropdownGamesOpen(false);
     setIsDropdownCommunityOpen(false);
   };
@@ -98,7 +118,55 @@ const Header = () => {
           <li className="my-2 md:my-0">
             <a className="text-futuro hover:text-qumir" href="/sobre_nosotros" onClick={toggleMenu}>Sobre nosotros</a>
           </li>
-          
+
+          {/* Dropdown Simiteca */}
+          <li className="relative my-2 md:my-0" ref={dropdownSimitecaRef}>
+            <button
+              type="button"
+              className="text-futuro hover:text-qumir focus:outline-none flex items-center"
+              onClick={toggleDropdownSimiteca}
+              aria-haspopup="true"
+              aria-expanded={isDropdownSimitecaOpen}
+            >
+              Simiteca
+              <i className={`fa fa-chevron-${isDropdownSimitecaOpen ? 'up' : 'down'} ml-1`}></i>
+            </button>
+            {isDropdownSimitecaOpen && (
+              <ul
+                role="menu"
+                className="md:absolute left-0 mt-2 w-40 bg-white rounded z-50"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <li>
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
+                    href="/simiteca?type=boletin"
+                    onClick={() => {
+                      setIsDropdownSimitecaOpen(false);
+                      toggleMenu();
+                    }}
+                  >
+                    Boletines
+                  </a>
+                </li>
+                <li>
+                  <a
+                    role="menuitem"
+                    className="block px-4 py-2 text-futuro hover:bg-gray-200"
+                    href="/simiteca?type=comic"
+                    onClick={() => {
+                      setIsDropdownSimitecaOpen(false);
+                      toggleMenu();
+                    }}
+                  >
+                    Cómics
+                  </a>
+                </li>
+              </ul>
+            )}
+          </li>
+
           {/* Dropdown Juegos */}
           <li className="relative my-2 md:my-0" ref={dropdownGamesRef}>
             <button
