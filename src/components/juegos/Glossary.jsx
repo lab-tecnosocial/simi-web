@@ -3,7 +3,7 @@ import { entries } from '../data'
 
 const PAGE_SIZE = 20
 
-const Glossary = () => {
+const Glossary = ({ headerImage }) => {
   const [selectedTema, setSelectedTema] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
@@ -66,7 +66,7 @@ const Glossary = () => {
       <div className="relative z-10 w-full max-w-6xl">
         <div className="flex justify-center mb-4">
           <img
-            src="/assets/images/DictionaryGreen.png"
+            src={headerImage?.src}
             alt="Logo Glosario"
             className="w-20 h-20 object-contain"
           />

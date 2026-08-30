@@ -1,13 +1,37 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import MatchingGame from "../components/juegos/MatchingGame";
+import { matchingData } from "../components/data";
+import { getImageModule } from "../lib/images.js";
 import "../styles/global.css";
+import emparejar from "../assets\images\emparejar_palabra.png";
+const headerImage = await getImage({ src: emparejar });
+
+const imagePaths = [
+  ...new Set(
+    Object.values(matchingData.temas)
+      .flat()
+      .map((item) => item.image)
+      .filter(Boolean)
+  ),
+];
+const imageMap = Object.fromEntries(
+  await Promise.all(
+    imagePaths.map(async (path) => {
+      const mod = getImageModule(path);
+      if (!mod) return [path, path];
+      const resolved = await getImage({ src: mod });
+      return [path, resolved.src];
+    })
+  )
+);
 ---
 
 <PageLayout
     titulo="Empareja"
     descripcion="Juega a descifrar las palabras"
-    imagen="/assets/img/anagrama.jpg"
+    imagen={headerImage.src}
 >
-    <MatchingGame client:only="react" />
+    <MatchingGame client:only="react" imageMap={imageMap} />
 </PageLayout>

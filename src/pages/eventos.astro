@@ -1,22 +1,46 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import Slider from "../components/eventos/Slider";
 import EventosList from "../components/eventos/EventosList";
+import hero4 from "../assets/images/juego/hero_4.webp";
+import hero1 from "../assets/images/juego/hero_1.png";
+import hero2 from "../assets/images/juego/hero_2.png";
+import feriaVoluntariado from "../assets/images/feria_voluntariado.jpg";
+import simiCalendario from "../assets/images/simi_calendario.png";
+import googleCalendarIconSrc from "../assets/images/GoogleCalendar.png";
+import usersIconSrc from "../assets/images/Users.png";
 import "../styles/global.css";
+
+const slides = await Promise.all(
+  [hero4, hero1, hero2].map((src) => getImage({ src }))
+);
+const eventImages = {
+  feria_voluntariado: await getImage({ src: feriaVoluntariado }),
+  simi_calendario: await getImage({ src: simiCalendario }),
+};
+const googleCalendarIcon = await getImage({ src: googleCalendarIconSrc });
+const usersIcon = await getImage({ src: usersIconSrc });
+const headerImage = await getImage({ src: hero4 });
 ---
 
 <PageLayout
   titulo="Eventos"
   descripcion="Descubre nuestros próximos eventos"
-  imagen="/assets/img/eventos.jpg"
+  imagen={headerImage.src}
 >
   <!-- Sección de Hero -->
   <div id="slider" class="w-full overflow-hidden">
-    <Slider client:load />
+    <Slider slides={slides} client:load />
   </div>
   <div class="p-4">
     {/*Componente EventosList*/}
-    <EventosList client:load />
+    <EventosList
+      eventImages={eventImages}
+      googleCalendarIcon={googleCalendarIcon}
+      usersIcon={usersIcon}
+      client:load
+    />
   </div>
 
 </PageLayout>

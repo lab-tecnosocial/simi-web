@@ -1,13 +1,50 @@
 ---
+import { Image, getImage } from "astro:assets";
 import Carousel from "../components/simiwanpullkana/carousel";
 import Simiwanpukllana from "../components/simiwanpullkana";
 import ImageTextBlock from "../components/simiwanpullkana/imagetextblock";
 import LogoSection from "../components/simiwanpullkana/logoSection";
-import Recursos from "../components/simiwanpullkana/recursos";
+import Recursos, { RECURSOS_BASE } from "../components/simiwanpullkana/recursos";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 //import PageLayout from "../layouts/PageLayout.astro";
+import { getImageModule } from "../lib/images.js";
 import "../styles/global.css";
+import banner from "../assets/images/juego/banner.jpg";
+import atuqLogo from "../assets/images/juego/atuq_logo.png";
+import logobyn from "../assets/images/juego/logobyn.png";
+import cover1 from "../assets/images/juego/cover1.png";
+import cover2 from "../assets/images/juego/cover2.png";
+import cover3 from "../assets/images/juego/cover3.png";
+import zorrito1 from "../assets/images/juego/zorrito1.png";
+import zorritoSrc from "../assets/images/juego/zorrito.png";
+import cedSrc from "../assets/images/juego/colabs/ced.png";
+import martaderoSrc from "../assets/images/juego/colabs/martadero.jpg";
+import microsSrc from "../assets/images/juego/colabs/micros.jpg";
+import fundimagenSrc from "../assets/images/juego/colabs/fundimagen.jpg";
+import misereorSrc from "../assets/images/juego/colabs/misereor.jpg";
+
+const atuqLogoImg = await getImage({ src: atuqLogo });
+const zorritoImage = await getImage({ src: zorritoSrc });
+const cedLogo = await getImage({ src: cedSrc });
+const martaderoLogo = await getImage({ src: martaderoSrc });
+const microsLogo = await getImage({ src: microsSrc });
+const fundimagenLogo = await getImage({ src: fundimagenSrc });
+const misereorLogo = await getImage({ src: misereorSrc });
+
+const recursoImageKeys = [...new Set(RECURSOS_BASE.map((r) => r.imagenKey))];
+const recursoImages = Object.fromEntries(
+  await Promise.all(
+    recursoImageKeys.map(async (key) => [
+      key,
+      await getImage({ src: getImageModule(`juego/recursos/${key}.png`) ?? getImageModule(`juego/recursos/${key}.jpg`) }),
+    ])
+  )
+);
+
+// og:image / twitter:image: esta página no usa PageLayout, así que se
+// resuelve manualmente una imagen representativa para las redes sociales.
+const socialImage = await getImage({ src: banner });
 ---
 
 <!doctype html>
@@ -31,9 +68,56 @@ import "../styles/global.css";
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Abel&family=Baloo+Thambi&display=swap" rel="stylesheet">
 
     <link href="/assets/css/style.css" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
+
+    <meta name="description" content="Simiwan Pukllana: un juego de mesa divertido y educativo para promover el quechua de Cochabamba." />
+<!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-WDS1CC061R"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-WDS1CC061R");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w: any, d: Document, s: string, l: string, i: string) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s) as HTMLScriptElement,
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode?.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MN7JBQC8");
+
+      (window as any).trackEvent = function (
+        eventName: string,
+        params?: Record<string, any>
+      ) {
+        (window as any).dataLayer.push({ event: eventName, ...params });
+      };
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content="Simiwan Pukllana" />
+    <meta property="og:description" content="Simiwan Pukllana: un juego de mesa divertido y educativo para promover el quechua de Cochabamba." />
+    <meta property="og:image" content={new URL(socialImage.src, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content="Simiwan Pukllana" />
+    <meta property="twitter:description" content="Simiwan Pukllana: un juego de mesa divertido y educativo para promover el quechua de Cochabamba." />
+    <meta property="twitter:image" content={new URL(socialImage.src, Astro.url)} />
 </head>
 <body class="font-nunito">
     <script>
@@ -46,9 +130,9 @@ import "../styles/global.css";
     <!-- Sección de Hero -->
     <div id="novedadesjuego" class="w-full overflow-hidden">
         <div class="w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] relative">
-          <img 
-            src="/assets/images/juego/banner.jpg" 
-            alt="hero" 
+          <Image
+            src={banner}
+            alt="hero"
             class="mx-auto w-full h-full object-cover absolute top-0 sm:top-[-50px] md:top-[-100px] lg:top-[-150px] xl:top-[-200px] brightness-75"
           />
         </div>  
@@ -60,7 +144,7 @@ import "../styles/global.css";
     <section class="mt-8">
         <div class="flex justify-center items-center mb-6">
             <div class="md:w-1/2 p-6 text-center">
-                <img src="/assets/images/juego/atuq_logo.png" alt="" class="mx-auto h-[150px]" />
+                <Image src={atuqLogo} alt="Logo de Atuq Yachachiq" class="mx-auto h-[150px]" />
                 <p class="mt-4 text-black font-[Nunito] font-light text-[20px]">
                     Atuq Yachachiq se trata de un colectivo editorial fundada en 2019 que se dedica a la creación y difusión de material didáctico y literario en Quechua de Cochabamba. Actualmente nos encontramos presentes en Cochabamba, Bolivia.
                 </p>
@@ -74,12 +158,12 @@ import "../styles/global.css";
                     <h2 class="font-[Nunito] text-3xl font-bold mb-2">
                         Descarga la versión digital del juego
                     </h2>
-                    <Recursos />
+                    <Recursos recursoImages={recursoImages} />
                 </div>
             </div>
-            
+
             <div class="w-full md:w-[608px] lg:w-[500px] h-auto bg-[#fff4cd] border-4 border-[#fff4cd] rounded-lg p-8 text-center relative mb-6 lg:mb-0 sm:order-2 lg:order-1">
-                <img src="/assets/images/juego/logobyn.png" alt="logosimiwanpukllana" class="mt-[-50px] h-[315px] w-auto mx-auto">
+                <Image src={logobyn} alt="logosimiwanpukllana" class="mt-[-50px] h-[315px] w-auto mx-auto" />
                 <p class="mt-[-55px] text-[19px] text-justify text-gray-700 font-[Nunito] font-light">
                     Simiwan Pukllana se trata de un <span class="font-bold">juego de mesa</span> divertido y educativo creado para 
                     <span class="font-bold">promover el quechua de Cochabamba.</span>
@@ -111,7 +195,14 @@ import "../styles/global.css";
     <!-- Sección del Logos -->
     <section class="mt-8">
         <!-- <h2 class="text-3xl font-bold text-black">Imágenes Destacadas</h2>  -->
-        <LogoSection />
+        <LogoSection
+          atuqLogo={atuqLogoImg}
+          cedLogo={cedLogo}
+          martaderoLogo={martaderoLogo}
+          microsLogo={microsLogo}
+          fundimagenLogo={fundimagenLogo}
+          misereorLogo={misereorLogo}
+        />
     </section>
 
     <!-- Sección de Tarjetas -->
@@ -119,13 +210,13 @@ import "../styles/global.css";
         <div class="container mx-auto">
             <div class="grid grid-cols-3 gap-4">
                 <div class="bg-red-200 rounded-lg overflow-hidden">
-                    <img src="/assets/images/juego/cover1.png" alt="Imagen 1" class="w-full h-auto object-cover" />
+                    <Image src={cover1} alt="Imagen 1" class="w-full h-auto object-cover" />
                 </div>
                 <div class="bg-blue-200 rounded-lg overflow-hidden">
-                    <img src="/assets/images/juego/cover3.png" alt="Imagen 2" class="w-full h-auto object-cover" />
+                    <Image src={cover3} alt="Imagen 2" class="w-full h-auto object-cover" />
                 </div>
                 <div class="bg-green-200 rounded-lg overflow-hidden">
-                    <img src="/assets/images/juego/cover2.png" alt="Imagen 3" class="w-full h-auto object-cover" />
+                    <Image src={cover2} alt="Imagen 3" class="w-full h-auto object-cover" />
                 </div>
             </div>
         </div>
@@ -139,12 +230,12 @@ import "../styles/global.css";
         <h2 class="text-center text-xl mb-4">Si bien realizamos material gratuito didáctico y literario en quechua, también ofrecemos nuestros servicios de manera que que Atuq Yachachiq sea una iniciativa autosustentable y podamos seguir liberando material.
             Atuq Yachachiq desafia las estructuras tradicionales de distribución del conocimiento que perpetúan sistemas de exclusión, las cuales refuerzan un modelo de inequidad, donde el acceso a libros y materiales culturales queda restringido a sectores privilegiados. 
             Cuando adquieres nuestros servicios también apoyas a un  nuestro proyecto editorial que promueve el acceso equitativo de material literario en qeuchua y otras lenguas indígenas de Bolivia.</h2>
-        <Simiwanpukllana client:only="react" />
+        <Simiwanpukllana client:only="react" zorritoImage={zorritoImage} />
     </section>
 
     <!-- Sección de Hero -->
     <div class="w-full">
-        <img src="/assets/images/juego/zorrito1.png" alt="hero" class="mx-auto w-full h-auto" />
+        <Image src={zorrito1} alt="hero" class="mx-auto w-full h-auto" />
     </div>
 
     <Footer/>

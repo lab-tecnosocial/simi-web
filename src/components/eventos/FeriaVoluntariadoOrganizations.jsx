@@ -1,47 +1,50 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const ORGANIZATION_META = [
+export const ORGANIZATION_META = [
   {
     match: "asobec",
     label: "ASOBEC",
-    logo: "/assets/images/feria-voluntariado/asobec.webp",
+    logoKey: "feria-voluntariado/asobec.webp",
   },
   {
     match: "banco de ropa",
     label: "Banco de Ropa",
-    logo: "/assets/images/feria-voluntariado/ropa.webp",
+    logoKey: "feria-voluntariado/ropa.webp",
   },
   {
     match: "hacklab",
     label: "HackLab Brick-Heads",
-    logo: "/assets/images/feria-voluntariado/hacklab.webp",
+    logoKey: "feria-voluntariado/hacklab.webp",
   },
   {
     match: "ods en accion",
     label: "ODS en Accion",
-    logo: "/assets/images/feria-voluntariado/ods.webp",
+    logoKey: "feria-voluntariado/ods.webp",
   },
   {
     match: "partners of the americas",
     label: "Partners of the Americas",
-    logo: "/assets/images/feria-voluntariado/partnersoftheamericas.webp",
+    logoKey: "feria-voluntariado/partnersoftheamericas.webp",
   },
   {
     match: "partners campus",
     label: "Partners Campus",
-    logo: "/assets/images/feria-voluntariado/partners_campus.webp",
+    logoKey: "feria-voluntariado/partners_campus.webp",
   },
   {
     match: "plataforma teatral",
     label: "Plataforma Teatral Cochabamba",
-    logo: "/assets/images/feria-voluntariado/plataforma_teatral.webp",
+    logoKey: "feria-voluntariado/plataforma_teatral.webp",
   },
   {
     match: "red de voluntarios",
     label: "Red de Voluntarios por los ODS",
-    logo: "/assets/images/feria-voluntariado/red_ods.webp",
+    logoKey: "feria-voluntariado/red_ods.webp",
   },
   {
+    // logo_simi2025.png vive en public/ (referenciado también por
+    // manifest.json, que necesita una URL pública fija), por eso usa una
+    // ruta pública directa en lugar de logoKey + astro:assets.
     match: "simi:",
     label: "Simi",
     logo: "/assets/images/brand/logo_simi2025.png",
@@ -49,37 +52,37 @@ const ORGANIZATION_META = [
   {
     match: "odontologia",
     label: "SCEOC",
-    logo: "/assets/images/feria-voluntariado/SCEOC.webp",
+    logoKey: "feria-voluntariado/SCEOC.webp",
   },
   {
     match: "tiltit",
     label: "TILTIT",
-    logo: "/assets/images/feria-voluntariado/TILTIT.webp",
+    logoKey: "feria-voluntariado/TILTIT.webp",
   },
   {
     match: "ingenieria industrial",
     label: "SOCIEII",
-    logo: "/assets/images/feria-voluntariado/socieii.webp",
+    logoKey: "feria-voluntariado/socieii.webp",
   },
   {
     match: "linguistica",
     label: "SOCIELIN",
-    logo: "/assets/images/feria-voluntariado/socielin.webp",
+    logoKey: "feria-voluntariado/socielin.webp",
   },
   {
     match: "fundacion naira",
     label: "Fundacion Naira",
-    logo: "/assets/images/feria-voluntariado/naira.webp",
+    logoKey: "feria-voluntariado/naira.webp",
   },
   {
     match: "bomberos voluntarios",
     label: "Bomberos voluntarios: Yunka Atoq",
-    logo: "/assets/images/feria-voluntariado/bomberos_voluntarios.webp"
+    logoKey: "feria-voluntariado/bomberos_voluntarios.webp"
   },
   {
     match: "red tu decides",
     label: "Red tu decides",
-    logo: "/assets/images/feria-voluntariado/red_tu_decides.webp"
+    logoKey: "feria-voluntariado/red_tu_decides.webp"
   }
 ];
 
@@ -140,21 +143,33 @@ function toSlug(value = "") {
     .replace(/^-+|-+$/g, "");
 }
 
-function getMeta(participant) {
+function getMeta(participant, orgLogos) {
   const name = normalizeText(participant.nombre);
-  return (
-    ORGANIZATION_META.find((meta) => name.includes(meta.match)) || {
+  const meta = ORGANIZATION_META.find((meta) => name.includes(meta.match));
+
+  if (!meta) {
+    return {
       label: participant.nombre,
       logo: "https://placehold.co/100x50/0b2545/ffffff?text=Org",
-    }
-  );
+    };
+  }
+
+  if (meta.logo) {
+    // Ya trae una ruta pública fija (ver comentario en ORGANIZATION_META).
+    return meta;
+  }
+
+  return {
+    ...meta,
+    logo: orgLogos?.[meta.logoKey]?.src,
+  };
 }
 
-function getOrderedParticipants(participants) {
+function getOrderedParticipants(participants, orgLogos) {
   return participants
     .map((participant) => ({
       ...participant,
-      meta: getMeta(participant),
+      meta: getMeta(participant, orgLogos),
     }))
     .sort((a, b) => {
       const indexA = ORGANIZATION_META.findIndex(
@@ -387,12 +402,15 @@ function PhoneIcon({ className = "h-5 w-5" }) {
   );
 }
 
-export default function FeriaVoluntariadoOrganizations({ participants = [] }) {
+export default function FeriaVoluntariadoOrganizations({
+  participants = [],
+  orgLogos = {},
+}) {
   const [selectedParticipant, setSelectedParticipant] = useState(null);
   const hasHandledRouteOpen = useRef(false);
   const orderedParticipants = useMemo(
-    () => getOrderedParticipants(participants),
-    [participants],
+    () => getOrderedParticipants(participants, orgLogos),
+    [participants, orgLogos],
   );
 
   useEffect(() => {

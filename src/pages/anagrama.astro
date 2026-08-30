@@ -2,12 +2,15 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import Anagram from "../components/juegos/Anagram";
 import "../styles/global.css";
+import anagram from "../assets/images/anagrama.png";
+import { getImage } from "astro:assets";
+const headerImage = await getImage({ src: anagram })
 ---
 
 <PageLayout
     titulo="Anagrama"
     descripcion="Juega a descifrar las palabras"
-    imagen="/assets/img/anagrama.jpg"
+    imagen={headerImage.src}
 >
     <Anagram client:visible />
 </PageLayout>

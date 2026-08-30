@@ -1,13 +1,14 @@
 ---
-
+import { Image } from "astro:assets";
+import logoSimiAlt from "../assets/images/logosimi_alt.png";
 ---
 
 <header id="inicio">
   <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
     <div class="container-fluid">
       <div class="logo-container d-flex items-center justify-center p-2">
-        <img
-          src="/assets/images/logosimi_alt.png"
+        <Image
+          src={logoSimiAlt}
           alt="Logo de Simi"
           class="logo-simi"
           style="height: 150%; margin-left: 10px; margin-left:-px"

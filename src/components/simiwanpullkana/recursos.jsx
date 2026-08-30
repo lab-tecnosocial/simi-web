@@ -1,36 +1,41 @@
-const Recursos = () => {
-    const recursos = [
-        { 
-            imagen: '/assets/images/juego/recursos/tablero.png',
-            descripcion: 'Tablero',
-            link: 'https://drive.google.com/file/d/1-ayFfEpwsJYl2xervm0pd-ri8iX5unHf/view?usp=sharing'
-        },
-        { 
-            imagen: '/assets/images/juego/recursos/peones.png',
-            descripcion: 'Peones',
-            link: 'https://drive.google.com/file/d/1_jzwCkGzAW1NmVeYmPLNUd48CoesEyDL/view?usp=sharing'
-        },
-        { 
-            imagen: '/assets/images/juego/recursos/tarjetas.png',
-            descripcion: 'Tarjetas',
-            link: 'https://drive.google.com/file/d/1pzCiYg80WxUkMOw82TFQVsdXchQjppBN/view?usp=sharing'
-        },
-        { 
-            imagen: '/assets/images/juego/recursos/tarjetas_blanco.jpg',
-            descripcion: 'Tarjetas en blanco',
-            link: 'https://drive.google.com/file/d/1JqZUeqfUh08Z1l9_Y0C3leRqp4kFMOnO/view?usp=sharing'
-        },
-        { 
-            imagen: '/assets/images/juego/recursos/manual.png',
-            descripcion: 'Manual',
-            link: 'https://drive.google.com/file/d/1_cmQAAGslN28Ld6m9EuyLpJfAlB0-eA0/view?usp=sharing'
-        },
-        { 
-            imagen: '/assets/images/juego/recursos/anexo.png',
-            descripcion: 'Descarga el anexo extras (material para maestrxs)',
-            link:'https://drive.google.com/file/d/11q2UQui3h6La-0eBtRfvu98HkCCZ9gtD/view?usp=sharing'
-        }
-    ];
+export const RECURSOS_BASE = [
+    {
+        imagenKey: 'tablero',
+        descripcion: 'Tablero',
+        link: 'https://drive.google.com/file/d/1-ayFfEpwsJYl2xervm0pd-ri8iX5unHf/view?usp=sharing'
+    },
+    {
+        imagenKey: 'peones',
+        descripcion: 'Peones',
+        link: 'https://drive.google.com/file/d/1_jzwCkGzAW1NmVeYmPLNUd48CoesEyDL/view?usp=sharing'
+    },
+    {
+        imagenKey: 'tarjetas',
+        descripcion: 'Tarjetas',
+        link: 'https://drive.google.com/file/d/1pzCiYg80WxUkMOw82TFQVsdXchQjppBN/view?usp=sharing'
+    },
+    {
+        imagenKey: 'tarjetas_blanco',
+        descripcion: 'Tarjetas en blanco',
+        link: 'https://drive.google.com/file/d/1JqZUeqfUh08Z1l9_Y0C3leRqp4kFMOnO/view?usp=sharing'
+    },
+    {
+        imagenKey: 'manual',
+        descripcion: 'Manual',
+        link: 'https://drive.google.com/file/d/1_cmQAAGslN28Ld6m9EuyLpJfAlB0-eA0/view?usp=sharing'
+    },
+    {
+        imagenKey: 'anexo',
+        descripcion: 'Descarga el anexo extras (material para maestrxs)',
+        link:'https://drive.google.com/file/d/11q2UQui3h6La-0eBtRfvu98HkCCZ9gtD/view?usp=sharing'
+    }
+];
+
+const Recursos = ({ recursoImages = {} }) => {
+    const recursos = RECURSOS_BASE.map((recurso) => ({
+        ...recurso,
+        imagen: recursoImages[recurso.imagenKey]?.src,
+    }));
 
     return (
         <section className="py-0 px-0 container">

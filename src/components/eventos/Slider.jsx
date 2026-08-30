@@ -5,7 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
-const Slider = () => {
+const Slider = ({ slides = [] }) => {
+  const [slide1, slide2, slide3] = slides;
   return (
     <Swiper
       modules={[Navigation, Autoplay, Pagination]}
@@ -20,7 +21,9 @@ const Slider = () => {
         <div className="w-full h-[603px] overflow-hidden mx-auto">
           <img
             className="w-full h-full object-cover"
-            src="/assets/images/juego/hero_4.webp"
+            src={slide1?.src}
+            width={slide1?.width}
+            height={slide1?.height}
             alt="Slide 1"
           />
         </div>
@@ -34,7 +37,9 @@ const Slider = () => {
         <div className="w-full h-[603px] overflow-hidden mx-auto">
           <img
             className="w-full h-full object-cover"
-            src="/assets/images/juego/hero_1.png"
+            src={slide2?.src}
+            width={slide2?.width}
+            height={slide2?.height}
             alt="Slide 1"
           />
         </div>
@@ -48,7 +53,9 @@ const Slider = () => {
         <div className="w-full h-[603px] overflow-hidden mx-auto">
           <img
             className="w-full h-full object-cover"
-            src="/assets/images/juego/hero_2.png"
+            src={slide3?.src}
+            width={slide3?.width}
+            height={slide3?.height}
             alt="Slide 1"
           />
         </div>

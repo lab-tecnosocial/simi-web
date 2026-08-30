@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const SuggestionBox = () => {
+const SuggestionBox = ({ image }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -60,8 +60,8 @@ const SuggestionBox = () => {
           </a>
         </div>      
         <img
-            className="w-20 h-auto ml-4" 
-            src="/assets/images/simigloboflotante.png"
+            className="w-20 h-auto ml-4"
+            src={image?.src}
             alt="Imagen 1"
         />
       </div>

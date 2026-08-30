@@ -2,6 +2,9 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import FAQ from "../components/FAQ";
 import "../styles/global.css";
+import { getImage } from "astro:assets";
+import simicards from "../assets/images/simi_cards.png";
+const headerImage = await getImage({ src: simicards });
 
 const questions = [
   {
@@ -32,7 +35,7 @@ const questions = [
 <PageLayout
   titulo="Preguntas frecuentes"
   descripcion="Preguntas mas frecuentes de usuarios"
-  imagen="/assets/img/anagrama.jpg"
+  imagen={headerImage.src}
 >
   <FAQ client:only="react" questions={questions} />
 </PageLayout>

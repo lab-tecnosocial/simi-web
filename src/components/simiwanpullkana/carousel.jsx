@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 
-const Carousel = () => {
-    const images = [
-        '/assets/images/juego/carrusel_atuq/1.png',
-        '/assets/images/juego/carrusel_atuq/2.png',
-        '/assets/images/juego/carrusel_atuq/3.png',
-        '/assets/images/juego/carrusel_atuq/4.png',
-    ];
-
+const Carousel = ({ images = [] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const goToSlide = (index) => {
@@ -22,11 +15,11 @@ const Carousel = () => {
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {images.map((image, index) => (
-                        <img 
-                            key={index} 
-                            src={image} 
-                            alt={`Slide ${index + 1}`} 
-                            className="w-full h-80 object-contain flex-shrink-0" 
+                        <img
+                            key={index}
+                            src={image?.src}
+                            alt={`Slide ${index + 1}`}
+                            className="w-full h-80 object-contain flex-shrink-0"
                         />
                     ))}
                 </div>

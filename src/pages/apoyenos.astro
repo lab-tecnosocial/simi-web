@@ -1,18 +1,25 @@
 ---
 //import Header from "../components/Header.jsx";
 //import Footer from "../components/Footer.astro";
+import { Image, getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import fondoSrc from "../assets/images/fondo.png";
+import banderaBoliviaSrc from "../assets/images/bandera_Bolivia.png";
+import qrSimiSrc from "../assets/images/QR_SIMI.png";
 import "../styles/global.css";
+
+const fondo = await getImage({ src: fondoSrc });
 ---
 
 <PageLayout
   titulo="Apóyenos"
   descripcion="Tu apoyo significa mucho para nosotros"
-  imagen="/assets/images/fondo.png"
+  imagen={fondo.src}
 >
   <div class="relative">
     <div
-      class="absolute top-[-65px] bottom-[-130px] left-0 right-0 bg-[url('/assets/images/fondo.png')] bg-cover bg-center opacity-15 z-0"
+      class="absolute top-[-65px] bottom-[-130px] left-0 right-0 bg-cover bg-center opacity-15 z-0"
+      style={`background-image: url('${fondo.src}')`}
     >
     </div>
 
@@ -25,8 +32,8 @@ import "../styles/global.css";
             class="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-600 font-roboto leading-tight md:leading-relaxed"
           >
             <span class="inline-block"
-              >APÓYANOS DESDE BOLIVIA <img
-                src="/assets/images/bandera_Bolivia.png"
+              >APÓYANOS DESDE BOLIVIA <Image
+                src={banderaBoliviaSrc}
                 alt="Bandera de Bolivia"
                 class="w-auto h-[40px] sm:h-[45px] md:h-[50px] inline-block ml-[-20px] sm:ml-[-25px] md:ml-[-30px] mt-[-5px]"
               /></span
@@ -46,11 +53,11 @@ import "../styles/global.css";
           <div
             class="border border-qumir p-0 rounded-[15px] md:rounded-[20px] flex flex-col justify-center items-center text-center bg-white text-futuro shadow-[0_3px_10px_rgba(89,203,7,0.35)] max-w-[350px] md:max-w-[400px] lg:max-w-[487px] w-full h-auto overflow-hidden"
           >
-            <img
-              src="/assets/images/QR_SIMI.png"
+            <Image
+              src={qrSimiSrc}
               alt="Código QR para donar a Simi"
-              width="380"
-              height="380"
+              width={380}
+              height={380}
               class="w-[90%] max-w-[280px] md:max-w-[320px] lg:max-w-[380px] h-auto object-contain py-4"
             />
           </div>

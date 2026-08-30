@@ -1,7 +1,11 @@
 ---
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
-const { titulo, descripcion, imagen } = Astro.props;
+// logo_simi2025.png vive en public/ (no en src/assets) porque manifest.json
+// también lo referencia y los manifests requieren una URL pública fija, no
+// un asset procesado con hash. Se reusa aquí como default de `imagen` para
+// que el og:image/twitter:image nunca queden rotos por omisión.
+const { titulo, descripcion, imagen = "/assets/images/brand/logo_simi2025.png" } = Astro.props;
 ---
 
 <!doctype html>
@@ -45,8 +49,7 @@ const { titulo, descripcion, imagen } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon & manifest -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
 
     <title>{titulo}</title>

@@ -1,29 +1,34 @@
 import React from 'react';
 
 
-const EventosList = () => {
-  const eventos = [
-    {
-      id: 1,
-      dia: 24,
-      mes: 'JULIO',
-      titulo: 'Feria del voluntariado',
-      lugar: 'CBA 25 de mayo casi plaza colón',
-      horario: '15:00 a 17:00 y 18:30 a 20:00',
-      descripcion: 'Pequeñas acciones generan grandes cambios. ¡Te esperamos!',
-      imagen: '/assets/images/feria_voluntariado.jpg'
-    },
-    {
-      id: 4,
-      dia: '',
-      mes: '',
-      titulo: 'Próximamente',
-      lugar: 'Mantente atento a nuestras redes sociales para conocer más.',
-      horario: 'Muy pronto anunciaremos el siguiente evento',
-      descripcion: '',
-      imagen: '/assets/images/simi_calendario.png'
-    }
-  ];
+const EVENTOS_BASE = [
+  {
+    id: 1,
+    dia: 24,
+    mes: 'JULIO',
+    titulo: 'Feria del voluntariado',
+    lugar: 'CBA 25 de mayo casi plaza colón',
+    horario: '15:00 a 17:00 y 18:30 a 20:00',
+    descripcion: 'Pequeñas acciones generan grandes cambios. ¡Te esperamos!',
+    imagenKey: 'feria_voluntariado'
+  },
+  {
+    id: 4,
+    dia: '',
+    mes: '',
+    titulo: 'Próximamente',
+    lugar: 'Mantente atento a nuestras redes sociales para conocer más.',
+    horario: 'Muy pronto anunciaremos el siguiente evento',
+    descripcion: '',
+    imagenKey: 'simi_calendario'
+  }
+];
+
+const EventosList = ({ eventImages = {}, googleCalendarIcon, usersIcon }) => {
+  const eventos = EVENTOS_BASE.map((evento) => ({
+    ...evento,
+    imagen: eventImages[evento.imagenKey]?.src,
+  }));
 
   return (
     <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 md:py-12 lg:py-16 bg-white font-nunito">
@@ -54,18 +59,18 @@ const EventosList = () => {
 
             {/* Sección de imagen */}
             <div className={`lg:w-[40%] h-48 sm:h-56 md:h-64 lg:h-auto lg:min-h-[300px] xl:min-h-[350px] overflow-hidden relative flex items-center justify-center ${
-              evento.imagen.includes('simi_calendario') ? 'bg-gradient-to-br from-blue-50 to-purple-50' : ''
+              evento.imagenKey === 'simi_calendario' ? 'bg-gradient-to-br from-blue-50 to-purple-50' : ''
             }`}>
               <img
                 src={evento.imagen}
                 alt={evento.titulo}
                 className={`${
-                  evento.imagen.includes('simi_calendario') 
+                  evento.imagenKey === 'simi_calendario' 
                     ? 'object-contain w-4/5 h-4/5 sm:w-3/4 sm:h-3/4' 
                     : 'object-cover w-full h-full'
                 }`}
                 style={{
-                  objectFit: evento.imagen.includes('simi_calendario') ? 'contain' : 'cover',
+                  objectFit: evento.imagenKey === 'simi_calendario' ? 'contain' : 'cover',
                   objectPosition: 'center'
                 }}
               />
@@ -98,7 +103,7 @@ const EventosList = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <button className="flex items-center justify-center bg-white hover:bg-gray-50 text-gray-800 font-semibold text-base sm:text-lg lg:text-lg xl:text-xl px-5 py-2.5 rounded-lg border border-gray-300 shadow-sm transition-colors duration-200 w-full sm:w-auto">
                     <img
-                      src="/assets/images/GoogleCalendar.png"
+                      src={googleCalendarIcon?.src}
                       alt="Google Calendar"
                       className="w-5 h-5 sm:w-6 sm:h-6 mr-2"
                     />
@@ -107,7 +112,7 @@ const EventosList = () => {
 
                   <div className="flex items-center justify-center sm:justify-end text-gray-600 text-sm sm:text-base lg:text-base xl:text-lg">
                     <img
-                      src="/assets/images/Users.png"
+                      src={usersIcon?.src}
                       alt="Usuarios"
                       className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                     />

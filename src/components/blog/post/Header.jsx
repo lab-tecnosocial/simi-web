@@ -1,5 +1,4 @@
-const Header = ({ post }) => {
-    const img_path = '../' + post.image;
+const Header = ({ post, imageSrc }) => {
     return (
       <section className="container mx-auto px-16 mt-2 mb-10 ml-4">
         <h1 className="text-4xl font-bold text-black font-nunito mr-8">{post.title}</h1>
@@ -14,7 +13,7 @@ const Header = ({ post }) => {
         <div className="w-full max-w-screen-lg mx-auto">
           <div className="relative w-full aspect-[5/3] overflow-hidden rounded-lg">
             <img
-              src={img_path}
+              src={imageSrc}
               alt={post.title}
               className="inset-0 w-full h-full object-cover"
             />

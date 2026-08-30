@@ -1,9 +1,11 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../../layouts/PageLayout.astro";
 import posts from "../../components/data/posts.json";
 import HeroTop from "../../components/blog/HeroTop.jsx";
 import PostHeader from "../../components/blog/post/Header.jsx";
 import PostContent from "../../components/blog/post/Content.jsx";
+import { getImageModule } from "../../lib/images.js";
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
@@ -12,18 +14,22 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const post = posts.find((p) => p.id === parseInt(id));
 if (!post) throw new Error("Post not found");
+
+const banner = await getImage({ src: getImageModule("juego/banner.jpg") });
+const postImageMod = getImageModule(post.image);
+const postImage = postImageMod ? await getImage({ src: postImageMod }) : null;
 ---
 
 <PageLayout
   titulo={post.title}
   descripcion={post.content.substring(0, 80) + "..."}
-  imagen={"/" + post.image}
+  imagen={postImage?.src ?? banner.src}
 >
   <!-- Sección de Hero -->
-  <HeroTop />
+  <HeroTop banner={banner} />
 
   <!-- Post Header Section -->
-  <PostHeader post={post} client:load />
+  <PostHeader post={post} imageSrc={postImage?.src} client:load />
 
   <!-- Post Content Section -->
   <PostContent content={post.content} client:load />

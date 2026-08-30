@@ -1,4 +1,5 @@
 ---
+import { getImage } from "astro:assets";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Hero2Section from "../components/Hero2.astro";
@@ -6,6 +7,15 @@ import Header from "../components/Header.jsx";
 import PeopleSection from "../components/PeopleSection.jsx";
 import Hero from "../components/Hero.jsx";
 import SuggestionBox from "../components/SuggestionBox.jsx";
+import heroPersonajeSrc from "../assets/images/hero_personaje.png";
+import presentacionSrc from "../assets/images/presentacion.webp";
+import previewSrc from "../assets/images/preview.png";
+import simiGloboFlotanteSrc from "../assets/images/simigloboflotante.png";
+
+const heroPersonaje = await getImage({ src: heroPersonajeSrc });
+const presentacion = await getImage({ src: presentacionSrc });
+const preview = await getImage({ src: previewSrc });
+const simiGloboFlotante = await getImage({ src: simiGloboFlotanteSrc });
 ---
 
 <!doctype html>
@@ -96,8 +106,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <title>Simi</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Primary Meta Tags -->
@@ -124,7 +133,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     />
     <meta
       property="og:image"
-      content="https://simiquechua.app/assets/images/preview.png"
+      content={new URL(preview.src, "https://simiquechua.app/")}
     />
 
     <!-- Twitter -->
@@ -140,7 +149,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     />
     <meta
       property="twitter:image"
-      content="https://simiquechua.app/assets/images/preview.png"
+      content={new URL(preview.src, "https://simiquechua.app/")}
     />
     <script>
       import AOS from "aos";
@@ -170,7 +179,7 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     <Header client:load />
 
     <div class="bg-rana">
-      <Hero />
+      <Hero personaje={heroPersonaje} />
 
       <!-- Android SIMI App Downloads Counter -->
       <section
@@ -203,10 +212,10 @@ import SuggestionBox from "../components/SuggestionBox.jsx";
     </div>
 
     <!--  People Section  -->
-    <PeopleSection client:load />
+    <PeopleSection client:load image={presentacion} />
 
     <!--  SuggestionBox Section  -->
-    <SuggestionBox />
+    <SuggestionBox image={simiGloboFlotante} />
 
     <!--Footer  -->
     <Footer />

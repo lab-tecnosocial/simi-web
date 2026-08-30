@@ -1,7 +1,13 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import FAQ from "../components/FAQ";
+import simicards from "../assets/images/simicards.png";
+import fondo from "../assets/images/fondo.png";
 import "../styles/global.css";
+
+const headerImage = await getImage({ src: simicards });
+const fondoImage = await getImage({ src: fondo });
 
 const questions = [
   {
@@ -29,17 +35,17 @@ const questions = [
 <PageLayout
   titulo="Preguntas frecuentes"
   descripcion="Preguntas mas frecuentes de usuarios"
-  imagen="/assets/img/anagrama.jpg"
+  imagen={headerImage.src}
 >
   <div class="relative">
     <div
       class="absolute inset-0 bg-cover bg-center bg-repeat opacity-15 z-0"
-      style={{ backgroundImage: "url('/assets/images/fondo.png')" }}
+      style={{ backgroundImage: `url('${fondoImage.src}')` }}
     >
     </div>
 
     <div class="relative z-10">
-      <FAQ client:only="react" questions={questions} />
+      <FAQ client:only="react" questions={questions} headerImage={headerImage} />
     </div>
   </div>
 </PageLayout>
