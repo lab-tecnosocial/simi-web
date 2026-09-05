@@ -1,16 +1,39 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card";
 import "../styles/global.css";
 import SobreNosotrosContent from "../components/sobreNosotros/SobreNosotrosContent.jsx";
 import Equipo from "../components/sobreNosotros/Equipo.jsx";
 import LogosApoyo from "../components/sobreNosotros/Logos_apoyo.jsx";
+import { imageModules, getImageModule } from "../lib/images.js";
+import simicards from "../assets/images/simicards.png";
+import labTecnosocialSrc from "../assets/images/logolabtecnosocial.png";
+import atuqYachachiqSrc from "../assets/images/logoatuqyachachiq.png";
+import quichwaNinaSrc from "../assets/images/quichwa_nina.jpg";
+
+const headerImage = await getImage({ src: simicards });
+const labTecnosocialLogo = await getImage({ src: labTecnosocialSrc });
+const atuqYachachiqLogo = await getImage({ src: atuqYachachiqSrc });
+const quichwaNina = await getImage({ src: quichwaNinaSrc });
+
+// El equipo se define como datos en Equipo.jsx (~30 fotos bajo
+// src/assets/images/equipo/); se resuelven todas de una vez vía el glob
+// compartido y se le pasan ya procesadas al componente.
+const equipoKeys = Object.keys(imageModules)
+  .filter((key) => key.includes("/equipo/"))
+  .map((key) => key.replace("/src/assets/images/", ""));
+const equipoImages = Object.fromEntries(
+  await Promise.all(
+    equipoKeys.map(async (key) => [key, await getImage({ src: getImageModule(key) })])
+  )
+);
 ---
 
 <PageLayout
   titulo="Sobre Nosotros"
   descripcion="Conoce más sobre nuestro proyecto y equipo"
-  imagen="/assets/img/sobre_nosotros.jpg"
+  imagen={headerImage.src}
 >
   <div class="p-4 justify-center items-center">
     <head>
@@ -19,11 +42,15 @@ import LogosApoyo from "../components/sobreNosotros/Logos_apoyo.jsx";
       <title>Sobre nosotros</title>
     </head>
     <body>
-      <SobreNosotrosContent />
+      <SobreNosotrosContent headerImage={headerImage} />
 
-      <Equipo />
+      <Equipo equipoImages={equipoImages} headerImage={headerImage} />
       <div class="bg-rana">>
-        <LogosApoyo />
+        <LogosApoyo
+          labTecnosocialLogo={labTecnosocialLogo}
+          atuqYachachiqLogo={atuqYachachiqLogo}
+          quichwaNina={quichwaNina}
+        />
       </div>
     </body>
   </div>

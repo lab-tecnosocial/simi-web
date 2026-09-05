@@ -4,21 +4,18 @@ const cardsData = [
     {
         title: "Ilustración",
         description: "Te ofrecemos servicios de ilustración para tu proyecto teniendo en cuenta la pertinencia cultural",
-        image: "/assets/images/juego/zorrito.png",
     },
     {
         title: "Talleres",
         description: "Realizamos talleres de iniciación en la ilustración y escritura de cuentos y comics en diferentes lenguas indígenas",
-        image: "/assets/images/juego/zorrito.png",
     },
     {
         title: "Traducción",
         description: "Te ayudamos en la traducción y edición de textos BILINGÛES (Quechua-Castellano)",
-        image: "/assets/images/juego/zorrito.png",
     },
 ];
 
-const cardsSection = () => {
+const cardsSection = ({ zorritoImage }) => {
   return (
     <section className="py-8 my-8 bg-texto2 bg-opacity-25 p-8 rounded-lg text-center">
       <div className="py-8 px-10">
@@ -41,7 +38,7 @@ const cardsSection = () => {
                 {cardsData.map((card, index) => (
                     <div key={index} className="bg-[#FFC803]/20 rounded-3xl min-h-[300px] max-w-xl mx-auto">
                         <div className="flex items-center justify-center w-full text-center mt-10">
-                          <img src={card.image} alt={card.title} className="h-12" />
+                          <img src={zorritoImage?.src} alt={card.title} className="h-12" />
                         </div>
                         <div className="w-full text-center">
                           <h2 className="text-2xl text-center text-[#B78E4C] font-nunito font-bold p-4">{card.title}</h2>

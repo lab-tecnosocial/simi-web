@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'; import { matchingData as gameData } from '../data'; import winSound
 from '../assets/sounds/win.mp3'; import loseSound from '../assets/sounds/lose.mp3';
 
-const MatchingGame = () => {
+const MatchingGame = ({ imageMap = {} }) => {
+  const resolveImage = (path) => imageMap[path] ?? path;
+
   const [matchedPairs, setMatchedPairs] = useState([]);
   const [selectedTheme, setSelectedTheme] = useState('Numeros');
   const [gameResults, setGameResults] = useState(null);
@@ -205,7 +207,7 @@ const MatchingGame = () => {
                 className="flex flex-col items-center m-1 sm:m-2 md:m-3 lg:m-4"
               >
                 {!Object.values(positions).includes(item.id) && (
-                  <img src={item.image} alt={item.word} className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover" />
+                  <img src={resolveImage(item.image)} alt={item.word} className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover" />
                 )}
               </div>
             ))}
@@ -235,7 +237,7 @@ const MatchingGame = () => {
                 {/* Image placement */}
                 {positions[index] && (
                   <img
-                    src={randomItems.find(item => item.id === positions[index]).image}
+                    src={resolveImage(randomItems.find(item => item.id === positions[index]).image)}
                     alt={word}
                     className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover z-10 mb-3"
                   />

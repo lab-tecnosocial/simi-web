@@ -1,23 +1,54 @@
 ---
+import { Image, getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import "../styles/global.css";
-import Recursos from "../components/simiwanpullkana/recursos";
+import Recursos, { RECURSOS_BASE } from "../components/simiwanpullkana/recursos";
 import CardsSection from "../components/simiwanpullkana/cardsSection";
 import LogoSection from "../components/simiwanpullkana/logoSection";
+import { getImageModule } from "../lib/images.js";
+import banner from "../assets/images/juego/banner.jpg";
+import atuqLogo from "../assets/images/juego/atuq_logo.png";
+import logobyn from "../assets/images/juego/logobyn.png";
+import wawasjugando from "../assets/images/juego/wawasjugando.jpg";
+import zorritoSrc from "../assets/images/juego/zorrito.png";
+import cedSrc from "../assets/images/juego/colabs/ced.png";
+import martaderoSrc from "../assets/images/juego/colabs/martadero.jpg";
+import microsSrc from "../assets/images/juego/colabs/micros.jpg";
+import fundimagenSrc from "../assets/images/juego/colabs/fundimagen.jpg";
+import misereorSrc from "../assets/images/juego/colabs/misereor.jpg";
+
+const atuqLogoImg = await getImage({ src: atuqLogo });
+const bannerImage = await getImage({ src: banner });
+const zorritoImage = await getImage({ src: zorritoSrc });
+const cedLogo = await getImage({ src: cedSrc });
+const martaderoLogo = await getImage({ src: martaderoSrc });
+const microsLogo = await getImage({ src: microsSrc });
+const fundimagenLogo = await getImage({ src: fundimagenSrc });
+const misereorLogo = await getImage({ src: misereorSrc });
+
+const recursoImageKeys = [...new Set(RECURSOS_BASE.map((r) => r.imagenKey))];
+const recursoImages = Object.fromEntries(
+  await Promise.all(
+    recursoImageKeys.map(async (key) => [
+      key,
+      await getImage({ src: getImageModule(`juego/recursos/${key}.png`) ?? getImageModule(`juego/recursos/${key}.jpg`) }),
+    ])
+  )
+);
 ---
 
 <PageLayout
   titulo="Simiwanpukllana"
   descripcion="Disfruta nuestro juego de mesa"
-  imagen="/assets/img/eventos.jpg"
+  imagen={bannerImage.src}
 >
   <!-- Sección de Hero -->
   <div id="novedadesjuego" class="w-full overflow-hidden">
     <div
       class="w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] relative"
     >
-      <img
-        src="/assets/images/juego/banner.jpg"
+      <Image
+        src={banner}
         alt="hero"
         class="mx-auto w-full h-full object-cover absolute brightness-75"
       />
@@ -28,9 +59,9 @@ import LogoSection from "../components/simiwanpullkana/logoSection";
   <section class="mt-8">
     <div class="flex justify-center items-center mb-6">
       <div class="w-full md:w-3/4 lg:w-3/4 p-6 text-center">
-        <img
-          src="/assets/images/juego/atuq_logo.png"
-          alt=""
+        <Image
+          src={atuqLogo}
+          alt="Logo de Atuq Yachachiq"
           class="mx-auto h-[150px]"
         />
         <p class="mt-4 font-[Nunito] font-light text-[20px]">
@@ -49,15 +80,15 @@ import LogoSection from "../components/simiwanpullkana/logoSection";
           <h2 class="font-[Nunito] text-3xl font-black mb-2">
             Descarga la versión digital del juego
           </h2>
-          <Recursos />
+          <Recursos recursoImages={recursoImages} />
         </div>
       </div>
 
       <div
         class="w-full md:w-[608px] lg:w-[500px] h-auto bg-[#fff4cd] border-4 border-[#fff4cd] rounded-lg p-8 text-center relative mb-6 lg:mb-0 sm:order-2 lg:order-1"
       >
-        <img
-          src="/assets/images/juego/logobyn.png"
+        <Image
+          src={logobyn}
           alt="logosimiwanpukllana"
           class="mt-[-50px] h-[315px] w-auto mx-auto"
         />
@@ -116,20 +147,27 @@ import LogoSection from "../components/simiwanpullkana/logoSection";
 
   <!-- Sección nuestros servicios -->
   <section class="mt-8">
-    <CardsSection />
+    <CardsSection zorritoImage={zorritoImage} />
   </section>
 
   <!-- Sección del Logos -->
   <section class="mt-8">
     <!-- <h2 class="text-3xl font-bold text-black">Imágenes Destacadas</h2>  -->
-    <LogoSection />
+    <LogoSection
+      atuqLogo={atuqLogoImg}
+      cedLogo={cedLogo}
+      martaderoLogo={martaderoLogo}
+      microsLogo={microsLogo}
+      fundimagenLogo={fundimagenLogo}
+      misereorLogo={misereorLogo}
+    />
   </section>
 
   <!-- Sección de Hero bottom-->
   <div class="w-full overflow-hidden">
     <div class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
-      <img
-        src="/assets/images/juego/wawasjugando.jpg"
+      <Image
+        src={wawasjugando}
         alt="Wawas pukllaspa"
         class="absolute inset-0 w-full h-full object-cover brightness-75"
       />

@@ -100,18 +100,23 @@ const EquipoConLayout = ({ miembros, nombreSeccion }) => {
   );
 };
 
-const Equipo = () => {
+const Equipo = ({ equipoImages = {}, headerImage }) => {
+  const withImg = (miembro) => ({
+    ...miembro,
+    imagen: equipoImages[miembro.imagenKey]?.src,
+  });
+
   // ========== FUNDADORES ==========
   const fundadores = [
     {
       nombre: "Nicaela Leon Coico",
-      imagen: "/assets/images/equipo/Leon.jpg",
+      imagenKey: "equipo/Leon.jpg",
       linkedin: "https://www.linkedin.com/in/nicaelaleon/",
       profesion: "Lingüista e Ilustradora infantil",
     },
     {
       nombre: "Alex Ojeda Copa",
-      imagen: "/assets/images/equipo/Ojeda.jpg",
+      imagenKey: "equipo/Ojeda.jpg",
       linkedin: "https://linkedin.com/in/persona1",
       profesion: "Sociólogo e informático",
     },
@@ -122,7 +127,7 @@ const Equipo = () => {
   const equiposInformaticosActual = [
     {
       nombre: "Dante Andree Yupanqui Rodriguez",
-      imagen: "/assets/images/equipo/DANTE_YUPANQUI.jpg",
+      imagenKey: "equipo/DANTE_YUPANQUI.jpg",
       linkedin: "https://www.linkedin.com/in/dante-yupanqui",
       profesion: "Ingeniero de Sistemas",
 
@@ -135,19 +140,19 @@ const Equipo = () => {
   const equiposLinguisticaActual = [
     {
       nombre: "María Cristina Rojas López",
-      imagen: "/assets/images/equipo/Rojas.png",
+      imagenKey: "equipo/Rojas.png",
       linkedin: "https://www.linkedin.com/in/cristina-rojas-4a5580354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       profesion: "Maestra de Biología-Geografía",
     },
     {
       nombre: "Maria Eugenia Hidalgo Cossio",
-      imagen: "/assets/images/equipo/Hidalgo.png",
+      imagenKey: "equipo/Hidalgo.png",
       linkedin: "https://www.linkedin.com/in/maria-eugenia-hidalgo-cossio-609481230/",
       profesion: "Estudiante de Lingüística",
     },
     {
       nombre: "Ruth Jimenez Nina",
-      imagen: "/assets/images/equipo/Jimenez.png",
+      imagenKey: "equipo/Jimenez.png",
       linkedin: "https://linkedin.com/in/persona8",
       profesion: "Lingüista",
     },
@@ -159,13 +164,13 @@ const Equipo = () => {
   const equiposEditorialActual = [
     {
       nombre: "Tamara Ingrid Bascope Bozo",
-      imagen: "/assets/images/equipo/Bascope.webp",
+      imagenKey: "equipo/Bascope.webp",
       linkedin: "https://linkedin.com/in/persona10",
       profesion: "Estudiante de Lingüística",
     },
      {
       nombre: "Ana Rosa Soria Montaño",
-      imagen: "/assets/images/equipo/AnaRosaSoriaMontaño.jpg",
+      imagenKey: "equipo/AnaRosaSoriaMontaño.jpg",
       linkedin: "",
       profesion: "Estudiante de Ciencias Jurídicas",
       portfolio: "https://www.instagram.com/anitaa_r0sita",
@@ -178,14 +183,14 @@ const Equipo = () => {
     
     {
       nombre: "Alan Roberto Davila Tinta",
-      imagen: "/assets/images/equipo/AlanDavilaTinta.jpg",
+      imagenKey: "equipo/AlanDavilaTinta.jpg",
       linkedin: "",
       profesion: "Diseñador Gráfico",
       portfolio: "https://www.instagram.com/aran_dart",
     },
     {
       nombre: "Alexandra Nicole Lazarte Andia",
-      imagen: "/assets/images/equipo/Nicole_Lazarte.jpg",
+      imagenKey: "equipo/Nicole_Lazarte.jpg",
       linkedin: "",
       profesion: "Estudiante",
     },
@@ -195,14 +200,14 @@ const Equipo = () => {
   const equiposDesignActual = [
     {
       nombre: "Pedro Carpio Montero",
-      imagen: "/assets/images/equipo/PedroCarpio.webp",
+      imagenKey: "equipo/PedroCarpio.webp",
       linkedin: "https://www.linkedin.com/in/pedro-carpio",
       profesion: "UI/UX Designer | Product Owner",
       portfolio: "https://porkusillo.site",
     },
     {
       nombre: "Carla Adriana Mamani Mamani",
-      imagen: "/assets/images/equipo/AdrianaMamani.jpg",
+      imagenKey: "equipo/AdrianaMamani.jpg",
       linkedin: "",
       profesion: "Informática",
     },
@@ -216,25 +221,25 @@ const Equipo = () => {
   const antiguosEquiposInformaticos = [
     {
       nombre: "Vladimir Marco Mujica Pinto",
-      imagen: "/assets/images/equipo/Mujica.jpg",
+      imagenKey: "equipo/Mujica.jpg",
       linkedin: "http://www.linkedin.com/in/vladimir-marco-mujica-pinto-053a2562",
       profesion: "Desarrollador de Software",
     },
     {
       nombre: "Raquel Andrea Calderón Gallardo",
-      imagen: "/assets/images/equipo/Calderon.png",
+      imagenKey: "equipo/Calderon.png",
       linkedin: "https://www.linkedin.com/in/raquel-andrea-calderon-gallardo",
       profesion: "Ingeniería Biomédica",
     },
      {
       nombre: "Tania Gisela Choque Condori",
-      imagen: "/assets/images/equipo/Choque.jpg",
+      imagenKey: "equipo/Choque.jpg",
       linkedin: "https://linkedin.com/in/persona1",
       profesion: "Ingeniera de sistemas y médico cirujano",
     },
      {
       nombre: "Ruben Pol Ventura Huchani",
-      imagen: "/assets/images/equipo/VENTURA_POL.jpg",
+      imagenKey: "equipo/VENTURA_POL.jpg",
       linkedin: "https://www.linkedin.com/in/ruben-pol-ventura-huchani-846609337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       profesion: "Estudiante de Ingeniería de Sistemas y Economía",
     },
@@ -244,19 +249,19 @@ const Equipo = () => {
   const antiguosEquiposDiseno = [
     {
       nombre: "Fabricio Lobaton",
-      imagen: "/assets/images/equipo/Lobaton.jpg",
+      imagenKey: "equipo/Lobaton.jpg",
       linkedin: "https://www.linkedin.com/in/fabricio-lobaton-556bb4224/",
       profesion: "Comunicador",
     },
     {
       nombre: "Melany Ventura",
-      imagen: "/assets/images/equipo/Melany_Ventura.jpg",
+      imagenKey: "equipo/Melany_Ventura.jpg",
       linkedin: "https://www.linkedin.com/in/melany-ventura/",
       profesion: "UX/UI Designer & Web Developer",
     },
     {
       nombre: "Melani Carol Padilla Olivares",
-      imagen: "/assets/images/equipo/Padilla.jpg",
+      imagenKey: "equipo/Padilla.jpg",
       linkedin: "http://www.linkedin.com/in/melanipadilla",
       profesion: "UX/UI Designer",
     },
@@ -266,32 +271,32 @@ const Equipo = () => {
   const antiguosEquiposLinguistica = [
     {
       nombre: "Celia Elena Rocabado Zalles",
-      imagen: "/assets/images/equipo/Rocabado.jpg",
+      imagenKey: "equipo/Rocabado.jpg",
       linkedin: "https://www.linkedin.com/in/elenarocabado/",
       profesion: "Lingüista",
     },
     {
       nombre: "Fania Quintana Olaques",
-      imagen: "/assets/images/equipo/Quintana.jpg",
+      imagenKey: "equipo/Quintana.jpg",
       linkedin: "https://www.linkedin.com/in/fania-quintana-90a410343?trk=contact-info",
       profesion: "Lingüista",
     },
     
     {
       nombre: "Alexis Pelaez",
-      imagen: "/assets/images/equipo/Alexis_Pelaez.jpeg",
+      imagenKey: "equipo/Alexis_Pelaez.jpeg",
       linkedin: "http://www.linkedin.com/in/alexis-pelaez-olivera-bb461b23a",
       profesion: "Docente de idiomas",
     },
      {
       nombre: "Nayely Vallejos Terrazas",
-      imagen: "/assets/images/equipo/nayely_vallejos.jpeg",
+      imagenKey: "equipo/nayely_vallejos.jpeg",
       linkedin: "https://linkedin.com/in/nuevo-linguista",
       profesion: "Maestra de Biología - Geografía",
     },
     {
       nombre: "Jhaxson Camacho Arandia",
-      imagen: "/assets/images/equipo/Jhaxson_Camacho.jpg",
+      imagenKey: "equipo/Jhaxson_Camacho.jpg",
       linkedin: "https://linkedin.com/in/nuevo-linguista",
       profesion: "Auditor",
     },
@@ -301,13 +306,13 @@ const Equipo = () => {
   const antiguosEquiposEditorial = [
     {
       nombre: "Ximena Alvarez Gutierrez",
-      imagen: "/assets/images/equipo/Alvarez.jpg",
+      imagenKey: "equipo/Alvarez.jpg",
       linkedin: "http://www.linkedin.com/in/ximena-alvarez-gutierrez-936778337",
       profesion: "Lingüista",
     },
     {
       nombre: "José Froylan López García", 
-      imagen: "/assets/images/equipo/LOPEZ.jpg", 
+      imagenKey: "equipo/LOPEZ.jpg", 
       linkedin: "https://linkedin.com/in/nuevo-ilustrador", 
       profesion: "Artista", 
     },
@@ -317,20 +322,20 @@ const Equipo = () => {
   const antiguosEquiposIlustracion = [
     {
       nombre: "Marcelo Javier Cala Paredes",
-      imagen: "/assets/images/equipo/Marcelo_Javier_Cala_Paredes.jpeg",
+      imagenKey: "equipo/Marcelo_Javier_Cala_Paredes.jpeg",
       linkedin: "https://linkedin.com/in/persona10",
       profesion: "Licenciado en Diseño Gráfico",
     },
 
     {
       nombre: "Darek Alberto Larrazabal Sanabria",
-      imagen: "/assets/images/equipo/Darek_Alberto_Larrazabal_Sanabria.jpeg",
+      imagenKey: "equipo/Darek_Alberto_Larrazabal_Sanabria.jpeg",
       linkedin: "http://www.linkedin.com/in/ximena-alvarez-gutierrez-936778337",
       profesion: "Artista plástico",
     },
     {
       nombre: "Martha Danitza Paitan Inga", 
-      imagen: "/assets/images/equipo/MARTHA_DANITZA.jpg", 
+      imagenKey: "equipo/MARTHA_DANITZA.jpg", 
       linkedin: "https://www.linkedin.com/in/martha-danitza-paitan-inga-84566a330/", 
       profesion: "Contadora e ilustradora", 
     },
@@ -342,7 +347,7 @@ const Equipo = () => {
       {/* Encabezado principal */}
       <div className="flex flex-col items-center mb-4 mt-12">
         <img
-          src="/assets/images/simicards.png"
+          src={headerImage?.src}
           alt="Equipos"
           className="w-28 h-auto mt-12 mb-12"
         />
@@ -357,7 +362,7 @@ const Equipo = () => {
           Fundadores
         </h2>
         <EquipoConLayout 
-          miembros={fundadores} 
+          miembros={fundadores.map(withImg)} 
           nombreSeccion="fundadores" 
         />
       </div>
@@ -373,7 +378,7 @@ const Equipo = () => {
           Informática y Desarrollo Web
         </h3>
         <EquipoConLayout 
-          miembros={equiposInformaticosActual} 
+          miembros={equiposInformaticosActual.map(withImg)} 
           nombreSeccion="actual-informatica" 
         />
 
@@ -384,7 +389,7 @@ const Equipo = () => {
         {equiposLinguisticaActual.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-              {equiposLinguisticaActual.slice(0, 3).map((miembro, index) => (
+              {equiposLinguisticaActual.slice(0, 3).map(withImg).map((miembro, index) => (
                 <Card
                   key={`actual-ling-${miembro.nombre}`}
                   nombre={miembro.nombre}
@@ -399,7 +404,7 @@ const Equipo = () => {
             {equiposLinguisticaActual.length > 3 && (
               <div className="flex justify-center mb-16">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-40">
-                  {equiposLinguisticaActual.slice(3).map((miembro, index) => (
+                  {equiposLinguisticaActual.slice(3).map(withImg).map((miembro, index) => (
                     <Card
                       key={`actual-ling-extra-${miembro.nombre}`}
                       nombre={miembro.nombre}
@@ -425,21 +430,21 @@ const Equipo = () => {
         {/* Sección: Editorial */}
         <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Editorial</h3>
         <EquipoConLayout 
-          miembros={equiposEditorialActual} 
+          miembros={equiposEditorialActual.map(withImg)} 
           nombreSeccion="actual-editorial" 
         />
 
         {/* Sección: Ilustración */}
         <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Ilustración</h3>
         <EquipoConLayout 
-          miembros={equiposIlustracionActual} 
+          miembros={equiposIlustracionActual.map(withImg)} 
           nombreSeccion="actual-ilustracion" 
         />
 
         {/* Sección: Diseño UX/UI */}
         <h3 className="text-3xl font-semibold text-futuro mt-16 mb-4 text-center">Diseño UX/UI</h3>
         <EquipoConLayout 
-          miembros={equiposDesignActual} 
+          miembros={equiposDesignActual.map(withImg)} 
           nombreSeccion="actual-design" 
         />
 
@@ -463,14 +468,14 @@ const Equipo = () => {
           Informática y Desarrollo Web
         </h3>
         <EquipoConLayout 
-          miembros={antiguosEquiposInformaticos} 
+          miembros={antiguosEquiposInformaticos.map(withImg)} 
           nombreSeccion="antiguo-informatica" 
         />
 
         {/* Sección: Antiguo Diseño UX/UI */}
         <h3 className="text-3xl font-bold text-gray-600 mt-6 mb-4 text-center">Diseño UX/UI</h3>
         <EquipoConLayout 
-          miembros={antiguosEquiposDiseno} 
+          miembros={antiguosEquiposDiseno.map(withImg)} 
           nombreSeccion="antiguo-uxui" 
         />
 
@@ -479,21 +484,21 @@ const Equipo = () => {
           Aprendizaje y Diseño Curricular
         </h3>
         <EquipoConLayout 
-          miembros={antiguosEquiposLinguistica} 
+          miembros={antiguosEquiposLinguistica.map(withImg)} 
           nombreSeccion="antiguo-linguistica" 
         />
 
         {/* Sección: Antigua Editorial */}
         <h3 className="text-3xl font-semibold text-gray-600 mt-6 mb-4 text-center">Editorial</h3>
         <EquipoConLayout 
-          miembros={antiguosEquiposEditorial} 
+          miembros={antiguosEquiposEditorial.map(withImg)} 
           nombreSeccion="antiguo-editorial" 
         />
 
         {/* Sección: Antigua Ilustracion */}
         <h3 className="text-3xl font-semibold text-gray-600 mt-6 mb-4 text-center">Ilustración</h3>
         <EquipoConLayout 
-          miembros={antiguosEquiposIlustracion} 
+          miembros={antiguosEquiposIlustracion.map(withImg)} 
           nombreSeccion="antiguo-ilustracion" 
         />
       </div>

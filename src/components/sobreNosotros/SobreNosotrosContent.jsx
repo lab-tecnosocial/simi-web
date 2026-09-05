@@ -1,9 +1,9 @@
-const SobreNosotrosContent = () => {
+const SobreNosotrosContent = ({ headerImage }) => {
   return (
     <section className="font-nunito flex flex-col items-center py-10 bg-white">
       <div className="flex flex-col items-center mb-20">
         <img
-          src="/assets/images/simicards.png"
+          src={headerImage?.src}
           alt="Simi Logo"
           className="w-28 h-28 mt-[-30px] mb-10"
         />
@@ -30,7 +30,7 @@ const SobreNosotrosContent = () => {
           "
         >
           <img
-            src="/assets/images/simicards.png"
+            src={headerImage?.src}
             alt="Misión"
             className="w-16 h-16 mx-auto mt-3 mb-2 /* 2) Reducimos margen superior e inferior del ícono */
           "
@@ -54,7 +54,7 @@ const SobreNosotrosContent = () => {
           "
         >
           <img
-            src="/assets/images/simicards.png"
+            src={headerImage?.src}
             alt="Quiénes somos"
             className="w-16 h-16 mx-auto mt-3 mb-2"
           />
@@ -77,7 +77,7 @@ const SobreNosotrosContent = () => {
           "
         >
           <img
-            src="/assets/images/simicards.png"
+            src={headerImage?.src}
             alt="Visión"
             className="w-16 h-16 mx-auto mt-3 mb-2"
           />

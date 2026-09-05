@@ -1,10 +1,39 @@
 ---
+import { getImage } from "astro:assets";
 import GameMenu from "../components/juegos/GameMenu";
 import PageLayout from "../layouts/PageLayout.astro";
+import simicards from "../assets/images/simicards.png";
+import dictionaryIconSrc from "../assets/images/Dictionary.png";
+import playIconSrc from "../assets/images/Play.png";
+import anagramaSrc from "../assets/images/anagrama.png";
+import ayudaSimiSrc from "../assets/images/ayuda_simi.png";
+import sopaDeLetrasSrc from "../assets/images/sopa_de_letras.png";
+import emparejarPalabraSrc from "../assets/images/emparejar_palabra.png";
+
+const headerImage = await getImage({ src: simicards });
+const dictionaryIcon = await getImage({ src: dictionaryIconSrc });
+const playIcon = await getImage({ src: playIconSrc });
+const anagramaImage = await getImage({ src: anagramaSrc });
+const ayudaSimiImage = await getImage({ src: ayudaSimiSrc });
+const sopaDeLetrasImage = await getImage({ src: sopaDeLetrasSrc });
+const emparejarPalabrasImage = await getImage({ src: emparejarPalabraSrc });
 ---
 
-<PageLayout titulo="Juegos" descripcion="Juega a los mejores juegos online">
+<PageLayout
+  titulo="Juegos"
+  descripcion="Juega a los mejores juegos online"
+  imagen={headerImage.src}
+>
   <div class="bg-rana">
-    <GameMenu client:only="react" />
+    <GameMenu
+      client:only="react"
+      headerImage={headerImage}
+      dictionaryIcon={dictionaryIcon}
+      playIcon={playIcon}
+      anagramaImage={anagramaImage}
+      ayudaSimiImage={ayudaSimiImage}
+      sopaDeLetrasImage={sopaDeLetrasImage}
+      emparejarPalabrasImage={emparejarPalabrasImage}
+    />
   </div>
 </PageLayout>

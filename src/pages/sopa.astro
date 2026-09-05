@@ -2,12 +2,16 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import WordPuzzleGame from "../components/juegos/WordPuzzleGame";
 import "../styles/global.css";
+import { getImage } from "astro:assets";
+import sopaImage from "../assets/images/sopa_de_letras.png";
+
+const headerImage = await getImage({ src: sopaImage });
 ---
 
 <PageLayout
     titulo="Sopa de letras"
     descripcion="Juega a descifrar las palabras"
-    imagen="/assets/img/anagrama.jpg"
+    imagen={headerImage.src}
 >
     <WordPuzzleGame client:only="react" />
 </PageLayout>

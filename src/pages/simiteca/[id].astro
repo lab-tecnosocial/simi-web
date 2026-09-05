@@ -1,7 +1,9 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../../layouts/PageLayout.astro";
 import biblioteca from "../../components/data/biblioteca.json";
 import FlipbookReader from "../../components/biblioteca/FlipbookReader.jsx";
+import bannerSrc from "../../assets/images/juego/banner.jpg";
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
@@ -11,12 +13,17 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const item = biblioteca.find((i) => i.id === parseInt(id));
 if (!item) throw new Error("Item de la Simiteca no encontrado");
+
+// item.cover apunta a public/assets/images/biblioteca/... (contenido de
+// biblioteca, excluido a propósito del pipeline de assets). Solo el
+// fallback (cuando no hay cover) usa una imagen que sí vive en src/assets.
+const fallbackBanner = await getImage({ src: bannerSrc });
 ---
 
 <PageLayout
   titulo={item.title}
   descripcion={item.description || `Lee ${item.title} en línea`}
-  imagen={item.cover || "/assets/images/juego/banner.jpg"}
+  imagen={item.cover || fallbackBanner.src}
 >
   <FlipbookReader item={item} client:only="react" />
 </PageLayout>

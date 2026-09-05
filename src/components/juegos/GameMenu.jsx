@@ -1,10 +1,14 @@
-import Anagrama from '../assets/images/anagrama.png';
-import AyudaSimi from '../assets/images/ayuda_simi.png';
-import SopadeLetras from '../assets/images/sopa_de_letras.png';
-import EmparejarPalabras from '../assets/images/emparejar_palabra.png';
 import '../../styles/global.css';
 
-const GameMenu = () => {
+const GameMenu = ({
+  headerImage,
+  dictionaryIcon,
+  playIcon,
+  anagramaImage,
+  ayudaSimiImage,
+  sopaDeLetrasImage,
+  emparejarPalabrasImage,
+}) => {
   return (
     <div className="relative flex flex-col items-center min-h-screen p-10 font-[Nunito,sans-serif] overflow-hidden">
 
@@ -14,7 +18,7 @@ const GameMenu = () => {
 
       <div className="relative z-10 w-full flex flex-col items-center">
         <img
-          src="/assets/images/simicards.png"
+          src={headerImage?.src}
           alt="cabeza logo"
           className="w-32 h-auto mx-auto mb-4"
         />
@@ -31,7 +35,7 @@ const GameMenu = () => {
           href="/glosario"
           className="mt-4 mb-2 bg-qumir hover:bg-green-700 text-white font-semibold text-2xl px-12 py-4 rounded-2xl flex items-center gap-3 min-w-[250px] justify-center"
         >
-          <img src="../assets/images/Dictionary.png" alt="Diccionario" className="w-9 h-9" />
+          <img src={dictionaryIcon?.src} alt="Diccionario" className="w-9 h-9" />
           <span>Ver glosario</span>
         </a>
 
@@ -44,7 +48,7 @@ const GameMenu = () => {
               <p className="text-gray-700 text-base mt-2">Anagrama</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
-              <img src={Anagrama.src} alt="Anagrama" className="max-h-full w-auto" />
+              <img src={anagramaImage?.src} alt="Anagrama" className="max-h-full w-auto" />
             </div>
             <div className="mt-auto">
               <a
@@ -56,7 +60,7 @@ const GameMenu = () => {
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
-                  src="../assets/images/Play.png"
+                  src={playIcon?.src}
                   alt="Play"
                   className="w-14 h-14 absolute right-8 bottom-5"
                 />
@@ -71,7 +75,7 @@ const GameMenu = () => {
               <p className="text-gray-700 text-base mt-2">Salva a Simi</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
-              <img src={AyudaSimi.src} alt="Salva a Simi" className="max-h-full w-auto" />
+              <img src={ayudaSimiImage?.src} alt="Salva a Simi" className="max-h-full w-auto" />
             </div>
             <div className="mt-auto">
               <a
@@ -83,7 +87,7 @@ const GameMenu = () => {
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
-                  src="../assets/images/Play.png"
+                  src={playIcon?.src}
                   alt="Play"
                   className="w-14 h-14 absolute right-8 bottom-5"
                 />
@@ -98,7 +102,7 @@ const GameMenu = () => {
               <p className="text-gray-700 text-base mt-2">Sopa de letras</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
-              <img src={SopadeLetras.src} alt="Sopa de letras" className="max-h-full w-auto" />
+              <img src={sopaDeLetrasImage?.src} alt="Sopa de letras" className="max-h-full w-auto" />
             </div>
             <div className="mt-auto">
               <a
@@ -110,7 +114,7 @@ const GameMenu = () => {
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
-                  src="../assets/images/Play.png"
+                  src={playIcon?.src}
                   alt="Play"
                   className="w-14 h-14 absolute right-8 bottom-5"
                 />
@@ -125,7 +129,7 @@ const GameMenu = () => {
               <p className="text-gray-700 text-base mt-2">Emparejamiento</p>
             </div>
             <div className="h-[200px] flex items-center justify-center">
-              <img src={EmparejarPalabras.src} alt="Emparejamiento" className="max-h-full w-auto" />
+              <img src={emparejarPalabrasImage?.src} alt="Emparejamiento" className="max-h-full w-auto" />
             </div>
             <div className="mt-auto">
               <a
@@ -137,7 +141,7 @@ const GameMenu = () => {
                   <span className="text-lg mt-1">Jugar</span>
                 </div>
                 <img
-                  src="../assets/images/Play.png"
+                  src={playIcon?.src}
                   alt="Play"
                   className="w-14 h-14 absolute right-8 bottom-5"
                 />

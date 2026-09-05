@@ -1,22 +1,35 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import HeroTop from "../components/blog/HeroTop.jsx";
 import RecomendedPosts from "../components/blog/RecomendedPosts.jsx";
 import RecentPosts from "../components/blog/RecentPosts.jsx";
+import posts from "../components/data/posts.json";
+import { getImageModule } from "../lib/images.js";
 import "../styles/global.css";
+
+const banner = await getImage({ src: getImageModule("juego/banner.jpg") });
+
+const posts_with_images = await Promise.all(
+  posts.map(async (post) => {
+    const mod = getImageModule(post.image);
+    const img = mod ? await getImage({ src: mod }) : null;
+    return { ...post, imageSrc: img?.src };
+  })
+);
 ---
 
 <PageLayout
   titulo="Blog"
   descripcion="Entérate de nuestros últimos posts"
-  imagen="/assets/images/juego/banner.jpg"
+  imagen={banner.src}
 >
   <!-- Sección de Hero -->
-  <HeroTop />
+  <HeroTop banner={banner} />
 
   <!-- Sección Blogs Recomendados -->
-  <RecomendedPosts />
+  <RecomendedPosts posts={posts_with_images} />
 
   <!-- Sección Publicados recientemente -->
-  <RecentPosts />
+  <RecentPosts posts={posts_with_images} />
 </PageLayout>

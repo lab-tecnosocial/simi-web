@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export default function FAQ({ questions }) {
+export default function FAQ({ questions, headerImage }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -16,7 +16,9 @@ export default function FAQ({ questions }) {
 
       <div className="flex flex-col items-center mb-4">
         <img
-          src="/assets/images/simicards.png"
+          src={headerImage?.src}
+          width={headerImage?.width}
+          height={headerImage?.height}
           alt="Equipos"
           className="w-28 h-auto mt-12 mb-12"
         />

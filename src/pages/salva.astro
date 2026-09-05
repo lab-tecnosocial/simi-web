@@ -1,13 +1,20 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import Hangman from "../components/juegos/Hangman.jsx";
+import fondoCieloUrl from "../assets/images/nubes.webp?url";
+import globoSrc from "../assets/images/globo.png";
+import manchaSrc from "../assets/images/mancha.png";
 import "../styles/global.css";
+
+const globo = await getImage({ src: globoSrc });
+const mancha = await getImage({ src: manchaSrc });
 ---
 
 <PageLayout
     titulo="Salva a Simi"
     descripcion="Juega a descifrar las palabras"
-    imagen="/assets/img/anagrama.jpg"
+    imagen={globo.src}
 >
-    <Hangman client:only="react" />
+    <Hangman client:only="react" fondoCielo={fondoCieloUrl} globo={globo} mancha={mancha} />
 </PageLayout>

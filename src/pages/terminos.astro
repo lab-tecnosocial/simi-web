@@ -1,12 +1,16 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import fondoSrc from "../assets/images/fondo.png";
 import "../styles/global.css";
+
+const fondo = await getImage({ src: fondoSrc });
 ---
 
 <PageLayout
   titulo="Términos y condiciones — Simi"
   descripcion="Términos y condiciones de uso de la aplicación Simi"
-  imagen="/assets/images/fondo.png"
+  imagen={fondo.src}
 >
   <main class="max-w-3xl mx-auto px-6 py-16 font-nunito text-futuro">
     <h1 class="text-3xl font-bold text-qumir mb-8">Términos y condiciones</h1>

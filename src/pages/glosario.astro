@@ -1,15 +1,20 @@
 ---
+import { getImage } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import Glossary from "../components/juegos/Glossary.jsx";
+import dictionaryGreen from "../assets/images/DictionaryGreen.png";
 import "../styles/global.css";
+
+const headerImage = await getImage({ src: dictionaryGreen });
 ---
 
 <PageLayout
   titulo="Glosario"
   descripcion="Lista de palabras"
+  imagen={headerImage.src}
 >
   {/* Monta el React component con Astro cuando cargue la página */}
   <div class="bg-rana">
-    <Glossary client:load />
+    <Glossary client:load headerImage={headerImage} />
   </div>
 </PageLayout>

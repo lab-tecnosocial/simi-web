@@ -3,11 +3,8 @@ import Word from './Word';
 import Keyboard from './Keyboard';
 import GameOver from './GameOver';
 import { wordList } from '../data';
-import fondoCielo from '../assets/images/Nubes.GIF';
-import globo from '../assets/images/globo.png';
-import mancha from '../assets/images/mancha.png';
 
-function Game() {
+function Game({ fondoCielo, globo, mancha }) {
   const [selectedList, setSelectedList] = useState('animales');
   const [selectedWord, setSelectedWord] = useState('');
   const [guessedLetters, setGuessedLetters] = useState([]);
@@ -100,7 +97,7 @@ function Game() {
     <div
       className="flex flex-col items-center min-h-screen bg-gray-100 pt-12 pb-2 px-4"
       style={{
-        backgroundImage: `url(${fondoCielo.src})`,
+        backgroundImage: `url(${fondoCielo})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
